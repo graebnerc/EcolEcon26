@@ -1,6 +1,6 @@
 ---
-title: "Development Economics"
-subtitle: "B.A. International Management - Fall Semester 2026/27"
+title: "Ecological Economics"
+subtitle: "MA Sustainable Energy & MA International Management Studies — Winter Semester 2026/27"
 date: today
 format:
   html:
@@ -14,13 +14,16 @@ format:
     toc: false
 ---
 
-
 ## Overall Goal of the Course
 
-You will know the most influential theories about the determinants of socio-economic
-development. You will be able to identify and reflect on the ideas of 'progress' and 'good life'
-underlying these theories. Moreover, you will learn to reproduce and evaluate the common patterns of
-argumentation on the relationship between 'development', 'economic growth' and 'planetary boundaries'.
+The course covers a wide range of interactions between the environment and socio-economic
+development. Students are introduced to various methods for analyzing economic impacts on the
+environment, the importance of the environment for economic activities, and the role of social
+institutions within the context of economy–environment relationships. In this setting, students
+learn about different policy tools that can address (undesired) external effects of economic
+activities on the environment and how to evaluate the effectiveness of environmental regulations
+from an economic perspective. Over the semester, students work on one particular country or region
+case study, which they present as a poster during a poster conference at the end of the semester.
 
 ## Learning Goals
 
@@ -28,111 +31,88 @@ Upon completion of this seminar, you will be able to:
 
 **Expertise:**
 
-- Define and critically evaluate the most important concepts of (sustainable) economic development and commonly used development indicators
-- Critically question and assess different approaches to defining and measuring development
-- Evaluate policy measures in terms of their expected impact on economic development and identify their underlying theoretical foundations
+- Understand the core concepts and analytical perspective of ecological economics
+- Explain how different notions of 'economic development' relate to the question of ecological sustainability
+- Discuss the relevance of trade-offs between social and environmental goals
+- Understand how economic activities and the resulting ecological stressors are globally interrelated
 
 **Methodological Competence:**
 
-- Independently collect development data from publicly available sources and use it to analyze determinants and implications of economic development
-- Identify and evaluate the theories underlying development programs and policies
-- Apply both empirical and theoretical methods from development economics to analyze development-related problems and critically assess them
+- Work with data on socio-economic development and environmental pressures
+- Account for environmental stressors at the global level, distinguishing production- and consumption-based perspectives
+- Evaluate environmental policy instruments and their underlying assumptions
 
 **Social and Personal Skills:**
 
-- Critically question common notions of 'development' and articulate and justify your own ideas about appropriate definitions and measurements of economic development
-- Describe current debates on development policy and take well-founded positions on concrete development policy measures
-- Identify the data necessary to answer development theory questions and, when needed, acquire and analyze this data yourself while explaining your findings
+- Conduct and present a country-level analysis as part of a group
+- Be able to delineate the assumptions on which your own assessments, and those on others depend when it comes to the discussion of social and environmental challenges
+- Take well-founded positions in current debates (e.g. growth vs. degrowth)
 
 ## Course Information
 
-:::: {.columns}
-
-::: {.column width="50%"}
 ### Prerequisites
-The lecture is an elective in the third or fifth semester. While there are no formal prerequisites, successful completion of the Economics I and II modules is strongly recommended. You also benefit from having completed the course "Applied Data Science".
+There are no formal prerequisites. A basic familiarity with introductory economics is
+helpful but not required. The course is offered jointly for the MA "Sustainable Energy"
+and the MA "International Management Studies" programs.
 
 ### Course Details
 
-- **Credits:** 5 CP (150 total hours)
-- **Lecture Time:** 15 hours (10 × 1.5 hours)
-- **Self-Study:** 135 hours
-- **Location:** MAD, room 131
-:::
+- **Lecture Time:** Wednesdays, 08:30–12:00 (we start 8:30 sharp)
+- **Lecturers:** Claudius Gräbner-Radkowitsch & Anna-Katharina Kothe
+- **Credits:** 5 ECTS (≈ 150 h total workload; about 7 h of self-study per week on top of the weekly lecture)
 
-::: {.column width="50%"}
 ### Course Resources
 
-- **Moodle Room:** [Link](https://elearning.uni-flensburg.de/moodle/course/view.php?id=17917)
-- **Moodle Password:** `DevEcon26`
-- **Course homepage:** [developmenteconomics-fall26.netlify.app](https://developmenteconomics-fall26.netlify.app/)
+- **Moodle Room:** [room 17919](https://elearning.uni-flensburg.de/moodle/course/view.php?id=17919)
+- Passwort will be distributed during the first lecture
 
-### Recommended Study Schedule
-
-- **Time Horizon:** September 18 - December 11
-- **Daily Study:** about 1.5 hours (7 days/week)
-- **Weekday Study:** about 2 hours (5 days/week)
-
-
-
-:::
-
-::::
 
 ## Schedule and Logistics
 
 ::: {.callout-important}
-**Note:** This schedule is subject to change as the course progresses. Announcements will be made via [Moodle](https://elearning.uni-flensburg.de/moodle/course/view.php?id=17917). 
+**Note:** This schedule is subject to change as the course progresses. Announcements will be made via [Moodle](https://elearning.uni-flensburg.de/moodle/course/view.php?id=17919).
 The latest version of the syllabus will be made available here.
 :::
 
-| #  | Date        | Topic                                                        | Format    |
-|----|-------------|--------------------------------------------------------------|-----------|
-| 1  | 18.09.      | Introduction and the meaning of 'development'                | In-person |
-| 2  | 25.09.      | Measuring development                                        | In-person |
-| 3  | 02.10.      | Human Development and the Capabilities Approach              | In-person |
-| 4  | 09.10.      | Classical and Neoclassical Growth Models                     | Video     |
-|    | 16.10.      | *No lecture*                                                 |           |
-| 5  | 23.10.      | Institutional Economics and Development I                    | In-person |
-| 6  | 30.10.      | Institutional Economics and Development II                   | In-person |
-| 7  | 06.11.      | Marxist Theories of Development                              | In-person |
-| 8  | 13.11.      | The Global Political Economy of Development                  | In-person |
-| 9  | 20.11.      | Technology Gaps, Innovation Systems, and Economic Complexity | In-person |
-| 10 | 27.11.      | Sustainable Development, Environmental Limits, and Degrowth  | In-person |
-| 11 | 04.12.      | *Buffer / Exam Preparation*                                  | In-person |
-| 12 | 11.12.      | Summary and Open Questions                                   | In-person |
+Sessions with two topics on the same date are listed as two rows sharing that date.
 
-::: {.callout-warning}
-### Exam Dates
-- **First Exam:** December 14, 2026, 9:00 - 11:30, room OSL 449
-- **Second Exam:** February 22, 12:30 - 15:00, room OSL 449
-:::
-
-<!---
-Removed:
-  Current methodological trends in development economics
---->
+| #  | Date   | Topic                                                                    | Lecturer            |
+|----|--------|--------------------------------------------------------------------------|---------------------|
+| 1  | 16.09. | Introduction, course logistics & example poster                          | Claudius & Anna-Katharina     |
+| 1  | 16.09. | Theories of socio-economic development and the environment               | Claudius & Anna-Katharina     |
+| 2  | 23.09. | *No on-site class* — decentralized working week                          | —                   |
+| 3  | 30.09. | Working with data: stylized facts & theory-ladenness of observation      | Anna-Katharina & Claudius     |
+| 4  | 07.10. | Primer on scientific argumentation                                       | Anna-Katharina               |
+| 4  | 07.10. | Primer on poster design and presentation                                 | Anna-Katharina               |
+|    | 14.10. | *No class*                                                               | —                   |
+| 5  | 21.10. | Trade, externalization, and environmental conflicts                      | Claudius             |
+| 6  | 28.10. | Accounting environmental stressors on the global level                   | Claudius             |
+| 7  | 04.11. | Classical environmental policy instruments                               | Claudius             |
+| 7  | 04.11. | Application: the European Emissions Trading System (EU ETS)              | Anna-Katharina               |
+| 8  | 11.11. | The growth vs. degrowth debate                                           | Claudius             |
+| 9  | 18.11. | Environmental and global justice                                         | Anna-Katharina               |
+| 10 | 25.11. | Non-conventional policy instruments                                      | Anna-Katharina               |
+| 11 | 02.12. | Work-in-progress country analysis presentations & feedback               | Anna-Katharina & Claudius     |
+| 12 | 09.12. | Summary & open questions                                                 | Anna-Katharina & Claudius     |
+| 13 | 16.12. | Poster presentations *(tentative)*                                       | Anna-Katharina & Claudius     |
 
 ## Evaluation and Assessment
 
-### Final Exam
-The course evaluation is based on a final exam at the end of the semester.
+The final mark for the course depends on a group **country-analysis poster** and the students'
+performance during the final poster presentation. The posters are prepared in groups of up to 3
+people and pitched during the poster conference at the end of the semester.
 
-### Admission Requirements
-
-- To be admitted to the final exam, students must **pass the essay take home** assigned during the semester.
-- The essay take home is a 1000 words essay that must be completed at home independenly, and will be graded pass or fail
+Full details on the poster — the content and guiding questions as well as the examination
+criteria and assessment dimensions — are on the dedicated **[examination page](examination.qmd)**.
 
 ::: {.callout-tip}
 #### Study Recommendations
-I strongly recommend that you spread your study time fairly evenly throughout the semester. It will save you time and effort if you study and practice constantly, not just right before the exam.
+I strongly recommend that you spread your study time fairly evenly throughout the semester. It will save you time and effort if you study and practice constantly.
 :::
-
 
 ---
 
 ::: {.callout-tip}
 #### Contact Information
-For questions regarding the course content or logistics, please use the Moodle discussion forums.
-For more personal questions consider visiting my [office hours](https://fantastical.app/claudiusgraebner-radkowitsch/consultation-hours).
+For questions regarding the course content or logistics, please use the [Moodle](https://elearning.uni-flensburg.de/moodle/course/view.php?id=17919) discussion forums.
 :::

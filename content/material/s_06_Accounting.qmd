@@ -1,0 +1,32 @@
+---
+title: "🗓️ Session 6: Accounting environmental stressors on the global level"
+date: "2026-10-28"
+date-modified: last-modified
+---
+
+## Abstract
+
+This session introduces methods for **accounting environmental stressors on the global level**,
+including the distinction between production- and consumption-based statistics. In the
+accompanying group work, you continue analysing the challenges facing your selected country or
+region.
+
+## 🖥️ Lecture Slides
+
+Either click on the slide area below or click [here](slides/EcolEcon26_L06_Accounting.pdf) to download the slides.
+
+<!-- NOTE: the slide PDF has not been added yet; the path below is a placeholder. -->
+
+```{=html}
+<div class="container" style="position: relative;overflow: hidden;width: 100%;padding-top: 56.25%;">
+<iframe src="slides/EcolEcon26_L06_Accounting.pdf" style="position: absolute;top: 0;left: 0;bottom: 0;right: 0;width: 100%;height: 100%;" allowfullscreen loading="lazy"></iframe>
+</div>
+```
+
+## 📚 Follow-up Reading
+
+- [TODO: add follow-up readings for this session.]
+
+### 🏆 Further readings
+
+- [TODO: add further readings for this session.]

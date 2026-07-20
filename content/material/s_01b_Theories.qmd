@@ -1,6 +1,6 @@
 ---
-title: "🗓️ Session 12: Summary & open questions"
-date: "2026-12-09"
+title: "🗓️ Session 1: Theories of socio-economic development and the environment"
+date: "2026-09-16"
 date-modified: last-modified
 author:
   - name: Claudius Gräbner-Radkowitsch
@@ -16,17 +16,20 @@ author:
 
 ## Abstract
 
-A concluding session to review the main themes of the course and to discuss **open questions**.
+This session introduces different **theories of socio-economic development** and how they
+conceptualise the relationship between the economy and the environment. These perspectives
+provide the analytical background for the interactions between environment and development
+that we study throughout the course.
 
 ## 🖥️ Lecture Slides
 
-Either click on the slide area below or click [here](slides/EcolEcon26_L12_Summary.pdf) to download the slides.
+Either click on the slide area below or click [here](slides/EcolEcon26_L01b_Theories.pdf) to download the slides.
 
 <!-- NOTE: the slide PDF has not been added yet; the path below is a placeholder. -->
 
 ```{=html}
 <div class="container" style="position: relative;overflow: hidden;width: 100%;padding-top: 56.25%;">
-<iframe src="slides/EcolEcon26_L12_Summary.pdf" style="position: absolute;top: 0;left: 0;bottom: 0;right: 0;width: 100%;height: 100%;" allowfullscreen loading="lazy"></iframe>
+<iframe src="slides/EcolEcon26_L01b_Theories.pdf" style="position: absolute;top: 0;left: 0;bottom: 0;right: 0;width: 100%;height: 100%;" allowfullscreen loading="lazy"></iframe>
 </div>
 ```
 

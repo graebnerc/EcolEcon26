@@ -1,0 +1,152 @@
+---
+title: "Examination — the country-analysis poster"
+---
+
+The examination for this course is a **poster** on a country or region case study, which
+you prepare in groups and present during the poster conference at the end of the semester.
+
+## Content and guiding questions for the poster
+
+Students are expected to prepare a poster (DIN-A0) and to **pitch** it to the other students
+during the poster conference at the end of the course (max. 5 minutes per student). Each
+student will be asked questions about the content they were responsible for. Students will
+prepare the poster together in groups of **up to 3 people**.
+
+The goal of the poster is to present an analysis of the main challenges faced by a specific
+country or region, which students selected during the second week of lectures. Make sure you
+choose a country or region whose documents are available in a language you understand and
+from which you can access the necessary data (see the [data hints](/content/index.qmd#some-hints-on-finding-data)).
+In their analysis, students are expected to identify key socio-ecological challenges of the
+country or region, describe and evaluate current solution strategies, and critically discuss
+these strategies while suggesting improvements.
+
+More precisely, the analysis involves **three major steps**.
+
+**First**, students are expected to **identify a set of challenges** to the country/region,
+which they consider essential. They need to justify their choice precisely. Challenges can
+refer to economic, social and/or ecological problems, e.g.:
+
+- Excessive reliance on fossil fuels
+- Extensive externalization of ecological costs into other countries ('living at the expense
+  of others') or serving as a sink for ecological problems caused by other countries (being
+  'exploited for the sake of others')
+- Problems in ensuring a decent level of well-being for the whole population
+- Relevance of national energy poverty
+- Excessive levels of income and/or wealth inequalities
+- Problems in achieving the SDGs
+- Excessive inflation and political polarization
+- Problems to remain within planetary boundaries[^leeds]
+
+[^leeds]: You should refer to the data provided by the good life and planetary boundaries working group from Leeds University. See the links to data sources in the [data hints](/content/index.qmd#some-hints-on-finding-data).
+
+It is crucial that you justify why you consider these challenges essential and worth
+examining. You also need to be clear about your value system, for example, when arguing that
+the current level of inequality in a country is 'unjust.' Students are then expected to explain
+how the country or region currently addresses the challenges described above and to critically
+analyze the current strategy.
+
+Here are some brief examples (your own analysis should go into much more detail, of course):
+
+- One of the main challenges for **France** is the excessive reliance on nuclear energy. The
+  current government does not perceive this as a major problem for various reasons. We believe
+  that because of generational justice, water scarcity, and global justice arguments this needs
+  to change. Investment in green energy is required and should be financed by a wealth tax.
+- One of **Bangladesh's** main challenges is the high poverty rate and gender inequality.
+  Currently, the country tries to become more competitive through low prices and environmentally
+  harmful activities. This is problematic; the country should focus on building a green technology
+  industrial base. International development collaboration is necessary.
+- One of **Germany's** main challenges is decarbonizing energy production and consumption. The
+  country aims to diversify its energy sources and strongly supports the development, use, and
+  import of green hydrogen. Consequently, political leaders and German companies are not only
+  promoting domestic green hydrogen production but also importing it from countries mostly in
+  the Global South, such as Chile, Morocco, or Nigeria. This approach risks creating social
+  injustices and resource exploitation similar to colonialism. Therefore, it is important to
+  carefully design these hydrogen partnerships, for example by including sustainability criteria
+  for green hydrogen production in the exporting countries, to ensure socio-economic benefits
+  are created locally.
+- **Morocco** has achieved success in developing renewable energy. One challenge in the Moroccan
+  energy transition is dependence on foreign investments and ownership, which creates social
+  injustices due to limited socio-economic opportunities for small actors and a lack of involvement
+  and participation from rural communities. Supportive measures for small actors, such as
+  implementing a feed-in tariff and government support for domestic actors, are necessary.
+
+In the **final step**, students are asked to suggest ways to improve or even redirect the
+current strategy. This includes analyzing risks, opportunities, and success factors for the new
+approach.
+
+For each step, if you have doubts or questions, please ask us for feedback.
+
+## Examination
+
+The posters need to be printed individually and brought to the class on the day of the poster
+presentation. A digital copy of the poster must be uploaded on Moodle **one week before** your
+presentation.
+
+The final mark for the course depends on the quality of the students' poster and their
+performance during the final poster presentation. The criteria for the evaluation are described
+below. The following specifics apply to the overall evaluation of the work:
+
+- A contribution that is not graded as at least *adequate* in dimensions #3 ("formalities"),
+  #4 ("clarity and comprehensibility of argument"), #5 ("correctness and accuracy of exposition")
+  or #8 ("spelling and grammar") will be graded 5.0.
+- If the work receives only a *sufficient* or *satisfactory* rating in dimensions #4 ("clarity
+  and comprehensibility of argument") or #5 ("correctness and accuracy of exposition"), the
+  overall rating cannot receive a grade better than 'sufficient' (4.0) or 'satisfactory' (3.0).
+- If a student provides a certificate for diagnosed dyslexia before submitting the work,
+  dimension #8 ("spelling and grammar") will be ignored.
+
+Apart from these special features, the overall rating results from the individual ratings in each
+assessment dimension. The "Weight" column shows the relative importance of each dimension for the
+overall score. For each dimension, we use an average reference value; special characteristics of
+the work may lead to upgrades or downgrades. The overall grade depends on the percentage of
+maximum points earned. A work that scores the reference value in each dimension receives a grade
+of 2.7. For the points in section I, only the poster itself is considered. For the final scores in
+sections II and III, both the poster and the oral presentation are evaluated, with the primary
+focus on the poster. Section IV considers only the oral performance.
+
+It is very important that when submitting their poster, groups indicate precisely which student
+was mainly responsible for which part of the final work, or which parts were prepared by all
+students equally. Depending on how students distribute the work within their group, not all
+evaluation dimensions might be relevant for each student. In such cases, the corresponding
+dimensions will simply be ignored when computing the final mark.
+
+### Assessment dimensions
+
+**I. Structure and design of the poster** — the entire group receives a joint grade
+
+| #  | Criterion | Weight | Guiding questions |
+|:--:|:----------|:------:|:------------------|
+| 1 | Structure and outline of the poster content ("red thread") | 3 | Do the individual parts build on each other meaningfully? Is the structure determined by guiding questions? Does each element contribute to answering them? |
+| 2 | Design of the poster | 3 | Is the poster visually appealing and easy to read? Do design choices facilitate conveying the key message? |
+| 3 | Formalities: consistent layout, correct citation, etc. | 2 | Have the formal requirements been met? Has sufficient and correct citation been given? |
+
+**II. General aspects and formalities** — each student receives an individual grade
+
+| #  | Criterion | Weight | Guiding questions |
+|:--:|:----------|:------:|:------------------|
+| 4 | Clarity and comprehensibility of the argumentation (logical stringency) | 2 | Are assumptions, mechanisms, and conclusions clearly identified? Do conclusions follow logically? Are normative assumptions made explicit? |
+| 5 | Correctness and accuracy of the arguments made | 2 | Are the statements made correct in content and accurately reflected upon? |
+| 6 | Extent and adequacy of the literature and data considered | 2 | Is literature incorporated appropriately, scientific, relevant, and balanced? |
+| 7 | Precision, systematics, and comprehensibility of the presentation of results | 2 | Were results described systematically and reported comprehensibly? |
+| 8 | Spelling & grammar | 1 | Is the work free of spelling and grammatical errors? Is the sentence structure understandable? |
+| 9 | Use of tables and graphics | 1 | Are figures and tables used to support the core arguments? |
+
+**III. Specific aspects of the country analysis** — each student receives an individual grade
+
+| #  | Criterion | Weight | Guiding questions |
+|:--:|:----------|:------:|:------------------|
+| 10 | Justification and explanation of the challenges identified | 3 | Were the main challenges made explicit and adequately justified? Is their background explained well? |
+| 11 | Justification and analysis of current solutions | 3 | Are the current solution strategies described and analyzed exhaustively? |
+| 12 | Critical assessment of the current strategy and outline of alternatives | 3 | Are current strategies assessed exhaustively, transparently, and convincingly? Are viable suggestions for improvement made? |
+
+**IV. Oral performance** — each student receives an individual grade
+
+| #  | Criterion | Weight | Guiding questions |
+|:--:|:----------|:------:|:------------------|
+| 13 | Pitch of the poster | 3 | Does the short pitch convey the key take-aways and motivate a closer look? Do students adhere to the 5-minute pitch? |
+| 14 | Quality of the answers | 3 | Were the answers correct, to the point, logically consistent, and justified with reference to theory or data? |
+
+::: {.callout-note}
+Detailed examples of upgrades and downgrades for each dimension are provided in the full
+examination rubric on [Moodle](https://elearning.uni-flensburg.de/moodle/course/view.php?id=17919).
+:::

@@ -1,0 +1,17 @@
+---
+title: "🗓️ Session 2: No on-site class — decentralized working week"
+date: "2026-09-23"
+date-modified: last-modified
+---
+
+## Abstract
+
+There is **no on-site class this week**. Instead, this is a decentralized working
+week that you use to prepare for the project work over the semester:
+
+- **Group formation** — get together in your project groups.
+- **Country selection** — decide which country your group will analyse.
+- **Foundational readings** — work through the foundational readings in preparation
+  for the coming sessions.
+
+[TODO: add details on group formation, country selection, and the foundational reading list.]

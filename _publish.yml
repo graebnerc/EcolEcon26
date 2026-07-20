@@ -1,3 +1,4 @@
 - source: project
   netlify:
-    - url: 'https://developmenteconomics-fall26.netlify.app/'
+    - id: '40117b20-d4fb-4ec9-9dd5-5fba44fd244e'
+      url: 'https://ecological-economics26.netlify.app/'

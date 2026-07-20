@@ -1,6 +1,11 @@
 .vscode/
 /.quarto/
-INBOX
+_INBOX
+
+# Example poster assets and working slide folders (not tracked)
+content/material/slides/ExamplePoster/
+content/material/slides/_keynote/
+content/material/slides/_old/
 
 _freeze/
 .Rproj.user/

@@ -1,6 +1,6 @@
 ---
-title: "🗓️ Session 12: Summary & open questions"
-date: "2026-12-09"
+title: "🗓️ Session 7: Application — the European Emissions Trading System (EU ETS)"
+date: "2026-11-04"
 date-modified: last-modified
 author:
   - name: Claudius Gräbner-Radkowitsch
@@ -16,17 +16,18 @@ author:
 
 ## Abstract
 
-A concluding session to review the main themes of the course and to discuss **open questions**.
+An application of environmental policy instruments to the **European Emissions Trading System
+(EU ETS)** — how it works and how it can be assessed.
 
 ## 🖥️ Lecture Slides
 
-Either click on the slide area below or click [here](slides/EcolEcon26_L12_Summary.pdf) to download the slides.
+Either click on the slide area below or click [here](slides/EcolEcon26_L07b_ETS.pdf) to download the slides.
 
 <!-- NOTE: the slide PDF has not been added yet; the path below is a placeholder. -->
 
 ```{=html}
 <div class="container" style="position: relative;overflow: hidden;width: 100%;padding-top: 56.25%;">
-<iframe src="slides/EcolEcon26_L12_Summary.pdf" style="position: absolute;top: 0;left: 0;bottom: 0;right: 0;width: 100%;height: 100%;" allowfullscreen loading="lazy"></iframe>
+<iframe src="slides/EcolEcon26_L07b_ETS.pdf" style="position: absolute;top: 0;left: 0;bottom: 0;right: 0;width: 100%;height: 100%;" allowfullscreen loading="lazy"></iframe>
 </div>
 ```
 

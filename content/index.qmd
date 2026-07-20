@@ -1,26 +1,14 @@
 ---
-title: "Development Economics"
-subtitle: "Fall Semester 2026"
+title: "Ecological Economics"
+subtitle: "Winter Semester 2026/27"
 format: html
 ---
 
-<!---
-::: {.callout-important collapse=false}
-## 📢 Important
-
-(12/03/2023)
-
-- [🗓️ Week 01 lecture material](/content/weeks/week01/page.qmd) is now available!
-
-:::
-
---->
-
 # 📍 Lecture
 
-- Fridays 09:15-10:45 in MAD (room MAD 131)
+- Wednesdays 08:00–12:00
 
-Please make sure to check out the most recent version of the seminar timetable. 
+Please make sure to check out the most recent version of the seminar timetable.
 The most recent version can be found [here](material/SeminarDescription.qmd).
 
 # 📂 Material
@@ -28,47 +16,45 @@ The most recent version can be found [here](material/SeminarDescription.qmd).
 You find an overview about all lecture materials, such as slides and
 reading lists [here](/content/material/).
 
-EUF students can
-register for the Moodle course
-[here](https://elearning.uni-flensburg.de/moodle/course/view.php?id=17917)
-using the password `DevEcon26`.
+Course material, including a reading list, will be distributed through Moodle, and announcements
+will also be made there. Therefore, please make sure to sign up for the Moodle room (room 17919)
+as soon as possible:
+
+- **Moodle Room:** [room 17919](https://elearning.uni-flensburg.de/moodle/course/view.php?id=17919)
+- Passwort will be distributed during the first lecture
 
 Mandatory readings are available for download via the Moodle course.
 
 # 💌 Contact and discussion
 
-For asking questions and starting discussions, please use the forum in [Moodle](https://elearning.uni-flensburg.de/moodle/course/view.php?id=17917).
+For asking questions and starting discussions, please use the forum in [Moodle](https://elearning.uni-flensburg.de/moodle/course/view.php?id=17919).
 
-<!---
-# 💻 Class Groups
+# 🔎 Some hints on finding data
 
-::: {style="display:inline-block;width: 28.5%;border-style: dotted;border-width: 1px;border-color: &quot;#fefefe&quot;; margin:1%;padding:1.5%;background-color:#fafafa"}
-**Group 01**
+For the [country-analysis poster](material/examination.qmd) you will need data on your selected
+country or region. A few pointers:
 
-- 📆 Mondays
-- ⌚ 09:00 - 10:30
-- 📍 
-- 🧑‍🏫 _TA_NAME_
-:::
+- Students are provided with Python snippets for the environmentally-augmented input-output table
+  **EXIOBASE3**; you can use other data sources but need to analyze them on your own.
+- EXIOBASE contains data for the following countries: Australia, Austria, Belgium, Brazil, Bulgaria,
+  Canada, China, Croatia, Cyprus, Czech Republic, Denmark, Estonia, Finland, France, Germany,
+  Greece, Hungary, India, Indonesia, Ireland, Italy, Japan, Latvia, Lithuania, Luxembourg, Malta,
+  Mexico, Netherlands, Norway, Poland, Portugal, Romania, Russia, Slovakia, Slovenia, South Africa,
+  South Korea, Spain, Sweden, Switzerland, Taiwan, Turkey, United Kingdom, United States, and the
+  Wallis and Futuna Islands.
+- You can substitute some aspect of the country analysis after consulting the examiners (e.g.,
+  substituting the carbon-leakage analysis, if no data is available for this country, by a
+  political analysis of external pressures).
 
-::: {style="display:inline-block;width: 28.5%;border-style: dotted;border-width: 1px;border-color: &quot;#fefefe&quot;; margin:1%;padding:1.5%;background-color:#fafafa"}
-**Group 02**
-
-            
-- 📆 Mondays
-- ⌚ 10:30 - 12:00
-- 📍 
-- 🧑‍🏫 _TA_NAME_
-            
-:::
-
-::: {style="display:inline-block;width: 28.5%;border-style: dotted;border-width: 1px;border-color: &quot;#fefefe&quot;; margin:1%;padding:1.5%;background-color:#fafafa"}
-**Group 03**
-
-- 📆 Fridays
-- ⌚ 16:00 - 17:30
-- 📍 
-- 🧑‍🏫 _TA_NAME_
-:::
-
---->
+| Source | Description | Link |
+|:-------|:------------|:-----|
+| Atlas of Economic Complexity | Data on exports and specialization patterns. | <https://atlas.cid.harvard.edu/> |
+| EXIOBASE 3 | A global input-output table that is available over time and quantifies a wide variety of ecological stressors. Can be used to compute both production- and consumption-based statistics. | <https://zenodo.org/record/3583071> |
+| Good life and planetary boundaries | Data on how well countries meet social needs of their population while respecting ecological boundaries. | <https://goodlife.leeds.ac.uk/> |
+| IMF Data | Common macroeconomic data, focus on financial and international flow data. | <https://www.imf.org/en/Data> |
+| Material Flow Database | Data on global material flows. | <http://www.materialflows.net/> |
+| Our World in Data | Wide variety of data, usually collected from other sources and accompanied by blog posts. | <https://ourworldindata.org/> |
+| The Global Carbon Project | Data on emissions and environmental stressors. | <https://www.globalcarbonproject.org/> |
+| World Bank Open Data | Collection of common macroeconomic and development indicators. | <https://data.worldbank.org/> |
+| Sustainable Development Goals | Country profiles of SDGs. | <https://dashboards.sdgindex.org/map> |
+| Global Atlas of Environmental Justice | Overview of environmental struggles and conflicts. | <https://ejatlas.org/> |

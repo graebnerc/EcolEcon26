@@ -1,0 +1,30 @@
+---
+title: "🗓️ Session 8: The growth vs. degrowth debate"
+date: "2026-11-11"
+date-modified: last-modified
+---
+
+## Abstract
+
+This session engages with the **growth vs. degrowth debate**. In the accompanying group work,
+you develop policy sets for your selected country or region.
+
+## 🖥️ Lecture Slides
+
+Either click on the slide area below or click [here](slides/EcolEcon26_L08_Degrowth.pdf) to download the slides.
+
+<!-- NOTE: the slide PDF has not been added yet; the path below is a placeholder. -->
+
+```{=html}
+<div class="container" style="position: relative;overflow: hidden;width: 100%;padding-top: 56.25%;">
+<iframe src="slides/EcolEcon26_L08_Degrowth.pdf" style="position: absolute;top: 0;left: 0;bottom: 0;right: 0;width: 100%;height: 100%;" allowfullscreen loading="lazy"></iframe>
+</div>
+```
+
+## 📚 Follow-up Reading
+
+- [TODO: add follow-up readings for this session.]
+
+### 🏆 Further readings
+
+- [TODO: add further readings for this session.]

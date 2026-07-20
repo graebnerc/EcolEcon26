@@ -1,18 +1,15 @@
 project:
   type: "website"
-  title: "Development Economics (Fall 2026)"
+  title: "Ecological Economics (Winter 2026/27)"
   output-dir: _site
   render: # Add here all folders that should be rendered
     - "index.qmd"
     - "content/index.qmd"
-    - "content/tutorials.qmd"
     - "content/material/*.qmd"
     - "content/material/session*/*.qmd"
-    - "content/tutorials/*.qmd"
-    - "content/tutorials/*/*.qmd"
 
 website:
-  title: "Development Economics" # Title of website shown on top left
+  title: "Ecological Economics" # Title of website shown on top left
   page-navigation: true
   reader-mode: true
   open-graph: true
@@ -33,30 +30,46 @@ website:
             text: Overview
           - href: content/material/SeminarDescription.qmd
             text: Seminar Description
-          - href: content/material/s_01_Intro.qmd
-            text: "Session 1: Introduction"
-          - href: content/material/s_02_Measuring.qmd
-            text: "Session 2: Measuring Development"
-          - href: content/material/s_03_HumanDev.qmd
-            text: "Session 3: Human Development"
-          - href: content/material/s_04_GrowthModels.qmd
-            text: "Session 4: Classical and Neoclassical Growth Models"
-          - href: content/material/s_05_Institutions1.qmd
-            text: "Session 5: Institutional Economics I"
-          - href: content/material/s_06_Institutions2.qmd
-            text: "Session 6: Institutional Economics II"
-          - href: content/material/s_07_Marxism.qmd
-            text: "Session 7: Marxist Theories"
-          - href: content/material/s_08_Dependency.qmd
-            text: "Session 8: Global Political Economy"
-          - href: content/material/s_09_Technology.qmd
-            text: "Session 9: Technology Gaps & Complexity"
-          - href: content/material/s_10_Sustainability.qmd
-            text: "Session 10: Sustainable Development & Degrowth"
+          - href: content/material/examination.qmd
+            text: "Examination (poster)"
+          - section: "Session 1 (16.09.): Introduction & theory"
+            contents:
+              - href: content/material/s_01a_Introduction.qmd
+                text: "Introduction, logistics & example poster"
+              - href: content/material/s_01b_Theories.qmd
+                text: "Theories of development and the environment"
+          - href: content/material/s_02_DecentralizedWeek.qmd
+            text: "Session 2 (23.09.): No on-site class"
+          - href: content/material/s_03_WorkingWithData.qmd
+            text: "Session 3 (30.09.): Working with data"
+          - section: "Session 4 (07.10.): Argumentation & posters"
+            contents:
+              - href: content/material/s_04a_ScientificArgumentation.qmd
+                text: "Primer on scientific argumentation"
+              - href: content/material/s_04b_PosterDesign.qmd
+                text: "Primer on poster design and presentation"
+          - href: content/material/s_05_Trade.qmd
+            text: "Session 5 (21.10.): Trade & environmental conflicts"
+          - href: content/material/s_06_Accounting.qmd
+            text: "Session 6 (28.10.): Accounting environmental stressors"
+          - section: "Session 7 (04.11.): Policy instruments & EU ETS"
+            contents:
+              - href: content/material/s_07a_PolicyInstruments.qmd
+                text: "Classical environmental policy instruments"
+              - href: content/material/s_07b_ETS.qmd
+                text: "Application: the EU ETS"
+          - href: content/material/s_08_Degrowth.qmd
+            text: "Session 8 (11.11.): Growth vs. degrowth"
+          - href: content/material/s_09_Justice.qmd
+            text: "Session 9 (18.11.): Environmental & global justice"
+          - href: content/material/s_10_NonConventional.qmd
+            text: "Session 10 (25.11.): Non-conventional policy instruments"
+          - href: content/material/s_11_CountryAnalysis.qmd
+            text: "Session 11 (02.12.): Country analysis presentations"
           - href: content/material/s_12_Summary.qmd
-            text: "Session 12: Summary & Open Questions"
-          - href: content/tutorials.qmd
-            text: "💻 Tutorials"
+            text: "Session 12 (09.12.): Summary & open questions"
+          - href: content/material/s_13_Posters.qmd
+            text: "Session 13 (16.12.): Poster presentations (tbc)"
 
   navbar:
     background: primary
@@ -87,11 +100,10 @@ format:
     highlight-style: github
 
     theme:
-      light: 
+      light:
         - cosmo
         - assets/styles/custom.scss # Change the default colour
     toc: true
 
 execute:
   freeze: auto
-

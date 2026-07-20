@@ -1,50 +1,57 @@
 ---
-title: "Development Economics"
-subtitle: "Fall Semester 2026"
+title: "Ecological Economics"
+subtitle: "Winter Semester 2026/27"
 ---
 
 # 📑 The course in brief
 
-**Focus:** 
+The course covers a wide range of interactions between the environment and socio-economic
+development. Students are introduced to various methods for analyzing economic impacts on the
+environment, the importance of the environment for economic activities, and the role of social
+institutions within the context of economy–environment relationships. In this setting, students
+learn about different policy tools that can address (undesired) external effects of economic
+activities on the environment and how to evaluate the effectiveness of environmental regulations
+from an economic perspective.
 
-- Discuss the concept of 'development' from an economic perspective
-- Learn about different notions of development and their policy implications
-- Understand how 'development' can be conceptualized, measured, and explained
+**Focus:**
 
-**How:** 
+- Analyze the interactions between the environment and socio-economic development
+- Learn methods for assessing economic impacts on the environment and the environment's importance for economic activity
+- Understand and evaluate environmental policy tools — conventional and non-conventional — from an economic perspective
 
-- The course is lecture-based, with interactive elements
+**How:**
+
+- The course is taught as a seminar with lectures, interactive elements, and group work.
+- Over the semester, students work on one particular country or region case study, which they present as a **poster** during a poster conference at the end of the semester (see the [examination page](content/material/examination.qmd)).
+- It is offered jointly for the MA "Sustainable Energy" and the MA "International Management Studies" programs.
 
 **Prerequisites:**
 
-- Successful completion of the Economics I and II modules is strongly recommended. 
-- You also benefit from having completed the course "Applied Data Science".
-
+- There are no formal prerequisites. A basic familiarity with introductory economics is helpful.
 
 # 🎯 Learning Objectives
 
 **Expertise:**
 
-- Define and critically evaluate the most important concepts of (sustainable) economic development and commonly used development indicators
-- Critically question and assess different approaches to defining and measuring development
-- Evaluate policy measures in terms of their expected impact on economic development and identify their underlying theoretical foundations
+- Understand the core concepts and analytical perspective of ecological economics
+- Explain how different notions of 'economic development' relate to the question of ecological sustainability
+- Discuss the relevance of trade-offs between social and environmental goals
+- Understand how economic activities and the resulting ecological stressors are globally interrelated
 
 **Methodological Competence:**
 
-- Independently collect development data from publicly available sources and use it to analyze determinants and implications of economic development
-- Identify and evaluate the theories underlying development programs and policies
-- Apply both empirical and theoretical methods from development economics to analyze development-related problems and critically assess them
+- Work with data on socio-economic development and environmental pressures
+- Account for environmental stressors at the global level, distinguishing production- and consumption-based perspectives
+- Evaluate environmental policy instruments and their underlying assumptions
 
 **Social and Personal Skills:**
 
-- Critically question common notions of 'development' and articulate and justify your own ideas about appropriate definitions and measurements of economic development
-- Describe current debates on development policy and take well-founded positions on concrete development policy measures
-- Identify the data necessary to answer development theory questions and, when needed, acquire and analyze this data yourself while explaining your findings
-
-
+- Conduct and present a country-level analysis as part of a group
+- Be able to delineate the assumptions on which your own assessments, and those on others depend when it comes to the discussion of social and environmental challenges
+- Take well-founded positions in current debates (e.g. growth vs. degrowth)
 
 -----------------
 
-<a href=https://elearning.uni-flensburg.de/moodle/course/view.php?id=17917>
+<a href=https://elearning.uni-flensburg.de/moodle/course/view.php?id=17919>
     <button class="button-61">The main course on moodle</button>
 </a>

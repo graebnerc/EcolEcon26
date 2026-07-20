@@ -1,30 +1,37 @@
 ---
 title: "Material overview"
+nocite: |
+  @coria2013, @daly2011, @raworth2017
 ---
 
 ## 📚 General references
 
-- [Developing Economics Blog](https://developingeconomics.org/): a critical blog on development topics
-- [Hierarchies of Development Podcast](https://www.eadi.org/news/podcast-hierarchies-of-development): critical podcast with very interesting, longer interviews about specific development topics
-- [Our World in Data](https://ourworldindata.org/): huge collection of data, together with a blog that is usually in the progressive-mainstream direction
+These texts accompany the seminar as a whole; session-specific readings are linked in the schedule below.
+
+::: {#refs}
+:::
 
 ## 🔖 Session-specific material
 
+Sessions with two topics on the same date appear as two rows sharing that date.
+The two non-teaching Wednesdays (23.09. and 14.10.) are included for completeness.
 
-
-
-| Session | Topic                                                                                                  |
-|:-------:|:-------------------------------------------------------------------------------------------------------|
-|    1    | [Introduction and the meaning of 'development'](/content/material/s_01_Intro.qmd)                       |
-|    2    | [Measuring Development](/content/material/s_02_Measuring.qmd)                                               |
-|    3    | [Human Development and the Capabilities Approach](/content/material/s_03_HumanDev.qmd)                     |
-|    4    | [Classical and Neoclassical Growth Models](/content/material/s_04_GrowthModels.qmd)                            |
-|    5    | [Institutional Economics and Development I](/content/material/s_05_Institutions1.qmd)                           |
-|    6    | [Institutional Economics and Development II](/content/material/s_06_Institutions2.qmd)                          |
-|    7    | [Marxist Theories of Development](/content/material/s_07_Marxism.qmd)                                     |
-|    8    | [Dependency Theory](/content/material/s_08_Dependency.qmd)                                           |
-|    9    | [Technology Gaps, Innovation Systems, and Economic Complexity](/content/material/s_09_Technology.qmd) |
-|   10    | [Sustainable Development, Environmental Limits, and Degrowth](/content/material/s_10_Sustainability.qmd)         |
-|   12    | [Summary and Open Questions](/content/material/s_12_Summary.qmd)                                     |
-
-
+| Session | Date   | Topic                                                                                                        |
+|:-------:|:------:|:-------------------------------------------------------------------------------------------------------------|
+|    1    | 16.09. | [Introduction, course logistics & example poster](/content/material/s_01a_Introduction.qmd)                  |
+|    1    | 16.09. | [Theories of socio-economic development and the environment](/content/material/s_01b_Theories.qmd)           |
+|    2    | 23.09. | [No on-site class — decentralized working week](/content/material/s_02_DecentralizedWeek.qmd)                |
+|    3    | 30.09. | [Working with data: stylized facts & the theory-ladenness of observation](/content/material/s_03_WorkingWithData.qmd) |
+|    4    | 07.10. | [Primer on scientific argumentation](/content/material/s_04a_ScientificArgumentation.qmd)                    |
+|    4    | 07.10. | [Primer on poster design and presentation](/content/material/s_04b_PosterDesign.qmd)                         |
+|    —    | 14.10. | *No class*                                                                                                   |
+|    5    | 21.10. | [Trade, externalization, and environmental conflicts](/content/material/s_05_Trade.qmd)                      |
+|    6    | 28.10. | [Accounting environmental stressors on the global level](/content/material/s_06_Accounting.qmd)              |
+|    7    | 04.11. | [Classical environmental policy instruments](/content/material/s_07a_PolicyInstruments.qmd)                  |
+|    7    | 04.11. | [Application: the European Emissions Trading System (EU ETS)](/content/material/s_07b_ETS.qmd)               |
+|    8    | 11.11. | [The growth vs. degrowth debate](/content/material/s_08_Degrowth.qmd)                                        |
+|    9    | 18.11. | [Environmental and global justice](/content/material/s_09_Justice.qmd)                                       |
+|   10    | 25.11. | [Non-conventional policy instruments](/content/material/s_10_NonConventional.qmd)                            |
+|   11    | 02.12. | [Work-in-progress country analysis presentations & feedback](/content/material/s_11_CountryAnalysis.qmd)     |
+|   12    | 09.12. | [Summary & open questions](/content/material/s_12_Summary.qmd)                                               |
+|   13    | 16.12. | [Poster presentations](/content/material/s_13_Posters.qmd) *(tentative)*                                     |

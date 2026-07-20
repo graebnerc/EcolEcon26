@@ -6,12 +6,99 @@ date-modified: last-modified
 
 ## Abstract
 
-There is **no on-site class this week**. Instead, this is a decentralized working
-week that you use to prepare for the project work over the semester:
+There is **no on-site class this week**. Instead, use this decentralized working
+week to lay the groundwork for the country-analysis project you will pursue over
+the semester. Two things need to happen:
 
-- **Group formation** — get together in your project groups.
-- **Country selection** — decide which country your group will analyse.
-- **Foundational readings** — work through the foundational readings in preparation
-  for the coming sessions.
+- **Form your groups and settle on a country group.** Talk to each other, team up,
+  and start thinking about which group of countries you want to work on.
+- **Read the four entry texts into Ecological Economics.** Each text opens the field
+  from a different angle. We will discuss them together next week, so come prepared.
 
-[TODO: add details on group formation, country selection, and the foundational reading list.]
+## Group formation and country selection
+
+Get together with your fellow students and **form your project groups yourselves**.
+Start discussing which **country group** you would like to analyse — this early
+conversation is what the week is for.
+
+You can organise this among yourselves, and you are welcome to use the
+**Group Formation tool** in our
+[Moodle room (17919)](https://elearning.uni-flensburg.de/moodle/course/view.php?id=17919)
+to find and join a group.
+
+::: {.callout-important}
+## Deadline: groups fixed by the third week
+
+Your groups must be **fixed by the third week (30.09.)**. The groups entered in the
+Moodle Group Formation tool at that point are **final**, and **every group must be
+registered there** — a group that is not in the Moodle tool does not count. Please
+make sure your whole group is entered before we meet again.
+:::
+
+## Foundational readings: four entry texts
+
+Take the time this week to read the **four different entry texts** into Ecological
+Economics. Each one offers a distinct entry point into the field. You may read and
+discuss them within your groups, but you do not have to — reading them individually
+is perfectly fine. We will discuss all four together next week.
+
+The texts are (the reading list is still *tentative*):
+
+- **Text 1 (Group 1):** @common2005 — *Ecological Economics: An Introduction*.
+- **Text 2 (Group 2):** @spash2018 — *Social Ecological Economics*.
+- **Text 3:** @martinezalier2015 — *Taking Stock: The Keystones of Ecological Economics*.
+- **Text 4:** *to be added.*
+
+### Prepare this general question
+
+For the discussion, come ready to answer — in **one sentence**:
+
+> In one sentence, what was the most surprising or challenging idea your text presented?
+
+### Guiding questions for the texts
+
+Use the following guiding questions to focus your reading. They are organised around
+three themes; for each theme, compare what your text argues with the contrasting
+position.
+
+#### What does need change?
+
+- **Group 1 (Common & Stagl):** Your text talks about making the economy
+  "sustainable" — what specific changes does that imply?
+- **Group 2 (Spash):** Your text calls for "radical transformation" — what does that
+  mean concretely, versus what Common & Stagl suggest?
+
+#### How should the environment be measured?
+
+- **Group 2 (Spash):** Your text critiques putting monetary values on ecosystem
+  services. What's wrong with calculating "the value of nature"?
+- **Group 1 (Common & Stagl):** Your text is more open to multiple methods — where
+  does monetary valuation fit appropriately?
+
+#### Who is in power to shape environmental policy?
+
+- **Group 2 (Spash):** Your text emphasises corporations, technology lock-in, and
+  imperial modes of living. How visible is this in mainstream environmental policy?
+- **Group 1 (Common & Stagl):** Your text is more about analytical frameworks. Do
+  these frameworks have politics hidden in them?
+
+::: {.callout-tip}
+## Connect it to your project
+
+For every one of these questions, also ask yourself: **What, if anything, do you take
+from this for your country analysis?**
+:::
+
+#### Text 3 (Martínez-Alier & Muradian) and Text 4
+
+::: {.callout-note}
+## To be added
+
+Guiding questions for @martinezalier2015 and for the fourth entry text will be added
+here.
+:::
+
+## References
+
+::: {#refs}
+:::

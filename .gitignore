@@ -79,3 +79,6 @@ venv.bak/
 
 
 **/*.quarto_ipynb
+
+# Built site — deployed via `quarto publish netlify`, not from git
+_site/

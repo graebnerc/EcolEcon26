@@ -6,6 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 A [Quarto](https://quarto.org) website for the university course "Ecological Economics" (taught by Claudius Gräbner-Radkowitsch, EUF/JKU). The site is rendered to static HTML in `_site/` and published to Netlify at <https://ecological-economics26.netlify.app/> (the site `id` and `url` live in `_publish.yml`). R is available for executable code in some pages (managed via `renv`).
 
+**Deployment is a local push, not CI.** The Netlify site is *not* linked to GitHub — no repo, no build command, no server-side build. The built site is uploaded straight from the author's machine with `quarto publish netlify` (wrapped by the `*.command` scripts below), so `_site/` is gitignored and GitHub serves only as source history. A `git push` therefore does **not** update the live site; running one of the publish scripts does.
+
 This repo started from a generic academic-course template (see `README.md` for what to change when reusing it) and was carried over from an earlier "Development Economics" edition, so stray old names may still surface — treat anything saying *Development Economics* as stale. It now targets the **Winter 2026/27** edition (the autumn term; repo directory `2026_Fall`). The course is **poster- and presentation-based**: the examination is a country-analysis poster (`content/material/examination.qmd`), and several sessions cover argumentation, poster design, and student presentations rather than problem-set exercises. Note that `references/references.bib` and in-text citations legitimately contain years like `2025` (publication/retrieval years, prize years, etc.) — these are real data, not edition labels, and must not be bumped. The authoritative course schedule lives in the table in `content/material/SeminarDescription.qmd`; session pages are numbered to match it (and match the sidebar in `_quarto.yml`).
 
 ## Commands
@@ -46,5 +48,5 @@ There is no test suite or linter — "building" means rendering with Quarto. Pag
 
 - **`execute: freeze: auto`** (root) means pages with code are *not* re-executed during render unless their source changed; frozen output is cached in `_freeze/` (gitignored). If R output looks stale, that's why.
 - Front matter `date` strings drive each session's displayed date; `date-modified: last-modified` auto-updates.
-- `_freeze/`, `.quarto/`, `renv/`, and `.Rproj.user/` are build/tooling artifacts and are gitignored. **`_site/` is currently *tracked*** (Netlify deploys the built site from GitHub), so a render shows up as dozens of changed files in `git status` — commit them along with the sources. Never hand-edit `_site/`; re-render instead.
+- `_site/`, `_freeze/`, `.quarto/`, `renv/`, and `.Rproj.user/` are build/tooling artifacts and are gitignored — don't hand-edit `_site/`, re-render instead.
 - The site is authored in English; content is academic prose with Quarto callouts (`::: {.callout-note}`), `mermaid` diagrams, and LaTeX math.

@@ -8,10 +8,6 @@ author:
     orcid: 0000-0003-4065-4722
     affiliation: EUF and JKU
     affiliation-url: https://www.uni-flensburg.de/en/pluralist-economics
-  - name: Anna-Katharina Kothe
-    orcid: 0009-0001-6178-4174
-    affiliation: EUF
-    affiliation-url: https://www.uni-flensburg.de/en/pluralist-economics
 ---
 
 ## Abstract
@@ -23,20 +19,25 @@ that we study throughout the course.
 
 ## 🖥️ Lecture Slides
 
-Either click on the slide area below or click [here](slides/EcolEcon26_L01b_Theories.pdf) to download the slides.
-
-<!-- NOTE: the slide PDF has not been added yet; the path below is a placeholder. -->
-
-```{=html}
-<div class="container" style="position: relative;overflow: hidden;width: 100%;padding-top: 56.25%;">
-<iframe src="slides/EcolEcon26_L01b_Theories.pdf" style="position: absolute;top: 0;left: 0;bottom: 0;right: 0;width: 100%;height: 100%;" allowfullscreen loading="lazy"></iframe>
-</div>
-```
+<!--slides:01b:EcolEcon26_L01b_Theories.pdf-->
+::: {.slides-pending}
+📽️ Slides will be made available after the lecture.
+:::
+<!--/slides:01b-->
 
 ## 📚 Follow-up Reading
 
-- [TODO: add follow-up readings for this session.]
+- @chang2011 — *Hamlet without the Prince of Denmark: How development has disappeared
+  from today's 'development' discourse*.
+- Chapter 1 in @escobar1995.
 
 ### 🏆 Further readings
 
-- [TODO: add further readings for this session.]
+- Chapter 1 in @todaro2020.
+- Chapter 1 in @dejanvry2021.
+- Snapshot of the Human Development Report [@undp2024].
+
+## References
+
+::: {#refs}
+:::

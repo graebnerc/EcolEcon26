@@ -22,20 +22,13 @@ produce and present at the poster conference at the end of the semester.
 
 ## 🖥️ Lecture Slides
 
-Either click on the slide area below or click [here](slides/EcolEcon26_L01a_Introduction.pdf) to download the slides.
+<!--slides:01a:EcolEcon26_L01a_Introduction.pdf-->
+::: {.slides-pending}
+📽️ Slides will be made available after the lecture.
+:::
+<!--/slides:01a-->
 
-<!-- NOTE: the slide PDF has not been added yet; the path below is a placeholder. -->
+## 📚 Reading
 
-```{=html}
-<div class="container" style="position: relative;overflow: hidden;width: 100%;padding-top: 56.25%;">
-<iframe src="slides/EcolEcon26_L01a_Introduction.pdf" style="position: absolute;top: 0;left: 0;bottom: 0;right: 0;width: 100%;height: 100%;" allowfullscreen loading="lazy"></iframe>
-</div>
-```
-
-## 📚 Follow-up Reading
-
-- [TODO: add follow-up readings for this session.]
-
-### 🏆 Further readings
-
-- [TODO: add further readings for this session.]
+There is **no mandatory reading** for this session. To get started, have a look at the
+[general references](SeminarDescription.qmd#general-references) for the course.

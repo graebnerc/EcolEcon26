@@ -13,20 +13,26 @@ region.
 
 ## 🖥️ Lecture Slides
 
-Either click on the slide area below or click [here](slides/EcolEcon26_L06_Accounting.pdf) to download the slides.
-
-<!-- NOTE: the slide PDF has not been added yet; the path below is a placeholder. -->
-
-```{=html}
-<div class="container" style="position: relative;overflow: hidden;width: 100%;padding-top: 56.25%;">
-<iframe src="slides/EcolEcon26_L06_Accounting.pdf" style="position: absolute;top: 0;left: 0;bottom: 0;right: 0;width: 100%;height: 100%;" allowfullscreen loading="lazy"></iframe>
-</div>
-```
+<!--slides:06:EcolEcon26_L06_Accounting.pdf-->
+::: {.slides-pending}
+📽️ Slides will be made available after the lecture.
+:::
+<!--/slides:06-->
 
 ## 📚 Follow-up Reading
 
-- [TODO: add follow-up readings for this session.]
+- @tukker2020 — a concise discussion of consumption-based and production-based
+  accounting, as well as further alternatives.
 
 ### 🏆 Further readings
 
-- [TODO: add further readings for this session.]
+- @miller2009 — a widely used textbook on input-output analysis.
+- @wood2020 — the authors use environmental input-output tables to describe the
+  structure of greenhouse gas emissions of the European Union. They show that
+  delineating an effective policy mix requires one to understand this structure,
+  including the relative importance of imported emissions and sectoral heterogeneity.
+
+## References
+
+::: {#refs}
+:::

@@ -1,0 +1,38 @@
+---
+title: "🗓️ Session 3: Discussion of the entry texts"
+date: "2026-09-30"
+date-modified: last-modified
+author:
+  - name: Anna-Katharina Kothe
+    orcid: 0009-0001-6178-4174
+    affiliation: EUF
+    affiliation-url: https://www.uni-flensburg.de/en/pluralist-economics
+---
+
+## Abstract
+
+We open the session by **discussing the entry texts** you read during the decentralized
+working week. Each reading group reports on its text, and we compare the different
+entry points into Ecological Economics with each other.
+
+::: {.callout-important}
+## Come prepared
+
+Bring your answers to the guiding questions from
+[Session 2](s_02_DecentralizedWeek.qmd) — in particular the one-sentence answer to:
+*what was the most surprising or challenging idea your text presented?*
+:::
+
+## 🖥️ Lecture Slides
+
+<!--slides:03a:EcolEcon26_L03a_TextDiscussion.pdf-->
+::: {.slides-pending}
+📽️ Slides will be made available after the lecture.
+:::
+<!--/slides:03a-->
+
+## 📚 Reading
+
+The texts discussed here are the entry texts assigned in
+[Session 2](s_02_DecentralizedWeek.qmd) — there is no additional reading for this part
+of the session.

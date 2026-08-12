@@ -26,10 +26,8 @@ website:
         text: "🏢 Getting Started"
       - section: "🗓️ Material"
         contents:
-          - href: content/material/index.qmd
-            text: Overview
           - href: content/material/SeminarDescription.qmd
-            text: Seminar Description
+            text: "Seminar Description & schedule"
           - href: content/material/examination.qmd
             text: "Examination (poster)"
           - section: "Session 1 (16.09.): Introduction & theory"
@@ -40,8 +38,12 @@ website:
                 text: "Theories of development and the environment"
           - href: content/material/s_02_DecentralizedWeek.qmd
             text: "Session 2 (23.09.): No on-site class"
-          - href: content/material/s_03_WorkingWithData.qmd
-            text: "Session 3 (30.09.): Working with data"
+          - section: "Session 3 (30.09.): Text discussion & data"
+            contents:
+              - href: content/material/s_03a_TextDiscussion.qmd
+                text: "Discussion of the entry texts"
+              - href: content/material/s_03b_WorkingWithData.qmd
+                text: "Working with data"
           - section: "Session 4 (07.10.): Argumentation & posters"
             contents:
               - href: content/material/s_04a_ScientificArgumentation.qmd
@@ -69,7 +71,7 @@ website:
           - href: content/material/s_12_Summary.qmd
             text: "Session 12 (09.12.): Summary & open questions"
           - href: content/material/s_13_Posters.qmd
-            text: "Session 13 (16.12.): Poster presentations (tbc)"
+            text: "Session 13 (16.12.): Poster presentations"
 
   navbar:
     background: primary

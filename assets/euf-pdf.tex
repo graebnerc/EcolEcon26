@@ -1,0 +1,60 @@
+% =====================================================================
+%  EUF / Abteilung Plurale Ökonomik — PDF branding
+%  Included via `include-in-header` in the `pdf` format of a page.
+%  Document class: scrartcl (KOMA-Script, Quarto's default) → KOMA-native
+%  font commands are used throughout.
+%  Colours mirror assets/styles/custom.scss (EUF Kobaltblau / Staubgrau).
+% =====================================================================
+
+% ---- Fonts: Source Pro ----------------------------------------------
+% (Open Sans, the EUF web face, has no reliable LaTeX package here;
+%  Source Sans/Serif Pro are the closest available substitutes.)
+\usepackage[T1]{fontenc}
+\usepackage[default,osf]{sourceserifpro}   % body text
+\usepackage[scaled=.94]{sourcesanspro}     % headings / sans
+\usepackage{sourcecodepro}                 % monospace
+\renewcommand{\familydefault}{\rmdefault}  % serif as default
+
+% ---- Colours (EUF, cf. custom.scss) ---------------------------------
+\usepackage{xcolor}
+\definecolor{eufblue}{HTML}{00395B}   % Kobaltblau, Hausfarbe
+\definecolor{eufgrey}{HTML}{6F6F6F}   % Staubgrau
+\definecolor{euflight}{HTML}{EAF0F4}
+
+% ---- Headings & title block (KOMA) ----------------------------------
+\setkomafont{section}{\Large\bfseries\sffamily\color{eufblue}}
+\setkomafont{subsection}{\large\bfseries\sffamily\color{eufblue}}
+\setkomafont{subsubsection}{\normalsize\bfseries\sffamily\color{eufblue}}
+\setkomafont{paragraph}{\normalsize\bfseries\sffamily\color{eufgrey}}
+\setkomafont{title}{\sffamily\bfseries\color{eufblue}}
+\setkomafont{subtitle}{\sffamily\normalfont\color{eufgrey}}
+\setkomafont{author}{\sffamily\color{eufgrey}}
+\setkomafont{date}{\sffamily\color{eufgrey}}
+\addtokomafont{disposition}{\sffamily}
+
+% ---- Header / footer with logo (scrlayer-scrpage, KOMA-native) ------
+\usepackage{graphicx}
+% The logo is found whether LaTeX runs in the project root or in the
+% directory of the page being rendered (e.g. content/material/).
+\graphicspath{{assets/}{../assets/}{../../assets/}{./assets/}}
+\usepackage{lastpage}
+\usepackage[headsepline,footsepline]{scrlayer-scrpage}
+\setkomafont{pagehead}{\normalfont}
+\setkomafont{pagefoot}{\normalfont}
+\setkomafont{headsepline}{\color{eufgrey!45}}
+\setkomafont{footsepline}{\color{eufgrey!45}}
+\clearpairofpagestyles
+\ihead{\footnotesize\sffamily\color{eufgrey}Ecological Economics\\Winter 2026/27}
+% Logo top right, raised slightly so it does not cut the rule
+\ohead{\raisebox{0.25cm}{\includegraphics[height=1.05cm]{abt-plurale-oekonomik.png}}}
+\ifoot{\footnotesize\sffamily\color{eufgrey}Claudius Gräbner-Radkowitsch \& Anna-Katharina Kothe\\Europa-Universität Flensburg}
+\ofoot{\footnotesize\sffamily\color{eufgrey}Page~\thepage\ of~\pageref{LastPage}}
+% same header/footer on the first page
+\renewcommand*{\titlepagestyle}{scrheadings}
+
+% ---- Colour links (after hyperref) ----------------------------------
+\AtBeginDocument{\hypersetup{colorlinks=true,linkcolor=eufblue,urlcolor=eufblue,citecolor=eufblue,filecolor=eufblue}}
+
+% ---- Slightly airier typesetting ------------------------------------
+\usepackage{setspace}
+\setstretch{1.05}

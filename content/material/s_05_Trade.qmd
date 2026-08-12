@@ -13,20 +13,30 @@ country or region.
 
 ## 🖥️ Lecture Slides
 
-Either click on the slide area below or click [here](slides/EcolEcon26_L05_Trade.pdf) to download the slides.
+<!--slides:05:EcolEcon26_L05_Trade.pdf-->
+::: {.slides-pending}
+📽️ Slides will be made available after the lecture.
+:::
+<!--/slides:05-->
 
-<!-- NOTE: the slide PDF has not been added yet; the path below is a placeholder. -->
+## 📖 Up-front Reading
 
-```{=html}
-<div class="container" style="position: relative;overflow: hidden;width: 100%;padding-top: 56.25%;">
-<iframe src="slides/EcolEcon26_L05_Trade.pdf" style="position: absolute;top: 0;left: 0;bottom: 0;right: 0;width: 100%;height: 100%;" allowfullscreen loading="lazy"></iframe>
-</div>
-```
+Please read **before** the session:
+
+- Chapters 18 and 19 in @daly2011.
 
 ## 📚 Follow-up Reading
 
-- [TODO: add follow-up readings for this session.]
+- @kolcava2019
 
 ### 🏆 Further readings
 
-- [TODO: add further readings for this session.]
+- @anguelovski2014
+- @dosiGrazziMoschella2015
+- @hidalgo2021
+- @hidalgo2023
+
+## References
+
+::: {#refs}
+:::

@@ -79,28 +79,46 @@ For each step, if you have doubts or questions, please ask us for feedback.
 ## Examination
 
 The posters need to be printed individually and brought to the class on the day of the poster
-presentation. A digital copy of the poster must be uploaded on Moodle **one week before** your
-presentation.
+conference (**16 December 2026**).
+
+::: {.callout-important}
+## Submission deadline
+
+A digital copy of the poster must be uploaded on
+[Moodle](https://elearning.uni-flensburg.de/moodle/course/view.php?id=17919) by
+**13 December 2026, 23:59 CET**.
+:::
 
 The final mark for the course depends on the quality of the students' poster and their
 performance during the final poster presentation. The criteria for the evaluation are described
-below. The following specifics apply to the overall evaluation of the work:
+below.
 
-- A contribution that is not graded as at least *adequate* in dimensions #3 ("formalities"),
-  #4 ("clarity and comprehensibility of argument"), #5 ("correctness and accuracy of exposition")
-  or #8 ("spelling and grammar") will be graded 5.0.
-- If the work receives only a *sufficient* or *satisfactory* rating in dimensions #4 ("clarity
-  and comprehensibility of argument") or #5 ("correctness and accuracy of exposition"), the
-  overall rating cannot receive a grade better than 'sufficient' (4.0) or 'satisfactory' (3.0).
+::: {.callout-note}
+## How the grading works: a default grade, then upgrades and downgrades
+
+We do **not** start from zero and add points up. Instead, every dimension has an **average
+reference value** — the level we expect from a solid, competent piece of work. A poster that
+hits that reference value in *every* dimension receives a grade of **2.7**.
+
+For each dimension we then ask a single question: **is there anything that deviates from that
+average expectation, upwards or downwards?** Something notably better earns an **upgrade**,
+something notably weaker a **downgrade**. Only these deviations move your grade away from 2.7,
+in either direction.
+:::
+
+The "Weight" column shows the relative importance of each dimension for the overall score; the
+weights add up to **30 points** in total, and the overall grade depends on the percentage of
+these points earned. The following specifics apply on top of that:
+
+- A contribution that is not graded as at least *adequate* in dimension #3 ("formalities") or
+  #4 ("clarity, correctness and comprehensibility of the argumentation and the presentation of
+  results") will be graded 5.0.
+- If the work receives only a *sufficient* or *satisfactory* rating in dimension #4, the overall
+  rating cannot receive a grade better than 'sufficient' (4.0) or 'satisfactory' (3.0).
 - If a student provides a certificate for diagnosed dyslexia before submitting the work,
-  dimension #8 ("spelling and grammar") will be ignored.
+  spelling and grammar are disregarded when assessing dimension #3 ("formalities").
 
-Apart from these special features, the overall rating results from the individual ratings in each
-assessment dimension. The "Weight" column shows the relative importance of each dimension for the
-overall score. For each dimension, we use an average reference value; special characteristics of
-the work may lead to upgrades or downgrades. The overall grade depends on the percentage of
-maximum points earned. A work that scores the reference value in each dimension receives a grade
-of 2.7. For the points in section I, only the poster itself is considered. For the final scores in
+For the points in section I, only the poster itself is considered. For the final scores in
 sections II and III, both the poster and the oral presentation are evaluated, with the primary
 focus on the poster. Section IV considers only the oral performance.
 
@@ -118,35 +136,26 @@ dimensions will simply be ignored when computing the final mark.
 |:--:|:----------|:------:|:------------------|
 | 1 | Structure and outline of the poster content ("red thread") | 3 | Do the individual parts build on each other meaningfully? Is the structure determined by guiding questions? Does each element contribute to answering them? |
 | 2 | Design of the poster | 3 | Is the poster visually appealing and easy to read? Do design choices facilitate conveying the key message? |
-| 3 | Formalities: consistent layout, correct citation, etc. | 2 | Have the formal requirements been met? Has sufficient and correct citation been given? |
+| 3 | Formalities: consistent layout, correct citation, spelling and grammar | 2 | Have the formal requirements been met? Has sufficient and correct citation been given? Is the poster free of spelling and grammatical errors? |
 
 **II. General aspects and formalities** — each student receives an individual grade
 
 | #  | Criterion | Weight | Guiding questions |
 |:--:|:----------|:------:|:------------------|
-| 4 | Clarity and comprehensibility of the argumentation (logical stringency) | 2 | Are assumptions, mechanisms, and conclusions clearly identified? Do conclusions follow logically? Are normative assumptions made explicit? |
-| 5 | Correctness and accuracy of the arguments made | 2 | Are the statements made correct in content and accurately reflected upon? |
-| 6 | Extent and adequacy of the literature and data considered | 2 | Is literature incorporated appropriately, scientific, relevant, and balanced? |
-| 7 | Precision, systematics, and comprehensibility of the presentation of results | 2 | Were results described systematically and reported comprehensibly? |
-| 8 | Spelling & grammar | 1 | Is the work free of spelling and grammatical errors? Is the sentence structure understandable? |
-| 9 | Use of tables and graphics | 1 | Are figures and tables used to support the core arguments? |
+| 4 | Clarity, correctness and comprehensibility of the argumentation and the presentation of results (logical stringency) | 5 | Are assumptions, mechanisms, and conclusions clearly identified? Do conclusions follow logically? Are normative assumptions made explicit? Are the statements made correct in content and accurately reflected upon? Were results described systematically and reported comprehensibly? |
+| 5 | Extent and adequacy of the literature and data considered | 2 | Is literature incorporated appropriately, scientific, relevant, and balanced? |
 
 **III. Specific aspects of the country analysis** — each student receives an individual grade
 
 | #  | Criterion | Weight | Guiding questions |
 |:--:|:----------|:------:|:------------------|
-| 10 | Justification and explanation of the challenges identified | 3 | Were the main challenges made explicit and adequately justified? Is their background explained well? |
-| 11 | Justification and analysis of current solutions | 3 | Are the current solution strategies described and analyzed exhaustively? |
-| 12 | Critical assessment of the current strategy and outline of alternatives | 3 | Are current strategies assessed exhaustively, transparently, and convincingly? Are viable suggestions for improvement made? |
+| 6 | Justification and explanation of the challenges identified | 3 | Were the main challenges made explicit and adequately justified? Is their background explained well? |
+| 7 | Justification and analysis of current solutions | 3 | Are the current solution strategies described and analyzed exhaustively? |
+| 8 | Critical assessment of the current strategy and outline of alternatives | 3 | Are current strategies assessed exhaustively, transparently, and convincingly? Are viable suggestions for improvement made? |
 
 **IV. Oral performance** — each student receives an individual grade
 
 | #  | Criterion | Weight | Guiding questions |
 |:--:|:----------|:------:|:------------------|
-| 13 | Pitch of the poster | 3 | Does the short pitch convey the key take-aways and motivate a closer look? Do students adhere to the 5-minute pitch? |
-| 14 | Quality of the answers | 3 | Were the answers correct, to the point, logically consistent, and justified with reference to theory or data? |
+| 9 | Pitch of the poster and quality of the answers | 6 | Does the short pitch convey the key take-aways and motivate a closer look? Do students adhere to the 5-minute pitch? Were the answers correct, to the point, logically consistent, and justified with reference to theory or data? |
 
-::: {.callout-note}
-Detailed examples of upgrades and downgrades for each dimension are provided in the full
-examination rubric on [Moodle](https://elearning.uni-flensburg.de/moodle/course/view.php?id=17919).
-:::

@@ -6,15 +6,15 @@ format: html
 
 # 📍 Lecture
 
-- Wednesdays 08:00–12:00
+- Wednesdays 08:30–12:00 (we start 8:30 sharp)
 
 Please make sure to check out the most recent version of the seminar timetable.
 The most recent version can be found [here](material/SeminarDescription.qmd).
 
 # 📂 Material
 
-You find an overview about all lecture materials, such as slides and
-reading lists [here](/content/material/).
+The [seminar description](material/SeminarDescription.qmd) holds the full schedule; every
+topic there links to its session page with the slides and the reading list.
 
 Course material, including a reading list, will be distributed through Moodle, and announcements
 will also be made there. Therefore, please make sure to sign up for the Moodle room (room 17919)

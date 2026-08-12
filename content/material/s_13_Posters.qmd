@@ -14,27 +14,27 @@ author:
     affiliation-url: https://www.uni-flensburg.de/en/pluralist-economics
 ---
 
-::: {.callout-warning}
-This session is **tentative** and may still change. Please check Moodle for the final schedule.
-:::
-
 ## Abstract
 
 The **poster conference**: groups present and pitch their country/region-analysis posters
 (max. 5 minutes per student) and discuss them with the class. See the
 [examination page](examination.qmd) for the poster requirements and assessment criteria.
 
+::: {.callout-important}
+## Submission deadline: 13 December 2026, 23:59 CET
+
+Upload the digital copy of your poster to
+[Moodle](https://elearning.uni-flensburg.de/moodle/course/view.php?id=17919) by then, and
+bring a printed copy to the conference.
+:::
+
 ## 🖥️ Lecture Slides
 
-Either click on the slide area below or click [here](slides/EcolEcon26_L13_Posters.pdf) to download the slides.
-
-<!-- NOTE: the slide PDF has not been added yet; the path below is a placeholder. -->
-
-```{=html}
-<div class="container" style="position: relative;overflow: hidden;width: 100%;padding-top: 56.25%;">
-<iframe src="slides/EcolEcon26_L13_Posters.pdf" style="position: absolute;top: 0;left: 0;bottom: 0;right: 0;width: 100%;height: 100%;" allowfullscreen loading="lazy"></iframe>
-</div>
-```
+<!--slides:13:EcolEcon26_L13_Posters.pdf-->
+::: {.slides-pending}
+📽️ Slides will be made available after the lecture.
+:::
+<!--/slides:13-->
 
 ## 📚 Follow-up Reading
 

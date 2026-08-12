@@ -23,16 +23,28 @@ There is no test suite or linter — "building" means rendering with Quarto. Pag
 
 - **`_quarto.yml`** is the control center: it defines the website type, the navbar/sidebar navigation, the theme, the bibliography/CSL, and — critically — the `render:` glob list. **A new `.qmd` page will not be built unless its path matches an entry under `project.render`** (currently `index.qmd`, `content/index.qmd`, `content/material/*.qmd`, and `content/material/session*/*.qmd`), and it will not appear in navigation unless added to `website.sidebar.contents`.
 - **`index.qmd`** (root) is the landing page; **`content/index.qmd`** is the "Getting Started" page.
-- **`content/material/`** holds the per-session lecture pages, named **`s_NN[x]_Slug.qmd`** where `NN` is the schedule session number, an optional lowercase letter (`a`, `b`, …) splits a session into parts, and `Slug` is a one-to-two-word topic. Examples: `s_03_WorkingWithData.qmd` (single), and `s_01a_Introduction.qmd` / `s_01b_Theories.qmd`, `s_04a_ScientificArgumentation.qmd` / `s_04b_PosterDesign.qmd`, `s_07a_PolicyInstruments.qmd` / `s_07b_ETS.qmd` (split sessions). `content/material/examination.qmd` describes the poster exam. `content/material/template/session00.qmd` is the starting point for a new session. Cross-links between pages use the rendered `.html` name (same basename), not `.qmd`.
-- **`content/material/slides/`** holds the lecture material. Session pages embed the rendered PDF via an `<iframe>` HTML block pointing at `slides/EcolEcon26_LNN[x]_*.pdf` (e.g. `slides/EcolEcon26_L05_Trade.pdf`). Source decks live in `slides/_keynote/` (`EnvEcon26_*.key`), superseded ones in `slides/_old/`, and `slides/ExamplePoster/` holds example student posters (PDF).
+- **`content/material/`** holds the per-session lecture pages, named **`s_NN[x]_Slug.qmd`** where `NN` is the schedule session number, an optional lowercase letter (`a`, `b`, …) splits a session into parts, and `Slug` is a one-to-two-word topic. Examples: `s_05_Trade.qmd` (single), and `s_01a_Introduction.qmd` / `s_01b_Theories.qmd`, `s_03a_TextDiscussion.qmd` / `s_03b_WorkingWithData.qmd`, `s_04a_ScientificArgumentation.qmd` / `s_04b_PosterDesign.qmd`, `s_07a_PolicyInstruments.qmd` / `s_07b_ETS.qmd` (split sessions). `content/material/examination.qmd` describes the poster exam and is the *only* assessment rubric — there is no separate Moodle rubric. `content/material/template/session00.qmd` is the starting point for a new session. Cross-links between pages use the rendered `.html` name (same basename), not `.qmd`.
+- **`content/material/SeminarDescription.qmd`** carries the authoritative schedule table *and* the general references (via `nocite` + a `#refs` div). It renders to both HTML and a downloadable PDF, so links in it are **absolute site URLs** — relative `.qmd` links would break in the PDF. There is deliberately no separate material-overview page.
+- **`content/material/slides/`** holds the lecture material as `EcolEcon26_LNN[x]_*.pdf` (e.g. `slides/EcolEcon26_L05_Trade.pdf`). Source decks live in `slides/_keynote/`, superseded ones in `slides/_old/`, and `slides/ExamplePoster/` holds example student posters (PDF). **Slides are published only after the lecture**, via a marker block on each session page:
+
+  ```
+  <!--slides:05:EcolEcon26_L05_Trade.pdf-->
+  ::: {.slides-pending}
+  📽️ Slides will be made available after the lecture.
+  :::
+  <!--/slides:05-->
+  ```
+
+  The marker holds the session id and the expected PDF filename. `Folien-freigeben.command` (repo root) swaps the placeholder for a download link once the PDF exists, then renders and publishes; `Folien-zuruecknehmen.command` reverses it. Edit the block by hand only if you keep both markers intact — the scripts key off them.
+- **`*.command` scripts** in the repo root are double-clickable macOS helpers: `Folien-freigeben`, `Folien-zuruecknehmen`, and `Veroeffentlichen` (incremental render + `quarto publish netlify`). They are modelled on the Politische-Ökonomie course's versions.
 - **`references/`** — `references.bib` (cited via `@key`) and `jepp.csl` (citation style).
 - **`assets/styles/custom.scss`** overrides the bootstrap `cosmo` theme (brand colors in `scss:defaults`) and is the SCSS wired into `_quarto.yml` (`format.html.theme.light`); `assets/scripts/collapse-callouts.html` is an included HTML snippet. (A top-level `css/` dir with `custom.scss`/`custom_style.css` remains from the template but is **not** referenced by `_quarto.yml` — don't edit it expecting an effect.)
 - **`figures/`** for site/icon assets (e.g. `figures/icons/course_favicon.png`); large datasets live next to the pages that consume them.
-- **`_INBOX/`** and **`NOTES/`** hold author working material (course-description drafts, `TODOS.md`, `detailed_course_outline.md`) — planning docs, not part of the rendered site.
+- **`_INBOX/`** holds author working material (course-description drafts, `TODOS.md`, material carried over from other courses) — planning docs, not part of the rendered site, and gitignored.
 
 ## Conventions worth knowing
 
 - **`execute: freeze: auto`** (root) means pages with code are *not* re-executed during render unless their source changed; frozen output is cached in `_freeze/` (gitignored). If R output looks stale, that's why.
 - Front matter `date` strings drive each session's displayed date; `date-modified: last-modified` auto-updates.
-- `_site/`, `_freeze/`, `.quarto/`, `renv/`, and `.Rproj.user/` are build/tooling artifacts and are gitignored — don't hand-edit `_site/`.
+- `_freeze/`, `.quarto/`, `renv/`, and `.Rproj.user/` are build/tooling artifacts and are gitignored. **`_site/` is currently *tracked*** (Netlify deploys the built site from GitHub), so a render shows up as dozens of changed files in `git status` — commit them along with the sources. Never hand-edit `_site/`; re-render instead.
 - The site is authored in English; content is academic prose with Quarto callouts (`::: {.callout-note}`), `mermaid` diagrams, and LaTeX math.

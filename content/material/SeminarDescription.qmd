@@ -2,17 +2,43 @@
 title: "Ecological Economics"
 subtitle: "MA Sustainable Energy & MA International Management Studies — Winter Semester 2026/27"
 date: today
+nocite: |
+  @coria2013, @daly2011, @raworth2017, @martinezalier2015a, @common2005, @caney2021
 format:
   html:
     toc: true
     toc-depth: 3
     number-sections: true
   pdf:
+    papersize: a4
     geometry: margin=1in
     fontsize: 11pt
     number-sections: true
     toc: false
+    include-in-header: ../../assets/euf-pdf.tex
 ---
+
+::: {.content-visible when-format="html"}
+
+::: {.callout-note appearance="simple" icon=false}
+📄 **Prefer a printable version?** You can
+[**download this seminar description as a PDF**](SeminarDescription.pdf).
+This page always holds the most recent version, so it is the one to bookmark and
+link to — the PDF is regenerated whenever the description changes.
+:::
+
+:::
+
+::: {.content-visible when-format="pdf"}
+
+::: {.callout-note appearance="simple" icon=false}
+**This seminar description is also available online.** The most recent version —
+together with all session materials — is on the course website at
+<https://ecological-economics26.netlify.app/content/material/SeminarDescription.html>,
+which is also linked from the Moodle room. Please check there for updates.
+:::
+
+:::
 
 ## Overall Goal of the Course
 
@@ -75,26 +101,37 @@ The latest version of the syllabus will be made available here.
 :::
 
 Sessions with two topics on the same date are listed as two rows sharing that date.
+**Each topic links to its session page**, which holds the slides and the reading list.
+The two non-teaching Wednesdays (23.09. and 14.10.) are included for completeness.
 
-| #  | Date   | Topic                                                                    | Lecturer            |
-|----|--------|--------------------------------------------------------------------------|---------------------|
-| 1  | 16.09. | Introduction, course logistics & example poster                          | Claudius & Anna-Katharina     |
-| 1  | 16.09. | Theories of socio-economic development and the environment               | Claudius & Anna-Katharina     |
-| 2  | 23.09. | *No on-site class* — decentralized working week                          | —                   |
-| 3  | 30.09. | Working with data: stylized facts & theory-ladenness of observation      | Anna-Katharina & Claudius     |
-| 4  | 07.10. | Primer on scientific argumentation                                       | Anna-Katharina               |
-| 4  | 07.10. | Primer on poster design and presentation                                 | Anna-Katharina               |
-|    | 14.10. | *No class*                                                               | —                   |
-| 5  | 21.10. | Trade, externalization, and environmental conflicts                      | Claudius             |
-| 6  | 28.10. | Accounting environmental stressors on the global level                   | Claudius             |
-| 7  | 04.11. | Classical environmental policy instruments                               | Claudius             |
-| 7  | 04.11. | Application: the European Emissions Trading System (EU ETS)              | Anna-Katharina               |
-| 8  | 11.11. | The growth vs. degrowth debate                                           | Claudius             |
-| 9  | 18.11. | Environmental and global justice                                         | Anna-Katharina               |
-| 10 | 25.11. | Non-conventional policy instruments                                      | Anna-Katharina               |
-| 11 | 02.12. | Work-in-progress country analysis presentations & feedback               | Anna-Katharina & Claudius     |
-| 12 | 09.12. | Summary & open questions                                                 | Anna-Katharina & Claudius     |
-| 13 | 16.12. | Poster presentations *(tentative)*                                       | Anna-Katharina & Claudius     |
+| #  | Date   | Topic | Lecturer |
+|----|--------|-------|----------|
+| 1  | 16.09. | [Introduction, course logistics & example poster](https://ecological-economics26.netlify.app/content/material/s_01a_Introduction.html) | Claudius & Anna-Katharina |
+| 1  | 16.09. | [Theories of socio-economic development and the environment](https://ecological-economics26.netlify.app/content/material/s_01b_Theories.html) | Claudius |
+| 2  | 23.09. | [*No on-site class* — decentralized working week](https://ecological-economics26.netlify.app/content/material/s_02_DecentralizedWeek.html) | — |
+| 3  | 30.09. | [Discussion of the entry texts](https://ecological-economics26.netlify.app/content/material/s_03a_TextDiscussion.html) | Anna-Katharina |
+| 3  | 30.09. | [Working with data: stylized facts & theory-ladenness of observation](https://ecological-economics26.netlify.app/content/material/s_03b_WorkingWithData.html) | Claudius |
+| 4  | 07.10. | [Primer on scientific argumentation](https://ecological-economics26.netlify.app/content/material/s_04a_ScientificArgumentation.html) | Anna-Katharina |
+| 4  | 07.10. | [Primer on poster design and presentation](https://ecological-economics26.netlify.app/content/material/s_04b_PosterDesign.html) | Anna-Katharina |
+|    | 14.10. | *No class* | — |
+| 5  | 21.10. | [Trade, externalization, and environmental conflicts](https://ecological-economics26.netlify.app/content/material/s_05_Trade.html) | Claudius |
+| 6  | 28.10. | [Accounting environmental stressors on the global level](https://ecological-economics26.netlify.app/content/material/s_06_Accounting.html) | Claudius |
+| 7  | 04.11. | [Classical environmental policy instruments](https://ecological-economics26.netlify.app/content/material/s_07a_PolicyInstruments.html) | Claudius |
+| 7  | 04.11. | [Application: the European Emissions Trading System (EU ETS)](https://ecological-economics26.netlify.app/content/material/s_07b_ETS.html) | Anna-Katharina |
+| 8  | 11.11. | [The growth vs. degrowth debate](https://ecological-economics26.netlify.app/content/material/s_08_Degrowth.html) | Claudius |
+| 9  | 18.11. | [Environmental and global justice](https://ecological-economics26.netlify.app/content/material/s_09_Justice.html) | Anna-Katharina |
+| 10 | 25.11. | [Non-conventional policy instruments](https://ecological-economics26.netlify.app/content/material/s_10_NonConventional.html) | Anna-Katharina |
+| 11 | 02.12. | [Work-in-progress country analysis presentations & feedback](https://ecological-economics26.netlify.app/content/material/s_11_CountryAnalysis.html) | Anna-Katharina & Claudius |
+| 12 | 09.12. | [Summary & open questions](https://ecological-economics26.netlify.app/content/material/s_12_Summary.html) | Anna-Katharina & Claudius |
+| 13 | 16.12. | [Poster presentations](https://ecological-economics26.netlify.app/content/material/s_13_Posters.html) | Anna-Katharina & Claudius |
+
+## General References
+
+These texts accompany the seminar as a whole; session-specific readings are on the individual
+session pages linked in the schedule above.
+
+::: {#refs}
+:::
 
 ## Evaluation and Assessment
 

@@ -21,15 +21,11 @@ mutual feedback ahead of the final poster conference.
 
 ## 🖥️ Lecture Slides
 
-Either click on the slide area below or click [here](slides/EcolEcon26_L11_CountryAnalysis.pdf) to download the slides.
-
-<!-- NOTE: the slide PDF has not been added yet; the path below is a placeholder. -->
-
-```{=html}
-<div class="container" style="position: relative;overflow: hidden;width: 100%;padding-top: 56.25%;">
-<iframe src="slides/EcolEcon26_L11_CountryAnalysis.pdf" style="position: absolute;top: 0;left: 0;bottom: 0;right: 0;width: 100%;height: 100%;" allowfullscreen loading="lazy"></iframe>
-</div>
-```
+<!--slides:11:EcolEcon26_L11_CountryAnalysis.pdf-->
+::: {.slides-pending}
+📽️ Slides will be made available after the lecture.
+:::
+<!--/slides:11-->
 
 ## 📚 Follow-up Reading
 

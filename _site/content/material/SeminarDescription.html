@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -13,10 +13,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -59,7 +62,26 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -70,7 +92,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
 <link href="../../content/material/examination.html" rel="next">
-<link href="../../content/material/index.html" rel="prev">
+<link href="../../content/index.html" rel="prev">
 <link href="../../figures/icons/course_favicon.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -78,10 +100,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-d31696e011675b5e12e5633f027f3c8c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2ee77bcef9fa167cf286fa9cd211e61c.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-55910784811878cbb546fa46ed5ddce3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-6fa1097671cc63201b1a15678e75c3f4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -114,6 +136,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta property="og:description" content="MA Sustainable Energy &amp; MA International Management Studies — Winter Semester 2026/27">
 <meta property="og:image" content="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==">
 <meta property="og:site_name" content="Ecological Economics">
+<meta property="og:image:alt" content="">
 </head>
 
 <body class="nav-sidebar docked nav-fixed quarto-light">
@@ -142,7 +165,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../content/material/index.html">🗓️ Material</a></li><li class="breadcrumb-item"><a href="../../content/material/SeminarDescription.html">Seminar Description</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../content/material/SeminarDescription.html">🗓️ Material</a></li><li class="breadcrumb-item"><a href="../../content/material/SeminarDescription.html">Seminar Description &amp; schedule</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -177,14 +200,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../content/material/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Overview</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../../content/material/SeminarDescription.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Seminar Description</span></a>
+ <span class="menu-text">Seminar Description &amp; schedule</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -222,21 +239,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Session 2 (23.09.): No on-site class</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../content/material/s_03_WorkingWithData.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Session 3 (30.09.): Working with data</span></a>
-  </div>
-</li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
- <span class="menu-text">Session 4 (07.10.): Argumentation &amp; posters</span></a>
+ <span class="menu-text">Session 3 (30.09.): Text discussion &amp; data</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/material/s_03a_TextDiscussion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Discussion of the entry texts</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../content/material/s_03b_WorkingWithData.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Working with data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Session 4 (07.10.): Argumentation &amp; posters</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../content/material/s_04a_ScientificArgumentation.html" class="sidebar-item-text sidebar-link">
@@ -265,13 +299,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Session 7 (04.11.): Policy instruments &amp; EU ETS</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../content/material/s_07a_PolicyInstruments.html" class="sidebar-item-text sidebar-link">
@@ -319,7 +353,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../content/material/s_13_Posters.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Session 13 (16.12.): Poster presentations (tbc)</span></a>
+ <span class="menu-text">Session 13 (16.12.): Poster presentations</span></a>
   </div>
 </li>
       </ul>
@@ -343,14 +377,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#course-resources" id="toc-course-resources" class="nav-link" data-scroll-target="#course-resources"><span class="header-section-number">3.3</span> Course Resources</a></li>
   </ul></li>
   <li><a href="#schedule-and-logistics" id="toc-schedule-and-logistics" class="nav-link" data-scroll-target="#schedule-and-logistics"><span class="header-section-number">4</span> Schedule and Logistics</a></li>
-  <li><a href="#evaluation-and-assessment" id="toc-evaluation-and-assessment" class="nav-link" data-scroll-target="#evaluation-and-assessment"><span class="header-section-number">5</span> Evaluation and Assessment</a></li>
+  <li><a href="#general-references" id="toc-general-references" class="nav-link" data-scroll-target="#general-references"><span class="header-section-number">5</span> General References</a></li>
+  <li><a href="#evaluation-and-assessment" id="toc-evaluation-and-assessment" class="nav-link" data-scroll-target="#evaluation-and-assessment"><span class="header-section-number">6</span> Evaluation and Assessment</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="SeminarDescription.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../content/material/index.html">🗓️ Material</a></li><li class="breadcrumb-item"><a href="../../content/material/SeminarDescription.html">Seminar Description</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../content/material/SeminarDescription.html">🗓️ Material</a></li><li class="breadcrumb-item"><a href="../../content/material/SeminarDescription.html">Seminar Description &amp; schedule</a></li></ol></nav>
 <div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title">Ecological Economics</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 <p class="subtitle lead">MA Sustainable Energy &amp; MA International Management Studies — Winter Semester 2026/27</p>
@@ -362,7 +397,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="quarto-title-meta-heading">Affiliation</div>
   
     <div class="quarto-title-meta-contents">
-    <p class="author"><a href="https://claudius-graebner.com/">Claudius Gräbner-Radkowitsch</a> <a href="https://orcid.org/0000-0003-4065-4722" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+    <p class="author"><a href="https://claudius-graebner.com/">Claudius Gräbner-Radkowitsch</a> <a href="https://orcid.org/0000-0003-4065-4722" class="quarto-title-author-orcid" aria-label="ORCID profile for Claudius Gräbner-Radkowitsch"> <img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
   </div>
   <div class="quarto-title-meta-contents">
         <p class="affiliation">
@@ -379,7 +414,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">20 07 2026</p>
+      <p class="date">12 08 2026</p>
     </div>
   </div>
   
@@ -391,6 +426,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>📄 <strong>Prefer a printable version?</strong> You can <a href="SeminarDescription.pdf"><strong>download this seminar description as a PDF</strong></a>. This page always holds the most recent version, so it is the one to bookmark and link to — the PDF is regenerated whenever the description changes.</p>
+</div>
+</div>
+</div>
 <section id="overall-goal-of-the-course" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="overall-goal-of-the-course"><span class="header-section-number">1</span> Overall Goal of the Course</h2>
 <p>The course covers a wide range of interactions between the environment and socio-economic development. Students are introduced to various methods for analyzing economic impacts on the environment, the importance of the environment for economic activities, and the role of social institutions within the context of economy–environment relationships. In this setting, students learn about different policy tools that can address (undesired) external effects of economic activities on the environment and how to evaluate the effectiveness of environmental regulations from an economic perspective. Over the semester, students work on one particular country or region case study, which they present as a poster during a poster conference at the end of the semester.</p>
@@ -455,14 +500,8 @@ Important
 <p><strong>Note:</strong> This schedule is subject to change as the course progresses. Announcements will be made via <a href="https://elearning.uni-flensburg.de/moodle/course/view.php?id=17919">Moodle</a>. The latest version of the syllabus will be made available here.</p>
 </div>
 </div>
-<p>Sessions with two topics on the same date are listed as two rows sharing that date.</p>
+<p>Sessions with two topics on the same date are listed as two rows sharing that date. <strong>Each topic links to its session page</strong>, which holds the slides and the reading list. The two non-teaching Wednesdays (23.09. and 14.10.) are included for completeness.</p>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 3%">
-<col style="width: 7%">
-<col style="width: 69%">
-<col style="width: 19%">
-</colgroup>
 <thead>
 <tr class="header">
 <th>#</th>
@@ -475,110 +514,140 @@ Important
 <tr class="odd">
 <td>1</td>
 <td>16.09.</td>
-<td>Introduction, course logistics &amp; example poster</td>
+<td><a href="https://ecological-economics26.netlify.app/content/material/s_01a_Introduction.html">Introduction, course logistics &amp; example poster</a></td>
 <td>Claudius &amp; Anna-Katharina</td>
 </tr>
 <tr class="even">
 <td>1</td>
 <td>16.09.</td>
-<td>Theories of socio-economic development and the environment</td>
-<td>Claudius &amp; Anna-Katharina</td>
+<td><a href="https://ecological-economics26.netlify.app/content/material/s_01b_Theories.html">Theories of socio-economic development and the environment</a></td>
+<td>Claudius</td>
 </tr>
 <tr class="odd">
 <td>2</td>
 <td>23.09.</td>
-<td><em>No on-site class</em> — decentralized working week</td>
+<td><a href="https://ecological-economics26.netlify.app/content/material/s_02_DecentralizedWeek.html"><em>No on-site class</em> — decentralized working week</a></td>
 <td>—</td>
 </tr>
 <tr class="even">
 <td>3</td>
 <td>30.09.</td>
-<td>Working with data: stylized facts &amp; theory-ladenness of observation</td>
-<td>Anna-Katharina &amp; Claudius</td>
+<td><a href="https://ecological-economics26.netlify.app/content/material/s_03a_TextDiscussion.html">Discussion of the entry texts</a></td>
+<td>Anna-Katharina</td>
 </tr>
 <tr class="odd">
-<td>4</td>
-<td>07.10.</td>
-<td>Primer on scientific argumentation</td>
-<td>Anna-Katharina</td>
+<td>3</td>
+<td>30.09.</td>
+<td><a href="https://ecological-economics26.netlify.app/content/material/s_03b_WorkingWithData.html">Working with data: stylized facts &amp; theory-ladenness of observation</a></td>
+<td>Claudius</td>
 </tr>
 <tr class="even">
 <td>4</td>
 <td>07.10.</td>
-<td>Primer on poster design and presentation</td>
+<td><a href="https://ecological-economics26.netlify.app/content/material/s_04a_ScientificArgumentation.html">Primer on scientific argumentation</a></td>
 <td>Anna-Katharina</td>
 </tr>
 <tr class="odd">
+<td>4</td>
+<td>07.10.</td>
+<td><a href="https://ecological-economics26.netlify.app/content/material/s_04b_PosterDesign.html">Primer on poster design and presentation</a></td>
+<td>Anna-Katharina</td>
+</tr>
+<tr class="even">
 <td></td>
 <td>14.10.</td>
 <td><em>No class</em></td>
 <td>—</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>5</td>
 <td>21.10.</td>
-<td>Trade, externalization, and environmental conflicts</td>
+<td><a href="https://ecological-economics26.netlify.app/content/material/s_05_Trade.html">Trade, externalization, and environmental conflicts</a></td>
 <td>Claudius</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>6</td>
 <td>28.10.</td>
-<td>Accounting environmental stressors on the global level</td>
-<td>Claudius</td>
-</tr>
-<tr class="even">
-<td>7</td>
-<td>04.11.</td>
-<td>Classical environmental policy instruments</td>
+<td><a href="https://ecological-economics26.netlify.app/content/material/s_06_Accounting.html">Accounting environmental stressors on the global level</a></td>
 <td>Claudius</td>
 </tr>
 <tr class="odd">
 <td>7</td>
 <td>04.11.</td>
-<td>Application: the European Emissions Trading System (EU ETS)</td>
-<td>Anna-Katharina</td>
+<td><a href="https://ecological-economics26.netlify.app/content/material/s_07a_PolicyInstruments.html">Classical environmental policy instruments</a></td>
+<td>Claudius</td>
 </tr>
 <tr class="even">
+<td>7</td>
+<td>04.11.</td>
+<td><a href="https://ecological-economics26.netlify.app/content/material/s_07b_ETS.html">Application: the European Emissions Trading System (EU ETS)</a></td>
+<td>Anna-Katharina</td>
+</tr>
+<tr class="odd">
 <td>8</td>
 <td>11.11.</td>
-<td>The growth vs.&nbsp;degrowth debate</td>
+<td><a href="https://ecological-economics26.netlify.app/content/material/s_08_Degrowth.html">The growth vs.&nbsp;degrowth debate</a></td>
 <td>Claudius</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>9</td>
 <td>18.11.</td>
-<td>Environmental and global justice</td>
+<td><a href="https://ecological-economics26.netlify.app/content/material/s_09_Justice.html">Environmental and global justice</a></td>
 <td>Anna-Katharina</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>10</td>
 <td>25.11.</td>
-<td>Non-conventional policy instruments</td>
+<td><a href="https://ecological-economics26.netlify.app/content/material/s_10_NonConventional.html">Non-conventional policy instruments</a></td>
 <td>Anna-Katharina</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>11</td>
 <td>02.12.</td>
-<td>Work-in-progress country analysis presentations &amp; feedback</td>
+<td><a href="https://ecological-economics26.netlify.app/content/material/s_11_CountryAnalysis.html">Work-in-progress country analysis presentations &amp; feedback</a></td>
+<td>Anna-Katharina &amp; Claudius</td>
+</tr>
+<tr class="odd">
+<td>12</td>
+<td>09.12.</td>
+<td><a href="https://ecological-economics26.netlify.app/content/material/s_12_Summary.html">Summary &amp; open questions</a></td>
 <td>Anna-Katharina &amp; Claudius</td>
 </tr>
 <tr class="even">
-<td>12</td>
-<td>09.12.</td>
-<td>Summary &amp; open questions</td>
-<td>Anna-Katharina &amp; Claudius</td>
-</tr>
-<tr class="odd">
 <td>13</td>
 <td>16.12.</td>
-<td>Poster presentations <em>(tentative)</em></td>
+<td><a href="https://ecological-economics26.netlify.app/content/material/s_13_Posters.html">Poster presentations</a></td>
 <td>Anna-Katharina &amp; Claudius</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="evaluation-and-assessment" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="evaluation-and-assessment"><span class="header-section-number">5</span> Evaluation and Assessment</h2>
+<section id="general-references" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="general-references"><span class="header-section-number">5</span> General References</h2>
+<p>These texts accompany the seminar as a whole; session-specific readings are on the individual session pages linked in the schedule above.</p>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-caney2021" class="csl-entry" role="listitem">
+Caney, S. (2021) <span>“Climate justice,”</span> in E. N. Zalta (ed.). <em>The <span class="nocase">Stanford Encyclopedia of Philosophy</span></em>. Stanford, CA: Metaphysics Research Lab, Stanford University, available at <a href="https://plato.stanford.edu/archives/win2021/entries/justice-climate/">https://plato.stanford.edu/archives/win2021/entries/justice-climate/</a> (accessed August 2026).
+</div>
+<div id="ref-common2005" class="csl-entry" role="listitem">
+Common, M. S. and Stagl, S. (2005) <em><a href="https://doi.org/10.1017/CBO9780511805547">Ecological economics: An introduction</a></em>, Cambridge: Cambridge University Press.
+</div>
+<div id="ref-coria2013" class="csl-entry" role="listitem">
+Coria, J. and Sterner, T. (eds.) (2013) <em>Policy instruments for environmental and natural resource management</em>, 2nd Ed., New York: Routledge.
+</div>
+<div id="ref-daly2011" class="csl-entry" role="listitem">
+Daly, H. E. and Farley, J. C. (2011) <em>Ecological economics: Principles and applications</em>, 2nd Ed., Washington, DC: Island Press.
+</div>
+<div id="ref-martinezalier2015a" class="csl-entry" role="listitem">
+Martínez-Alier, J. and Muradian, R. (eds.) (2015) <em><a href="https://doi.org/10.4337/9781783471416">Handbook of ecological economics</a></em>, Cheltenham; Northampton, MA: Edward Elgar Publishing.
+</div>
+<div id="ref-raworth2017" class="csl-entry" role="listitem">
+Raworth, K. (2017) <em>Doughnut economics: Seven ways to think like a 21st-century economist</em>, White River Junction, VT: Chelsea Green Publishing.
+</div>
+</div>
+</section>
+<section id="evaluation-and-assessment" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="evaluation-and-assessment"><span class="header-section-number">6</span> Evaluation and Assessment</h2>
 <p>The final mark for the course depends on a group <strong>country-analysis poster</strong> and the students’ performance during the final poster presentation. The posters are prepared in groups of up to 3 people and pitched during the poster conference at the end of the semester.</p>
 <p>Full details on the poster — the content and guiding questions as well as the examination criteria and assessment dimensions — are on the dedicated <strong><a href="../../content/material/examination.html">examination page</a></strong>.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -707,16 +776,16 @@ Important
     }
     function toggleCodeHandler(show) {
       return function(e) {
-        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-        for (let i=0; i<detailsSrc.length; i++) {
-          const details = detailsSrc[i].parentElement;
+        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
+        for (let i=0; i<cellDetails.length; i++) {
+          const details = cellDetails[i];
           if (show) {
             details.open = true;
           } else {
             details.removeAttribute("open");
           }
         }
-        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
         const fromCls = show ? "hidden" : "unhidden";
         const toCls = show ? "unhidden" : "hidden";
         for (let i=0; i<cellCodeDivs.length; i++) {
@@ -1073,8 +1142,8 @@ Important
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../content/material/index.html" class="pagination-link" aria-label="Overview">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Overview</span>
+      <a href="../../content/index.html" class="pagination-link" aria-label="🏢 Getting Started">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">🏢 Getting Started</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
@@ -1087,120 +1156,157 @@ Important
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Ecological Economics"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "MA Sustainable Energy &amp; MA International Management Studies — Winter Semester 2026/27"</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> today</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-depth: 3</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: true</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">  pdf:</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">    geometry: margin=1in</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">    fontsize: 11pt</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: true</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: false</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">## Overall Goal of the Course</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>The course covers a wide range of interactions between the environment and socio-economic</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>development. Students are introduced to various methods for analyzing economic impacts on the</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>environment, the importance of the environment for economic activities, and the role of social</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>institutions within the context of economy–environment relationships. In this setting, students</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>learn about different policy tools that can address (undesired) external effects of economic</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>activities on the environment and how to evaluate the effectiveness of environmental regulations</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>from an economic perspective. Over the semester, students work on one particular country or region</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>case study, which they present as a poster during a poster conference at the end of the semester.</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="fu">## Learning Goals</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">nocite:</span><span class="co"> |</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">  @coria2013, @daly2011, @raworth2017, @martinezalier2015a, @common2005, @caney2021</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-depth: 3</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: true</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">  pdf:</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">    papersize: a4</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">    geometry: margin=1in</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">    fontsize: 11pt</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: true</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: false</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">    include-in-header: ../../assets/euf-pdf.tex</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>::: {.content-visible when-format="html"}</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>::: {.callout-note appearance="simple" icon=false}</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>📄 **Prefer a printable version?** You can</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">**download this seminar description as a PDF**</span><span class="co">](SeminarDescription.pdf)</span>.</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>This page always holds the most recent version, so it is the one to bookmark and</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>link to — the PDF is regenerated whenever the description changes.</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>Upon completion of this seminar, you will be able to:</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>**Expertise:**</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>::: {.content-visible when-format="pdf"}</span>
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Understand the core concepts and analytical perspective of ecological economics</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Explain how different notions of 'economic development' relate to the question of ecological sustainability</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Discuss the relevance of trade-offs between social and environmental goals</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Understand how economic activities and the resulting ecological stressors are globally interrelated</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>**Methodological Competence:**</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>::: {.callout-note appearance="simple" icon=false}</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>**This seminar description is also available online.** The most recent version —</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>together with all session materials — is on the course website at</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="ot">&lt;https://ecological-economics26.netlify.app/content/material/SeminarDescription.html&gt;</span>,</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>which is also linked from the Moodle room. Please check there for updates.</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Work with data on socio-economic development and environmental pressures</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Account for environmental stressors at the global level, distinguishing production- and consumption-based perspectives</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Evaluate environmental policy instruments and their underlying assumptions</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="fu">## Overall Goal of the Course</span></span>
 <span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>**Social and Personal Skills:**</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Conduct and present a country-level analysis as part of a group</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Be able to delineate the assumptions on which your own assessments, and those on others depend when it comes to the discussion of social and environmental challenges</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Take well-founded positions in current debates (e.g. growth vs. degrowth)</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="fu">## Course Information</span></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="fu">### Prerequisites</span></span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>There are no formal prerequisites. A basic familiarity with introductory economics is</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>helpful but not required. The course is offered jointly for the MA "Sustainable Energy"</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>and the MA "International Management Studies" programs.</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>The course covers a wide range of interactions between the environment and socio-economic</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>development. Students are introduced to various methods for analyzing economic impacts on the</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>environment, the importance of the environment for economic activities, and the role of social</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>institutions within the context of economy–environment relationships. In this setting, students</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>learn about different policy tools that can address (undesired) external effects of economic</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>activities on the environment and how to evaluate the effectiveness of environmental regulations</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>from an economic perspective. Over the semester, students work on one particular country or region</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>case study, which they present as a poster during a poster conference at the end of the semester.</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="fu">## Learning Goals</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>Upon completion of this seminar, you will be able to:</span>
 <span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="fu">### Course Details</span></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>**Expertise:**</span>
 <span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Lecture Time:** Wednesdays, 08:30–12:00 (we start 8:30 sharp)</span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Lecturers:** Claudius Gräbner-Radkowitsch &amp; Anna-Katharina Kothe</span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Credits:** 5 ECTS (≈ 150 h total workload; about 7 h of self-study per week on top of the weekly lecture)</span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="fu">### Course Resources</span></span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Moodle Room:** <span class="co">[</span><span class="ot">room 17919</span><span class="co">](https://elearning.uni-flensburg.de/moodle/course/view.php?id=17919)</span></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Passwort will be distributed during the first lecture</span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="fu">## Schedule and Logistics</span></span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>::: {.callout-important}</span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>**Note:** This schedule is subject to change as the course progresses. Announcements will be made via <span class="co">[</span><span class="ot">Moodle</span><span class="co">](https://elearning.uni-flensburg.de/moodle/course/view.php?id=17919)</span>.</span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>The latest version of the syllabus will be made available here.</span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Understand the core concepts and analytical perspective of ecological economics</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Explain how different notions of 'economic development' relate to the question of ecological sustainability</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Discuss the relevance of trade-offs between social and environmental goals</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Understand how economic activities and the resulting ecological stressors are globally interrelated</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>**Methodological Competence:**</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Work with data on socio-economic development and environmental pressures</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Account for environmental stressors at the global level, distinguishing production- and consumption-based perspectives</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Evaluate environmental policy instruments and their underlying assumptions</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>**Social and Personal Skills:**</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Conduct and present a country-level analysis as part of a group</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Be able to delineate the assumptions on which your own assessments, and those on others depend when it comes to the discussion of social and environmental challenges</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Take well-founded positions in current debates (e.g. growth vs. degrowth)</span>
 <span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>Sessions with two topics on the same date are listed as two rows sharing that date.</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="fu">## Course Information</span></span>
 <span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> #  <span class="pp">|</span> Date   <span class="pp">|</span> Topic                                                                    <span class="pp">|</span> Lecturer            <span class="pp">|</span></span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="pp">|----|--------|--------------------------------------------------------------------------|---------------------|</span></span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 1  <span class="pp">|</span> 16.09. <span class="pp">|</span> Introduction, course logistics &amp; example poster                          <span class="pp">|</span> Claudius &amp; Anna-Katharina     <span class="pp">|</span></span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 1  <span class="pp">|</span> 16.09. <span class="pp">|</span> Theories of socio-economic development and the environment               <span class="pp">|</span> Claudius &amp; Anna-Katharina     <span class="pp">|</span></span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 2  <span class="pp">|</span> 23.09. <span class="pp">|</span> *No on-site class* — decentralized working week                          <span class="pp">|</span> —                   <span class="pp">|</span></span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 3  <span class="pp">|</span> 30.09. <span class="pp">|</span> Working with data: stylized facts &amp; theory-ladenness of observation      <span class="pp">|</span> Anna-Katharina &amp; Claudius     <span class="pp">|</span></span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 4  <span class="pp">|</span> 07.10. <span class="pp">|</span> Primer on scientific argumentation                                       <span class="pp">|</span> Anna-Katharina               <span class="pp">|</span></span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 4  <span class="pp">|</span> 07.10. <span class="pp">|</span> Primer on poster design and presentation                                 <span class="pp">|</span> Anna-Katharina               <span class="pp">|</span></span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>    <span class="pp">|</span> 14.10. <span class="pp">|</span> *No class*                                                               <span class="pp">|</span> —                   <span class="pp">|</span></span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 5  <span class="pp">|</span> 21.10. <span class="pp">|</span> Trade, externalization, and environmental conflicts                      <span class="pp">|</span> Claudius             <span class="pp">|</span></span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 6  <span class="pp">|</span> 28.10. <span class="pp">|</span> Accounting environmental stressors on the global level                   <span class="pp">|</span> Claudius             <span class="pp">|</span></span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 7  <span class="pp">|</span> 04.11. <span class="pp">|</span> Classical environmental policy instruments                               <span class="pp">|</span> Claudius             <span class="pp">|</span></span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 7  <span class="pp">|</span> 04.11. <span class="pp">|</span> Application: the European Emissions Trading System (EU ETS)              <span class="pp">|</span> Anna-Katharina               <span class="pp">|</span></span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 8  <span class="pp">|</span> 11.11. <span class="pp">|</span> The growth vs. degrowth debate                                           <span class="pp">|</span> Claudius             <span class="pp">|</span></span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 9  <span class="pp">|</span> 18.11. <span class="pp">|</span> Environmental and global justice                                         <span class="pp">|</span> Anna-Katharina               <span class="pp">|</span></span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 10 <span class="pp">|</span> 25.11. <span class="pp">|</span> Non-conventional policy instruments                                      <span class="pp">|</span> Anna-Katharina               <span class="pp">|</span></span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 11 <span class="pp">|</span> 02.12. <span class="pp">|</span> Work-in-progress country analysis presentations &amp; feedback               <span class="pp">|</span> Anna-Katharina &amp; Claudius     <span class="pp">|</span></span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 12 <span class="pp">|</span> 09.12. <span class="pp">|</span> Summary &amp; open questions                                                 <span class="pp">|</span> Anna-Katharina &amp; Claudius     <span class="pp">|</span></span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 13 <span class="pp">|</span> 16.12. <span class="pp">|</span> Poster presentations *(tentative)*                                       <span class="pp">|</span> Anna-Katharina &amp; Claudius     <span class="pp">|</span></span>
-<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a><span class="fu">## Evaluation and Assessment</span></span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>The final mark for the course depends on a group **country-analysis poster** and the students'</span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>performance during the final poster presentation. The posters are prepared in groups of up to 3</span>
-<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>people and pitched during the poster conference at the end of the semester.</span>
-<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>Full details on the poster — the content and guiding questions as well as the examination</span>
-<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>criteria and assessment dimensions — are on the dedicated **[examination page](examination.qmd)**.</span>
-<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
-<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Study Recommendations</span></span>
-<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>I strongly recommend that you spread your study time fairly evenly throughout the semester. It will save you time and effort if you study and practice constantly.</span>
-<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>---</span>
-<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
-<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Contact Information</span></span>
-<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>For questions regarding the course content or logistics, please use the <span class="co">[</span><span class="ot">Moodle</span><span class="co">](https://elearning.uni-flensburg.de/moodle/course/view.php?id=17919)</span> discussion forums.</span>
-<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a><span class="fu">### Prerequisites</span></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>There are no formal prerequisites. A basic familiarity with introductory economics is</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>helpful but not required. The course is offered jointly for the MA "Sustainable Energy"</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>and the MA "International Management Studies" programs.</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="fu">### Course Details</span></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Lecture Time:** Wednesdays, 08:30–12:00 (we start 8:30 sharp)</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Lecturers:** Claudius Gräbner-Radkowitsch &amp; Anna-Katharina Kothe</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Credits:** 5 ECTS (≈ 150 h total workload; about 7 h of self-study per week on top of the weekly lecture)</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a><span class="fu">### Course Resources</span></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Moodle Room:** <span class="co">[</span><span class="ot">room 17919</span><span class="co">](https://elearning.uni-flensburg.de/moodle/course/view.php?id=17919)</span></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Passwort will be distributed during the first lecture</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a><span class="fu">## Schedule and Logistics</span></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>::: {.callout-important}</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>**Note:** This schedule is subject to change as the course progresses. Announcements will be made via <span class="co">[</span><span class="ot">Moodle</span><span class="co">](https://elearning.uni-flensburg.de/moodle/course/view.php?id=17919)</span>.</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>The latest version of the syllabus will be made available here.</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>Sessions with two topics on the same date are listed as two rows sharing that date.</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>**Each topic links to its session page**, which holds the slides and the reading list.</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>The two non-teaching Wednesdays (23.09. and 14.10.) are included for completeness.</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> #  <span class="pp">|</span> Date   <span class="pp">|</span> Topic <span class="pp">|</span> Lecturer <span class="pp">|</span></span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a><span class="pp">|----|--------|-------|----------|</span></span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 1  <span class="pp">|</span> 16.09. <span class="pp">|</span> <span class="co">[</span><span class="ot">Introduction, course logistics &amp; example poster</span><span class="co">](https://ecological-economics26.netlify.app/content/material/s_01a_Introduction.html)</span> <span class="pp">|</span> Claudius &amp; Anna-Katharina <span class="pp">|</span></span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 1  <span class="pp">|</span> 16.09. <span class="pp">|</span> <span class="co">[</span><span class="ot">Theories of socio-economic development and the environment</span><span class="co">](https://ecological-economics26.netlify.app/content/material/s_01b_Theories.html)</span> <span class="pp">|</span> Claudius <span class="pp">|</span></span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 2  <span class="pp">|</span> 23.09. <span class="pp">|</span> <span class="co">[</span><span class="ot">*No on-site class* — decentralized working week</span><span class="co">](https://ecological-economics26.netlify.app/content/material/s_02_DecentralizedWeek.html)</span> <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 3  <span class="pp">|</span> 30.09. <span class="pp">|</span> <span class="co">[</span><span class="ot">Discussion of the entry texts</span><span class="co">](https://ecological-economics26.netlify.app/content/material/s_03a_TextDiscussion.html)</span> <span class="pp">|</span> Anna-Katharina <span class="pp">|</span></span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 3  <span class="pp">|</span> 30.09. <span class="pp">|</span> <span class="co">[</span><span class="ot">Working with data: stylized facts &amp; theory-ladenness of observation</span><span class="co">](https://ecological-economics26.netlify.app/content/material/s_03b_WorkingWithData.html)</span> <span class="pp">|</span> Claudius <span class="pp">|</span></span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 4  <span class="pp">|</span> 07.10. <span class="pp">|</span> <span class="co">[</span><span class="ot">Primer on scientific argumentation</span><span class="co">](https://ecological-economics26.netlify.app/content/material/s_04a_ScientificArgumentation.html)</span> <span class="pp">|</span> Anna-Katharina <span class="pp">|</span></span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 4  <span class="pp">|</span> 07.10. <span class="pp">|</span> <span class="co">[</span><span class="ot">Primer on poster design and presentation</span><span class="co">](https://ecological-economics26.netlify.app/content/material/s_04b_PosterDesign.html)</span> <span class="pp">|</span> Anna-Katharina <span class="pp">|</span></span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>    <span class="pp">|</span> 14.10. <span class="pp">|</span> *No class* <span class="pp">|</span> — <span class="pp">|</span></span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 5  <span class="pp">|</span> 21.10. <span class="pp">|</span> <span class="co">[</span><span class="ot">Trade, externalization, and environmental conflicts</span><span class="co">](https://ecological-economics26.netlify.app/content/material/s_05_Trade.html)</span> <span class="pp">|</span> Claudius <span class="pp">|</span></span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 6  <span class="pp">|</span> 28.10. <span class="pp">|</span> <span class="co">[</span><span class="ot">Accounting environmental stressors on the global level</span><span class="co">](https://ecological-economics26.netlify.app/content/material/s_06_Accounting.html)</span> <span class="pp">|</span> Claudius <span class="pp">|</span></span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 7  <span class="pp">|</span> 04.11. <span class="pp">|</span> <span class="co">[</span><span class="ot">Classical environmental policy instruments</span><span class="co">](https://ecological-economics26.netlify.app/content/material/s_07a_PolicyInstruments.html)</span> <span class="pp">|</span> Claudius <span class="pp">|</span></span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 7  <span class="pp">|</span> 04.11. <span class="pp">|</span> <span class="co">[</span><span class="ot">Application: the European Emissions Trading System (EU ETS)</span><span class="co">](https://ecological-economics26.netlify.app/content/material/s_07b_ETS.html)</span> <span class="pp">|</span> Anna-Katharina <span class="pp">|</span></span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 8  <span class="pp">|</span> 11.11. <span class="pp">|</span> <span class="co">[</span><span class="ot">The growth vs. degrowth debate</span><span class="co">](https://ecological-economics26.netlify.app/content/material/s_08_Degrowth.html)</span> <span class="pp">|</span> Claudius <span class="pp">|</span></span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 9  <span class="pp">|</span> 18.11. <span class="pp">|</span> <span class="co">[</span><span class="ot">Environmental and global justice</span><span class="co">](https://ecological-economics26.netlify.app/content/material/s_09_Justice.html)</span> <span class="pp">|</span> Anna-Katharina <span class="pp">|</span></span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 10 <span class="pp">|</span> 25.11. <span class="pp">|</span> <span class="co">[</span><span class="ot">Non-conventional policy instruments</span><span class="co">](https://ecological-economics26.netlify.app/content/material/s_10_NonConventional.html)</span> <span class="pp">|</span> Anna-Katharina <span class="pp">|</span></span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 11 <span class="pp">|</span> 02.12. <span class="pp">|</span> <span class="co">[</span><span class="ot">Work-in-progress country analysis presentations &amp; feedback</span><span class="co">](https://ecological-economics26.netlify.app/content/material/s_11_CountryAnalysis.html)</span> <span class="pp">|</span> Anna-Katharina &amp; Claudius <span class="pp">|</span></span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 12 <span class="pp">|</span> 09.12. <span class="pp">|</span> <span class="co">[</span><span class="ot">Summary &amp; open questions</span><span class="co">](https://ecological-economics26.netlify.app/content/material/s_12_Summary.html)</span> <span class="pp">|</span> Anna-Katharina &amp; Claudius <span class="pp">|</span></span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> 13 <span class="pp">|</span> 16.12. <span class="pp">|</span> <span class="co">[</span><span class="ot">Poster presentations</span><span class="co">](https://ecological-economics26.netlify.app/content/material/s_13_Posters.html)</span> <span class="pp">|</span> Anna-Katharina &amp; Claudius <span class="pp">|</span></span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a><span class="fu">## General References</span></span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>These texts accompany the seminar as a whole; session-specific readings are on the individual</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>session pages linked in the schedule above.</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a><span class="fu">## Evaluation and Assessment</span></span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>The final mark for the course depends on a group **country-analysis poster** and the students'</span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>performance during the final poster presentation. The posters are prepared in groups of up to 3</span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>people and pitched during the poster conference at the end of the semester.</span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>Full details on the poster — the content and guiding questions as well as the examination</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>criteria and assessment dimensions — are on the dedicated **[examination page](examination.qmd)**.</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Study Recommendations</span></span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>I strongly recommend that you spread your study time fairly evenly throughout the semester. It will save you time and effort if you study and practice constantly.</span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Contact Information</span></span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>For questions regarding the course content or logistics, please use the <span class="co">[</span><span class="ot">Moodle</span><span class="co">](https://elearning.uni-flensburg.de/moodle/course/view.php?id=17919)</span> discussion forums.</span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

@@ -26,7 +26,7 @@ suppressPackageStartupMessages({
 # what you see in the PNG is what Keynote shows. Set to "transparent" if you
 # ever need to drop a figure onto a coloured background.
 PAPER_BG <- "white"
-FORMATS  <- c("pdf", "png")
+FORMATS  <- c("pdf") # , "png"
 DPI      <- 300
 
 # ---- EUF colours (see assets/styles/custom.scss) ---------------------------
@@ -53,14 +53,22 @@ region_pal <- c(
   "Oceania"       = "#00A0A8"
 )
 
-# ---- Font: Open Sans if installed (the site's Hausschrift), else default ----
+# ---- Font --------------------------------------------------------------
+# Inter first: it is the face used in the Keynote deck, so the figures match
+# the surrounding slides instead of sitting in a different typeface. The rest
+# are fallbacks for a machine without it; "" means the device default.
+# cairo_pdf embeds the font, so the PDF looks the same on a machine that does
+# not have Inter installed.
+FONT_CANDIDATES <- c("Inter", "Open Sans", "Source Sans 3", "Helvetica Neue")
+
 euf_family <- ""
 if (requireNamespace("systemfonts", quietly = TRUE)) {
   fams <- systemfonts::system_fonts()$family
-  for (cand in c("Open Sans", "Source Sans 3", "Helvetica Neue")) {
+  for (cand in FONT_CANDIDATES) {
     if (cand %in% fams) { euf_family <- cand; break }
   }
 }
+message("Font: ", if (nzchar(euf_family)) euf_family else "device default (none of the candidates installed)")
 
 theme_euf <- function(base_size = 14) {
   theme_minimal(base_size = base_size, base_family = euf_family) +
@@ -118,5 +126,3 @@ only_countries <- function(df) {
     filter(!is.na(owid_region), owid_region %in% names(region_pal), nchar(code) == 3) |>
     mutate(owid_region = factor(owid_region, levels = names(region_pal)))
 }
-
-SRC <- "Rebuilt from the raw data by analysis/02_figures.R - see analysis/README.md."

@@ -17,7 +17,18 @@ Rscript analysis/02_figures.R     # write PDF + PNG into analysis/figures/
 ```
 
 Then drag the PDFs into Keynote — they are vector, so they stay sharp at any
-size. PNGs are there for quick previews and for anything that chokes on PDF.
+size, and the font is embedded.
+
+Output formats are set by `FORMATS` in `R/euf_style.R`, currently `"pdf"` only.
+Add `"png"` there if you want raster previews as well.
+
+## Typeface
+
+The figures are set in **Inter**, the face used in the Keynote deck, so they do
+not sit in a different typeface from the slide around them. The candidate list
+lives in `FONT_CANDIDATES` in `R/euf_style.R`; the first installed one wins and
+the script prints which it picked. `cairo_pdf` subsets and embeds the font, so
+the PDFs render identically on a machine that does not have Inter installed.
 
 ## What is where
 

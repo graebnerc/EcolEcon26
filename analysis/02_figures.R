@@ -59,7 +59,7 @@ p06 <- ggplot(gdp_reg, aes(year, gdp_per_capita, color = region)) +
        subtitle = paste0("GDP per capita by world region, 1820-", MAXY,
                          " (constant international $, adjusted for price differences)"),
        x = NULL, y = "GDP per capita",
-       caption = paste("Source: Maddison Project Database via Our World in Data.", SRC)) +
+       caption = "Source: Maddison Project Database via Our World in Data.") +
   guides(color = "none") +
   theme_euf()
 save_euf(p06, "fig_06_gdp_by_region", width = 10, height = 5.8)
@@ -93,7 +93,7 @@ p07 <- ggplot(pov, aes(year, share, color = line)) +
        subtitle = paste0("Share of the world population below different poverty lines, 1981-", PMAX,
                          "\nLines are in international dollars at 2021 PPP, so they account for inflation and price differences."),
        x = NULL, y = "Share of world population",
-       caption = paste("Source: World Bank Poverty and Inequality Platform (PIP) API.", SRC)) +
+       caption = "Source: World Bank Poverty and Inequality Platform (PIP) API.") +
   guides(color = "none") +
   theme_euf()
 save_euf(p07, "fig_07_poverty_lines", width = 10, height = 5.8)
@@ -138,7 +138,7 @@ p08 <- ggplot(pov_long, aes(year, share, color = series)) +
        subtitle = "Share of the world population living in poverty. Two different measures, two different stories about the level.",
        x = NULL, y = "Share of world population",
        caption = paste("Sources: Moatsos (2021) via Our World in Data; World Bank PIP.",
-                       "For a critique of the 'poverty is falling' claim see Hickel (2019).", SRC)) +
+                       "For a critique of the 'poverty is falling' claim see Hickel (2019).")) +
   guides(color = guide_legend(nrow = 2)) +
   theme_euf()
 save_euf(p08, "fig_08_poverty_longrun", width = 10, height = 5.8)
@@ -188,7 +188,7 @@ p09 <- ggplot(pg, aes(gdp, share)) +
                          "\ngrey repeats all regions in every panel so they can be compared."),
        x = "GDP per capita (log scale)", y = "Share in extreme poverty",
        caption = paste("Sources: Moatsos (2021), 'cost of basic needs' approach;",
-                       "Maddison Project Database. Both via Our World in Data.", SRC)) +
+                       "Maddison Project Database. Both via Our World in Data.")) +
   theme_euf() +
   theme(panel.spacing = unit(0.9, "lines"))
 save_euf(p09, "fig_09_poverty_vs_gdp", width = 10, height = 7)
@@ -251,7 +251,7 @@ p10 <- combine_panels(
   plot_annotation(
     title = "GDP correlates with many development indicators",
     subtitle = "One dot = one country, at its most recent observation. All four relationships are strong at low incomes and flatten out at high incomes.",
-    caption = paste("Source: Our World in Data (UNDP, UN IGME, UNESCO, WHO via World Bank).", SRC),
+    caption = paste("Source: Our World in Data (UNDP, UN IGME, UNESCO, WHO via World Bank)."),
     theme = theme_euf())
 save_euf(p10, "fig_10_gdp_indicators", width = 12, height = 8.5)
 
@@ -371,7 +371,7 @@ p11 <- (p11a | p11b) +
     title = "The extraction of raw materials keeps increasing",
     subtitle = paste0(mat_what, ", ", MATY[1], "-", MATY[2],
                       ". Left: how much is taken out of the ground worldwide. Right: who takes it out."),
-    caption = paste(mat_src, SRC),
+    caption = paste(mat_src),
     theme = theme_euf()) &
   theme(legend.position = "bottom")
 save_euf(p11, "fig_11_material_use", width = 13, height = 6.2)
@@ -394,7 +394,7 @@ p12 <- combine_panels(p12a, p12b) +
     title = "GDP correlates with energy use and with emissions",
     subtitle = "One dot = one country, at its most recent observation. Both axes are logarithmic, so a straight line means a constant percentage relationship.",
     caption = paste("Sources: Our World in Data - World Bank (energy) and Global Carbon Project (CO2).",
-                    "Territorial emissions.", SRC),
+                    "Territorial emissions."),
     theme = theme_euf())
 save_euf(p12, "fig_12_energy_and_emissions", width = 12, height = 5.8)
 
@@ -436,7 +436,7 @@ p14 <- ggplot(dec, aes(year, index, color = series)) +
        subtitle = paste0("GDP and consumption-based CO2 emissions per capita, index ", BASE,
                          " = 100.\nEmissions are adjusted for trade, so imported emissions count towards the importer. Note the different y-axes."),
        x = NULL, y = paste0("Index (", BASE, " = 100)"),
-       caption = paste("Source: Our World in Data - Global Carbon Project and World Bank.", SRC)) +
+       caption = paste("Source: Our World in Data - Global Carbon Project and World Bank.")) +
   theme_euf() +
   theme(panel.spacing = unit(1.1, "lines"))
 save_euf(p14, "fig_14_decoupling", width = 11, height = 6)
@@ -472,7 +472,7 @@ p15 <- combine_panels(p15a, p15b) +
     subtitle = paste0("Left: the UNDP index, which contains income itself.\n",
                       "Right: Prados de la Escosura's Augmented HDI, built from health, education and civil liberties only - the correlation survives."),
     caption = paste("Sources: Our World in Data - UNDP (HDI); Prados de la Escosura (Augmented HDI);",
-                    "Maddison Project Database (GDP for the right panel).", SRC),
+                    "Maddison Project Database (GDP for the right panel)."),
     theme = theme_euf()) &
   theme(legend.position = "bottom")
 save_euf(p15, "fig_15_composite_indicators", width = 12, height = 5.8)

@@ -98,11 +98,14 @@ theme_euf <- function(base_size = 14) {
     )
 }
 
-# Theme for the overall title block of a wide multi-panel figure. At 12-13
-# inches the theme's default title reads small against the canvas, so the size
-# is raised - but only the size: colour, weight and plot-edge alignment still
-# come from theme_euf(). Used by figs 10, 12 and 15 so their titles match.
-theme_euf_wide <- function(title_size = 24) {
+# Theme for a figure's own title block. The figures are dropped onto slides at
+# a size where theme_euf()'s default title reads small, so the title size is
+# raised here - only the size: colour, weight and plot-edge alignment still come
+# from theme_euf().
+#
+# Use this for every top-level figure, and plain theme_euf(base_size = 12) for
+# the inner panels of a patchwork, whose smaller headings should stay small.
+theme_euf_main <- function(title_size = 24) {
   theme_euf() + theme(plot.title = element_text(size = title_size))
 }
 

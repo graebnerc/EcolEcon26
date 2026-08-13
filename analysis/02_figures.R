@@ -252,10 +252,7 @@ p10 <- combine_panels(
     title = "GDP correlates with many development indicators",
     subtitle = "One dot = one country, at its most recent observation. All four relationships are strong at low incomes and flatten out at high incomes.",
     caption = paste("Source: Our World in Data (UNDP, UN IGME, UNESCO, WHO via World Bank)."),
-    # This figure is the widest of the set, so the default title looks small on
-    # it. Override only the size and keep everything else theme_euf() sets
-    # (brand blue, bold, title aligned to the plot rather than the panel).
-    theme = theme_euf() + theme(plot.title = element_text(size = 24)))
+    theme = theme_euf_wide())
 save_euf(p10, "fig_10_gdp_indicators", width = 12, height = 8.5)
 
 # ============================================================================
@@ -395,10 +392,11 @@ p12b <- panel_scatter(d_co, "tonnes CO2 per person", "CO2 emissions per capita",
 p12 <- combine_panels(p12a, p12b) +
   plot_annotation(
     title = "GDP correlates with energy use and with emissions",
-    subtitle = "One dot = one country, at its most recent observation. Both axes are logarithmic, so a straight line means a constant percentage relationship.",
+    subtitle = paste0("One dot = one country, at its most recent observation.\n",
+                      "Both axes are logarithmic, so a straight line means a constant percentage relationship."),
     caption = paste("Sources: Our World in Data - World Bank (energy) and Global Carbon Project (CO2).",
                     "Territorial emissions."),
-    theme = theme_euf())
+    theme = theme_euf_wide())
 save_euf(p12, "fig_12_energy_and_emissions", width = 12, height = 5.8)
 
 # ============================================================================
@@ -476,7 +474,7 @@ p15 <- combine_panels(p15a, p15b) +
                       "Right: Prados de la Escosura's Augmented HDI, built from health, education and civil liberties only - the correlation survives."),
     caption = paste("Sources: Our World in Data - UNDP (HDI); Prados de la Escosura (Augmented HDI);",
                     "Maddison Project Database (GDP for the right panel)."),
-    theme = theme_euf()) &
+    theme = theme_euf_wide()) &
   theme(legend.position = "bottom")
 save_euf(p15, "fig_15_composite_indicators", width = 12, height = 5.8)
 

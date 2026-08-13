@@ -98,6 +98,14 @@ theme_euf <- function(base_size = 14) {
     )
 }
 
+# Theme for the overall title block of a wide multi-panel figure. At 12-13
+# inches the theme's default title reads small against the canvas, so the size
+# is raised - but only the size: colour, weight and plot-edge alignment still
+# come from theme_euf(). Used by figs 10, 12 and 15 so their titles match.
+theme_euf_wide <- function(title_size = 24) {
+  theme_euf() + theme(plot.title = element_text(size = title_size))
+}
+
 save_euf <- function(plot, file, width = 9, height = 5.4) {
   stem <- tools::file_path_sans_ext(file)
   for (fmt in FORMATS) {

@@ -258,18 +258,79 @@ save_euf(p10, "fig_10_gdp_indicators", width = 12, height = 8.5)
 # ============================================================================
 # 11 · Material use is increasing                                  [slide 11]
 # ============================================================================
-mat_lbl <- c(BIM = "Biomass", FOF = "Fossil fuels",
-             MEO = "Metal ores", NMM = "Non-metallic minerals")
 mat_cols <- c("Biomass" = "#1F8A5B", "Non-metallic minerals" = "#C98A00",
               "Fossil fuels" = "#6F6F6F", "Metal ores" = "#2A72B5")
 
-mat <- rd("material_dmc.csv") |>
-  filter(type %in% names(mat_lbl)) |>
-  # the API returns one row per reporting type; collapse to one value per cell
-  group_by(area, year, type) |> summarise(tonnes = max(tonnes), .groups = "drop") |>
-  mutate(material = factor(mat_lbl[type], levels = names(mat_cols)))
+IRP_FILE    <- file.path("analysis", "data-manual", "mfa4_export.csv")
+IRP_REGIONS <- c("Africa", "Asia + Pacific", "EECCA", "Europe",
+                 "Latin America + Caribbean", "North America", "West Asia")
 
-mat_world <- mat |> filter(area == "World")
+# Preferred source: the hand-downloaded IRP export (domestic EXTRACTION, from
+# 1970). See analysis/data-manual/README-mfa4_export.txt. The checks below make
+# a wrong or partial export fail loudly instead of producing a wrong figure.
+read_irp <- function(path) {
+  # The unit column contains the single letter "t", which readr happily guesses
+  # as logical TRUE - so the text columns are typed explicitly.
+  raw <- read_csv(path, show_col_types = FALSE, progress = FALSE,
+                  col_types = cols(Country      = col_character(),
+                                   Category     = col_character(),
+                                   `Flow name`  = col_character(),
+                                   `Flow code`  = col_character(),
+                                   `Flow unit`  = col_character(),
+                                   .default     = col_double()))
+
+  need <- c("Country", "Category", "Flow code", "Flow unit")
+  if (!all(need %in% names(raw))) stop("IRP export: missing columns ",
+                                       paste(setdiff(need, names(raw)), collapse = ", "))
+  de <- raw |> filter(`Flow code` == "DE")
+  if (!nrow(de))                 stop("IRP export: no rows with Flow code 'DE' (domestic extraction)")
+  if (!all(de$`Flow unit` == "t")) stop("IRP export: expected tonnes ('t') as the flow unit")
+  if (!all(names(mat_cols) %in% de$Category))
+    stop("IRP export: missing material categories ",
+         paste(setdiff(names(mat_cols), de$Category), collapse = ", "))
+  if (!all(c("World", IRP_REGIONS) %in% de$Country))
+    stop("IRP export: missing regions ",
+         paste(setdiff(c("World", IRP_REGIONS), de$Country), collapse = ", "))
+
+  d <- de |>
+    filter(Category %in% names(mat_cols)) |>
+    select(area = Country, material = Category, matches("^[0-9]{4}$")) |>
+    pivot_longer(-c(area, material), names_to = "year", values_to = "tonnes") |>
+    mutate(year = as.integer(year), tonnes = as.numeric(tonnes)) |>
+    filter(!is.na(tonnes), tonnes > 0) |>
+    mutate(material = factor(material, levels = names(mat_cols)))
+
+  # the seven regions must add up to the reported world total
+  chk <- d |> filter(year == max(year)) |>
+    summarise(world = sum(tonnes[area == "World"]),
+              regs  = sum(tonnes[area %in% IRP_REGIONS]))
+  if (abs(chk$regs - chk$world) / chk$world > 0.01)
+    stop("IRP export: the seven regions sum to ",
+         round(chk$regs / chk$world * 100, 1), "% of the world total - looks like a partial export")
+  d
+}
+
+if (file.exists(IRP_FILE)) {
+  mat      <- read_irp(IRP_FILE)
+  mat_what <- "Domestic extraction"
+  mat_src  <- "Source: UN IRP Global Material Flows Database (manual export, see analysis/data-manual/)."
+} else {
+  warning("IRP export not found - falling back to UN SDG consumption data. ",
+          "See analysis/data-manual/README-mfa4_export.txt")
+  mat_lbl <- c(BIM = "Biomass", FOF = "Fossil fuels",
+               MEO = "Metal ores", NMM = "Non-metallic minerals")
+  mat <- rd("material_dmc.csv") |>
+    filter(type %in% names(mat_lbl)) |>
+    group_by(area, year, type) |> summarise(tonnes = max(tonnes), .groups = "drop") |>
+    mutate(material = factor(mat_lbl[type], levels = names(mat_cols)),
+           area = recode(area, Americas = "North America"))
+  IRP_REGIONS <- setdiff(unique(mat$area), "World")
+  mat_what <- "Domestic material consumption"
+  mat_src  <- "Source: UN SDG Indicators Database, series EN_MAT_DOMCMPT (fallback - IRP export missing)."
+}
+
+mat_world <- mat |> filter(area == "World") |>
+  group_by(year, material) |> summarise(tonnes = sum(tonnes), .groups = "drop")
 MATY <- range(mat_world$year)
 
 p11a <- ggplot(mat_world, aes(year, tonnes, fill = material)) +
@@ -280,30 +341,40 @@ p11a <- ggplot(mat_world, aes(year, tonnes, fill = material)) +
   labs(title = "World, by material group", x = NULL, y = "Tonnes") +
   theme_euf(base_size = 12)
 
-mat_reg <- mat |> filter(area != "World") |>
+reg_order <- mat |> filter(area %in% IRP_REGIONS, year == max(year)) |>
+  group_by(area) |> summarise(t = sum(tonnes)) |> arrange(desc(t)) |> pull(area)
+mat_reg <- mat |> filter(area %in% IRP_REGIONS) |>
   group_by(area, year) |> summarise(tonnes = sum(tonnes), .groups = "drop") |>
   group_by(year) |> mutate(share = tonnes / sum(tonnes) * 100) |> ungroup() |>
-  mutate(area = factor(area, levels = c("Asia", "Americas", "Europe", "Africa", "Oceania")))
-area_cols <- c(Asia = "#E0542F", Americas = "#C98A00", Europe = "#2A72B5",
-               Africa = "#1F8A5B", Oceania = "#8A5FBF")
+  mutate(area = factor(area, levels = reg_order))
+area_cols <- setNames(c("#E0542F", "#C98A00", "#2A72B5", "#1F8A5B",
+                        "#8A5FBF", "#00A0A8", "#6F6F6F")[seq_along(reg_order)],
+                      reg_order)
+
+# EECCA is the IRP's own abbreviation; spell it out for students
+reg_labels <- c("EECCA" = "E. Europe, Caucasus & C. Asia",
+                "Latin America + Caribbean" = "Latin America & Caribbean",
+                "Asia + Pacific" = "Asia & Pacific")
 
 p11b <- ggplot(mat_reg, aes(year, share, fill = area)) +
   geom_area(color = "white", linewidth = 0.2) +
-  scale_fill_manual(values = area_cols) +
-  scale_x_continuous(breaks = seq(MATY[1], MATY[2], 5)) +
+  scale_fill_manual(values = area_cols,
+                    labels = function(x) coalesce(reg_labels[x], x)) +
+  scale_x_continuous(breaks = seq(MATY[1], MATY[2], 10)) +
   scale_y_continuous(labels = label_percent(scale = 1), expand = expansion(0)) +
   labs(title = "By world region (share of global total)", x = NULL, y = "Share") +
+  guides(fill = guide_legend(ncol = 3)) +
   theme_euf(base_size = 12)
 
 p11 <- (p11a | p11b) +
   plot_annotation(
-    title = "The use of raw materials keeps increasing",
-    subtitle = paste0("Domestic material consumption, ", MATY[1], "-", MATY[2],
-                      ". Consumption equals extraction at the world level, because trade nets out; for regions it does not."),
-    caption = paste("Source: UN SDG Indicators Database, series EN_MAT_DOMCMPT (UN IRP Global Material Flows).", SRC),
+    title = "The extraction of raw materials keeps increasing",
+    subtitle = paste0(mat_what, ", ", MATY[1], "-", MATY[2],
+                      ". Left: how much is taken out of the ground worldwide. Right: who takes it out."),
+    caption = paste(mat_src, SRC),
     theme = theme_euf()) &
   theme(legend.position = "bottom")
-save_euf(p11, "fig_11_material_use", width = 12, height = 5.8)
+save_euf(p11, "fig_11_material_use", width = 13, height = 6.2)
 
 # ============================================================================
 # 12 · GDP correlates with energy use and with emissions   [slides 12 and 13]

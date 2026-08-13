@@ -85,3 +85,6 @@ _site/
 
 # Downloaded raw data for the figure scripts (recreate with analysis/01_download.R)
 analysis/data-raw/
+
+# Keynote sources belong in content/material/slides/_keynote/, never in the repo root
+/*.key

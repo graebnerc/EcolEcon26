@@ -23,10 +23,11 @@ size. PNGs are there for quick previews and for anything that chokes on PDF.
 
 | File | Purpose |
 |---|---|
-| `01_download.R` | Downloads every dataset. Overwrites `data-raw/` each run. |
-| `02_figures.R` | Builds the figures. Reads only `data-raw/`, never the network. |
+| `01_download.R` | Downloads every scriptable dataset. Overwrites `data-raw/` each run. |
+| `02_figures.R` | Builds the figures. Reads only local files, never the network. |
 | `R/euf_style.R` | EUF palette, ggplot theme, save helper. Shared by all figures. |
 | `data-raw/` | Downloaded CSVs. **Gitignored** — recreate with `01_download.R`. |
+| `data-manual/` | The one dataset with no API, plus a txt saying how to refresh it. Tracked. |
 | `figures/` | Output, tracked in git so the slides have a stable source. |
 
 ## Figures and the slides they replace
@@ -50,20 +51,24 @@ size. PNGs are there for quick previews and for anything that chokes on PDF.
 - **World Bank PIP API** for poverty at several poverty lines. PIP publishes
   nowcasts beyond the last survey year; `02_figures.R` drops them via
   `estimate_type == "actual"` so no forecast is ever drawn as data.
-- **UN SDG Indicators API**, series `EN_MAT_DOMCMPT`, for material use.
+- **UN IRP Global Material Flows Database** for material extraction. This is the
+  only source that is **not** scriptable: it comes from an interactive portal, so
+  `analysis/data-manual/mfa4_export.csv` is refreshed by hand roughly once a
+  year. `analysis/data-manual/README-mfa4_export.txt` says where to get it and
+  what the file must contain; `02_figures.R` validates it on every run and stops
+  with a specific message if the export is wrong or partial. If the file is
+  missing entirely, the figure falls back to the UN SDG API
+  (`EN_MAT_DOMCMPT`, consumption rather than extraction, 2000 onwards) and says
+  so in its own subtitle, so the build never silently breaks.
 
-## Three things to know before you trust these figures
+## Two things to know before you trust these figures
 
-1. **Slide 11 shows domestic material *consumption*, not extraction.** The old
-   slide used the IRP extraction series, which has no scriptable download. At
-   the world level the two are identical because trade nets out; for individual
-   regions they are not, and the subtitle says so.
-2. **Slide 15's right panel is the *Augmented* HDI** (Prados de la Escosura:
+1. **Slide 15's right panel is the *Augmented* HDI** (Prados de la Escosura:
    health, education and civil liberties), not the "HIHD without the GDP
    metric" of the old slide — Our World in Data no longer publishes that exact
    series. The teaching point survives: a composite built without income still
    tracks income closely.
-3. **The poverty lines changed.** The old slide used 2011-PPP lines ($1.90,
+2. **The poverty lines changed.** The old slide used 2011-PPP lines ($1.90,
    $3.20, …). The World Bank moved to 2021 PPP, so the current lines are $3.00,
    $4.20 and $8.30. The levels are therefore not comparable with the old slide,
    which is itself worth a sentence in the lecture.

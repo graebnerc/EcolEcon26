@@ -82,3 +82,6 @@ venv.bak/
 
 # Built site — deployed via `quarto publish netlify`, not from git
 _site/
+
+# Downloaded raw data for the figure scripts (recreate with analysis/01_download.R)
+analysis/data-raw/

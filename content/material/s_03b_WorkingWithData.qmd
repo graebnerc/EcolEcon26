@@ -19,7 +19,7 @@ country or region.
 
 ## 🖥️ Lecture Slides
 
-<!--slides:03b:EcolEcon26_L03b_WorkingWithData.pdf-->
+<!--slides:03b:EcolEcon26_L03b_Data.pdf-->
 ::: {.slides-pending}
 📽️ Slides will be made available after the lecture.
 :::

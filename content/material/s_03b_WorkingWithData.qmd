@@ -19,16 +19,103 @@ country or region.
 
 ## 🖥️ Lecture Slides
 
-<!--slides:03b:EcolEcon26_L03b_Data.pdf-->
+<!--slides:03b:EcolEcon26_L03b_Data.html-->
 ::: {.slides-pending}
 📽️ Slides will be made available after the lecture.
 :::
 <!--/slides:03b-->
 
+## 📊 Data sources for the figures
+
+Every data figure in the lecture is built from **openly available data**, and the table below
+says exactly where each one comes from. Use it to check a claim from the lecture — and, more
+importantly, to pull the same indicators for **your own country analysis**.
+
+On an Our World in Data chart page, the **Download** tab gives you the underlying data as a
+CSV for *all* countries and years, not just the ones shown. That is usually the fastest route
+to a comparable number for your country.
+
+| Figure in the lecture | Where the data come from |
+|---|---|
+| Income grows, but in a very unequal fashion | [Maddison Project Database](https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database) (via Our World in Data) |
+| Income poverty remains a global problem | [World Bank Poverty and Inequality Platform (PIP)](https://pip.worldbank.org/) |
+| There has been progress with respect to income poverty | [Moatsos, "cost of basic needs" poverty](https://ourworldindata.org/grapher/share-of-population-living-in-extreme-poverty-cost-of-basic-needs) (via Our World in Data) · World Bank PIP, as above |
+| Reducing income poverty due to growth of GDP?! | The same two sources as the previous two rows, joined |
+| GDP correlates with many development indicators | [Years of schooling](https://ourworldindata.org/grapher/average-years-of-schooling-vs-gdp-per-capita) · [Child mortality](https://ourworldindata.org/grapher/child-mortality-gdp-per-capita) · [Adult literacy](https://ourworldindata.org/grapher/literacy-rate-vs-gdp-per-capita) · [Medical doctors](https://ourworldindata.org/grapher/medical-doctors-per-1000-people-vs-gdp-per-capita) |
+| The extraction of raw materials keeps increasing | [UN IRP Global Material Flows Database](https://www.materialflows.net/) ([background](https://www.resourcepanel.org/global-material-flows-database)). A scriptable but narrower alternative is the [UN SDG Indicators Database](https://unstats.un.org/sdgs/dataportal), series `EN_MAT_DOMCMPT` |
+| GDP correlates with energy use and with emissions | [Energy use per capita](https://ourworldindata.org/grapher/energy-use-per-capita-vs-gdp-per-capita) · [CO~2~ emissions](https://ourworldindata.org/grapher/co2-emissions-vs-gdp) |
+| Some countries achieved decoupling of GDP from emissions | [Consumption-based CO~2~ and GDP per capita](https://ourworldindata.org/grapher/co2-emissions-and-gdp-per-capita) |
+| Composite indicators also correlate with GDP | [Human Development Index](https://ourworldindata.org/grapher/human-development-index-vs-gdp-per-capita) · [Augmented HDI (Prados de la Escosura)](https://ourworldindata.org/grapher/human-development-index-escosura) · Maddison Project Database, as above |
+| No country manages both at once | [Fanning, O'Neill, Hickel & Roux (2022), national trends data](https://goodlife.leeds.ac.uk/download-data/) |
+
+### 🍩 The country doughnuts
+
+The two doughnut diagrams in the lecture come from the University of Leeds project
+[A Good Life For All Within Planetary Boundaries](https://goodlife.leeds.ac.uk/). Its
+**National Snapshots** and **Country Trends** pages will draw the same diagram for *your*
+country, and the underlying figures can be downloaded from the same
+[download page](https://goodlife.leeds.ac.uk/download-data/) as the scatter plot above.
+
+### 🧭 The Atlas of Economic Complexity
+
+The [Atlas of Economic Complexity](https://atlas.hks.harvard.edu/) (Harvard Growth Lab) is not
+behind any figure in this lecture, but it is the obvious next stop for a country analysis. It
+holds **50+ years of trade flows for 228 countries**: what a country exports and imports, to
+and from whom, how that basket has shifted over time, and where it sits in the complexity
+rankings.
+
+- [Country profiles](https://atlas.hks.harvard.edu/countries) — start here for your country
+- [Rankings](https://atlas.hks.harvard.edu/rankings) — economic complexity, and growth projections
+- [Data downloads](https://atlas.hks.harvard.edu/data-downloads) — the underlying data, if you
+  want to compute something yourself
+
+A caveat worth carrying into the poster: economic complexity says something about the
+**productive structure** of an economy, not about whether that structure is ecologically
+sustainable or socially just. A high-complexity export basket and a transgressed material
+footprint are entirely compatible — which is itself a result worth pointing at.
+
+::: {.callout-tip}
+## Two habits worth acquiring now
+
+**Write down every judgement call.** Which year, which indicator, which source, which of
+several competing series. That list is where the theory-ladenness of your own analysis
+becomes visible — and it belongs on your poster.
+
+**Check what a number actually measures** before you compare it. Poverty lines change
+(the World Bank moved from 2011 to 2021 purchasing power parities, so the lines are now
+$3.00 and $4.20 rather than $1.90 and $3.20), and material *extraction* is not material
+*consumption*. Two defensible sources can tell two different stories about the same country.
+:::
+
 ## 📚 Follow-up Reading
 
-- [TODO: add follow-up readings for this session.]
+- @graebner2026-theory-ladenness-of-observation — *The Theory-Ladenness of
+  Observation*, in the EUF **Method and Inquiry** hub.
+- @graebner2026-accessing-development-data-in-r — *Accessing Development Data in
+  R*. Only relevant **if you work with R**; you can safely skip it otherwise.
 
 ### 🏆 Further readings
 
-- [TODO: add further readings for this session.]
+*On how a measurement choice makes the result:*
+
+- @reddy2010 — the classic critique of the dollar-a-day poverty line.
+- @jerven2013 — how development statistics are actually produced, and what that
+  means for anyone using them.
+
+*On the doughnut, and on its critics:*
+
+- @fanning2022 — the study behind the scatter plot in the lecture.
+- @fanning2025 — the 2025 successor, with 35 indicators up to 2022, at the
+  global level.
+- @grabner-radkowitsch2026 — an introduction to doughnut economics (in German).
+- @winter2026 — a critical reading of the doughnut *diagram* itself.
+
+*On objectivity:*
+
+- @harding2015 — the source of the two passages on strong objectivity quoted in
+  the lecture.
+
+## References
+
+::: {#refs}
+:::

@@ -48,6 +48,17 @@ to a comparable number for your country.
 | Composite indicators also correlate with GDP | [Human Development Index](https://ourworldindata.org/grapher/human-development-index-vs-gdp-per-capita) · [Augmented HDI (Prados de la Escosura)](https://ourworldindata.org/grapher/human-development-index-escosura) · Maddison Project Database, as above |
 | No country manages both at once | [Fanning, O'Neill, Hickel & Roux (2022), national trends data](https://goodlife.leeds.ac.uk/download-data/) |
 
+::: {.callout-note}
+## Want to rebuild the figures yourself?
+
+Every figure above is built by two R scripts, from the data linked in the
+table. They live in the
+[`analysis/` folder of the course repository](https://github.com/graebnerc/EcolEcon26/tree/main/analysis),
+together with a README explaining how to run them. You are welcome to change a
+colour, a year range or a country selection — or to lift the approach for your
+own poster.
+:::
+
 ### 🍩 The country doughnuts
 
 The two doughnut diagrams in the lecture come from the University of Leeds project

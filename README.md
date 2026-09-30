@@ -1,38 +1,40 @@
-# Template for academic courses
+# Ecological Economics (Winter 2026/27)
 
-When using for a new course, adjust the following:
+Course website for *Ecological Economics* at Europa-Universität Flensburg,
+taught by Claudius Gräbner-Radkowitsch and Anna-Katharina Kothe.
 
-`_publish.yml`
+**→ <https://ecological-economics26.netlify.app/>**
 
-- The id used by Netlify (when available)
-- The URL of the course website
+The course is poster-based: students analyse a country or region and present
+the result at a poster conference. See
+[the seminar description](content/material/SeminarDescription.qmd) for the
+schedule and [examination.qmd](content/material/examination.qmd) for the task.
 
-`_quarto.yml`
+## What is where
 
-- Name of the course
-- Content structure
-- All other meta data of interest
+| | |
+|---|---|
+| `content/material/` | one page per session, plus the schedule and the exam |
+| `content/material/slides/` | the decks: Keynote exports as PDF, web versions as `.qmd` |
+| `analysis/` | the R scripts that build the lecture figures from open data — [start here](analysis/) if you want to reproduce or reuse them |
+| `references/` | the bibliography |
+| `_quarto.yml` | navigation, theme, and which files get rendered |
 
-`index.qmd` and `content/index.qmd`
+## Building it
 
-- The landing pages with course specific info
-- Also, `content/statrecap.qmd` for blog-specific content
+```bash
+quarto preview   # live preview while editing
+quarto render    # build the site into _site/
+```
 
-`content/material/SeminarDescription.qmd`
+Package versions are pinned with [renv](https://rstudio.github.io/renv/); run
+`renv::restore()` once after cloning.
 
-- A template for a seminar description
+Publishing is a local step, not CI: `Veroeffentlichen.command` renders and
+uploads to Netlify. A push to GitHub does **not** update the live site.
 
-**Other relevant info**
+---
 
-- The actual course pages reside in the directory `content`
-- `index.qmd` is the overview page, single lectures are in `content/material/`
-- If you want to set up a blog-based content page, such as separate tutorials, or the statistics recap I did for my research methodology course, they need to get a folder here, as well as an `*.qmd` file that serves as a landing page for the blogs
-  - Example: you have a directory `statrecap`, then the landing page for these blogs is `statrecap.qmd` in the content directory
-  - Within the folders you either create subdirectories with `index.qmd` or `.qmd` files with the respective titles
-  - In the directory for the blog you also put `_metadata.yml` with general info
-  - You must add the directories to the render heading of `_quarto.yml` such that they get rendered
-- References should be in `references/references.bib`
-
-
-Inspired by [this template](https://github.com/jonjoncardoso/quarto-template-for-university-courses).
-
+Built with [Quarto](https://quarto.org), from
+[this template](https://github.com/jonjoncardoso/quarto-template-for-university-courses).
+Content © the authors; see [LICENSE](LICENSE) for the code.

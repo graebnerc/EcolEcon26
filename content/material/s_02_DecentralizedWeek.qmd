@@ -12,7 +12,7 @@ the semester. Two things need to happen:
 
 - **Form your groups and settle on a country group.** Talk to each other, team up,
   and start thinking about which group of countries you want to work on.
-- **Read your reading group's entry text into Ecological Economics.** Each text opens
+- **Choose and read one entry text into Ecological Economics.** Each text opens
   the field from a different angle. We will discuss them together next week, so come
   prepared.
 
@@ -31,9 +31,9 @@ to find and join a group.
 ## Deadline: groups fixed by the third week
 
 Your groups must be **fixed by the third week (30.09.)**. The groups entered in the
-Moodle Group Formation tool at that point are **final**, and **every group must be
-registered there** — a group that is not in the Moodle tool does not count. Please
-make sure your whole group is entered before we meet again.
+Moodle Group Formation tool at that point are **final**, and 
+**every group must be registered there** — a group that is not in the Moodle 
+tool does not count. Please make sure your whole group is entered before we meet again.
 :::
 
 ## Foundational readings: entry texts into Ecological Economics
@@ -42,20 +42,18 @@ Take the time this week to read **one entry text** into Ecological Economics. Ea
 opens the field from a different angle, and we will discuss all of them together next
 week — so come prepared to report on yours.
 
-We split the course into **reading groups**, one text per group. How many groups there
-are depends on the size of the course: normally **three**, with a **fourth** added only
-if the course is large enough to need it. The assignment of reading groups will be
-announced in Session 1; note that these reading groups are **not** the same as your
+We use the Moodle tool to allocate the text. You can sign up for the text of your 
+choice there. Note that the resulting 'text groups' are **not** the same as your
 country-analysis project groups.
 
 The texts are:
 
 - **Text 1 (Reading group 1):** @common2005 — *Ecological Economics: An Introduction*.
 - **Text 2 (Reading group 2):** @spash2018 — *Social Ecological Economics*.
-- **Text 3 (Reading group 3):** @martinezalier2015 — *Taking Stock: The Keystones of
-  Ecological Economics*.
-- **Text 4 (Reading group 4):** announced in Session 1 — this text is only used if the
-  course is large enough to need a fourth group.
+- **Text 3 (Reading group 3):** @martinezalier2015 — *Taking Stock: The Keystones of Ecological Economics*.
+
+Note that the PDFs available via Moodle only contain the excerpts you are 
+expected to read - no need to reed the full books 😉
 
 You may read and discuss the text within your group, but you do not have to — reading
 it individually is perfectly fine.
@@ -74,24 +72,35 @@ position.
 
 #### What does need change?
 
-- **Reading group 1 (Common & Stagl):** Your text talks about making the economy
+- **Text 1 [@common2005]:** Your text talks about making the economy
   "sustainable" — what specific changes does that imply?
-- **Reading group 2 (Spash):** Your text calls for "radical transformation" — what does that
-  mean concretely, versus what Common & Stagl suggest?
+- **Text 2 [@spash2018]:** Your text calls for "radical transformation" — what 
+  does that mean concretely, versus what Common & Stagl suggest?
+- **Text 3 [@martinezalier2015]**: Your text traces the field back to thinkers 
+  like Georgescu-Roegen and Daly - in these two conceptions, what is the core 
+  problem for a sustainable economy?
 
 #### How should the environment be measured?
 
-- **Reading group 2 (Spash):** Your text critiques putting monetary values on ecosystem
-  services. What's wrong with calculating "the value of nature"?
-- **Reading group 1 (Common & Stagl):** Your text is more open to multiple methods — where
-  does monetary valuation fit appropriately?
+- **Text 1 [@common2005]:** Your text is more open to multiple 
+  methods — where does monetary valuation fit appropriately?
+- **Text 2 [@spash2018]:** Your text critiques putting monetary values on 
+  ecosystem services. What's wrong with calculating "the value of nature"?
+- **Text 3 [@martinezalier2015]**: Your text argues that values are 
+  "incommensurable." How does your text argue for this and what does this mean 
+  for how we measure environmental impacts?
 
 #### Who is in power to shape environmental policy?
 
-- **Reading group 2 (Spash):** Your text emphasises corporations, technology lock-in, and
-  imperial modes of living. How visible is this in mainstream environmental policy?
-- **Reading group 1 (Common & Stagl):** Your text is more about analytical frameworks. Do
+- **Text 1 [@common2005]:** Your text is more about analytical frameworks. Do
   these frameworks have politics hidden in them?
+- **Text 2 [@spash2018]:** Your text emphasises corporations, technology lock-in, 
+  and imperial modes of living. How visible is this in mainstream environmental 
+  policy?
+- **Text 3 [@martinezalier2015]**: Your text discusses commons, property rights, 
+  and institutions. What role do these play in determining who controls natural 
+  resources?
+
 
 ::: {.callout-tip}
 ## Connect it to your project
@@ -100,13 +109,6 @@ For every one of these questions, also ask yourself: **What, if anything, do you
 from this for your country analysis?**
 :::
 
-#### Texts 3 and 4
-
-::: {.callout-note}
-## To be added
-
-Guiding questions for @martinezalier2015 and for the fourth text will be added here.
-:::
 
 ## References
 

@@ -1,70 +1,68 @@
 .vscode/
 /.quarto/
 _INBOX
-
 # Example poster assets and working slide folders (not tracked)
 content/material/slides/ExamplePoster/
 content/material/slides/_keynote/
 content/material/slides/_old/
-
+# Revealjs decks: the .qmd source, the theme, the assets and the exported PDF
+# are tracked; the rendered HTML is build output (several MB, rewritten on
+# every render). The figure copies are build output too - see analysis/figures
+# below.
+content/material/slides/*.html
 _freeze/
 .Rproj.user/
-renv/
-.Rprofile
+
+# renv: the infrastructure IS tracked, so a clone can activate the project and
+# restore the pinned versions. renv writes its own renv/.gitignore that
+# excludes the library itself; the entries below only make that explicit.
+#   tracked:  renv.lock, .Rprofile, renv/activate.R, renv/settings.json
+renv/library/
+renv/local/
+renv/cellar/
+renv/lock/
+renv/python/
+renv/sandbox/
+renv/staging/
 
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
 **/.DS_Store
-
 # History files
 .Rhistory
 .Rapp.history
-
 # Session Data files
 .RData
 .RDataTmp
-
 # User-specific files
 .Ruserdata
-
 # Output files from R CMD build
 /*.tar.gz
-
 # Output files from R CMD check
 /*.Rcheck/
-
 # RStudio files
 .Rproj.user/
-
 # produced vignettes
 vignettes/*.html
 vignettes/*.pdf
-
 # OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
 .httr-oauth
-
 # knitr and R markdown default cache directories
 *_cache/
 /cache/
-
 # Temporary files created by R markdown
 *.utf8.md
 *.knit.md
-
 # R Environment Variables
 .Renviron
-
 # pkgdown site
 docs/
-
 # translation temp files
 po/*~
-
 # RStudio Connect folder
 rsconnect/
-
 # Environments
 .env
 .venv
@@ -73,18 +71,19 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-
 # mkdocs documentation
 /site
-
-
 **/*.quarto_ipynb
-
 # Built site — deployed via `quarto publish netlify`, not from git
 _site/
-
 # Downloaded raw data for the figure scripts (recreate with analysis/01_download.R)
 analysis/data-raw/
 
+# Built figures. Git tracks what PRODUCES a figure - the scripts in analysis/
+# and the two hand-downloaded datasets in analysis/data-manual/ - not the
+# figure itself. Rebuild with analysis/02_figures.R (or Abbildungen-bauen.command).
+analysis/figures/
+content/material/slides/figures/
 # Keynote sources belong in content/material/slides/_keynote/, never in the repo root
 /*.key
+_SharedFolder-AK

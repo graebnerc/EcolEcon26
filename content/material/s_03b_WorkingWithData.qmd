@@ -20,8 +20,19 @@ country or region.
 ## 🖥️ Lecture Slides
 
 <!--slides:03b:EcolEcon26_L03b_Data.html-->
-::: {.slides-pending}
-📽️ Slides will be made available after the lecture.
+```{=html}
+<div class="container" style="position: relative;overflow: hidden;width: 100%;padding-top: 56.25%;">
+<iframe src="slides/EcolEcon26_L03b_Data.html" style="position: absolute;top: 0;left: 0;bottom: 0;right: 0;width: 100%;height: 100%;" allowfullscreen loading="lazy"></iframe>
+</div>
+```
+
+[📽️ Open the slides in a separate tab](slides/EcolEcon26_L03b_Data.html){.btn .btn-primary target="_blank"}
+
+::: {.callout-tip}
+## Would you rather have a PDF?
+Open the slides, click the ☰ button in the upper right corner, and choose
+**Tools → PDF Export Mode**. Then print the page (<kbd>Cmd</kbd>/<kbd>Ctrl</kbd> + <kbd>P</kbd>)
+and save it as a PDF.
 :::
 <!--/slides:03b-->
 

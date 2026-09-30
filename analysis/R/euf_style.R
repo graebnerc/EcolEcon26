@@ -26,8 +26,13 @@ suppressPackageStartupMessages({
 # what you see in the PNG is what Keynote shows. Set to "transparent" if you
 # ever need to drop a figure onto a coloured background.
 PAPER_BG <- "white"
-FORMATS  <- c("pdf") # , "png"
-DPI      <- 300
+# Both outputs are vector, so a figure stays sharp at any zoom and in any
+# print: PDF for Keynote, SVG for the revealjs HTML deck, which cannot place a
+# PDF in an <img> but handles SVG natively. Raster PNG is deliberately not
+# written any more - it was only ever a workaround for that <img> limitation,
+# and it went soft as soon as anyone zoomed or projected at high resolution.
+FORMATS  <- c("pdf", "svg")
+DPI      <- 300  # PDF/print
 
 # ---- EUF colours (see assets/styles/custom.scss) ---------------------------
 euf <- list(
@@ -117,9 +122,19 @@ save_euf <- function(plot, file, width = 9, height = 5.4) {
       dev <- if (capabilities("cairo")) grDevices::cairo_pdf else grDevices::pdf
       ggsave(path, plot, width = width, height = height, device = dev, bg = PAPER_BG)
     } else {
-      dev <- if (requireNamespace("ragg", quietly = TRUE)) ragg::agg_png else "png"
-      ggsave(path, plot, width = width, height = height, dpi = DPI,
-             device = dev, bg = PAPER_BG)
+      # grDevices::svg() is the cairo SVG device, and cairo writes every glyph
+      # as an outline path rather than as a <text> element. That matters here:
+      # an SVG referenced from an <img> is an isolated document and cannot see
+      # the Inter that the deck embeds for its own HTML, so a <text>-based SVG
+      # would silently fall back to whatever the viewer happens to have
+      # installed. Outlines make the figure look identical everywhere, with no
+      # font to ship. Use svglite instead only if you need selectable text.
+      if (!capabilities("cairo"))
+        stop("No cairo support in this R build, so SVG output would depend on ",
+             "the viewer's fonts. Install a cairo-capable R, or set FORMATS ",
+             "back to include \"png\".")
+      ggsave(path, plot, width = width, height = height,
+             device = grDevices::svg, bg = PAPER_BG)
     }
   }
   message("  ok  ", stem, " (", paste(FORMATS, collapse = ", "), ")")

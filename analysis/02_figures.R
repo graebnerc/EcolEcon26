@@ -4,8 +4,7 @@
 #  Reads only what 01_download.R wrote into analysis/data-raw/ and writes
 #  PDF + PNG into analysis/figures/. Numbering follows the slide it replaces.
 #
-#  Run:  Rscript analysis/01_download.R && Rscript analysis/02_figures.R
-#  or double-click Abbildungen-bauen.command in the repo root.
+#  Run:  Rscript analysis/01_download.R && Rscript analysis/02_figures.R.
 # ============================================================================
 
 source(file.path("analysis", "R", "euf_style.R"))
@@ -13,22 +12,24 @@ source(file.path("analysis", "R", "euf_style.R"))
 RAW     <- file.path("analysis", "data-raw")
 FIG_DIR <- file.path("analysis", "figures")
 dir.create(FIG_DIR, showWarnings = FALSE, recursive = TRUE)
-rd <- function(f) read_csv(file.path(RAW, f), show_col_types = FALSE, progress = FALSE)
+rd <- function(f) read_csv(file.path(RAW, f), show_col_types = FALSE, 
+                           progress = FALSE)
 
 message("Building figures ...")
 
 # ============================================================================
 # 06 · GDP per capita by world region, long run                    [slide 6]
 # ============================================================================
-mad_regions <- c("Western offshoots (Maddison)"            = "Western offshoots",
-                 "Western Europe (Maddison)"               = "Western Europe",
-                 "Eastern Europe (Maddison)"               = "Eastern Europe",
-                 "Middle East and North Africa (Maddison)" = "Middle East & N. Africa",
-                 "East Asia (Maddison)"                    = "East Asia",
-                 "Latin America (Maddison)"                = "Latin America",
-                 "South and South East Asia (Maddison)"    = "South & South-East Asia",
-                 "Sub Saharan Africa (Maddison)"           = "Sub-Saharan Africa",
-                 "World"                                   = "World")
+mad_regions <- c(
+  "Western offshoots (Maddison)"            = "Western offshoots",
+  "Western Europe (Maddison)"               = "Western Europe",
+  "Eastern Europe (Maddison)"               = "Eastern Europe",
+  "Middle East and North Africa (Maddison)" = "Middle East & N. Africa",
+  "East Asia (Maddison)"                    = "East Asia",
+  "Latin America (Maddison)"                = "Latin America",
+  "South and South East Asia (Maddison)"    = "South & South-East Asia",
+  "Sub Saharan Africa (Maddison)"           = "Sub-Saharan Africa",
+  "World"                                   = "World")
 
 gdp_reg <- rd("gdp_maddison.csv") |>
   filter(entity %in% names(mad_regions), year >= 1820, !is.na(gdp_per_capita)) |>
@@ -55,11 +56,14 @@ p06 <- ggplot(gdp_reg, aes(year, gdp_per_capita, color = region)) +
   scale_x_continuous(breaks = seq(1820, 2020, 40),
                      limits = c(1820, MAXY + 95), expand = expansion(mult = c(0.01, 0))) +
   scale_y_continuous(labels = lbl_dollar) +
-  labs(title = "Income grows, but in a very unequal fashion",
-       subtitle = paste0("GDP per capita by world region, 1820-", MAXY,
-                         " (constant international $, adjusted for price differences)"),
-       x = NULL, y = "GDP per capita",
-       caption = "Source: Maddison Project Database via Our World in Data.") +
+  labs(
+    title = "Income grows, but in a very unequal fashion",
+    subtitle = paste0(
+      "GDP per capita by world region, 1820-", MAXY,
+      " (constant international $, adjusted for price differences)"),
+    x = NULL, y = "GDP per capita",
+    caption = "Source: Maddison Project Database via Our World in Data."
+  ) +
   guides(color = "none") +
   theme_euf_main()
 save_euf(p06, "fig_06_gdp_by_region", width = 10, height = 5.8)
@@ -80,18 +84,22 @@ line_cols <- setNames(c("#7A1E12", "#E0542F", "#C98A00", "#1F8A5B", "#2A72B5"),
 
 p07 <- ggplot(pov, aes(year, share, color = line)) +
   geom_line(linewidth = 1.2) +
-  geom_text_repel(data = pov_end, aes(label = paste0("less than ", line, " a day")),
-                  hjust = 0, direction = "y", nudge_x = 1.5, size = 3.6,
-                  fontface = "bold", family = euf_family, seed = 1,
-                  segment.color = euf$grid, min.segment.length = 0,
-                  xlim = c(PMAX + 1, NA)) +
+  geom_text_repel(
+    data = pov_end, aes(label = paste0("less than ", line, " a day")),
+    hjust = 0, direction = "y", nudge_x = 1.5, size = 3.6,
+    fontface = "bold", family = euf_family, seed = 1,
+    segment.color = euf$grid, min.segment.length = 0,
+    xlim = c(PMAX + 1, NA)
+    ) +
   scale_color_manual(values = line_cols) +
   scale_x_continuous(breaks = seq(1980, PMAX, 5), limits = c(1981, PMAX + 17)) +
   scale_y_continuous(labels = label_percent(scale = 1), limits = c(0, 100),
                      breaks = seq(0, 100, 20)) +
   labs(title = "Income poverty remains a global problem",
-       subtitle = paste0("Share of the world population below different poverty lines, 1981-", PMAX,
-                         "\nLines are in international dollars at 2021 PPP, so they account for inflation and price differences."),
+       subtitle = paste0(
+         "Share of the world population below different poverty lines, 1981-", PMAX,
+         "\nLines are in international dollars at 2021 PPP, so they account",
+         " for inflation and price differences."),
        x = NULL, y = "Share of world population",
        caption = "Source: World Bank Poverty and Inequality Platform (PIP) API.") +
   guides(color = "none") +
@@ -111,13 +119,16 @@ cbn_share <- function() {
 }
 
 cbn <- cbn_share() |> filter(entity == "World") |>
-  transmute(year, share, series = "Extreme poverty, 'cost of basic needs' (Moatsos)")
+  transmute(year, share, 
+            series = "Extreme poverty, 'cost of basic needs' (Moatsos)")
 
 pip300 <- pov |> filter(povline == 3.00) |>
-  transmute(year, share, series = "Below $3.00 a day (World Bank PIP, 2021 PPP)")
+  transmute(year, share, 
+            series = "Below $3.00 a day (World Bank PIP, 2021 PPP)")
 
 pov_long <- bind_rows(cbn, pip300) |>
-  mutate(series = factor(series, levels = c(unique(cbn$series), unique(pip300$series))))
+  mutate(series = factor(
+    series, levels = c(unique(cbn$series), unique(pip300$series))))
 
 long_cols <- setNames(c("#7A1E12", "#2A72B5"), levels(pov_long$series))
 pl_end <- pov_long |> group_by(series) |> slice_max(year, n = 1) |> ungroup()
@@ -125,20 +136,27 @@ pl_end <- pov_long |> group_by(series) |> slice_max(year, n = 1) |> ungroup()
 p08 <- ggplot(pov_long, aes(year, share, color = series)) +
   geom_line(linewidth = 1.3) +
   geom_point(data = pl_end, size = 2.4) +
-  geom_text_repel(data = pl_end, aes(label = sprintf("%.0f%% (%d)", share, year)),
-                  hjust = 0, nudge_x = 6, direction = "y", size = 3.6,
-                  fontface = "bold", family = euf_family, seed = 1,
-                  segment.color = euf$grid, min.segment.length = 0,
-                  show.legend = FALSE) +
+  geom_text_repel(
+    data = pl_end, aes(label = sprintf("%.0f%% (%d)", share, year)),
+    hjust = 0, nudge_x = 6, direction = "y", size = 3.6,
+    fontface = "bold", family = euf_family, seed = 1,
+    segment.color = euf$grid, min.segment.length = 0,
+    show.legend = FALSE
+    ) +
   scale_color_manual(values = long_cols) +
   scale_x_continuous(breaks = seq(1820, 2020, 20),
                      limits = c(1820, max(pov_long$year) + 22)) +
   scale_y_continuous(labels = label_percent(scale = 1), limits = c(0, 100)) +
-  labs(title = "There has been progress with respect to income poverty",
-       subtitle = "Share of the world population living in poverty. Two different measures, two different stories about the level.",
+  labs(
+    title = "There has been progress with respect to income poverty",
+    subtitle = paste0(
+      "Share of the world population living in poverty. ",
+      "Two different measures, two different stories about the level."),
        x = NULL, y = "Share of world population",
-       caption = paste("Sources: Moatsos (2021) via Our World in Data; World Bank PIP.",
-                       "For a critique of the 'poverty is falling' claim see Hickel (2019).")) +
+       caption = paste(
+         "Sources: Moatsos (2021) via Our World in Data; World Bank PIP.",
+         "For a critique of the 'poverty is falling' claim see Hickel (2019).")
+    ) +
   guides(color = guide_legend(nrow = 2)) +
   theme_euf_main()
 save_euf(p08, "fig_08_poverty_longrun", width = 10, height = 5.8)
@@ -175,7 +193,9 @@ pg_end <- pg |> group_by(label) |> slice_max(year, n = 1) |> ungroup()
 
 p09 <- ggplot(pg, aes(gdp, share)) +
   # every region repeated in the background of every panel, as a reference
-  geom_path(data = select(pg, -label), aes(group = 1), color = "#C7CDD2", linewidth = 0.35) +
+  geom_path(
+    data = select(pg, -label), aes(group = 1), 
+    color = "#C7CDD2", linewidth = 0.35) +
   geom_path(color = euf$blue_mid, linewidth = 1.2) +
   geom_point(data = pg_end, color = euf$red, size = 2.2) +
   facet_wrap(~ label, ncol = 3) +
@@ -183,15 +203,21 @@ p09 <- ggplot(pg, aes(gdp, share)) +
                 expand = expansion(mult = 0.08)) +
   scale_y_continuous(labels = label_percent(scale = 1), limits = c(0, 100)) +
   labs(title = "Reducing income poverty due to growth of GDP?!",
-       subtitle = paste0("Share in extreme poverty vs. GDP per capita, ", min(pg$year), "-", max(pg$year), ".",
-                         "\nBlue traces the region named in the panel, red marks its latest year;",
-                         " grey repeats all regions in every panel."),
+       subtitle = paste0(
+         "Share in extreme poverty vs. GDP per capita, ", 
+         min(pg$year), "-", max(pg$year), ".",
+         "\nBlue traces the region named in the panel, red marks its latest year;",
+         " grey repeats all regions in every panel."),
        x = "GDP per capita (log scale)", y = "Share in extreme poverty",
-       caption = paste("Sources: Moatsos (2021), 'cost of basic needs' approach;",
-                       "Maddison Project Database. Both via Our World in Data.")) +
+       caption = paste(
+         "Sources: Moatsos (2021), 'cost of basic needs' approach;",
+         "Maddison Project Database. Both via Our World in Data.")) +
   theme_euf_main() +
   theme(panel.spacing = unit(0.9, "lines"))
-save_euf(p09, "fig_09_poverty_vs_gdp", width = 10, height = 7)
+# 13x7 rather than 11x7: at 3x3 panels the taller shape overflowed the bottom
+# of a 16:9 slide and pushed the caption under the footer rule. Widening rather
+# than shrinking keeps the type at the same absolute size.
+save_euf(p09, "fig_09_poverty_vs_gdp", width = 13, height = 7)
 
 # ============================================================================
 # 10 · GDP correlates with many development indicators             [slide 10]
@@ -224,7 +250,8 @@ panel_scatter <- function(d, ylab, ptitle, log_y = FALSE, ylabels = waiver()) {
     labs(title = paste0(ptitle, " (", yr_range(d), ")"),
          x = "GDP per capita (log scale)", y = ylab) +
     theme_euf(base_size = 12)
-  if (log_y) p + scale_y_log10(labels = ylabels) else p + scale_y_continuous(labels = ylabels)
+  if (log_y) p + scale_y_log10(
+    labels = ylabels) else p + scale_y_continuous(labels = ylabels)
 }
 
 # One shared legend for a patchwork of scatter panels. Collecting guides has to
@@ -232,28 +259,39 @@ panel_scatter <- function(d, ylab, ptitle, log_y = FALSE, ylabels = waiver()) {
 # per nested group.
 combine_panels <- function(..., ncol = 2) {
   wrap_plots(..., ncol = ncol, guides = "collect") &
-    guides(fill = guide_legend(override.aes = list(size = 3.6, alpha = 1), nrow = 1)) &
+    guides(
+      fill = guide_legend(
+        override.aes = list(size = 3.6, alpha = 1), nrow = 1)) &
     theme(legend.position = "bottom")
 }
 
 d_sch <- latest_wide(rd("gdp_schooling.csv"),      "mys__sex_total")
-d_cm  <- rd("gdp_childmortality.csv") |> rename(ny_gdp_pcap_pp_kd = gdp_per_capita) |>
+d_cm  <- rd("gdp_childmortality.csv") |> 
+  rename(ny_gdp_pcap_pp_kd = gdp_per_capita) |>
          latest_wide("child_mortality_rate")
-d_lit <- latest_wide(rd("gdp_literacy.csv"),
-                     "adult_literacy_rate__population_15plus_years__both_sexes__pct__lr_ag15t99")
+d_lit <- latest_wide(
+  rd("gdp_literacy.csv"),
+  "adult_literacy_rate__population_15plus_years__both_sexes__pct__lr_ag15t99")
 d_doc <- latest_wide(rd("gdp_doctors.csv"),        "sh_med_phys_zs")
 
 p10 <- combine_panels(
     panel_scatter(d_sch, "Years", "Average years of schooling"),
-    panel_scatter(d_cm,  "Deaths per 100 live births", "Child mortality", log_y = TRUE),
+    panel_scatter(d_cm,  "Deaths per 100 live births", "Child mortality", 
+                  log_y = TRUE),
     panel_scatter(d_lit, "% of adults", "Adult literacy rate"),
     panel_scatter(d_doc, "per 1,000 people", "Medical doctors")) +
   plot_annotation(
     title = "GDP correlates with many development indicators",
-    subtitle = "One dot = one country, at its most recent observation. All four relationships are strong at low incomes and flatten out at high incomes.",
-    caption = paste("Source: Our World in Data (UNDP, UN IGME, UNESCO, WHO via World Bank)."),
+    subtitle = paste0(
+      "One dot = one country, at its most recent observation. ",
+      "All four relationships are strong at low incomes and flatten out at ",
+      "high incomes."),
+    caption = paste(
+      "Source: Our World in Data (UNDP, UN IGME, UNESCO, WHO via World Bank)."
+      ),
     theme = theme_euf_main())
-save_euf(p10, "fig_10_gdp_indicators", width = 12, height = 8.5)
+
+save_euf(p10, "fig_10_gdp_indicators", width = 14, height = 7.5)
 
 # ============================================================================
 # 11 · Material use is increasing                                  [slide 11]
@@ -266,10 +304,9 @@ IRP_REGIONS <- c("Africa", "Asia + Pacific", "EECCA", "Europe",
                  "Latin America + Caribbean", "North America", "West Asia")
 
 # Preferred source: the hand-downloaded IRP export (domestic EXTRACTION, from
-# 1970). See analysis/data-manual/README-mfa4_export.txt. The checks below make
-# a wrong or partial export fail loudly instead of producing a wrong figure.
+# 1970). See analysis/data-manual/README-mfa4_export.txt. 
 read_irp <- function(path) {
-  # The unit column contains the single letter "t", which readr happily guesses
+  # The unit column contains the single letter "t"
   # as logical TRUE - so the text columns are typed explicitly.
   raw <- read_csv(path, show_col_types = FALSE, progress = FALSE,
                   col_types = cols(Country      = col_character(),
@@ -280,11 +317,14 @@ read_irp <- function(path) {
                                    .default     = col_double()))
 
   need <- c("Country", "Category", "Flow code", "Flow unit")
-  if (!all(need %in% names(raw))) stop("IRP export: missing columns ",
-                                       paste(setdiff(need, names(raw)), collapse = ", "))
+  if (!all(need %in% names(raw))) stop(
+    "IRP export: missing columns ",
+    paste(setdiff(need, names(raw)), collapse = ", "))
   de <- raw |> filter(`Flow code` == "DE")
-  if (!nrow(de))                 stop("IRP export: no rows with Flow code 'DE' (domestic extraction)")
-  if (!all(de$`Flow unit` == "t")) stop("IRP export: expected tonnes ('t') as the flow unit")
+  if (!nrow(de))                 stop(
+    "IRP export: no rows with Flow code 'DE' (domestic extraction)")
+  if (!all(de$`Flow unit` == "t")) stop(
+    "IRP export: expected tonnes ('t') as the flow unit")
   if (!all(names(mat_cols) %in% de$Category))
     stop("IRP export: missing material categories ",
          paste(setdiff(names(mat_cols), de$Category), collapse = ", "))
@@ -306,14 +346,16 @@ read_irp <- function(path) {
               regs  = sum(tonnes[area %in% IRP_REGIONS]))
   if (abs(chk$regs - chk$world) / chk$world > 0.01)
     stop("IRP export: the seven regions sum to ",
-         round(chk$regs / chk$world * 100, 1), "% of the world total - looks like a partial export")
+         round(chk$regs / chk$world * 100, 1), 
+         "% of the world total - looks like a partial export")
   d
 }
 
 if (file.exists(IRP_FILE)) {
   mat      <- read_irp(IRP_FILE)
   mat_what <- "Domestic extraction"
-  mat_src  <- "Source: UN IRP Global Material Flows Database (manual export, see analysis/data-manual/)."
+  mat_src  <- paste0("Source: UN IRP Global Material Flows Database ",
+                     "(manual export, see analysis/data-manual/).")
 } else {
   warning("IRP export not found - falling back to UN SDG consumption data. ",
           "See analysis/data-manual/README-mfa4_export.txt")
@@ -321,12 +363,14 @@ if (file.exists(IRP_FILE)) {
                MEO = "Metal ores", NMM = "Non-metallic minerals")
   mat <- rd("material_dmc.csv") |>
     filter(type %in% names(mat_lbl)) |>
-    group_by(area, year, type) |> summarise(tonnes = max(tonnes), .groups = "drop") |>
+    group_by(area, year, type) |> 
+    summarise(tonnes = max(tonnes), .groups = "drop") |>
     mutate(material = factor(mat_lbl[type], levels = names(mat_cols)),
            area = recode(area, Americas = "North America"))
   IRP_REGIONS <- setdiff(unique(mat$area), "World")
   mat_what <- "Domestic material consumption"
-  mat_src  <- "Source: UN SDG Indicators Database, series EN_MAT_DOMCMPT (fallback - IRP export missing)."
+  mat_src  <- paste0("Source: UN SDG Indicators Database, ",
+                     "series EN_MAT_DOMCMPT (fallback - IRP export missing).")
 }
 
 mat_world <- mat |> filter(area == "World") |>
@@ -371,8 +415,10 @@ p11b <- ggplot(mat_reg, aes(year, share, fill = area)) +
 p11 <- (p11a | p11b) +
   plot_annotation(
     title = "The extraction of raw materials keeps increasing",
-    subtitle = paste0(mat_what, ", ", MATY[1], "-", MATY[2],
-                      ". Left: how much is taken out of the ground worldwide. Right: who takes it out."),
+    subtitle = paste0(
+      mat_what, ", ", MATY[1], "-", MATY[2],
+      ". Left: how much is taken out of the ground worldwide. ",
+      "Right: who takes it out."),
     caption = paste(mat_src),
     theme = theme_euf_main()) &
   theme(legend.position = "bottom")
@@ -386,18 +432,24 @@ d_en <- latest_wide(rd("gdp_energy.csv"), "eg_use_pcap_kg_oe")
 d_co <- rd("gdp_co2.csv") |> rename(ny_gdp_pcap_pp_kd = gdp_per_capita) |>
   latest_wide("emissions_total_per_capita") |> filter(y > 0)
 
-p12a <- panel_scatter(d_en, "kg of oil equivalent per person", "Energy use per capita",
-                      log_y = TRUE, ylabels = lbl_short)
-p12b <- panel_scatter(d_co, "tonnes CO2 per person", "CO2 emissions per capita",
-                      log_y = TRUE, ylabels = label_number(accuracy = 0.1))
+p12a <- panel_scatter(
+  d_en, "kg of oil equivalent per person", "Energy use per capita",
+  log_y = TRUE, ylabels = lbl_short)
+p12b <- panel_scatter(
+  d_co, "tonnes CO2 per person", "CO2 emissions per capita",
+  log_y = TRUE, ylabels = label_number(accuracy = 0.1))
 
 p12 <- combine_panels(p12a, p12b) +
   plot_annotation(
     title = "GDP correlates with energy use and with emissions",
-    subtitle = paste0("One dot = one country, at its most recent observation.\n",
-                      "Both axes are logarithmic, so a straight line means a constant percentage relationship."),
-    caption = paste("Sources: Our World in Data - World Bank (energy) and Global Carbon Project (CO2).",
-                    "Territorial emissions."),
+    subtitle = paste0(
+      "One dot = one country, at its most recent observation.\n",
+      "Both axes are logarithmic, so a straight line means a constant",
+      " percentage relationship."),
+    caption = paste(
+      "Sources: Our World in Data - World Bank (energy) ",
+      "and Global Carbon Project (CO2).",
+      "Territorial emissions."),
     theme = theme_euf_main())
 save_euf(p12, "fig_12_energy_and_emissions", width = 12, height = 5.8)
 
@@ -424,7 +476,8 @@ dec <- rd("gdp_co2_consumption.csv") |>
 dec_end <- dec |> group_by(entity, series) |> slice_max(year, n = 1) |> ungroup()
 
 p14 <- ggplot(dec, aes(year, index, color = series)) +
-  geom_hline(yintercept = 100, color = euf$gray, linewidth = 0.3, linetype = "dotted") +
+  geom_hline(
+    yintercept = 100, color = euf$gray, linewidth = 0.3, linetype = "dotted") +
   geom_line(linewidth = 1.1) +
   geom_text(data = dec_end, aes(label = sprintf("%+.0f%%", index - 100)),
             hjust = -0.15, size = 3.3, fontface = "bold", family = euf_family,
@@ -432,14 +485,19 @@ p14 <- ggplot(dec, aes(year, index, color = series)) +
   # free y: China's +1200% would otherwise flatten every other panel and hide
   # exactly the decoupling this figure is about
   facet_wrap(~ entity, ncol = 3, scales = "free_y") +
-  scale_color_manual(values = c("GDP per capita" = "#2A72B5", "CO2 per capita" = "#E0542F")) +
+  scale_color_manual(
+    values = c("GDP per capita" = "#2A72B5", "CO2 per capita" = "#E0542F")) +
   scale_x_continuous(breaks = seq(BASE, 2020, 10),
                      limits = c(BASE, max(dec$year) + 9)) +
   labs(title = "Some countries achieved decoupling of GDP from emissions",
-       subtitle = paste0("GDP and consumption-based CO2 emissions per capita, index ", BASE,
-                         " = 100.\nEmissions are adjusted for trade, so imported emissions count towards the importer. Note the different y-axes."),
+       subtitle = paste0(
+         "GDP and consumption-based CO2 emissions per capita, index ", BASE,
+         " = 100.\nEmissions are adjusted for trade, so imported emissions ",
+         "count towards the importer. Note the different y-axes."),
        x = NULL, y = paste0("Index (", BASE, " = 100)"),
-       caption = paste("Source: Our World in Data - Global Carbon Project and World Bank.")) +
+       caption = paste(
+         "Source: Our World in Data - Global Carbon Project and World Bank.")
+       ) +
   theme_euf_main() +
   theme(panel.spacing = unit(1.1, "lines"))
 save_euf(p14, "fig_14_decoupling", width = 11, height = 6)
@@ -453,7 +511,12 @@ d_hdi <- latest_wide(rd("gdp_hdi.csv"), "hdi__sex_total")
 # liberties - a composite built deliberately differently from the UNDP index.
 # Joined to Maddison GDP for the same year.
 ahdi_raw <- rd("ahdi_escosura.csv") |> filter(!is.na(ahdi), !is.na(owid_region))
-AY <- ahdi_raw |> count(year) |> filter(n >= 60) |> slice_max(year, n = 1) |> pull(year)
+AY <- ahdi_raw |> 
+  count(year) |> 
+  filter(n >= 60) |> 
+  slice_max(year, n = 1) |> 
+  pull(year)
+
 d_ahdi <- ahdi_raw |> filter(year == AY) |>
   inner_join(rd("gdp_maddison.csv") |> filter(year == AY) |>
                select(code, gdp = gdp_per_capita), by = "code") |>
@@ -472,12 +535,158 @@ p15b <- ggplot(d_ahdi, aes(gdp, y)) +
 p15 <- combine_panels(p15a, p15b) +
   plot_annotation(
     title = "Composite indicators also correlate with GDP",
-    subtitle = paste0("Left: the UNDP index, which contains income itself.\n",
-                      "Right: Prados de la Escosura's Augmented HDI, built from health, education and civil liberties only - the correlation survives."),
-    caption = paste("Sources: Our World in Data - UNDP (HDI); Prados de la Escosura (Augmented HDI);",
-                    "Maddison Project Database (GDP for the right panel)."),
+    subtitle = paste0(
+      "Left: the UNDP index, which contains income itself.\n",
+      "Right: Prados de la Escosura's Augmented HDI, built from health, ",
+      "education and civil liberties only - the correlation survives."),
+    caption = paste(
+      "Sources: Our World in Data - UNDP (HDI);",
+      "Prados de la Escosura (Augmented HDI);",
+      "Maddison Project Database (GDP for the right panel)."),
     theme = theme_euf_main()) &
   theme(legend.position = "bottom")
 save_euf(p15, "fig_15_composite_indicators", width = 12, height = 5.8)
+
+# ============================================================================
+# 16 · No country manages both at once                            [slide 16]
+# ============================================================================
+# Reproduces Fig. 1 of Fanning, O'Neill, Hickel & Roux (2022), "The social
+# shortfall and ecological overshoot of nations", Nature Sustainability 5(1),
+# 26-36, from the authors' own supplementary data, without the country paths.
+#
+# 1992-2015 is the most recent country-level data of this kind in existence.
+# The 2025 "Doughnut 3.0" successor runs to 2021/22 but publishes only global
+# and three-income-cluster aggregates, so it cannot produce a country scatter.
+#
+# The workbook is already normalised, which is what makes this cheap to
+# rebuild: a biophysical value > 1 means the boundary for that year is
+# transgressed, a social value > 1 means the threshold is achieved. Both axes
+# are therefore just counts of values above 1.
+
+# Stored gzipped: 2.7 MB of CSV compress to 0.26 MB, and read_csv() handles
+# .gz transparently, so nothing else in the pipeline has to change.
+FANNING_FILE <- file.path("analysis", "data-manual", "fanning2022_trends.csv.gz")
+FANNING_YEARS <- 1992:2015          # the full observed period
+FANNING_WINDOW <- 2011:2015         # "performance at the end of the period"
+
+fan <- read_csv(FANNING_FILE, show_col_types = FALSE, progress = FALSE,
+                col_types = cols(
+                  country = col_character(), iso3c = col_character(),
+                  year = col_integer(), domain = col_character(),
+                  indicator = col_character(), value = col_double()))
+
+fan_bio <- sort(unique(fan$indicator[fan$domain == "biophysical"]))
+fan_soc <- sort(unique(fan$indicator[fan$domain == "social"]))
+if (length(fan_bio) != 6 || length(fan_soc) != 11)
+  stop("Fanning data: expected 6 biophysical and 11 social indicators, got ",
+       length(fan_bio), " and ", length(fan_soc))
+if (!setequal(unique(fan$year), FANNING_YEARS))
+  stop("Fanning data: expected the years 1992-2015 - BAU projections must not be in this file")
+
+# The selection rule is the paper's own figure caption: "Only countries with
+# data for all six biophysical indicators and at least 9 of the 10 social
+# indicators are shown (N = 91)". Read literally: completeness is required in
+# EVERY year, and the "10" excludes Social Support, which has no observations
+# in the early years. That reading reproduces the published N exactly, which is
+# what the assert below protects.
+FAN_DROP <- "Social Support"
+
+fan_ok <- fan |>
+  mutate(sel_ind = !(domain == "social" & indicator == FAN_DROP)) |>
+  filter(sel_ind) |>
+  group_by(country, year, domain) |>
+  summarise(have = sum(!is.na(value)), .groups = "drop") |>
+  pivot_wider(names_from = domain, values_from = have) |>
+  group_by(country) |>
+  summarise(
+    ok = all(biophysical == 6) && all(social >= 9), .groups = "drop") |>
+  filter(ok) |>
+  pull(country)
+
+if (length(fan_ok) != 91)
+  stop("Fanning data: selection rule gives ", length(fan_ok),
+       " countries, the paper reports 91 - check analysis/data-manual/")
+
+# Positions are the end-of-period average, as in the paper. Thresholds achieved
+# are counted over all 11 social indicators (the paper does the same when it
+# reports "4 out of 11 in 2015"); only the selection above uses 10.
+fan_cnt <- fan |>
+  filter(country %in% fan_ok, year %in% FANNING_WINDOW) |>
+  group_by(country, iso3c, domain, indicator) |>
+  summarise(value = mean(value, na.rm = TRUE), .groups = "drop") |>
+  group_by(country, iso3c, domain) |>
+  summarise(over = sum(value > 1, na.rm = TRUE), .groups = "drop") |>
+  pivot_wider(names_from = domain, values_from = over) |>
+  transmute(country, code = iso3c,
+            transgressed = biophysical,   # boundaries exceeded, 0-6
+            achieved     = social)        # thresholds met, 0-11
+
+# Region and population come from the OWID data 01_download.R already fetches,
+# joined on ISO3 rather than on country names.
+fan_geo <- rd("gdp_hdi.csv") |>
+  filter(year == max(FANNING_WINDOW), !is.na(owid_region)) |>
+  select(entity, code, owid_region, population = population_historical)
+
+onl <- fan_cnt |> left_join(fan_geo, by = "code")
+if (any(is.na(onl$owid_region)))
+  stop("Fanning data: no region match for ",
+       paste(onl$country[is.na(onl$owid_region)], collapse = ", "))
+onl <- only_countries(onl) |> filter(!is.na(population))
+
+# The claim the slide makes, checked rather than asserted.
+GOOD_X <- 0.5   # at most 0 boundaries transgressed
+GOOD_Y <- 9.5   # at least 10 of 11 thresholds achieved
+if (any(onl$transgressed < GOOD_X & onl$achieved > GOOD_Y))
+  stop("Fanning data: the 'safe and just' corner is not empty - the figure's ",
+       "annotation would be wrong")
+
+# Labelled by hand: the two ends of the argument plus the two giants.
+onl_lab <- c("United States", "Germany", "China", "India",
+             "Sri Lanka", "Bangladesh", "Nigeria")
+
+p16 <- ggplot(onl, aes(transgressed, achieved)) +
+  annotate("rect", xmin = -0.45, xmax = GOOD_X, ymin = GOOD_Y, ymax = 11.45,
+           fill = euf$wash, color = euf$blue, linewidth = 0.4, linetype = "22") +
+  # the label sits beside the box, not inside it: the point of the box is that
+  # it is empty, so nothing may be drawn in it
+  annotate("text", x = 0.62, y = 10.5, hjust = 0, vjust = 0.5,
+           label = "A good life for all, within the boundaries.\nNo country is here.",
+           color = euf$blue, fontface = "bold", size = 4.0, lineheight = 1.15,
+           family = euf_family) +
+  # big circles first, so a populous country never hides a small neighbour
+  geom_point(data = ~ arrange(.x, desc(population)),
+             aes(fill = owid_region, size = population),
+             shape = 21, color = "white", stroke = 0.4, alpha = 0.85) +
+  geom_text_repel(data = ~ filter(.x, entity %in% onl_lab), aes(label = entity),
+                  size = 3.4, fontface = "bold", family = euf_family,
+                  color = euf$ink, seed = 3, box.padding = 0.6,
+                  min.segment.length = 0, segment.color = euf$gray) +
+  scale_fill_manual(values = region_pal, drop = FALSE, name = NULL) +
+  # radius on the square root of population, so circle AREA carries population.
+  # The lower bound of the range keeps a country of two million from vanishing.
+  scale_size(range = c(2, 16), trans = "sqrt", guide = "none") +
+  scale_x_continuous(breaks = 0:6, limits = c(-0.5, 6.9)) +
+  scale_y_continuous(breaks = seq(0, 11, 1), limits = c(-0.4, 11.5)) +
+  labs(title = "No country manages both at once",
+       subtitle = paste0(
+         "One circle per country, scaled by population, average ",
+         min(FANNING_WINDOW), "-", max(FANNING_WINDOW), ".\n",
+         "Countries that stay within all six boundaries achieve at most ",
+         "two of the eleven social thresholds."),
+       x = "Number of biophysical boundaries transgressed  →",
+       y = "Number of social thresholds achieved  →",
+       caption = paste(
+         "Source: Fanning, O'Neill, Hickel and Roux (2022),",
+         "The social shortfall and ecological",
+         "overshoot of nations, Nature Sustainability 5(1),",
+         "26-36;\nnational trends data,",
+         "goodlife.leeds.ac.uk. Countries with complete biophysical and",
+         "near-complete social data",
+         "for every year 1992-2015 (N = 91).\nRegion and population:",
+         "Our World in Data.")) +
+  theme_euf_main() +
+  guides(fill = guide_legend(override.aes = list(size = 5))) +
+  theme(panel.grid.major = element_line(color = euf$grid, linewidth = 0.3))
+save_euf(p16, "fig_16_safe_and_just", width = 11, height = 6.6)
 
 message("\nDone. Figures in ", FIG_DIR, "/")

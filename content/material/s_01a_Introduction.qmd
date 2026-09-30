@@ -23,9 +23,7 @@ produce and present at the poster conference at the end of the semester.
 ## 🖥️ Lecture Slides
 
 <!--slides:01a:EcolEcon26_L01a_Introduction.pdf-->
-::: {.slides-pending}
-📽️ Slides will be made available after the lecture.
-:::
+[📽️ Download the slides (PDF)](slides/EcolEcon26_L01a_Introduction.pdf)
 <!--/slides:01a-->
 
 ## 📚 Reading

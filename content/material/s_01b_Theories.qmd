@@ -20,9 +20,7 @@ that we study throughout the course.
 ## 🖥️ Lecture Slides
 
 <!--slides:01b:EcolEcon26_L01b_Theories.pdf-->
-::: {.slides-pending}
-📽️ Slides will be made available after the lecture.
-:::
+[📽️ Download the slides (PDF)](slides/EcolEcon26_L01b_Theories.pdf)
 <!--/slides:01b-->
 
 ## 📚 Follow-up Reading

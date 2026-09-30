@@ -7,6 +7,9 @@ project:
     - "content/index.qmd"
     - "content/material/*.qmd"
     - "content/material/session*/*.qmd"
+    # revealjs decks: they have to be rendered INTO _site, or the iframe that
+    # embeds them on a session page has nothing to point at.
+    - "content/material/slides/*.qmd"
 
 website:
   title: "Ecological Economics" # Title of website shown on top left
@@ -64,8 +67,8 @@ website:
             text: "Session 8 (11.11.): Growth vs. degrowth"
           - href: content/material/s_09_Justice.qmd
             text: "Session 9 (18.11.): Environmental & global justice"
-          - href: content/material/s_10_NonConventional.qmd
-            text: "Session 10 (25.11.): Non-conventional policy instruments"
+          - href: content/material/s_10_HeatTransition.qmd
+            text: "Session 10 (25.11.): The heat transition in Germany: A Case Study"
           - href: content/material/s_11_CountryAnalysis.qmd
             text: "Session 11 (02.12.): Country analysis presentations"
           - href: content/material/s_12_Summary.qmd

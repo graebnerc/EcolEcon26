@@ -1,5 +1,5 @@
 ---
-title: "🗓️ Session 10: Non-conventional policy instruments"
+title: "🗓️ Session 10: The heat transition in Germany: A Case Study"
 date: "2026-11-25"
 date-modified: last-modified
 author:
@@ -12,16 +12,19 @@ author:
     orcid: 0009-0001-6178-4174
     affiliation: EUF
     affiliation-url: https://www.uni-flensburg.de/en/pluralist-economics
+  - name: Katharina Prehn
+    affiliation: EUF
+    affiliation-url: https://www.uni-flensburg.de/en/pluralist-economics
 ---
 
 ## Abstract
 
-This session introduces **non-conventional policy instruments**. In the accompanying group
-work, you address the policy challenges facing your selected country or region.
+This session studies the **heat transition in Germany** as a case study. In the accompanying
+group work, you address the policy challenges facing your selected country or region.
 
 ## 🖥️ Lecture Slides
 
-<!--slides:10:EcolEcon26_L10_NonConventional.pdf-->
+<!--slides:10:EcolEcon26_L10_HeatTransition.pdf-->
 ::: {.slides-pending}
 📽️ Slides will be made available after the lecture.
 :::

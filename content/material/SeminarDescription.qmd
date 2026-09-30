@@ -120,7 +120,7 @@ The two non-teaching Wednesdays (23.09. and 14.10.) are included for completenes
 | 7  | 04.11. | [Application: the European Emissions Trading System (EU ETS)](https://ecological-economics26.netlify.app/content/material/s_07b_ETS.html) | Anna-Katharina |
 | 8  | 11.11. | [The growth vs. degrowth debate](https://ecological-economics26.netlify.app/content/material/s_08_Degrowth.html) | Claudius |
 | 9  | 18.11. | [Environmental and global justice](https://ecological-economics26.netlify.app/content/material/s_09_Justice.html) | Anna-Katharina |
-| 10 | 25.11. | [Non-conventional policy instruments](https://ecological-economics26.netlify.app/content/material/s_10_NonConventional.html) | Anna-Katharina |
+| 10 | 25.11. | [The heat transition in Germany: A Case Study](https://ecological-economics26.netlify.app/content/material/s_10_HeatTransition.html) | Anna-Katharina & Katharina Prehn |
 | 11 | 02.12. | [Work-in-progress country analysis presentations & feedback](https://ecological-economics26.netlify.app/content/material/s_11_CountryAnalysis.html) | Anna-Katharina & Claudius |
 | 12 | 09.12. | [Summary & open questions](https://ecological-economics26.netlify.app/content/material/s_12_Summary.html) | Anna-Katharina & Claudius |
 | 13 | 16.12. | [Poster presentations](https://ecological-economics26.netlify.app/content/material/s_13_Posters.html) | Anna-Katharina & Claudius |

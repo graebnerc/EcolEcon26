@@ -41,7 +41,9 @@ refer to economic, social and/or ecological problems, e.g.:
 
 It is crucial that you justify why you consider these challenges essential and worth
 examining. You also need to be clear about your value system, for example, when arguing that
-the current level of inequality in a country is 'unjust.' Students are then expected to explain
+the current level of inequality in a country is 'unjust.' 
+
+**In a second step**, you are expected to explain
 how the country or region currently addresses the challenges described above and to critically
 analyze the current strategy.
 
@@ -70,7 +72,7 @@ Here are some brief examples (your own analysis should go into much more detail,
   and participation from rural communities. Supportive measures for small actors, such as
   implementing a feed-in tariff and government support for domestic actors, are necessary.
 
-In the **final step**, students are asked to suggest ways to improve or even redirect the
+In the **third and final step**, students are asked to suggest ways to improve or even redirect the
 current strategy. This includes analyzing risks, opportunities, and success factors for the new
 approach.
 

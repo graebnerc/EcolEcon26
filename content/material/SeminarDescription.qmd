@@ -114,7 +114,8 @@ The two non-teaching Wednesdays (23.09. and 14.10.) are included for completenes
 | 4  | 07.10. | [Primer on scientific argumentation](https://ecological-economics26.netlify.app/content/material/s_04a_ScientificArgumentation.html) | Anna-Katharina |
 | 4  | 07.10. | [Primer on poster design and presentation](https://ecological-economics26.netlify.app/content/material/s_04b_PosterDesign.html) | Anna-Katharina |
 |    | 14.10. | *No class* | — |
-| 5  | 21.10. | [Trade, externalization, and environmental conflicts](https://ecological-economics26.netlify.app/content/material/s_05_Trade.html) | Claudius |
+| 5  | 21.10. | [Free trade: blessing or curse?](https://ecological-economics26.netlify.app/content/material/s_05a_Trade.html) | Claudius |
+| 5  | 21.10. | [Environmental conflicts](https://ecological-economics26.netlify.app/content/material/s_05b_Conflicts.html) | Claudius |
 | 6  | 28.10. | [Accounting environmental stressors on the global level](https://ecological-economics26.netlify.app/content/material/s_06_Accounting.html) | Claudius |
 | 7  | 04.11. | [Classical environmental policy instruments](https://ecological-economics26.netlify.app/content/material/s_07a_PolicyInstruments.html) | Claudius |
 | 7  | 04.11. | [Application: the European Emissions Trading System (EU ETS)](https://ecological-economics26.netlify.app/content/material/s_07b_ETS.html) | Anna-Katharina |

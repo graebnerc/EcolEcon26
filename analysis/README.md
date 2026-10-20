@@ -70,6 +70,7 @@ with a clear message if your R build has no cairo support.
 |---|---|
 | `01_download.R` | Downloads every dataset that has an API. Overwrites `data-raw/` on each run. |
 | `02_figures.R` | Builds the figures. Reads only local files, never the network. |
+| `trade_01_download.R`, `trade_02_figures.R` | The same pair for session 5 ("Free trade: blessing or curse?"); see the section below. |
 | `R/euf_style.R` | The EUF palette, the ggplot theme, and the save helper. Shared by every figure. |
 | `data-raw/` | The downloaded CSVs. **Not in git** — recreate them with `01_download.R`. |
 | `data-manual/` | The two datasets that cannot be downloaded by script, each with a `README-*.txt` saying exactly where it came from. **In git**, because there is no way to fetch them automatically. |
@@ -166,3 +167,35 @@ that is only acceptable *with* a second visual cue, which is why every figure
 using it also carries a legend plus either direct labels or facet titles. If
 you change the hues, check them again before using the result — and the same
 advice holds for your own poster.
+
+## Session 5: trade
+
+```bash
+Rscript analysis/trade_01_download.R    # Atlas API, Dataverse, Mendeley, World Bank, OWID
+Rscript analysis/trade_02_figures.R     # fig_L05_*; also copies the SVGs into the deck
+```
+
+| Output | Slide | What it shows |
+|---|---|---|
+| `fig_L05_14_korea_exports` | 14 | South Korea's goods exports by product group, 1962– |
+| `fig_L05_14_korea_gdp` | 14 | GDP per capita, South Korea vs Western Europe, World, Sub-Saharan Africa |
+| `fig_L05_16_solar_learning` | 16 | Solar PV module price vs cumulative capacity |
+| `fig_L05_20_terms_of_trade` | 20 | Grilli-Yang real commodity price index, 1900– |
+| `fig_L05_21_rca_matrix` | 21 | Country x product matrix of RCA >= 1 |
+| `fig_L05_24_product_space` | 24 | The product space |
+| `fig_L05_25_product_space_groups` | 25 | Product space for three country groups |
+
+Things to know:
+
+- **The Atlas data come from its GraphQL API** (`atlas.hks.harvard.edu/api/graphql`),
+  the product-space layout from the Growth Lab's CC0 dataset on Harvard
+  Dataverse (doi:10.7910/DVN/FCDZBN). `ATLAS_YEAR` in the download script sets
+  the year for the matrix and the product spaces.
+- **The terms-of-trade series is spliced.** The Grilli-Yang index ends in 2016;
+  after that it is chained with the World Bank's real non-energy index and drawn
+  dashed. The Pink Sheet URL changes with each monthly release.
+- **Slide 14 quotes two numbers** (GDP multiple, machinery share). The figure
+  script prints them at the end; they are typed into the deck by hand.
+- **Slide 25 shades by share of countries**, not by group-level RCA: summed
+  over a whole continent, exports look far more diversified than those of any
+  member country.

@@ -1,0 +1,286 @@
+---
+title: "Environmental conflicts"
+subtitle: "Where unequal exchange touches the ground — and how to analyse it"
+author: "Prof. Dr. Claudius Gräbner-Radkowitsch"
+institute: "Department of Pluralist Economics, Europa-Universität Flensburg · ICAE, JKU Linz"
+date: "2026-10-21"
+date-format: "D MMMM YYYY"
+bibliography: ../../../references/references.bib
+csl: ../../../references/jepp.csl
+# cited only inside the raw-HTML table of "seven questions", which citeproc
+# cannot see
+nocite: |
+  @scheidel2018, @navas2018
+filters:
+  - produnis/timer
+format:
+  revealjs:
+    width: 1600
+    height: 900
+    margin: 0.07
+    center: false
+    theme: [default, euf-slides.scss]
+    slide-number: true
+    show-slide-number: all
+    menu: true
+    incremental: true
+    auto-stretch: false
+    footer: " "
+    logo: assets/euf-logo.svg
+    embed-resources: true
+    progress: false
+    transition: none
+    history: false
+---
+
+## From unequal exchange to conflicts on the ground
+
+<!-- =========================================================================
+     EcolEcon26 L05b — Environmental conflicts. A 20-minute input after slide
+     26 of L05a (ecologically unequal exchange), followed by 20 minutes of
+     group work with the analysis grid (ConflictAnalysis.qmd, also as PDF).
+     Minute budget, slide by slide:
+       2  unequal exchange → conflicts        2  environmentalism of the poor
+       2  the EJAtlas                         2  global patterns
+       3  the seven questions                 6  worked example (2 slides)
+       1  read the atlas critically           2  task
+     Then 20 min group work and ~15 min reports; the closing two slides
+     (Summary, Suggestion for country analysis) come from L05a and take ~5 min.
+     Justice theory is deliberately left out: that is Session 9.
+     Every empirical claim carries its source on the slide; the figures on
+     the case slides come from Flores Fernández & Alba (2023, open access)
+     and from analysis/trade_02_figures.R (Atlas of Economic Complexity).
+     ========================================================================= -->
+
+
+- Resources flow **net from poorer to richer** countries
+- Per unit of resource exported, rich countries earn **far more**
+- The costs of extraction stay **where the extraction happens**
+
+::: {.grid2 .stats .fragment}
+::: {.cap}
+[11×]{.statnum}
+
+value added per **tonne of raw material** embodied in exports — in **high-income** compared with **lowest-income** countries
+:::
+
+::: {.cap}
+[28×]{.statnum}
+
+value added per **hour of labour** embodied in exports — in **high-income** compared with **lowest-income** countries
+:::
+:::
+
+::: {.arrow .lg .fragment}
+Where those costs are contested: **ecological distribution conflicts**
+:::
+
+::: {.source}
+Dorninger et al. [-@dorninger2021]:
+environmentally extended multi-regional input-output model, 1990–2015;
+net flows of materials, energy, land and labour to high-income countries.
+:::
+
+## The environmentalism of the poor
+
+
+::: {.columns .divided}
+::: {.column width="48%"}
+::: {.colhead}
+Ecological distribution conflicts
+:::
+
+- A growing **social metabolism** needs ever more materials, energy and sinks
+- Conflicts over **who gets** the benefits and **who bears** the burdens
+- Fought out in different **valuation languages**: money, livelihood, territory, sacredness
+:::
+
+::: {.column width="52%"}
+::: {.colhead}
+Three currents of environmentalism
+:::
+
+- **Cult of wilderness**: protect pristine nature
+- **Gospel of eco-efficiency**: green growth, technology, markets
+- **Environmentalism of the poor**: livelihoods, territory and health of those living off the land
+:::
+:::
+
+::: {.source}
+Martínez-Alier [-@martinezalier2002]; Martínez-Alier et al. [-@martinezalier2010];
+Anguelovski & Martínez-Alier [-@anguelovski2014]. Recall Text 3 of Session 2 [@martinezalier2015].
+:::
+
+## The EJAtlas: a global inventory of conflicts
+
+::: {.columns}
+::: {.column width="58%"}
+- **Co-produced** by researchers and activist groups
+- Every case **coded on one template**:
+  - commodity and type of project
+  - actors and mobilising groups
+  - forms of mobilisation, intensity
+  - impacts and outcome
+- For you: **a starting point** for your country
+:::
+
+::: {.column .qrcol width="42%"}
+<img src="img/L05/ejatlas-qr.svg" width="300" alt="QR code linking to ejatlas.org">
+
+**[ejatlas.org](https://ejatlas.org)**
+:::
+:::
+
+::: {.source}
+Temper, Del Bene & Martínez-Alier [-@temper2015].
+:::
+
+## What the cases show globally
+
+::: {.grid3}
+::: {.cap .fragment}
+[Who mobilises]{.caphead}
+
+Mostly vulnerable groups, mostly non-violent protest — in countries of **all income levels**
+:::
+
+::: {.cap .fragment}
+[At what risk]{.caphead}
+
+Criminalisation **20%**, physical violence **18%**, assassinations **13%** of cases
+:::
+
+::: {.cap .fragment}
+[With what effect]{.caphead}
+
+Projects stopped in **11%** of cases — up to **27%** with preventive mobilisation, diverse protest and litigation
+:::
+:::
+
+::: {.keybox .fragment}
+Indigenous Peoples: about **6%** of the world population — involved in at least **34%** of documented conflicts
+:::
+
+::: {.source}
+Percentages of all cases analysed: 2,743 EJAtlas conflicts in Scheidel et al. [-@scheidel2020];
+3,081 EJAtlas conflicts over development projects in Scheidel et al. [-@scheidel2023].
+6% = share of Indigenous Peoples in the world population (6.2%).
+:::
+
+## Analysing a conflict: seven questions
+
+<!-- The order follows Scheidel et al. (2018): why — through whom — how —
+     when; the sub-questions follow the EJAtlas coding template. -->
+
+<table class="econ grid7">
+<thead><tr><th></th><th>Question</th><th>Look for</th><th>Based on</th></tr></thead>
+<tbody>
+<tr class="fragment"><td>1</td><td><strong>What and where?</strong></td><td>Project, commodity, location, timeline</td><td>Temper et al. (2015)</td></tr>
+<tr class="fragment"><td>2</td><td><strong>Why?</strong> The metabolic driver</td><td>Which flow of materials, energy, water or waste — and where does it go?</td><td>Scheidel et al. (2018); Dorninger et al. (2021)</td></tr>
+<tr class="fragment"><td>3</td><td><strong>Through whom?</strong> Actors</td><td>Companies, state, financiers, mobilising groups — who holds power?</td><td>Scheidel et al. (2018); Temper et al. (2015)</td></tr>
+<tr class="fragment"><td>4</td><td><strong>Impacts</strong></td><td>Environmental, health, socio-economic; visible or potential</td><td>Temper et al. (2015); Scheidel et al. (2023)</td></tr>
+<tr class="fragment"><td>5</td><td><strong>How?</strong> Valuation languages</td><td>Money and compensation — or livelihood, territory, sacredness?</td><td>Martínez-Alier (2002); Martínez-Alier et al. (2010)</td></tr>
+<tr class="fragment"><td>6</td><td><strong>When?</strong> Mobilisation and outcome</td><td>Preventive or reactive, forms of protest, repression, result</td><td>Scheidel et al. (2020); Navas et al. (2018)</td></tr>
+<tr class="fragment"><td>7</td><td><strong>So what?</strong> For your poster</td><td>What does the case say about your country's place in world trade?</td><td>L05a; Dorninger et al. (2021)</td></tr>
+</tbody>
+</table>
+
+::: {.source}
+The full grid with sub-questions is on the handout.
+:::
+
+## Worked example: lithium in the Salar de Atacama, Chile
+
+
+::: {.columns style="gap: 1.6em;"}
+::: {.column width="44%"}
+- **What, where:** lithium from brine, pumped from beneath the salt flat; operations since 1984 and 1996
+- **Why:** brine pumped into evaporation ponds, plus freshwater — authorised quotas of about **2,000 l/s** of brine and **260 l/s** of freshwater
+- **Through whom:** SQM and Albemarle, under contracts with the state agency CORFO — on the territories of the **Atacameño/Lickanantay**
+:::
+
+::: {.column width="56%"}
+![](figures/fig_L05b_lithium_trade.svg){width="100%" fig-alt="Chile supplies 73% of world lithium carbonate exports; 72% of Chile's exports go to China, followed by South Korea and Japan"}
+:::
+:::
+
+::: {.source}
+Flores Fernández & Alba [-@floresfernandez2023], quotas: SQM 1,600 + 240 l/s, Albemarle 442 + 23.5 l/s
+(approved, not necessarily extracted). Trade: Atlas of Economic Complexity, 2024.
+:::
+
+## Worked example: lithium in the Salar de Atacama, Chile
+
+
+- **Impacts:** high-Andean wetlands, vegetation and flamingo populations under pressure
+  - **High scientific uncertainty** about the water balance — even after 30 years of extraction
+- **Valuation languages:** state and companies treat brine as a **mineral**; Lickanantay communities insist it is **water** — and water is sacred
+- **Mobilisation and outcome:** objections of Peine, Toconao, Socaire excluded on formal grounds (2006)
+  - Communities' council intervenes against SQM and the 2018 CORFO contract
+  - Excess extraction found — **no sanction**, a compliance plan instead
+- **Not one voice:** resistance *and* negotiation
+  - Substantial direct and indirect economic benefits from the companies
+  - Some members work in the mines
+- **So what:** "green extractivism" — the **colonial shadow of green electromobility**
+
+::: {.source}
+Flores Fernández & Alba [-@floresfernandez2023]; Jerez Henríquez, Garcés & Torres Salinas [-@jerez2021].
+:::
+
+## Read the atlas critically
+
+- It records conflicts that were **documented** — often by those mobilising
+- Coverage is **uneven** across countries — gaps e.g. in Central Asia, Russia, the Pacific
+- **No entry is not no conflict**
+- So: triangulate with **peer-reviewed case studies** and local sources
+
+::: {.arrow .fragment}
+Same lesson as Session 3: the vantage point decides what is in the picture
+:::
+
+::: {.source}
+Temper, Del Bene & Martínez-Alier [-@temper2015]; on data gaps, Scheidel et al. [-@scheidel2023].
+:::
+
+## Your task
+
+::: {.taskbox style="margin-top: 1.0em;"}
+**Country groups** · **20 minutes**
+
+Find the conflicts the EJAtlas lists for **your country** — pick **one**, ideally linked to a major export
+
+Work through the **seven questions** on the handout
+
+Then: a **2-minute report** — question 7 first
+:::
+
+::: {.arrow .fragment}
+No case for your country? Take one linked to its main export commodity
+:::
+
+::: {#task-timer .timer seconds="1200" starton="interaction"}
+:::
+
+## Summary
+
+- Ecologically unequal exchange becomes visible as **ecological distribution conflicts** where resources are extracted
+- **Environmentalism of the poor**: defending livelihoods, territory and health — not a luxury
+- The **EJAtlas**: a global, co-produced inventory — a starting point, to be read critically
+- **Seven questions** for a single conflict: what and where, why, through whom, impacts, how, when — and so what
+- The Atacama case: even **"green" technologies** have extraction frontiers and contested valuation languages
+- Next: **measuring** the embodied flows → Session 6; **justice** → Session 9
+
+## Suggestion for country analysis
+
+<!-- From L05a (slide 29 of the PDF), plus the EJAtlas bullet. -->
+
+- Look at data on trade, and trade openness
+- Complement this with data on export composition, complexity, and the product space
+- What is your country specialized in?
+- What are the outlooks for the future?
+- Which **environmental conflicts** does the EJAtlas list for your country? Analyse one with the **seven questions**
+
+## References {.smaller .scrollable}
+
+::: {#refs}
+:::

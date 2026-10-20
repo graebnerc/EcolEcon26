@@ -1,0 +1,181 @@
+---
+title: "🗓️ Session 5: Free trade — blessing or curse?"
+date: "2026-10-21"
+date-modified: last-modified
+# The page used to be s_05_Trade.html; keep old links working.
+aliases:
+  - s_05_Trade.html
+---
+
+## Abstract
+
+This session examines **trade**: the classical case for free trade, from Smith and Ricardo,
+and the challenges to it — unequal terms of trade, technological lock-in, and the
+**externalization** of ecological costs across countries. The second part of the session
+turns to the **environmental conflicts** this produces on the ground (see
+[Environmental conflicts](s_05b_Conflicts.html)).
+
+## 🖥️ Lecture Slides
+
+<!--slides:05a:EcolEcon26_L05a_Trade.html-->
+::: {.slides-pending}
+📽️ Slides will be made available after the lecture.
+:::
+<!--/slides:05a-->
+
+- Link to the [Tweedback Session](https://tweedback.de/2naq)
+
+::: {.callout-note collapse="true"}
+## The computations behind the trade examples (slides 8–12)
+
+### 1. Adam Smith: absolute advantage (slides 8–9)
+
+**The setup.** Germany 🇩🇪 and Japan 🇯🇵 each have **100 units of labour (L)**. If a
+country uses *all* of its labour on one good, it can produce:
+
+|    | L   | 🥨 (all labour) | 🍱 (all labour) |
+|----|-----|-----------------|-----------------|
+| 🇩🇪 | 100 | 20              | 10              |
+| 🇯🇵 | 100 | 16              | 12              |
+
+From this follows how much labour one unit of each good costs:
+
+- 🇩🇪: one 🥨 costs $100/20 = 5$ L, one 🍱 costs $100/10 = 10$ L.
+- 🇯🇵: one 🥨 costs $100/16 = 6.25$ L, one 🍱 costs $100/12 \approx 8.33$ L.
+
+So 🇩🇪 is absolutely better at pretzels (5 L < 6.25 L) and 🇯🇵 is absolutely better
+at bento (8.33 L < 10 L). Each country has an **absolute advantage** in one good.
+
+**Relative value.** The last column of the slide's left table shows what one pretzel is
+worth *within* each country, measured in bento. In 🇩🇪, the labour for one 🥨 (5 L)
+could instead produce half a 🍱 ($5/10 = 0.5$). In 🇯🇵, the labour for one 🥨 (6.25 L)
+could produce $6.25/8.33 = 0.75$ 🍱. Equivalently, divide the two production
+possibilities: $10/20 = 0.5$ and $12/16 = 0.75$.
+
+**No trade.** Without trade, each country must produce both goods itself. The slide
+assumes that each country splits its labour evenly, 50 L per good:
+
+- 🇩🇪: $50/5 = 10$ 🥨 and $50/10 = 5$ 🍱
+- 🇯🇵: $50/6.25 = 8$ 🥨 and $50/8.33 = 6$ 🍱
+- World (🇺🇳): $10 + 8 = 18$ 🥨 and $5 + 6 = 11$ 🍱
+
+**Trade.** Now each country puts all its labour into the good in which it has the
+absolute advantage: 🇩🇪 makes 20 🥨 and no 🍱; 🇯🇵 makes 12 🍱 and no 🥨. World output
+rises to 20 🥨 and 12 🍱, which is **2 🥨 and 1 🍱 more** than before. Not a single
+extra hour was worked: the gain comes entirely from the division of labour.
+
+|    | No trade 🥨 | No trade 🍱 | Trade 🥨 | Trade 🍱 | Change 🥨 | Change 🍱 |
+|----|-----|-----|-----|-----|-----|-----|
+| 🇩🇪 | 10  | 5   | 20  | 0   | +10 | −5  |
+| 🇯🇵 | 8   | 6   | 0   | 12  | −8  | +6  |
+| 🇺🇳 | 18  | 11  | 20  | 12  | +2  | +1  |
+
+**The corridor in which both win (slide 9).** Specialisation alone leaves 🇩🇪 without
+bento and 🇯🇵 without pretzels, so the two have to exchange. Suppose 🇩🇪 sends $x$ 🥨 to
+🇯🇵 and receives $y$ 🍱 in return. Each country should end up with more of both goods
+than it had without trade:
+
+- 🇩🇪 keeps $20 - x$ 🥨, which must exceed 10, so $x < 10$; and it receives $y$ 🍱, which
+  must exceed 5, so $y > 5$.
+- 🇯🇵 receives $x$ 🥨, which must exceed 8, so $x > 8$; and it keeps $12 - y$ 🍱, which
+  must exceed 6, so $y < 6$.
+
+Hence $8 < x < 10$ and $5 < y < 6$. This is the slide's corridor: 🇩🇪 trades roughly
+8.1–9.9 🥨 for 5.1–5.9 🍱. Within it, the $+2$ 🥨 and $+1$ 🍱 of extra world output are
+shared between the two countries, and *how* they are shared depends on where in the
+corridor the exchange lands.
+
+Note how the corridor lines up with the relative values: the implied exchange rate $y/x$
+lies between $5/10 = 0.5$ and $6/8 = 0.75$ bento per pretzel. That is, the price at which
+the two countries trade must lie between their two domestic relative values. Below 0.5,
+🇩🇪 would be better off making bento itself; above 0.75, the same holds for 🇯🇵 and
+pretzels.
+
+### 2. David Ricardo: comparative advantage (slides 10–12)
+
+**The setup.** This is Ricardo's original example. The table now shows **labour
+requirements**, i.e. how many hours it takes to produce *one* unit:
+
+|        | 🍷 (wine) | 🧥 (cloth) |
+|--------|-----------|------------|
+| 🇵🇹     | 80        | 90         |
+| 🏴󠁧󠁢󠁥󠁮󠁧󠁿     | 120       | 100        |
+
+Portugal needs fewer hours for *both* goods, so it has an absolute advantage in both.
+On Smith's logic there would be no reason to trade. Ricardo shows that there is one
+anyway.
+
+**Who is *relatively* better at what (slide 11).** Compare Portugal's labour
+requirements with England's, good by good:
+
+- 🍷: $80/120 \approx 0.67$, so Portugal needs only 67% of England's labour.
+- 🧥: $90/100 = 0.9$, so Portugal needs 90% of England's labour.
+
+Portugal's lead is much larger in wine, so its comparative advantage lies in 🍷, and
+England's (its *smallest disadvantage*) in 🧥.
+
+**Opportunity costs.** The same result follows from asking what each country gives up.
+The 90 hours Portugal spends on one 🧥 could instead produce $90/80 = 1.125$ 🍷. In
+England, the 100 hours for one 🧥 could instead produce $100/120 \approx 0.833$ 🍷. So
+cloth is relatively cheaper in England (it costs 0.833 🍷 there versus 1.125 🍷 in
+Portugal), and by the same token wine is relatively cheaper in Portugal (it costs
+$80/90 \approx 0.89$ 🧥 there versus $120/100 = 1.2$ 🧥 in England). Note that what
+matters is *not* how many hours a good takes in absolute terms, but how much of the
+other good one must forgo to produce it.
+
+**No trade (slide 12).** Suppose each country produces one unit of each good:
+
+- 🏴󠁧󠁢󠁥󠁮󠁧󠁿: $120 + 100 = 220$ hours for 1 🍷 and 1 🧥
+- 🇵🇹: $80 + 90 = 170$ hours for 1 🍷 and 1 🧥
+- World: 2 🍷 and 2 🧥
+
+**Specialisation.** Now each country uses the same hours only for the good in which it
+has the comparative advantage:
+
+- 🇵🇹: $170/80 = 2.125$ 🍷 and no 🧥
+- 🏴󠁧󠁢󠁥󠁮󠁧󠁿: $220/100 = 2.2$ 🧥 and no 🍷
+- World: 2.125 🍷 and 2.2 🧥, which is **0.125 🍷 and 0.2 🧥 more** with the same total
+  labour of 390 hours.
+
+**The terms of trade.** As in Smith's case, the two countries must exchange. Suppose
+England sends 1 🧥 to Portugal and receives $w$ 🍷 in return:
+
+- 🏴󠁧󠁢󠁥󠁮󠁧󠁿 ends up with $2.2 - 1 = 1.2$ 🧥 and $w$ 🍷. It is better off than before if
+  $w \geq 1$.
+- 🇵🇹 ends up with 1 🧥 and $2.125 - w$ 🍷. It is better off than before if
+  $2.125 - w > 1$, so $w < 1.125$.
+
+Any exchange of 1 🧥 for between 1 and 1.125 🍷 thus leaves both countries with more
+than they had without trade. More generally, the price of cloth must lie between the two
+opportunity costs from above: above England's 0.833 🍷 (otherwise England would rather
+make its own wine) and below Portugal's 1.125 🍷 (otherwise Portugal would rather make
+its own cloth).
+
+**The take-away.** Trade can be mutually beneficial even when one country is more
+productive in everything. What drives the gains are differences in *opportunity costs*,
+not in absolute productivity. This simple narrative remains at the core of many trade
+debates and analyses, which is why it is worth looking closely at the assumptions built
+into it: full employment, labour as the only input, no transport costs, and no
+ecological costs of production or shipping.
+:::
+
+## 📖 Up-front Reading
+
+Please read **before** the session:
+
+- Chapters 18 and 19 in @daly2011.
+
+## 📚 Follow-up Reading
+
+- @kolcava2019
+
+### 🏆 Further readings
+
+- @dosiGrazziMoschella2015
+- @hidalgo2021
+- @hidalgo2023
+
+## References
+
+::: {#refs}
+:::

@@ -1,0 +1,44 @@
+---
+title: "🗓️ Session 5: Environmental conflicts"
+date: "2026-10-21"
+date-modified: last-modified
+---
+
+## Abstract
+
+Where ecologically unequal exchange touches the ground, it is often contested. This second
+part of the session, following [Free trade — blessing or curse?](s_05a_Trade.html), introduces **ecological distribution conflicts** and the **environmentalism of the
+poor**, presents the **Environmental Justice Atlas (EJAtlas)**, and offers a structured way
+of analysing a single conflict — illustrated with lithium mining in the Salar de Atacama,
+Chile. In the group work, you apply it to a conflict in your country.
+
+## 🖥️ Lecture Slides
+
+<!--slides:05b:EcolEcon26_L05b_Conflicts.html-->
+::: {.slides-pending}
+📽️ Slides will be made available after the lecture.
+:::
+<!--/slides:05b-->
+
+## 🧭 Group work
+
+- [**Analysing an environmental conflict: seven questions**](ConflictAnalysis.html)
+  ([PDF](ConflictAnalysis.pdf)) — the grid for the group work, and a template for the
+  conflict section of your poster.
+- [Environmental Justice Atlas](https://ejatlas.org) — filter by your country.
+
+## 📚 Follow-up Reading
+
+- @scheidel2020 — what environmental defenders achieve worldwide, and at what risk.
+
+### 🏆 Further readings
+
+- @temper2015 — how the EJAtlas is built; read this before you cite it.
+- @scheidel2018 — the conceptual framework behind the seven questions.
+- @anguelovski2014 — the environmentalism of the poor, revisited.
+- @floresfernandez2023 (open access) and @jerez2021 — the lithium case from the lecture.
+
+## References
+
+::: {#refs}
+:::

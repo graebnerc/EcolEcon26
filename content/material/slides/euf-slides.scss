@@ -69,12 +69,14 @@ $font-family-monospace: "SFMono-Regular", Menlo, Monaco, Consolas, monospace;
 // master exactly. 26px sits deliberately above it, for legibility from the
 // back of the room. Re-run the overflow check after raising this: the task
 // table and the two-column comparison slides are the first to break.
-$presentation-font-size-root:      26px;
+$presentation-font-size-root:      28px;
 $presentation-heading-font:         $font-family-sans-serif;
 $presentation-heading-color:        $euf-blue;
 $presentation-heading-font-weight:  700;
-$presentation-h1-font-size:         2.4em;
-$presentation-h2-font-size:         1.90em;
+// Raised the body copy from 26px to 28px on 21.10.2026; the title sizes are
+// rescaled so the titles keep their former absolute size (62.4px / 49.4px).
+$presentation-h1-font-size:         2.23em;
+$presentation-h2-font-size:         1.764em;
 $presentation-h3-font-size:         1.0em;
 $presentation-slide-text-align:     left;
 
@@ -99,8 +101,15 @@ $code-block-font-size: 0.55em;
   color: $euf-blue;
   margin-bottom: 1.15em;
 }
+// The !important matters: depending on its position in the list, reveal gave a
+// nested list either no top margin or a full one, so sub-bullets sat at two
+// different distances from their parent bullet.
+.reveal .slides section li > ul,
+.reveal .slides section li > ol {
+  margin-top: 0.9em !important;
+  margin-bottom: 0 !important;
+}
 .reveal .slides section ul ul {
-  margin-top: 0.9em;
   margin-left: 0.9em;
   list-style-type: disc;
 }
@@ -176,7 +185,7 @@ $annotation-size: 0.5em;
   text-align: right;
   left: auto;
   right: 0;
-  bottom: 46px;   // clears the footer rule, the logo and the slide number
+  bottom: 76px;   // clears the footer rule, the logo and the slide number
   max-width: 64%;
 }
 
@@ -244,7 +253,7 @@ $annotation-size: 0.5em;
 }
 .reveal section.divider > h2 {
   color: #FFFFFF;
-  font-size: 2.4em;
+  font-size: 2.23em;
   margin: 0;
 }
 .reveal section.divider > h2::after {
@@ -295,7 +304,7 @@ body:has(section.divider.present) .slide-logo { display: none !important; }
   color: #FFFFFF;
   font-size: 0.86em;
   line-height: 1.45;
-  padding-left: 2.6em;
+  padding-left: 1.6em;
   position: relative;
 }
 .reveal section.quote .quotebody::before {
@@ -518,11 +527,12 @@ body:has(section.divider.present) .slide-logo { display: none !important; }
 .reveal table.tasks td:last-child { color: $euf-gray; }
 
 // ---- footer chrome on content slides ---------------------------------------
+// The rule sits ABOVE logo and slide number (it used to run through them).
 .reveal .footer {
   border-top: 1px solid $euf-rule;
   width: 92% !important;
   left: 4% !important;
-  bottom: 16px !important;
+  bottom: 66px !important;
   height: 0;
   padding: 0;
   text-align: center;
@@ -565,3 +575,284 @@ body:has(section.divider.present) .slide-logo { display: none !important; }
   transition: opacity 0.15s ease;
 }
 .reveal .slide-menu-button a:hover { opacity: 1; }
+
+// ============================================================================
+//  Additions for "Free trade: blessing or curse?" (L05a). Generic enough to be
+//  reused: emoji images, Keynote-style number tables, portraits, the pull-
+//  quote pair, title + subhead, the arrow-and-box conclusion, inline diagrams.
+// ============================================================================
+
+// ---- emoji as images (see emoji-img.lua) -----------------------------------
+.reveal img.emo {
+  display: inline-block;
+  height: 1.05em;
+  width: auto;
+  margin: 0 0.06em;
+  vertical-align: -0.18em;
+}
+
+// ---- subhead under a title -------------------------------------------------
+// "Technologically unequal exchange" / "Economic complexity": the second line
+// is part of the title, not a dek, so it stays blue and bold.
+.reveal .subhead {
+  color: $euf-blue;
+  font-weight: 700;
+  font-size: 1.15em;
+  margin: -0.5em 0 1.1em 0;
+}
+.reveal .subhead p { margin: 0; }
+.reveal section:has(.subhead) > h2 { margin-bottom: 0.5em; }
+.reveal section:has(.subhead) > h2::after { display: none; }
+
+// ---- Keynote-style number tables -------------------------------------------
+// The theme's default table is a text table (rules only). The economics
+// examples are grids of numbers, which read better boxed and centred, exactly
+// as on the Keynote slides. Use raw HTML: <table class="econ">.
+.reveal table.econ {
+  width: auto;
+  font-size: 0.92em;
+  border-collapse: collapse;
+  margin: 0;
+}
+.reveal table.econ th,
+.reveal table.econ td {
+  border: 1px solid $euf-blue !important;
+  padding: 0.28em 0.75em;
+  text-align: center;
+  vertical-align: middle;
+  min-width: 2.6em;
+}
+.reveal table.econ th { font-weight: 700; border-bottom: 1px solid $euf-blue; }
+.reveal table.econ td:first-child,
+.reveal table.econ th:first-child { min-width: 2em; }
+.reveal table.econ .pos { color: $euf-teal; }
+.reveal table.econ .neg { color: $euf-red; }
+
+// ---- portrait with caption -------------------------------------------------
+.reveal .portrait {
+  text-align: center;
+  color: $euf-gray;
+  font-size: 0.62em;
+  line-height: 1.3;
+}
+.reveal .portrait img { display: block; margin: 0 auto 0.4em auto; }
+.reveal .portrait p { margin: 0; }
+
+// ---- the pull-quote pair on a blue slide -----------------------------------
+.reveal section.duel {
+  height: 100%;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  color: #FFFFFF;
+}
+.reveal section.duel .duel-row {
+  display: flex;
+  align-items: center;
+  gap: 1.2em;
+}
+.reveal section.duel .duel-row.top { justify-content: flex-end; text-align: right; }
+.reveal section.duel .duel-quote {
+  font-size: 1.08em;
+  line-height: 1.4;
+  max-width: 70%;
+  position: relative;
+}
+.reveal section.duel .duel-quote::before {
+  content: "\201C";
+  position: absolute;
+  top: -0.38em;
+  left: -0.42em;
+  font-size: 2.6em;
+  line-height: 1;
+  font-weight: 700;
+  color: $euf-quotemark;
+}
+.reveal section.duel .duel-row.top .duel-quote::before { left: -0.42em; }
+.reveal section.duel figure { margin: 0; text-align: center; }
+.reveal section.duel figure img { display: block; }
+.reveal section.duel figcaption {
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.6em;
+  margin-top: 0.4em;
+}
+.reveal section.duel .duel-bolt { text-align: center; margin: 0.3em 0; }
+.reveal section.duel .duel-bolt svg { height: 2.6em; }
+.reveal section.duel::after {
+  content: "EUF · ICAE";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 0.55em;
+  font-weight: 700;
+  color: $euf-steel;
+}
+body:has(section.duel.present) .footer,
+body:has(section.duel.present) .slide-number,
+body:has(section.duel.present) .slide-logo { display: none !important; }
+
+// ---- arrow followed by a box: the conclusion on a worked example -----------
+.reveal .arrowkey {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.0em;
+  margin-top: 1.4em;
+}
+.reveal .arrowkey .bigarrow {
+  font-size: 2.4em;
+  line-height: 1;
+  color: #000000;
+}
+.reveal .arrowkey .bigarrow p { margin: 0; }
+.reveal .arrowkey .keybox { margin: 0; width: auto; max-width: 70%; font-weight: 700; }
+.reveal .arrowkey .keybox.filled {
+  background: $euf-blue;
+  color: #FFFFFF;
+}
+.reveal .arrowkey .keybox.filled strong { color: #FFFFFF; }
+
+// ---- inline SVG diagrams ---------------------------------------------------
+// Drawn inline rather than as <img> so that the labels are set in the deck's
+// own Inter, and so that their colours come from this file.
+.reveal svg.diagram { display: block; margin: 0.4em auto; overflow: visible; }
+.reveal svg.diagram text { font-family: $font-family-sans-serif; }
+.reveal svg.diagram .box { fill: #FFFFFF; stroke: $euf-blue; stroke-width: 2; }
+.reveal svg.diagram .boxlabel { fill: $euf-blue; font-weight: 700; font-size: 22px; }
+.reveal svg.diagram .darkbox { fill: #000000; }
+.reveal svg.diagram .darklabel { fill: #FFFFFF; font-weight: 600; font-size: 22px; }
+.reveal svg.diagram .lbl { fill: $euf-navy; font-size: 19px; }
+.reveal svg.diagram .lbl-teal { fill: $euf-teal; font-weight: 700; font-size: 20px; }
+.reveal svg.diagram .lbl-light { fill: #69AACD; font-weight: 700; font-size: 20px; }
+
+// ---- QR code + tweedback logo column ---------------------------------------
+.reveal .qrcol { text-align: center; }
+.reveal .qrcol img { display: block; margin: 0 auto 0.6em auto; }
+
+// ---- figure that still needs replacing -------------------------------------
+.reveal .placeholder {
+  outline: 3px dashed $euf-red;
+  outline-offset: 4px;
+  position: relative;
+}
+.reveal .placeholder::after {
+  content: "PLACEHOLDER — original image";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  background: $euf-red;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 1px 6px;
+}
+
+// Pandoc writes "I." lists as <ol type="I">, but reveal's own list styles
+// override the attribute and the browser falls back to lower-roman. Wrap such
+// a list in ::: {.upper-roman} to get back what the author typed.
+.reveal .upper-roman ol { list-style-type: upper-roman !important; }
+.reveal .slides section ol > li { margin-bottom: 1.15em; padding-left: 0.3em; }
+
+// ---- a text grid in the boxed table style (L05b, seven questions) --------
+.reveal table.econ.grid7 { font-size: 0.8em; width: 100%; }
+.reveal table.econ.grid7 td,
+.reveal table.econ.grid7 th { text-align: left; padding: 0.35em 0.6em; }
+.reveal table.econ.grid7 td:first-child { text-align: center; font-weight: 700; }
+.reveal table.econ.grid7 td:last-child { color: $euf-gray; }
+
+// ---- arrows that draw themselves -------------------------------------------
+// <g class="fragment draw"> around a <path class="stroke" pathLength="1"> plus
+// an arrowhead (.head) and an optional label. On its click the line is drawn
+// from start to end; head and label fade in once the line has arrived.
+// pathLength="1" normalises the path, so one dasharray value fits any arrow.
+// Speed: $draw-time is how long one arrow takes to draw; head and label
+// fade in just before it arrives.
+$draw-time: 0.6s;
+.reveal svg .draw path.stroke {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset $draw-time ease-in-out;
+}
+.reveal svg .draw.visible path.stroke { stroke-dashoffset: 0; }
+.reveal svg .draw .head,
+.reveal svg .draw text {
+  opacity: 0;
+  transition: opacity 0.25s ease ($draw-time - 0.1s);
+}
+.reveal svg .draw.visible .head,
+.reveal svg .draw.visible text { opacity: 1; }
+// reveal's own fade would hide the line before it is drawn; keep the group
+// itself visible and let the dash do the work.
+.reveal .slides section svg .fragment.draw { opacity: 1; visibility: inherit; }
+
+// ---- click order independent of layout -------------------------------------
+// reveal reveals fragments in document order. To show a figure *between* two
+// bullets while it sits beside the list, put the figure inside the bullet it
+// follows and lift it out of the flow:
+//   ::: {.rel}  ::: {style="width: 52%;"}  - bullet ... ::: {.fragment .abs-right} …
+.reveal .rel { position: relative; }
+.reveal .abs-right { position: absolute; right: 0; }
+.reveal .abs-left  { position: absolute; left: 0; }
+.reveal .abs-right p, .reveal .abs-left p { margin: 0; }
+
+// South Korea: GDP chart top right, bullets below it, the two export charts
+// stacked on the left (they live inside bullet 2, see the deck).
+.reveal .korea { position: relative; height: 640px; }
+.reveal .korea .k-gdp { position: absolute; right: 0; top: 0; width: 49%; }
+.reveal .korea .k-bullets { margin-left: 51%; padding-top: 445px; font-size: 0.85em; }
+.reveal .korea .k-bullets li { margin-bottom: 0.55em !important; }
+.reveal .korea .k-fig1 { position: absolute; left: 0; top: 0; width: 49%; }
+.reveal .korea .k-fig2 { position: absolute; left: 0; top: 345px; width: 49%; }
+.reveal .korea p { margin: 0; }
+
+// ---- labels that move on a click (product space by country group) ----------
+// The container is a fragment that is never hidden; on its click it gets
+// .visible and every label slides from its stack (top right) to its panel.
+.reveal .slides section .fragment.move { opacity: 1; visibility: inherit; }
+.reveal .psgroups { position: relative; margin-top: 2.2em; }
+.reveal .psgroups p { margin: 0; }
+.reveal .pslab {
+  position: absolute;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  color: $euf-blue;
+  font-weight: 700;
+  font-size: 0.9em;
+  transition: left 0.9s ease-in-out, top 0.9s ease-in-out;
+  left: 84%;
+}
+.reveal .pslab.lat { top: -4.6em; }
+.reveal .pslab.afr { top: -3.2em; }
+.reveal .pslab.ind { top: -1.8em; }
+.reveal .move.visible .pslab { top: 0.5em; }
+.reveal .move.visible .pslab.ind { left: 17.5%; }
+.reveal .move.visible .pslab.lat { left: 50%; }
+.reveal .move.visible .pslab.afr { left: 82.5%; }
+
+// ---- stylised product space -------------------------------------------------
+.reveal svg.stylised-ps { margin-top: -0.4em; }
+.reveal svg.stylised-ps .edge { stroke: #C9D1D8; stroke-width: 2; }
+.reveal svg.stylised-ps .hl   { stroke: $euf-blue; stroke-width: 5; }
+.reveal svg.stylised-ps .far  { stroke: $euf-red; stroke-width: 3; stroke-dasharray: 8 7; }
+.reveal svg.stylised-ps .ring { fill: none; stroke: $euf-blue; stroke-width: 3; }
+.reveal svg.stylised-ps .pslbl { fill: $euf-navy; font-size: 20px; }
+.reveal svg.stylised-ps .pscap { fill: $euf-blue; font-size: 22px; font-weight: 700; }
+.reveal svg.stylised-ps .far-cap,
+.reveal svg.stylised-ps .path-cap { fill: $euf-red; }
+.reveal svg.stylised-ps .ps-path { stroke: $euf-red; stroke-width: 5; stroke-linejoin: round; }
+
+// A smaller ring for slides where the timer shares a column with the task.
+.reveal .timer-sm .base-timer { width: 200px; height: 200px; margin-top: 0.4em; }
+
+// ---- big numbers in concept boxes (L05b, Dorninger et al.) -----------------
+.reveal .grid2.stats { margin-top: 1.0em; width: 78%; }
+.reveal .grid2.stats .cap { text-align: center; padding: 0.7em 1.0em; }
+.reveal .statnum {
+  display: block;
+  color: $euf-blue;
+  font-weight: 700;
+  font-size: 2.4em;
+  line-height: 1.05;
+  margin-bottom: 0.15em;
+}

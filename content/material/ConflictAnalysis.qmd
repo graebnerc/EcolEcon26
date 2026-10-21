@@ -1,7 +1,7 @@
 ---
 title: "Analysing an environmental conflict"
-subtitle: "Seven questions for the group work in Session 5 — and for your poster"
-date: "2026-10-21"
+subtitle: "Seven questions for the group work in Session 6 — and for your poster"
+date: "2026-10-28"
 date-modified: last-modified
 nocite: |
   @dorninger2021, @navas2018
@@ -45,7 +45,7 @@ every EJAtlas case is coded [@temper2015], so most answers can be found on the c
 | **4** | **Impacts** | Environmental, health and socio-economic impacts. Visible already, or potential? Which groups are hit hardest? | @temper2015; @scheidel2023 |
 | **5** | **How?** Valuation languages | In which terms do the parties argue — money, jobs, compensation, or livelihood, territory, sacredness, rights? Are some languages excluded from the decision? | @martinezalier2002; @martinezalier2010 |
 | **6** | **When?** Mobilisation and outcome | Preventive, reacting to the project, or demanding reparation? Forms of protest, litigation, intensity. Repression or violence — direct, but also slow or structural? Outcome? | @scheidel2020; @navas2018 |
-| **7** | **So what?** For your poster | What does the case tell you about your country's position in world trade — and about the twin challenge of social provisioning and ecological sustainability? | Session 5a; @dorninger2021 |
+| **7** | **So what?** For your poster | What does the case tell you about your country's position in world trade — and about the twin challenge of social provisioning and ecological sustainability? | Session 5; @dorninger2021 |
 
 **Read the atlas critically.** The EJAtlas lists conflicts that were *documented*, often
 together with those mobilising [@temper2015]. Coverage differs strongly between countries

@@ -42,8 +42,8 @@ format:
 
 <!-- slide 2.
      =========================================================================
-     EcolEcon26 L05a — Free trade: blessing or curse? HTML (revealjs) version
-     of the Keynote deck EcolEcon26_L05a_Trade.key (PDF export of 20.10.2026,
+     EcolEcon26 L05 — Free trade: blessing or curse? HTML (revealjs) version
+     of the Keynote deck EcolEcon26_L05_Trade.key (PDF export of 20.10.2026,
      29 slides). Same content, slide for slide; the slide numbers in the
      comments below are those of the PDF.
 
@@ -60,7 +60,7 @@ format:
      · Diagrams (slides 7, 21, 26) are inline SVG, set in the deck's font.
      · Emoji are Twemoji images (emoji-img.lua), so flags render on Windows.
      · Slides 13 onwards were in the old master; they now use the new one.
-     · Slide 27 is dropped and slides 28-29 live at the end of L05b — see the
+     · Slide 27 is dropped and slides 28-29 live at the end of L06a — see the
        note at the end of this file.
      ========================================================================= -->
 
@@ -479,7 +479,7 @@ This simple narrative continues to be at the core of many trade debates and anal
   following question:
   - Which were the main arguments in favour of free trade?
   - Which of the arguments did you find convincing? Which ones not?
-  - Are factors that you find important, but that were not taken into
+  - Are there factors that you find important, but that were not taken into
     account in the previous arguments in favour of free trade?
 - **Post your results on the chatwall!**
 
@@ -799,15 +799,16 @@ The product space
   - One source: ever broader free trade agreements covering much more than trade
 - Two potential drawbacks of full free trade:
   - Technological lock-in/vicious specialization → This session
-  - Ecological externalisation → conflicts: after the break; accounting: Session 6
+  - Ecological externalisation → conflicts and accounting: Session 6
 - Most debates about trade are intricate → corner solutions unlikely to be best
   - See ambivalent role of environmental protection
 
-<!-- End of L05a. Timing in the session (21.10.): slide 27 of the PDF (second
+<!-- End of L05. Timing in the session (21.10.): slide 27 of the PDF (second
      "Break and discussion", arguments against free trade) is dropped — the
-     group work in L05b replaces it. Slide 28 (Summary) closes this deck;
-     slide 29 (Suggestion for country analysis) moved to the end of L05b,
-     after the conflict reports. -->
+     group work in L06a replaces it. Slide 28 (Summary) closes this deck;
+     slide 29 (Suggestion for country analysis) moved to the end of L06a,
+     after the conflict reports. L06a was planned for after the break but
+     moved to session 6 (28.10.) for lack of time. -->
 
 ## References {.smaller .scrollable}
 

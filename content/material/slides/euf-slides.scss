@@ -577,7 +577,7 @@ body:has(section.divider.present) .slide-logo { display: none !important; }
 .reveal .slide-menu-button a:hover { opacity: 1; }
 
 // ============================================================================
-//  Additions for "Free trade: blessing or curse?" (L05a). Generic enough to be
+//  Additions for "Free trade: blessing or curse?" (L05). Generic enough to be
 //  reused: emoji images, Keynote-style number tables, portraits, the pull-
 //  quote pair, title + subhead, the arrow-and-box conclusion, inline diagrams.
 // ============================================================================
@@ -754,7 +754,7 @@ body:has(section.duel.present) .slide-logo { display: none !important; }
 .reveal .upper-roman ol { list-style-type: upper-roman !important; }
 .reveal .slides section ol > li { margin-bottom: 1.15em; padding-left: 0.3em; }
 
-// ---- a text grid in the boxed table style (L05b, seven questions) --------
+// ---- a text grid in the boxed table style (L06a, seven questions) --------
 .reveal table.econ.grid7 { font-size: 0.8em; width: 100%; }
 .reveal table.econ.grid7 td,
 .reveal table.econ.grid7 th { text-align: left; padding: 0.35em 0.6em; }
@@ -845,7 +845,7 @@ $draw-time: 0.6s;
 // A smaller ring for slides where the timer shares a column with the task.
 .reveal .timer-sm .base-timer { width: 200px; height: 200px; margin-top: 0.4em; }
 
-// ---- big numbers in concept boxes (L05b, Dorninger et al.) -----------------
+// ---- big numbers in concept boxes (L06a, Dorninger et al.) -----------------
 .reveal .grid2.stats { margin-top: 1.0em; width: 78%; }
 .reveal .grid2.stats .cap { text-align: center; padding: 0.7em 1.0em; }
 .reveal .statnum {

@@ -2,26 +2,38 @@
 title: "🗓️ Session 5: Free trade — blessing or curse?"
 date: "2026-10-21"
 date-modified: last-modified
-# The page used to be s_05_Trade.html; keep old links working.
+# The page was s_05a_Trade.html while session 5 had two parts; keep old links
+# working.
 aliases:
-  - s_05_Trade.html
+  - s_05a_Trade.html
 ---
 
 ## Abstract
 
 This session examines **trade**: the classical case for free trade, from Smith and Ricardo,
 and the challenges to it — unequal terms of trade, technological lock-in, and the
-**externalization** of ecological costs across countries. The second part of the session
-turns to the **environmental conflicts** this produces on the ground (see
-[Environmental conflicts](s_05b_Conflicts.html)).
+**externalization** of ecological costs across countries. The **environmental conflicts**
+this produces on the ground were planned for the second half, but moved to the next
+session for lack of time (see [Environmental conflicts](s_06a_Conflicts.html), Session 6).
 
 ## 🖥️ Lecture Slides
 
-<!--slides:05a:EcolEcon26_L05a_Trade.html-->
-::: {.slides-pending}
-📽️ Slides will be made available after the lecture.
+<!--slides:05:EcolEcon26_L05_Trade.html-->
+```{=html}
+<div class="container" style="position: relative;overflow: hidden;width: 100%;padding-top: 56.25%;">
+<iframe src="slides/EcolEcon26_L05_Trade.html" style="position: absolute;top: 0;left: 0;bottom: 0;right: 0;width: 100%;height: 100%;" allowfullscreen loading="lazy"></iframe>
+</div>
+```
+
+[📽️ Open the slides in a separate tab](slides/EcolEcon26_L05_Trade.html){.btn .btn-primary target="_blank"}
+
+::: {.callout-tip}
+## Would you rather have a PDF?
+Open the slides, click the ☰ button in the upper right corner, and choose
+**Tools → PDF Export Mode**. Then print the page (<kbd>Cmd</kbd>/<kbd>Ctrl</kbd> + <kbd>P</kbd>)
+and save it as a PDF.
 :::
-<!--/slides:05a-->
+<!--/slides:05-->
 
 - Link to the [Tweedback Session](https://tweedback.de/2naq)
 
@@ -157,6 +169,80 @@ not in absolute productivity. This simple narrative remains at the core of many 
 debates and analyses, which is why it is worth looking closely at the assumptions built
 into it: full employment, labour as the only input, no transport costs, and no
 ecological costs of production or shipping.
+:::
+
+## 📊 Data sources for the figures
+
+Every data figure in the lecture is built from **openly available data**. The table below
+says where each one comes from, so you can check a claim from the lecture and, more
+importantly, pull the same data for **your own country**.
+
+| Figure in the lecture | Where the data come from |
+|---|---|
+| South Korea: GDP per capita compared with other regions | [Maddison Project Database 2023](https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database) [@bolt2025], via Our World in Data |
+| South Korea: exports by product group, 1962–2024 | [Atlas of Economic Complexity](https://atlas.hks.harvard.edu/) [@growthlabatlas], exports by SITC section |
+| Solar PV module prices vs. cumulative installed capacity | [Our World in Data](https://ourworldindata.org/grapher/solar-pv-prices-vs-cumulative-capacity) [@owidsolar], combining @nemet2009, @farmer2016 and IRENA |
+| Solar PV module production by country, 2024 | @ieapvps2025, as reported by [pv magazine](https://www.pv-magazine.com/2025/10/17/thirty-five-countries-now-operate-gw-scale-annual-pv-markets/). Entered by hand, as there is no download |
+| The terms-of-trade problem | The Grilli-Yang commodity price index, 1900–2016 [@pfaffenzeller2007], in the [version of @geronimi2018](https://doi.org/10.17632/j24mjpcrrz.1), extended with the [World Bank Pink Sheet](https://www.worldbank.org/en/research/commodity-markets) [@worldbank2026pinksheet] |
+| The country–product matrix (who exports what) | [Atlas of Economic Complexity](https://atlas.hks.harvard.edu/), all countries × 4-digit products (HS 1992), 2024 |
+| The product space | Layout and links from the [Growth Lab's product space network](https://doi.org/10.7910/DVN/FCDZBN) [@growthlab2026productspace]; node sizes from Atlas trade data |
+| The product space for three country groups | As above, combined with the Atlas data for every country |
+
+### 🧭 Economic complexity for your country
+
+The figures on technologically unequal exchange all come from the
+[Atlas of Economic Complexity](https://atlas.hks.harvard.edu/) of the Harvard Growth Lab. You
+do not need any code to use it for your poster:
+
+- [**Country profiles**](https://atlas.hks.harvard.edu/countries): start here. For your
+  country they show what it exports, how the export basket has changed since the 1960s, its
+  rank in the Economic Complexity Index, and which products lie "nearby" in the product space.
+- [**Explore**](https://atlas.hks.harvard.edu/explore): treemaps, trade partners, the
+  product space with your country's exports highlighted, and time series, all downloadable.
+- [**Rankings**](https://atlas.hks.harvard.edu/rankings): economic complexity and the
+  Growth Lab's growth projections.
+- [**Data downloads**](https://atlas.hks.harvard.edu/data-downloads): the full underlying
+  data, if you want to compute something yourself.
+
+Three concepts from the lecture that you will meet there:
+
+- **Revealed comparative advantage (RCA).** A country has RCA ≥ 1 in a product if that
+  product makes up a larger share of the country's exports than it does of world trade.
+  The country–product matrix in the lecture marks exactly these cells.
+- **Diversity and ubiquity.** Diversity is the number of products a country exports with
+  RCA ≥ 1; ubiquity is the number of countries that export a given product with RCA ≥ 1. The
+  Economic Complexity Index combines the two [@hidalgo2021].
+- **The product space** links two products when countries tend to export both with RCA ≥ 1.
+  Your country's position in it shows which new products are within reach of the
+  capabilities it already has [@hidalgoetalProductSpace2007].
+
+A caveat to carry into the poster: economic complexity describes the **productive
+structure** of an economy. It tells you nothing about whether that structure is ecologically
+sustainable or socially just. Look at what your country exports *and* at what this
+extraction or production costs on the ground, which is where
+[Session 6](s_06a_Conflicts.html) picks up.
+
+::: {.callout-note}
+## Want to rebuild the figures yourself?
+
+Every figure above is built by two R scripts, `trade_01_download.R` (fetches the data) and
+`trade_02_figures.R` (draws the figures). They live in the
+[`analysis/` folder of the course repository](https://github.com/graebnerc/EcolEcon26/tree/main/analysis),
+together with a [README](https://github.com/graebnerc/EcolEcon26/blob/main/analysis/README.md#session-5-free-trade)
+that explains how to run them and how to fetch Atlas data for **your own country** with a
+few lines of R. You are welcome to change a country, a year or a colour, or to lift the
+approach for your own poster.
+:::
+
+::: {.callout-tip}
+## A suggestion for your country analysis
+
+- Look at data on your country's trade and **trade openness**.
+- Complement this with data on its **export composition**, its **economic complexity**, and its
+  position in the **product space**.
+- What is your country specialised in? How has this changed over time?
+- What are the prospects for the future: which products lie within reach, and how does this relate to the key challenge you have identified?
+- How much does the current policy mix take into account capability constraints?
 :::
 
 ## 📖 Up-front Reading

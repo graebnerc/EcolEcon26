@@ -1,201 +1,274 @@
-# analysis/ — how the lecture figures are made
+# analysis/: the code behind the lecture figures
 
-Every data figure in session 3 ("Working with data") is built here, from openly
-available data, by the two R scripts in this folder. None of them is a
-screenshot. That is deliberate, and it is the point of the session: if you can
-see exactly which series went into a chart and which choices were made along
-the way, you can argue with it.
+All data figures in the lectures are produced by the R scripts in this folder,
+using openly available data. I publish the code so that you can see which
+series went into a chart and which choices I made along the way, and so that
+you can check, change or criticise them.
 
-You are welcome to run all of this yourself. You may well want to — the sources
-used here are the same ones you will need for your own country analysis, and
-the code shows how to get from a raw download to a finished figure.
+You can also use the scripts as a starting point for your own country
+analysis: most of the sources are the ones you will need anyway, and the code
+shows the steps from the raw download to the finished figure.
 
-## Rebuild the figures yourself
+## Overview
 
-You need **R** and a handful of packages:
+| Session | Scripts | Figures | Data sources with links |
+|---|---|---|---|
+| 3: Working with data | `01_download.R`, `02_figures.R` | GDP, poverty, material use, emissions, the doughnut | [session page](https://ecological-economics26.netlify.app/content/material/s_03b_WorkingWithData.html#data-sources-for-the-figures) |
+| 5: Free trade | `trade_01_download.R`, `trade_02_figures.R` | South Korea, solar PV, terms of trade, economic complexity, product space | [session page](https://ecological-economics26.netlify.app/content/material/s_05_Trade.html#data-sources-for-the-figures) |
+
+For each session there are two scripts. The download script fetches the data
+and needs an internet connection. The figure script only reads the downloaded
+files, so once you have the data you can work offline.
+
+If you only need the data and not the code, the session pages linked above are
+the better place to start. They link to every source, and most of these let you
+download the data for your country directly.
+
+## Running the scripts
+
+You need R and the following packages:
 
 ```r
 install.packages(c("tidyverse", "ggrepel", "patchwork", "scales",
-                   "jsonlite", "systemfonts"))
+                   "jsonlite", "systemfonts", "readxl", "curl"))
 ```
 
-Or let the project do it for you. This repository uses
-[renv](https://rstudio.github.io/renv/), so the exact package versions the
-figures were built with are pinned in `renv.lock`. Once you have cloned the
-repository, a single call installs them into a project-local library without
-touching your usual R setup:
+Alternatively, use the package versions I used. They are recorded in
+`renv.lock` via [renv](https://rstudio.github.io/renv/). After cloning the
+repository, run
 
 ```r
 renv::restore()
 ```
 
-Then, from the repository root:
+This installs the packages into a library inside the project and leaves your
+usual R setup alone.
+
+Then run the scripts from the repository root, i.e. the folder that contains
+`analysis/`:
 
 ```bash
-Rscript analysis/01_download.R    # fetch the data into analysis/data-raw/
-Rscript analysis/02_figures.R     # write PDF + SVG into analysis/figures/
+# Session 3
+Rscript analysis/01_download.R          # data go to analysis/data-raw/
+Rscript analysis/02_figures.R           # figures go to analysis/figures/
+
+# Session 5
+Rscript analysis/trade_01_download.R
+Rscript analysis/trade_02_figures.R
 ```
 
-The first script needs an internet connection; the second never touches the
-network, so once you have the data you can rebuild and modify figures offline.
-On macOS you can also just double-click **`Abbildungen-bauen.command`** in the
-repository root, which runs both and opens the output folder.
+In RStudio, open the project file, open a script and click *Source*. Opening
+the project sets the working directory correctly. On macOS, double-clicking
+`Abbildungen-bauen.command` in the repository root runs the two session 3
+scripts and opens the folder with the results.
 
-Change a colour, a year range, a country selection — the scripts are meant to
-be poked at. If something breaks, the error message should tell you what and
-where; several checks are deliberately strict (see below).
+Feel free to change countries, years or colours. Some checks in the scripts
+are strict on purpose (see below); if one of them fails, the error message
+says what went wrong.
 
-## Why there are two output formats
+## Session 3: working with data
 
-| Format | Used for | Why |
+### Figures
+
+| File | Slide | Content |
 |---|---|---|
-| **PDF** | the Keynote deck | vector, with the typeface embedded |
-| **SVG** | the revealjs HTML deck | a browser `<img>` cannot display a PDF, but handles SVG natively |
-
-Both are vector, so a figure stays sharp at any zoom and on any projector.
-There is deliberately no PNG: raster output only ever existed as a workaround
-for that `<img>` limitation, and it went soft the moment anyone zoomed in. The
-setting lives in `FORMATS` in `R/euf_style.R`.
-
-The SVG device is cairo (`grDevices::svg`), which writes every letter as an
-outline path instead of as a text element. That matters: an SVG loaded through
-an `<img>` is an isolated document and cannot see the fonts of the page around
-it, so a text-based SVG would quietly fall back to whatever font your machine
-happens to have. As outlines it looks identical everywhere. `save_euf()` stops
-with a clear message if your R build has no cairo support.
-
-## What is where
-
-| File | What it is |
-|---|---|
-| `01_download.R` | Downloads every dataset that has an API. Overwrites `data-raw/` on each run. |
-| `02_figures.R` | Builds the figures. Reads only local files, never the network. |
-| `trade_01_download.R`, `trade_02_figures.R` | The same pair for session 5 ("Free trade: blessing or curse?"); see the section below. |
-| `R/euf_style.R` | The EUF palette, the ggplot theme, and the save helper. Shared by every figure. |
-| `data-raw/` | The downloaded CSVs. **Not in git** — recreate them with `01_download.R`. |
-| `data-manual/` | The two datasets that cannot be downloaded by script, each with a `README-*.txt` saying exactly where it came from. **In git**, because there is no way to fetch them automatically. |
-| `figures/` | The finished figures. **Not in git** — git tracks what *produces* a figure, not the figure itself. Run `02_figures.R` to get them. |
-
-## Which figure is which
-
-| Output | Slide | What it shows |
-|---|---|---|
-| `fig_06_gdp_by_region` | 6 | GDP per capita by world region, 1820– |
-| `fig_07_poverty_lines` | 7 | Share of the world below five poverty lines |
-| `fig_08_poverty_longrun` | 8 | Long-run poverty, two measures side by side |
-| `fig_09_poverty_vs_gdp` | 9 | Extreme poverty vs GDP per capita, by region |
-| `fig_10_gdp_indicators` | 10 | Schooling, child mortality, literacy, doctors vs GDP |
+| `fig_06_gdp_by_region` | 6 | GDP per capita by world region, since 1820 |
+| `fig_07_poverty_lines` | 7 | Share of the world population below five poverty lines |
+| `fig_08_poverty_longrun` | 8 | Long-run poverty, two measures |
+| `fig_09_poverty_vs_gdp` | 9 | Extreme poverty vs. GDP per capita, by region |
+| `fig_10_gdp_indicators` | 10 | Schooling, child mortality, literacy and doctors vs. GDP |
 | `fig_11_material_use` | 11 | Material extraction by material group and by region |
-| `fig_12_energy_and_emissions` | 12 | Energy use and CO2 vs GDP |
-| `fig_14_decoupling` | 14 | GDP vs consumption-based CO2, six countries |
-| `fig_15_composite_indicators` | 15 | HDI and Augmented HDI vs GDP |
-| `fig_16_safe_and_just` | 16 | Social thresholds achieved vs boundaries transgressed |
+| `fig_12_energy_and_emissions` | 12 | Energy use and CO2 vs. GDP |
+| `fig_14_decoupling` | 14 | GDP vs. consumption-based CO2, six countries |
+| `fig_15_composite_indicators` | 15 | HDI and Augmented HDI vs. GDP |
+| `fig_16_safe_and_just` | 16 | Social thresholds achieved vs. planetary boundaries transgressed |
 
-## Where the data come from
+### Data
 
-The session page lists every source with a clickable link, which is the better
-starting point if you are looking for data for your own country. What follows
-is the same information from the pipeline's side.
+- **Our World in Data** for most series, via its CSV interface
+  (`ourworldindata.org/grapher/<name>.csv`). The original source of each
+  series is given in the caption of the figure.
+- **World Bank Poverty and Inequality Platform (PIP)** for poverty at several
+  poverty lines. PIP also publishes nowcasts for years after the last survey.
+  `02_figures.R` removes them (`estimate_type == "actual"`), so only
+  observed values are plotted.
+- **UN IRP Global Material Flows Database** for material extraction. There is
+  no API for it, so I download `data-manual/mfa4_export.csv` by hand about
+  once a year; `data-manual/README-mfa4_export.txt` describes how.
+  `02_figures.R` checks the file on every run and stops if it is incomplete.
+  If the file is missing, the figure uses the UN SDG database instead (series
+  `EN_MAT_DOMCMPT`, which measures consumption rather than extraction, from
+  2000 onwards), and its subtitle says so.
+- **"A Good Life For All Within Planetary Boundaries"** (University of Leeds)
+  for figure 16, i.e. the supplementary data of Fanning, O'Neill, Hickel and
+  Roux (2022): 148 countries, 6 biophysical and 11 social indicators,
+  1992–2015. The website blocks scripted downloads, so the file is stored in
+  `data-manual/fanning2022_trends.csv.gz` (see
+  `README-fanning2022_trends.txt`). I kept only the historical data and
+  dropped the projections for 2016–2050 contained in the original file.
 
-- **Our World in Data**, through its grapher CSV API
-  (`ourworldindata.org/grapher/<slug>.csv`), for most series. The original
-  source behind each series is named in that figure's own caption.
-- **World Bank PIP API** for poverty at several poverty lines. PIP publishes
-  nowcasts beyond the last survey year; `02_figures.R` drops them via
-  `estimate_type == "actual"`, so no forecast is ever drawn as if it were an
-  observation.
-- **UN IRP Global Material Flows Database** for material extraction. This one
-  has no API — it comes out of an interactive portal — so
-  `data-manual/mfa4_export.csv` is refreshed by hand roughly once a year.
-  `data-manual/README-mfa4_export.txt` says where to get it and what the file
-  has to contain. `02_figures.R` validates it on every run and stops with a
-  specific message if the export is wrong or partial. If the file is missing
-  altogether, the figure falls back to the UN SDG API (`EN_MAT_DOMCMPT`,
-  consumption rather than extraction, 2000 onwards) and says so in its own
-  subtitle — so the build never breaks silently.
-- **Leeds, "A Good Life For All Within Planetary Boundaries"** for figure 16:
-  the supplementary data of Fanning, O'Neill, Hickel and Roux (2022), 148
-  countries, 6 biophysical and 11 social indicators, annually 1992–2015. Also
-  not scriptable — goodlife.leeds.ac.uk answers scripted requests with HTTP 403
-  — so it lives in `data-manual/fanning2022_trends.csv.gz`, described in
-  `README-fanning2022_trends.txt`. Only the historical sheets are kept; the
-  file's 2016–2050 business-as-usual projections are deliberately left out,
-  because projections have no place on a slide that presents itself as data.
+### Caveats
 
-## Three things to know before you trust these figures
+1. The right panel of figure 15 shows the *Augmented* HDI by Prados de la
+   Escosura (health, education and civil liberties). It is not the HDI
+   without its income component, because Our World in Data no longer
+   publishes that series. The argument on the slide holds for both: an index
+   without income still moves closely with income.
+2. The poverty lines have changed. Older material uses lines in 2011 PPP
+   ($1.90, $3.20, ...). The World Bank now uses 2021 PPP, so the lines here
+   are $3.00, $4.20 and $8.30, and the levels cannot be compared with older
+   charts. If you run into such a break in your own data, mention it on the
+   poster.
+3. Figure 16 reproduces the figure in Fanning et al. (2022). Both axes count
+   indicators with normalised values above 1. The country selection follows
+   the rule in the caption of the original figure: complete data for all six
+   biophysical and at least 9 of the 10 social indicators in every year
+   1992–2015 (social support, the eleventh, is not counted). `02_figures.R`
+   checks that this gives the 91 countries reported in the paper and that no
+   country is in the "safe and just" corner. If the data or the rule change,
+   the script stops.
 
-1. **The right-hand panel of figure 15 is the *Augmented* HDI** (Prados de la
-   Escosura: health, education and civil liberties), not the HDI with the
-   income component removed — Our World in Data no longer publishes that exact
-   series. The point survives either way: a composite built without income
-   still tracks income closely.
-2. **The poverty lines changed.** Older versions of this material used 2011-PPP
-   lines ($1.90, $3.20, …). The World Bank has moved to 2021 PPP, so the lines
-   here are $3.00, $4.20 and $8.30. The levels are therefore *not* comparable
-   with older charts you may find elsewhere — which is exactly the kind of
-   thing worth flagging on a poster.
-3. **Figure 16 is a reproduction, not an approximation.** Both axes are simply
-   counts of normalised values above 1, and the country selection is the rule
-   quoted in the source paper's own figure caption: all six biophysical
-   indicators and at least 9 of the 10 social ones — read literally, meaning
-   complete data in *every* year 1992–2015, with Social Support excluded as the
-   eleventh. `02_figures.R` asserts that this yields exactly the 91 countries
-   the paper reports, and separately asserts that the "safe and just" corner it
-   shades really is empty. A corrupted file or a changed rule therefore fails
-   the build instead of quietly producing a wrong-but-plausible figure.
+   There are no more recent country data. The follow-up study by Fanning and
+   Raworth (2025, *Nature*) covers the years up to 2021/22, but only reports
+   global values and three income groups. The country doughnuts on the slide
+   before figure 16 come from an older data release (2018).
 
-   **1992–2015 is as recent as this gets.** The 2025 successor (Fanning and
-   Raworth, "Doughnut of social and planetary boundaries", *Nature*) runs to
-   2021/22, but publishes only global and three-income-cluster aggregates,
-   never named countries — so it cannot produce a per-country scatter. Note
-   also that the country doughnuts on the preceding slide come from the older
-   2018 snapshot, so those two slides are of different vintages.
+## Session 5: free trade
 
-## Typeface
+### Figures
 
-The figures are set in **Inter**, the same face as the slides, so a chart does
-not sit in a different typeface from the text around it. The candidate list is
-`FONT_CANDIDATES` in `R/euf_style.R`; the first one installed on your machine
-wins, and the script prints which it picked. If you have none of them, the
-figures still build — they will just use your device default.
+Slide titles refer to the
+[slides of session 5](https://ecological-economics26.netlify.app/content/material/s_05_Trade.html).
 
-## Colours
+| File | Slide | Content |
+|---|---|---|
+| `fig_L05_14_korea_gdp` | Example case: South Korea | GDP per capita of South Korea, Western Europe, the world and Sub-Saharan Africa, since 1820 |
+| `fig_L05_14_korea_exports_value`, `_share` | Example case: South Korea | South Korea's goods exports by product group since 1962, in US$ and as shares |
+| `fig_L05_16_solar_learning` | Example: China and the solar panel boom | Price of solar modules vs. cumulative installed capacity |
+| `fig_L05_16_pv_production` | Example: China and the solar panel boom | Production of solar modules by country, 2024 |
+| `fig_L05_20_terms_of_trade` | The Terms-of-Trade problem | Grilli-Yang index of real commodity prices, since 1900 |
+| `fig_L05_21_rca_matrix` | Technologically unequal exchange | Countries × products with RCA ≥ 1 |
+| `fig_L05_24_product_space` | The product space | The product space |
+| `fig_L05_25_product_space_groups` | The product space | The product space for three groups of countries (`_blind`: the same without panel titles) |
+| `fig_L06a_lithium_trade` | Environmental conflicts (session 6) | Exporters of lithium carbonate, and the destinations of Chile's exports |
 
-`R/euf_style.R` carries a six-hue categorical palette for the world regions,
-checked for colourblind separation. Its worst adjacent pair sits in the band
-that is only acceptable *with* a second visual cue, which is why every figure
-using it also carries a legend plus either direct labels or facet titles. If
-you change the hues, check them again before using the result — and the same
-advice holds for your own poster.
+The lithium figure is used in session 6, but it is based on the same Atlas
+data and therefore built here.
 
-## Session 5: trade
+### Data
 
-```bash
-Rscript analysis/trade_01_download.R    # Atlas API, Dataverse, Mendeley, World Bank, OWID
-Rscript analysis/trade_02_figures.R     # fig_L05_*; also copies the SVGs into the deck
+- **Atlas of Economic Complexity** (Harvard Growth Lab), via its GraphQL API
+  (`atlas.hks.harvard.edu/api/graphql`): South Korea's exports, and the
+  exports and RCA of all countries for all 4-digit products (HS 1992). The
+  year of the matrix and the product spaces is set by `ATLAS_YEAR` at the top
+  of `trade_01_download.R`. The Atlas data usually end two years before the
+  current year.
+- **Product space**: positions and links of the products come from the Growth
+  Lab's dataset on Harvard Dataverse (doi:10.7910/DVN/FCDZBN, CC0), so the
+  layout is the same as in the Atlas.
+- **Grilli-Yang commodity price index**, 1900–2016, in the version of
+  Geronimi, Anani and Taranco (2018) on Mendeley Data
+  (doi:10.17632/j24mjpcrrz.1).
+- **World Bank Pink Sheet** (real commodity price indices) to extend that
+  index beyond 2016.
+- **Our World in Data** for GDP per capita (Maddison Project Database) and the
+  prices of solar modules.
+- **IEA-PVPS (2025)** for the production of solar modules by country, as
+  reported by pv magazine. I entered these numbers by hand in
+  `data-manual/pv_module_production_2024.csv`; the accompanying
+  `README-pv_module_production_2024.txt` documents the source.
+
+### Caveats
+
+1. The terms-of-trade series combines two sources. The Grilli-Yang index ends
+   in 2016; for later years it is continued with the World Bank's real
+   non-energy index, drawn as a dashed line. The address of the World Bank
+   file changes with every monthly release. If the download fails, update it
+   in `trade_01_download.R`.
+2. The matrix and the product spaces only include countries with goods
+   exports of at least US$ 1 bn, roughly following the Atlas rankings.
+3. In the product spaces for the three country groups, a product is shaded by
+   the share of countries in the group that export it with RCA ≥ 1. Adding up
+   the exports of a whole group would be misleading: a continent as a whole
+   exports a bit of almost everything, even if each of its countries exports
+   only a few products.
+4. The two numbers in the text of the South Korea slide (growth of GDP per
+   capita, share of machinery in exports) are printed by `trade_02_figures.R`
+   at the end of its run. I copied them into the slides by hand.
+
+### Economic complexity for your own country
+
+For most posters, the Atlas website is all you need: start with the
+[country profiles](https://atlas.hks.harvard.edu/countries) and the
+[explore](https://atlas.hks.harvard.edu/explore) section. If you want to work
+with the data in R, the API needs only a few lines. The following example
+downloads Chile's goods exports by product group since 2000:
+
+```r
+library(jsonlite)
+
+query <- '{ countryProductYear(productClass: SITC, servicesClass: unilateral,
+            productLevel: 1, countryId: 152, yearMin: 2000, yearMax: 2100)
+            { year productId exportValue } }'
+
+h <- curl::new_handle()
+curl::handle_setheaders(h, "Content-Type" = "application/json")
+curl::handle_setopt(h, postfields = toJSON(list(query = query), auto_unbox = TRUE))
+res <- curl::curl_fetch_memory("https://atlas.hks.harvard.edu/api/graphql", handle = h)
+exports <- fromJSON(rawToChar(res$content))$data$countryProductYear
 ```
 
-| Output | Slide | What it shows |
-|---|---|---|
-| `fig_L05_14_korea_exports` | 14 | South Korea's goods exports by product group, 1962– |
-| `fig_L05_14_korea_gdp` | 14 | GDP per capita, South Korea vs Western Europe, World, Sub-Saharan Africa |
-| `fig_L05_16_solar_learning` | 16 | Solar PV module price vs cumulative capacity |
-| `fig_L05_20_terms_of_trade` | 20 | Grilli-Yang real commodity price index, 1900– |
-| `fig_L05_21_rca_matrix` | 21 | Country x product matrix of RCA >= 1 |
-| `fig_L05_24_product_space` | 24 | The product space |
-| `fig_L05_25_product_space_groups` | 25 | Product space for three country groups |
+To adapt it:
 
-Things to know:
+- `countryId` is the numeric ISO 3166 code of the country, e.g. 152 for
+  Chile, 410 for South Korea, 276 for Germany, 404 for Kenya. The full list is
+  saved by the download script in `data-raw/atlas_countries.csv`.
+- With `productClass: HS92, productLevel: 4` you get about 1,200 individual
+  products instead of 10 product groups. Adding `exportRca` to the fields in
+  the last line of the query also gives you the revealed comparative
+  advantage of each product.
+- `trade_01_download.R` contains all queries used for the lecture, each with
+  a short comment.
 
-- **The Atlas data come from its GraphQL API** (`atlas.hks.harvard.edu/api/graphql`),
-  the product-space layout from the Growth Lab's CC0 dataset on Harvard
-  Dataverse (doi:10.7910/DVN/FCDZBN). `ATLAS_YEAR` in the download script sets
-  the year for the matrix and the product spaces.
-- **The terms-of-trade series is spliced.** The Grilli-Yang index ends in 2016;
-  after that it is chained with the World Bank's real non-energy index and drawn
-  dashed. The Pink Sheet URL changes with each monthly release.
-- **Slide 14 quotes two numbers** (GDP multiple, machinery share). The figure
-  script prints them at the end; they are typed into the deck by hand.
-- **Slide 25 shades by share of countries**, not by group-level RCA: summed
-  over a whole continent, exports look far more diversified than those of any
-  member country.
+## Technical notes
+
+This section is not needed for running the scripts.
+
+### Files
+
+| File | Content |
+|---|---|
+| `01_download.R`, `02_figures.R` | Session 3: download the data, build the figures. |
+| `trade_01_download.R`, `trade_02_figures.R` | Session 5: download the data, build the figures. |
+| `R/euf_style.R` | Colours, ggplot theme and the function that saves the figures. Used by all scripts. |
+| `data-raw/` | The downloaded data. Not in git; the download scripts recreate them and overwrite existing files. |
+| `data-manual/` | Data that cannot be downloaded by script, each with a `README-*.txt` describing the source. These are in git. |
+| `figures/` | The finished figures. Not in git; the figure scripts recreate them. |
+
+### Output formats
+
+Each figure is saved as PDF (for the Keynote slides) and as SVG (for the HTML
+slides, since browsers cannot show a PDF as an image). Both are vector
+formats and stay sharp at any size. The formats are set in `FORMATS` in
+`R/euf_style.R`.
+
+The SVG files are written with the cairo device (`grDevices::svg`), which
+stores letters as shapes rather than as text. An SVG embedded as an image
+cannot use the fonts of the surrounding web page, so otherwise the labels
+would be shown in whatever font the viewer's computer has. `save_euf()` stops
+with a message if your R installation lacks cairo support.
+
+### Font
+
+The figures use Inter, the font of the slides. `FONT_CANDIDATES` in
+`R/euf_style.R` lists the fonts the scripts look for; the first one installed
+on your computer is used, and the script tells you which. If none is
+installed, R's default font is used.
+
+### Colours
+
+`R/euf_style.R` defines six colours for the world regions, chosen to be
+distinguishable for people with colour vision deficiencies. Two neighbouring
+colours are still fairly close, so every figure that uses them also has a
+legend and either direct labels or panel titles. If you change the colours,
+check them again, and the same applies to the colours on your poster.

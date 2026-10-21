@@ -407,7 +407,7 @@ message("  slide 25  facet labels: ", paste(levels(grp_share$group), collapse = 
 save_l05(p25, "fig_L05_25_product_space_groups", width = 12, height = 4.8)
 
 # ============================================================================
-# L05b · Lithium carbonate: Chile in world trade                  [L05b case]
+# L06a · Lithium carbonate: Chile in world trade                  [L06a case]
 # ============================================================================
 cname <- setNames(countries$nameShortEn, countries$countryId)
 top_share <- function(df, id, k = 5) {
@@ -443,7 +443,7 @@ p_li <- (li_bar(li_exp, "Chile") | li_bar(li_dst, "China")) +
     caption = paste0("Chile's exports: US$ ", round(li_chl_total / 1e9, 1), " bn.\n",
                      "Source: Harvard Growth Lab, Atlas of Economic Complexity."),
     theme = theme_euf_main(title_size = 15))
-save_l05(p_li, "fig_L05b_lithium_trade", width = 7.6, height = 3.6)
+save_l05(p_li, "fig_L06a_lithium_trade", width = 7.6, height = 3.6)
 
 # ============================================================================
 # Numbers quoted in the slide text
@@ -455,7 +455,7 @@ message(sprintf("  slide 14  machinery & vehicles: %.1f%% of goods exports in %d
                 100 * mach_first, KOR_FIRST, 100 * mach_last, KOR_LAST))
 message(sprintf("  slide 20  linear trend %d-%d: %.2f%% of the mean index per year",
                 min(gy$year), GY_LAST, trend_pct))
-message(sprintf("  L05b      Chile: %.0f%% of world lithium-carbonate exports; %.0f%% of them to China (%d)",
+message(sprintf("  L06a      Chile: %.0f%% of world lithium-carbonate exports; %.0f%% of them to China (%d)",
                 100 * li_exp$share[li_exp$name == "Chile"],
                 100 * li_dst$share[li_dst$name == "China"], ATLAS_YEAR))
 message("\nDone. Figures in ", FIG_DIR, "/ and ", SLIDE_DIR, "/")

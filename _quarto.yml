@@ -53,14 +53,14 @@ website:
                 text: "Primer on scientific argumentation"
               - href: content/material/s_04b_PosterDesign.qmd
                 text: "Primer on poster design and presentation"
-          - section: "Session 5 (21.10.): Trade & environmental conflicts"
+          - href: content/material/s_05_Trade.qmd
+            text: "Session 5 (21.10.): Free trade: blessing or curse?"
+          - section: "Session 6 (28.10.): Environmental conflicts & accounting"
             contents:
-              - href: content/material/s_05a_Trade.qmd
-                text: "Free trade: blessing or curse?"
-              - href: content/material/s_05b_Conflicts.qmd
+              - href: content/material/s_06a_Conflicts.qmd
                 text: "Environmental conflicts"
-          - href: content/material/s_06_Accounting.qmd
-            text: "Session 6 (28.10.): Accounting environmental stressors"
+              - href: content/material/s_06b_Accounting.qmd
+                text: "Accounting environmental stressors"
           - section: "Session 7 (04.11.): Policy instruments & EU ETS"
             contents:
               - href: content/material/s_07a_PolicyInstruments.qmd

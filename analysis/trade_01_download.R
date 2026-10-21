@@ -91,7 +91,8 @@ write_csv(cpy, file.path(RAW, "atlas_cpy_hs92.csv"))
 message("      -> atlas_cpy_hs92.csv (", format(nrow(cpy), big.mark = ","), " rows)")
 
 # Lithium carbonate (HS92 283691, Atlas product id 6009) for the Atacama case
-# in L05b: who exports it, and where Chile's (country 152) exports go.
+# in L06a (environmental conflicts, session 6): who exports it, and where
+# Chile's (country 152) exports go.
 message("ATLAS lithium carbonate: exporters and Chile's destinations, ", ATLAS_YEAR)
 li_world <- atlas(paste0(
   "{ countryProductYear(productClass: HS92, productLevel: 6, productId: 6009, ",

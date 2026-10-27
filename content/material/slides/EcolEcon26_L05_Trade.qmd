@@ -7,9 +7,7 @@ date: "2026-10-21"
 date-format: "D MMMM YYYY"
 bibliography: ../../../references/references.bib
 csl: ../../../references/jepp.csl
-# The slides carry their sources in the figure captions rather than as
-# citations, so the reference list is built from nocite. The two opening
-# quotes (Hickel, Bhagwati) still need their sources.
+# Sources sit in the figure captions, not in citations: hence nocite.
 nocite: |
   @smith1776, @ricardo1817, @prebisch1950, @singer1950, @pfaffenzeller2007,
   @geronimi2018, @worldbank2026pinksheet, @bolt2025, @growthlabatlas,
@@ -40,30 +38,6 @@ format:
 
 ## {.duel background-color="#00395B" data-menu-title="Two views on free trade"}
 
-<!-- slide 2.
-     =========================================================================
-     EcolEcon26 L05 — Free trade: blessing or curse? HTML (revealjs) version
-     of the Keynote deck EcolEcon26_L05_Trade.key (PDF export of 20.10.2026,
-     29 slides). Same content, slide for slide; the slide numbers in the
-     comments below are those of the PDF.
-
-     WHAT IS DIFFERENT FROM THE KEYNOTE
-     · Data figures are rebuilt from current data by
-       analysis/trade_01_download.R + analysis/trade_02_figures.R (see the
-       README there). That covers slides 14 (South Korea, both charts), 16
-       (solar learning curve), 20 (commodity terms of trade), 21 (country-
-       product matrix), 24 and 25 (product space). The numbers quoted in the
-       text of slide 14 come from the same run — the figure script prints
-       them; re-check them after every data refresh.
-     · Slide 16, right-hand chart (IEA, solar PV module production by country)
-       is still the image from the Keynote, marked PLACEHOLDER.
-     · Diagrams (slides 7, 21, 26) are inline SVG, set in the deck's font.
-     · Emoji are Twemoji images (emoji-img.lua), so flags render on Windows.
-     · Slides 13 onwards were in the old master; they now use the new one.
-     · Slide 27 is dropped and slides 28-29 live at the end of L06a — see the
-       note at the end of this file.
-     ========================================================================= -->
-
 ::: {.duel-row .top}
 ::: {.duel-quote}
 The ideology of "free trade" has now overplayed its hand; it has exposed
@@ -93,8 +67,6 @@ instead of handicapping them."
 
 ## Starting activity
 
-<!-- slide 3 -->
-
 ::: {.columns}
 ::: {.column width="62%"}
 - Sit together with 2-3 neighbours and discuss for about 5 minutes the
@@ -115,8 +87,6 @@ instead of handicapping them."
 
 ## Learning goals
 
-<!-- slide 4 -->
-
 ::: {.upper-roman}
 I.  Understand the classical justification of **free trade** and its historical origin
 II. Learn about **challenges** to the free trade narrative
@@ -131,8 +101,6 @@ III. Think about the extent to which this is relevant for the **(trade) policy**
 
 ## Mercantilism
 
-<!-- slide 6 -->
-
 - 16^th^–18^th^ centuries: **absolutist states** and **hardly any international cooperation**.
 - Basic idea: "The best for us, the worst for others."
 - Mercantilism had its explicit theory of foreign trade
@@ -143,10 +111,6 @@ III. Think about the extent to which this is relevant for the **(trade) policy**
   - The **environment** played no role in this debate
 
 ## Mercantilism: the role of the colonies
-
-<!-- slide 7. The two boxes come with the second bullet; each arrow is then
-     drawn on its own click, from its start to its end (class "draw", see
-     euf-slides.scss), and its label fades in when the line has arrived. -->
 
 - Sole purpose of colonies: serve interest of the colonizers
 - Implications for 'trade policy':
@@ -174,11 +138,7 @@ III. Think about the extent to which this is relevant for the **(trade) policy**
 
 ## Adam Smith: the theory of absolute advantage {auto-animate="true" data-auto-animate-id="smith"}
 
-<!-- slide 8. Click order (explicit fragment indices, because the table cells
-     have to be revealed by column, not by row): the four bullets (1-4), the
-     left table (5), its relative values (6), then the right table (from 7),
-     column group by column group, one country per click (7-15). Slides 8 and 9
-     auto-animate into each other: the right table slides to the left. -->
+<!-- Explicit fragment indices: the right table is revealed by column, not by row. -->
 
 ::: {.columns}
 ::: {.column width="80%"}
@@ -241,8 +201,6 @@ Adam Smith<br>(1723-1790)
 
 ## Adam Smith: the theory of absolute advantage {auto-animate="true" data-auto-animate-id="smith"}
 
-<!-- slide 9 -->
-
 ::: {.columns}
 ::: {.column width="80%"}
 ::: {.nonincremental}
@@ -291,8 +249,6 @@ Corridor in which both would win
 
 ## David Ricardo: the theory of *comparative* advantage {auto-animate="true" data-auto-animate-id="ricardo"}
 
-<!-- slide 10. The table auto-animates into its place on slide 11. -->
-
 ::: {.columns style="align-items: center;"}
 ::: {.column width="58%"}
 - Ricardo also one of the most famous economists of the classical age
@@ -329,8 +285,6 @@ David Ricardo<br>(1772-1823)
 
 ## Comparative advantage: one example {auto-animate="true" data-auto-animate-id="ricardo"}
 
-<!-- slide 11 -->
-
 ::: {.columns style="gap: 1.6em;"}
 ::: {.column width="66%"}
 - Relation of input costs is $80/120 = 0.67$ for 🍷 and $90/100 = 0.9$ for 🧥
@@ -356,8 +310,6 @@ David Ricardo<br>(1772-1823)
 :::
 
 ## Comparative advantage: one example
-
-<!-- slide 12. Deliberately not auto-animated: the table just stays put. -->
 
 ::: {.columns style="gap: 1.6em;"}
 ::: {.column width="66%"}
@@ -395,8 +347,6 @@ This simple narrative continues to be at the core of many trade debates and anal
 
 ## Other advantages of free(er) trade
 
-<!-- slide 13 -->
-
 - Numerous other arguments for free(r) trade, especially in economics:
   - Exploitation of **economies of scale** and corresponding efficiency gains
   - Increasing the **variety of products** that consumers can buy.
@@ -409,12 +359,7 @@ This simple narrative continues to be at the core of many trade debates and anal
 
 ## Example case: South Korea
 
-<!-- slide 14. All charts and the two numbers in the bullets come from
-     analysis/trade_02_figures.R; the Keynote said "more than 27 times" and
-     "1.4% in 1962, and is 47% of exports in 2024".
-     Click order follows the DOM: GDP chart, bullet 1, bullet 2, export
-     values, export shares, bullet 3, bullet 4. The two export charts sit
-     inside bullet 2 but are positioned absolutely on the left. -->
+<!-- The two export charts sit inside bullet 2, positioned absolutely on the left. -->
 
 ::: {.korea}
 ::: {.fragment .k-gdp}
@@ -439,8 +384,6 @@ This simple narrative continues to be at the core of many trade debates and anal
 
 ## Trade and the environment
 
-<!-- slide 15 -->
-
 - **Potential synergies:**
   - Access to green technologies (solar panels, wind turbines)
   - Export revenues fund conservation
@@ -451,10 +394,6 @@ This simple narrative continues to be at the core of many trade debates and anal
   - Supportive institutions and policies
 
 ## Example: China and the solar panel boom
-
-<!-- slide 16. Both charts are ours now: left from Our World in Data, right
-     hand-entered from IEA-PVPS (2025), see
-     analysis/data-manual/README-pv_module_production_2024.txt. -->
 
 ::: {.columns style="gap: 1.4em; align-items: center;"}
 ::: {.column .fragment width="52%"}
@@ -470,8 +409,6 @@ This simple narrative continues to be at the core of many trade debates and anal
   cheaper and cheaper PV panels
 
 ## Break and discussion
-
-<!-- slide 17 -->
 
 ::: {.columns}
 ::: {.column width="60%"}
@@ -502,8 +439,6 @@ This simple narrative continues to be at the core of many trade debates and anal
 
 ## A nuanced view on trade
 
-<!-- slide 19 -->
-
 - **What you export matters**
   - For development
   - For the environment
@@ -516,9 +451,7 @@ This simple narrative continues to be at the core of many trade debates and anal
 
 ## The Terms-of-Trade problem
 
-<!-- slide 20. The chart is rebuilt: Grilli-Yang index 1900-2016, extended
-     to the latest Pink Sheet year. It sits inside the bullet after which it
-     appears, positioned absolutely on the right. -->
+<!-- The chart sits inside the bullet it follows, positioned absolutely on the right. -->
 
 ::: {.rel}
 ::: {style="width: 52%;"}
@@ -538,8 +471,7 @@ This simple narrative continues to be at the core of many trade debates and anal
 
 ## Technologically unequal exchange
 
-<!-- slide 21. The diagram sits inside the first bullet (positioned on the
-     right), so it appears right after it. -->
+<!-- The diagram sits inside the first bullet, positioned absolutely on the right. -->
 
 ::: {.subhead}
 Economic complexity
@@ -609,8 +541,6 @@ Economic complexity
 
 ## Technologically unequal exchange
 
-<!-- slide 22 -->
-
 ::: {.subhead}
 Capability accumulation and the product space
 :::
@@ -633,19 +563,6 @@ Strong path dependence in the context of capability accumulation!
 :::
 
 ## Technologically unequal exchange
-
-<!-- slide 23, shortened on 20.10.: the close/far bullets are now carried by
-     the stylised product space below (invented positions — an illustration,
-     not data). Names revised on 21.10. after a student asked whether apples
-     and oranges are really related (they are not: 4 steps apart in the
-     Growth Lab network). Each cluster now holds products that are directly
-     linked, or nearly so, in analysis/data-raw/productspace_edges_hs92.csv:
-     apples, grapes, cherries, berries (HS 0808/0806/0809/0810); transistors
-     and solar cells (8541), integrated circuits (8542), printed circuits
-     (8534); crude, gas, refined petroleum, petroleum coke (2709/2711/2710/
-     2713). Steel tubes (7304, mostly drill pipe) stay as a technologically
-     plausible but statistically weak first step. The graph appears after the
-     bullets and builds in four further clicks. -->
 
 ::: {.subhead}
 Capability accumulation and the product space
@@ -733,9 +650,6 @@ Stylised illustration, not data. For the real product space see the next slide.
 
 ## Technologically unequal exchange
 
-<!-- slide 24. Rebuilt with the Growth Lab's current product space (CC0)
-     instead of the Hausmann, Hidalgo et al. (2014) Atlas figure. -->
-
 ::: {.subhead}
 The product space
 :::
@@ -743,10 +657,6 @@ The product space
 ![](figures/fig_L05_24_product_space.svg){height="640" fig-align="center" fig-alt="The product space: about 850 products as nodes, coloured by cluster, linked when they tend to be exported together"}
 
 ## Technologically unequal exchange
-
-<!-- slide 25. The figure is drawn without its panel titles; the titles start
-     stacked at the top right (in a different order) and move to their panels
-     on the next click — ask the room first which panel is which. -->
 
 ::: {.subhead}
 The product space
@@ -765,9 +675,6 @@ The product space
 :::
 
 ## Outlook: Ecological unequal exchange and externalization
-
-<!-- slide 26. Boxes in EUF blue on white; each arrow is drawn on its own
-     click, with its label (class "draw"). -->
 
 - General idea:
 
@@ -797,10 +704,7 @@ The product space
 - For the computation of emissions embodied in trade and the implications, you
   need input output tables → see separate session
 
-
 ## Summary
-
-<!-- slide 28 of the PDF -->
 
 - Free trade has long been argued to be a source of development
 - Thanks to comparative advantage said to be to the benefit of all countries involved
@@ -811,13 +715,6 @@ The product space
   - Ecological externalisation → conflicts and accounting: Session 6
 - Most debates about trade are intricate → corner solutions unlikely to be best
   - See ambivalent role of environmental protection
-
-<!-- End of L05. Timing in the session (21.10.): slide 27 of the PDF (second
-     "Break and discussion", arguments against free trade) is dropped — the
-     group work in L06a replaces it. Slide 28 (Summary) closes this deck;
-     slide 29 (Suggestion for country analysis) moved to the end of L06a,
-     after the conflict reports. L06a was planned for after the break but
-     moved to session 6 (28.10.) for lack of time. -->
 
 ## References {.smaller .scrollable}
 

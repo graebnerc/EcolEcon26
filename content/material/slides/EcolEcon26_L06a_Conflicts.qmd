@@ -35,25 +35,6 @@ format:
 
 ## From unequal exchange to conflicts on the ground
 
-<!-- =========================================================================
-     EcolEcon26 L06a — Environmental conflicts. Planned as a 20-minute input
-     after slide 26 of L05 (ecologically unequal exchange); there was no time
-     for it on 21.10., so it opens session 6 (28.10.) instead. Followed by
-     20 minutes of group work with the analysis grid (ConflictAnalysis.qmd, also as PDF).
-     Minute budget, slide by slide:
-       2  unequal exchange → conflicts        2  environmentalism of the poor
-       2  the EJAtlas                         2  global patterns
-       3  the seven questions                 6  worked example (2 slides)
-       1  read the atlas critically           2  task
-     Then 20 min group work and ~15 min reports; the closing two slides
-     (Summary, Suggestion for country analysis) come from L05 and take ~5 min.
-     Justice theory is deliberately left out: that is Session 9.
-     Every empirical claim carries its source on the slide; the figures on
-     the case slides come from Flores Fernández & Alba (2023, open access)
-     and from analysis/trade_02_figures.R (Atlas of Economic Complexity).
-     ========================================================================= -->
-
-
 - Resources flow **net from poorer to richer** countries
 - Per unit of resource exported, rich countries earn **far more**
 - The costs of extraction stay **where the extraction happens**
@@ -83,7 +64,6 @@ net flows of materials, energy, land and labour to high-income countries.
 :::
 
 ## The environmentalism of the poor
-
 
 ::: {.columns .divided}
 ::: {.column width="48%"}
@@ -170,9 +150,6 @@ Percentages of all cases analysed: 2,743 EJAtlas conflicts in Scheidel et al. [-
 
 ## Analysing a conflict: seven questions
 
-<!-- The order follows Scheidel et al. (2018): why — through whom — how —
-     when; the sub-questions follow the EJAtlas coding template. -->
-
 <table class="econ grid7">
 <thead><tr><th></th><th>Question</th><th>Look for</th><th>Based on</th></tr></thead>
 <tbody>
@@ -192,7 +169,6 @@ The full grid with sub-questions is on the handout.
 
 ## Worked example: lithium in the Salar de Atacama, Chile
 
-
 ::: {.columns style="gap: 1.6em;"}
 ::: {.column width="44%"}
 - **What, where:** lithium from brine, pumped from beneath the salt flat; operations since 1984 and 1996
@@ -211,7 +187,6 @@ Flores Fernández & Alba [-@floresfernandez2023], quotas: SQM 1,600 + 240 l/s, A
 :::
 
 ## Worked example: lithium in the Salar de Atacama, Chile
-
 
 - **Impacts:** high-Andean wetlands, vegetation and flamingo populations under pressure
   - **High scientific uncertainty** about the water balance — even after 30 years of extraction
@@ -272,8 +247,6 @@ No case for your country? Take one linked to its main export commodity
 - Next: **measuring** the embodied flows → after the break; **justice** → Session 9
 
 ## Suggestion for country analysis
-
-<!-- From L05 (slide 29 of the PDF), plus the EJAtlas bullet. -->
 
 - Look at data on trade, and trade openness
 - Complement this with data on export composition, complexity, and the product space

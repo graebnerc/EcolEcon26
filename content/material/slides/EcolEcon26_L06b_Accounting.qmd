@@ -7,8 +7,6 @@ date: "2026-10-28"
 date-format: "D MMMM YYYY"
 bibliography: ../../../references/references.bib
 csl: ../../../references/jepp.csl
-# The references slide of the 2025 deck (slide 36) is kept as the model: the
-# reference list is built from the citations plus these.
 nocite: |
   @miller2009, @stadler2018, @steininger2016, @tukker2020, @wood2020,
   @dorninger2021
@@ -36,30 +34,6 @@ format:
 ---
 
 ## {.duel background-color="#00395B" data-menu-title="Recap: free trade or exploitation?"}
-
-<!-- slide 2.
-     =========================================================================
-     EcolEcon26 L06b — Accounting environmental stressors. HTML (revealjs)
-     version of the Keynote deck EnvEcon25_T6-Environmental-IOT (PDF of the
-     2025 edition, 36 slides, in _old/). The slide numbers in the comments
-     below are those of that PDF. Changes follow the review in
-     _old/EnvEcon25_T6-Environmental-IOT_feedback.md, up to the EU
-     application (slide 27); slides 28-36 are translated unchanged.
-
-     WHAT IS DIFFERENT FROM THE KEYNOTE
-     · Recap (slides 2-6) shrunk to the quote pair from L05 plus one slide.
-     · Slide 9: Schandl et al. (2017) chart replaced with our own, from the
-       current IRP data (analysis/accounting_02_figures.R). Slide 10: chart
-       replaced by an animated diagram (review of 27.10.).
-     · Slide 8: Atlas treemaps rebuilt from Atlas data for 2024.
-     · Slides 11-12 (EJAtlas, Rodrik on trade agreements) removed; the
-       EJAtlas is covered in L06a.
-     · Slide 16: Leontief's biography reordered, Nobel Prize and his 1970
-       paper on environmental repercussions added.
-     · Slides 18-21 rebuilt as inline SVG / HTML and animated.
-     · New: the Leontief inverse (after slide 22), income-based accounting
-       (after slide 25), MRIO uncertainty (after slide 32).
-     ========================================================================= -->
 
 ::: {.duel-row .top}
 ::: {.duel-quote}
@@ -121,10 +95,6 @@ instead of handicapping them."
 
 ## Neocolonial practices?
 
-<!-- slide 10. The material-footprint chart is replaced by a diagram (review
-     of 27.10.): the chart did not show extraction, which the previous slide
-     already does. One click per step of the chain. -->
-
 ::: {.columns style="gap: 1.4em; align-items: center;"}
 ::: {.column width="30%"}
 <!-- Explicit fragment indices (reveal puts unindexed fragments last): the
@@ -176,9 +146,6 @@ instead of handicapping them."
 
 ## Discussion in country groups
 
-<!-- slide 13. Forward reference fixed for the 2026 schedule: conflicts are
-     L06a (earlier today), global justice is Session 9. -->
-
 ::: {.columns}
 ::: {.column width="62%"}
 - 5 minutes, in your country group:
@@ -206,8 +173,6 @@ instead of handicapping them."
 
 ## Learning goals and outline
 
-<!-- slide 15 -->
-
 ::: {.columns .divided .goals .nonincremental}
 ::: {.column width="55%"}
 ### Learning goals
@@ -232,14 +197,7 @@ III. Exercises and group work
 
 ## Input-Output Analysis
 
-<!-- slide 16. Biography put in order, Nobel Prize and the 1970 paper added
-     (review §5). Leontief was born in Munich in 1905 and grew up in
-     St Petersburg; he left the Soviet Union in 1925 for Berlin (PhD 1928),
-     worked at the Kiel Institute and emigrated to the USA in 1931. -->
-
-<!-- The portrait sits inside the "Developed by" bullet, so that both appear
-     on the same click, and is lifted out of the flow to the right (.rel /
-     .abs-right, see euf-slides.scss). -->
+<!-- The portrait sits inside the "Developed by" bullet, so both appear on the same click. -->
 
 ::: {.rel}
 ::: {style="width: 74%;"}
@@ -257,8 +215,6 @@ III. Exercises and group work
 :::
 
 ## Input-Output Analysis
-
-<!-- slide 17. The source of the quote was missing on the slide. -->
 
 - Key motivation: aligning economics closely to actual accounting
 
@@ -279,10 +235,6 @@ III. Exercises and group work
 - Only very simple *economic* theory involved
 
 ## An input-output table: the complete view
-
-<!-- slide 18. The Miller & Blair figure redrawn; each question arrow is drawn
-     on its own click and highlights the part of the table it is about:
-     a column (inputs), a row (outputs), final demand, value added. -->
 
 <svg class="diagram iot" viewBox="0 0 1440 600" width="1440" role="img" aria-label="Input-output transactions table: industries as producers and as consumers, final demand, and value added">
 <rect class="cell cz" x="410" y="180" width="66" height="27"/>
@@ -436,9 +388,6 @@ After Miller & Blair [-@miller2009, fig. 1.1].
 
 ## Input-output tables in more detail
 
-<!-- slide 19. "Missing of this" → "Missing from this" (review §5). The cell
-     z_ij lights up with the first bullet, the whole row i with the last. -->
-
 ::: {.columns style="gap: 1.6em;"}
 ::: {.column width="44%"}
 [Interindustry flows of goods]{.muted}
@@ -491,10 +440,6 @@ Miller & Blair [-@miller2009, ch. 2].
 
 ## Full accounts for a two-sector economy
 
-<!-- slide 20. The colour blocks of the Keynote now light up one after the
-     other, each with its explanation: final demand, value added, totals
-     (review §5: "work with animations"). -->
-
 <table class="econ io io2">
 <thead><tr><th class="blank" colspan="2"></th><th colspan="2" class="z">Processing sectors</th><th colspan="4">Final demand</th><th>Total output (<i>x</i>)</th></tr><tr><th class="blank" colspan="2"></th><th class="z">1</th><th class="z">2</th><th>C</th><th>I</th><th>G</th><th>E</th><th></th></tr></thead><tbody>
 <tr><td class="rowlab" rowspan="2">Processing sectors</td><td>1</td><td class="z"><i>z</i><sub>11</sub></td><td class="z"><i>z</i><sub>12</sub></td><td class="fragment mark mf" data-fragment-index="1"><i>c</i><sub>1</sub></td><td class="fragment mark mf" data-fragment-index="1"><i>i</i><sub>1</sub></td><td class="fragment mark mf" data-fragment-index="1"><i>g</i><sub>1</sub></td><td class="fragment mark mf" data-fragment-index="1"><i>e</i><sub>1</sub></td><td class="fragment mark mx" data-fragment-index="3"><i>x</i><sub>1</sub></td></tr>
@@ -535,9 +480,6 @@ Miller & Blair [-@miller2009, table 2.2].
 
 ## More than one country: MRIO tables
 
-<!-- slide 21. The two blocks of Z are opened one at a time, in the colours
-     of the Keynote: domestic (red), trade (blue). -->
-
 - Global perspective: more than one country → system of IO tables
   - **Multi-regional input-output (MRIO)** tables
 - All relevant matrices extended, e.g.:
@@ -563,8 +505,6 @@ $$Z_{1k} = \begin{pmatrix} z_{11} & \cdots & z_{1n} \\ \vdots & & \vdots \\ z_{n
 
 ## Input-output tables and the environment
 
-<!-- slide 22 -->
-
 - IO tables: tracking flows of goods throughout production
 - Classical IO tables ignore the environment:
   - Goods taken from nature…
@@ -575,9 +515,6 @@ $$Z_{1k} = \begin{pmatrix} z_{11} & \cdots & z_{1n} \\ \vdots & & \vdots \\ z_{n
 - Result: damages in country $i$ caused by consumption and production in country $j$
 
 ## From flows to footprints: the Leontief inverse
-
-<!-- NEW (review §2). Four steps, one per click; in step 3 the series is
-     built term by term — "the requirements of the requirements". -->
 
 ::: {.nonincremental}
 ::: {.fragment}
@@ -664,10 +601,6 @@ Miller & Blair [-@miller2009, ch. 2 and 13]; Leontief [-@leontief1970].
 
 ## A real-world example: EXIOBASE3
 
-<!-- slide 23. Years updated (review §5): v3.11.2 (Zenodo, Sept. 2026) runs
-     1995-2024, with the most recent years nowcast. The concept DOI always
-     resolves to the latest release. -->
-
 ::: {.columns style="align-items: center;"}
 ::: {.column width="64%"}
 - Prominent EE MRIO table: **EXIOBASE3**
@@ -691,8 +624,6 @@ Stadler et al. [-@stadler2018]; current release on [Zenodo](https://doi.org/10.5
 :::
 
 ## Consumption & Production-based accounting
-
-<!-- slide 24 -->
 
 - Goal: environmental impact of consumption and production
   - **Two (basic) approaches**, many intermediate variations^[See Tukker et al. [-@tukker2020] for an overview.]
@@ -728,11 +659,7 @@ Stadler et al. [-@stadler2018]; current release on [Zenodo](https://doi.org/10.5
 
 ## CBA and PBA: an example {auto-animate="true" data-auto-animate-id="car"}
 
-<!-- slide 25. The value chain first, bullet by bullet; then the table; then
-     one cell per click, the PBA column before the CBA column — the contrast is
-     the point of the slide. All fragments carry explicit indices (reveal puts
-     unindexed fragments last), hence the raw <ul> in the chain. Auto-animates
-     into the next slide, which adds the third column. -->
+<!-- Explicit fragment indices (reveal puts unindexed fragments last), hence the raw <ul>. -->
 
 ::: {.nonincremental}
 - Example of a three-step value chain:
@@ -776,15 +703,9 @@ Stadler et al. [-@stadler2018]; current release on [Zenodo](https://doi.org/10.5
 
 ## A third perspective: who earns from the emissions? {auto-animate="true" data-auto-animate-id="car"}
 
-<!-- NEW (review §4). Income-based accounting (Marques et al. 2012), as one
-     of the "multiple accounts" of Steininger et al. (2016): emissions are
-     allocated to everyone whose value added they enable — the emitting
-     stage and every stage downstream of it, in proportion to the value
-     added each earns. Hence the split cells. -->
-
 ::: {.columns style="gap: 2.4em; align-items: center;"}
 ::: {.column width="38%"}
-<!-- Bullets 1-2, then the IBA column cell by cell, then bullet 3. -->
+<!-- Explicit fragment indices: bullets 1-2, the IBA column cell by cell, bullet 3. -->
 <ul><li class="fragment" data-fragment-index="1"><strong>Income-based accounting (IBA)</strong>: the “<strong>who earns</strong>” principle</li><li class="fragment" data-fragment-index="2">Emissions allocated to those earning the <strong>value added</strong> they enable, <em>downstream</em> of the emission</li><li class="fragment" data-fragment-index="7">Not a technicality: a question of <strong>responsibility</strong> → Session 9</li></ul>
 :::
 
@@ -806,10 +727,6 @@ Steininger et al. [-@steininger2016]; Marques et al. [-@marques2012]. IBA cells:
 :::
 
 ## Group work
-
-<!-- slide 26, doubled words removed (review §5). Shared via Tweedback
-     (review of 27.10.: QR code on the group-work slides); in 2025 via the
-     Moodle forum. -->
 
 ::: {.columns}
 ::: {.column width="60%"}
@@ -839,9 +756,6 @@ Steininger et al. [-@steininger2016]; Marques et al. [-@marques2012]. IBA cells:
 
 ## The European carbon footprint
 
-<!-- slide 28. Slides 28-32: one title each instead of title + subhead
-     (review of 27.10.). -->
-
 - Wood et al. [-@wood2020]: EU28 carbon footprint with EXIOBASE3
 
 ::: {.columns style="gap: 1.6em;"}
@@ -863,8 +777,6 @@ Source: Wood et al. [-@wood2020], fig. 3.
 
 ## Emissions embodied in EU trade
 
-<!-- slide 29 -->
-
 - **Emissions embodied in imports** (EEI): emitted outside the EU28 for final demand *within* the EU28 ('externalised')
   - Non-CO₂ gases: net trade 40% of total footprint
   - CO₂: EEI only 15% → trade in mining (CH₄), food and agriculture (CH₄, N₂O)
@@ -882,9 +794,6 @@ Domestic policies miss 33% of emissions caused
 :::
 
 ## What drives the EU footprint?
-
-<!-- slide 30. The three drivers are drawn one at a time; each badge says
-     the sign of its effect on the footprint. -->
 
 ```{=html}
 <svg class="diagram" viewBox="0 0 960 350" width="1250" role="img" aria-label="Three drivers of the EU footprint: composition of trade, population growth and consumption per capita (no net effect); production technologies (negative); level of trade and total consumption (positive)">
@@ -924,8 +833,6 @@ Domestic policies miss 33% of emissions caused
 
 ## Policy implications for the EU
 
-<!-- slide 31 -->
-
 - **Main drivers** of traded emissions: three sectors
   - **Agriculture & mining**: strong import, little substitution → only less consumption reduces emissions
   - **Manufacturing**: more emissions imported *and* exported → specialisation, no significant externalisation
@@ -936,8 +843,6 @@ Domestic policies miss 33% of emissions caused
   - Carbon prices included in the price of imports
 
 ## Why production-based accounting dominates
-
-<!-- slide 32 -->
 
 - **PBA**: the **standard approach** to measure environmental impacts
   - Statistical offices: only national mandates to collect data
@@ -950,9 +855,6 @@ Domestic policies miss 33% of emissions caused
   - Remember structuralist and dependency theories of development
 
 ## How certain are these numbers?
-
-<!-- NEW (review §3), placed after the application so that it qualifies the
-     numbers students have just seen. -->
 
 - MRIO footprints are **model results**, not measurements
 - Databases (EXIOBASE, Eora, WIOD, GTAP): **different footprints** for the same country
@@ -976,8 +878,6 @@ Moran & Wood [-@moran2014]; Tukker et al. [-@tukker2020].
 
 ## Summary and conclusion
 
-<!-- slide 34 -->
-
 - **Input-output tables**: product and resource flows between industries and final demand, for one or more countries
   - Track flows of value and resources through the world economy
 - Two accounting approaches:
@@ -987,11 +887,6 @@ Moran & Wood [-@moran2014]; Tukker et al. [-@tukker2020].
 - **EU**: net importer of environmental stressors, despite a slightly falling footprint
 
 ## Food for group work
-
-<!-- slide 35. environmentalfootprints.org/exiobase3 is gone (404). Replaced
-     by the IRP Global Material Flows Database, the source of the material
-     figures in this deck and usable for the poster: domestic extraction is
-     territorial (PBA-like), the material footprint is consumption-based. CO2: Our World in Data; coding: the tutorial. -->
 
 ::: {.nonincremental}
 **Practical exercise**

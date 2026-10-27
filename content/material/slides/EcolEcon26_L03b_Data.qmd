@@ -35,40 +35,6 @@ format:
 01
 :::
 
-<!-- =========================================================================
-     EcolEcon26 L03b — Working with data. HTML (revealjs) version of the
-     Keynote deck EcolEcon26_L03b_Data.key.
-
-     WHAT IS DIFFERENT FROM THE KEYNOTE
-     · The nine data figures are the SAME pipeline output as the Keynote, but
-       regenerated: analysis/01_download.R was re-run on 17.09.2026 and
-       analysis/02_figures.R rebuilt every figure. euf_style.R writes "svg"
-       alongside "pdf" because an <img> cannot take a PDF — the Keynote keeps
-       using the PDFs, this deck uses the SVGs, both vector, both from the
-       same script on the same run. The SVGs carry their text as outlines, so
-       they need no font at display time.
-     · Publisher screenshots, book covers and portrait photographs of living
-       people are NOT reproduced here. An HTML deck is far more likely to end
-       up on the open web than a .key file, and those images were cleared for
-       a lecture room, not for publication. They are replaced by typographic
-       slides carrying the same argument and a full citation. The duck-rabbit
-       (Fliegende Blätter, 1892, public domain) and the Leeds country
-       doughnuts (CC BY, goodlife.leeds.ac.uk) are kept.
-     · Everything else follows the Keynote slide for slide.
-
-     Conventions come from the modernised master (same as RM26 / DevEcon26):
-     assertion titles, .dek for nuance, 3-4 bullets, .source on every
-     empirical claim.
-
-     BODY COPY IS TELEGRAPHIC, NOT PROSE. Bullets, deks, boxes and column
-     text are noun phrases — no running sentences, no sub-clauses to read out
-     while the room is reading them too. The assertion titles are the one
-     deliberate exception: they are full statements because that is what an
-     assertion title is for, and they are shared with the other decks. The two
-     Harding passages are verbatim quotations, trimmed with […] to the clauses
-     the lecture actually uses.
-     ========================================================================= -->
-
 ## Two problems, pulling against each other
 
 ::: {.dek}
@@ -192,7 +158,6 @@ Not just interpretation — the vantage point decides what is in the picture.
 ## {.no-dash data-menu-title="There has been progress with respect to income poverty"}
 
 ![](figures/fig_08_poverty_longrun.svg){fig-align="center" width="86%" fig-alt="Long-run global poverty on two different measures"}
-
 
 ## {.no-dash data-menu-title="Reducing income poverty due to growth of GDP?!"}
 
@@ -474,12 +439,3 @@ Never neutral — but **explicit** and **self-reflexive**
 ::: {#refs}
 :::
 
-<!-- End of deck. 26 slides against the Keynote's 24: the O'Neill scatter
-     became a typographic slide of its own, and the task slide was split in
-     two so the "two interpretations" requirement is not buried in a
-     sub-bullet.
-
-     To refresh the figures before the lecture:
-         Rscript analysis/01_download.R && Rscript analysis/02_figures.R
-     then re-render this deck. The SVGs in slides/figures/ are copies — see
-     the note in analysis/README.md. -->

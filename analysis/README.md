@@ -15,6 +15,7 @@ shows the steps from the raw download to the finished figure.
 |---|---|---|---|
 | 3: Working with data | `01_download.R`, `02_figures.R` | GDP, poverty, material use, emissions, the doughnut | [session page](https://ecological-economics26.netlify.app/content/material/s_03b_WorkingWithData.html#data-sources-for-the-figures) |
 | 5: Free trade | `trade_01_download.R`, `trade_02_figures.R` | South Korea, solar PV, terms of trade, economic complexity, product space | [session page](https://ecological-economics26.netlify.app/content/material/s_05_Trade.html#data-sources-for-the-figures) |
+| 6b: Accounting | `accounting_02_figures.R` (no download script) | Export treemaps Africa vs. Europe, physical trade balance by region, material footprint by HDI group | UN IRP Global Material Flows Database; Our World in Data |
 
 For each session there are two scripts. The download script fetches the data
 and needs an internet connection. The figure script only reads the downloaded
@@ -30,7 +31,7 @@ You need R and the following packages:
 
 ```r
 install.packages(c("tidyverse", "ggrepel", "patchwork", "scales",
-                   "jsonlite", "systemfonts", "readxl", "curl"))
+                   "jsonlite", "systemfonts", "readxl", "curl", "treemapify"))
 ```
 
 Alternatively, use the package versions I used. They are recorded in
@@ -55,6 +56,9 @@ Rscript analysis/02_figures.R           # figures go to analysis/figures/
 # Session 5
 Rscript analysis/trade_01_download.R
 Rscript analysis/trade_02_figures.R
+
+# Session 6b (reads the IRP export and the OWID file of session 3)
+Rscript analysis/accounting_02_figures.R
 ```
 
 In RStudio, open the project file, open a script and click *Source*. Opening
@@ -272,3 +276,20 @@ distinguishable for people with colour vision deficiencies. Two neighbouring
 colours are still fairly close, so every figure that uses them also has a
 legend and either direct labels or panel titles. If you change the colours,
 check them again, and the same applies to the colours on your poster.
+
+## Session 6b: accounting environmental stressors
+
+| File | Slide | Content |
+|---|---|---|
+| `fig_L06b_08_exports_treemap` | Challenges to free trade: specialisation and ecological costs | Goods exports of Africa and Europe by 4-digit product, coloured by sector, latest Atlas year |
+| `fig_L06b_09_physical_trade_balance` | Challenges to free trade: unequal ecological exchange? | Physical trade balance (imports minus exports, tonnes) of the seven IRP world regions, since 1970 |
+| `fig_L06b_10_material_footprint_hdi` | Challenges to free trade: … neo-colonial trade agreements? | Material footprint per capita by HDI group, since 1995 |
+
+The treemaps replace screenshots from the Atlas website (2022), the other two
+charts from Schandl et al. (2017), whose data ended in 2010. There is no
+download script: the figures use `data-manual/mfa4_export.csv` (see session
+3), `data-raw/gdp_hdi.csv` (written by `01_download.R`) and the Atlas files
+written by `trade_01_download.R`. The treemaps need the package `treemapify`.
+Countries are grouped by their most recent HDI and stay in that group for all
+years; the series starts in 1995 because the successor states of the USSR,
+Czechoslovakia and Yugoslavia enter the IRP data only in the early 1990s.

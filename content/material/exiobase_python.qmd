@@ -1,0 +1,165 @@
+---
+title: "🐍 EXIOBASE in Python: footprints for your country"
+subtitle: "A one-page tutorial for Session 6"
+date-modified: last-modified
+---
+
+<!-- Tested on 27.10.2026 with Python 3.12, pymrio 0.7.0 and EXIOBASE 3.11.2
+     (IOT_2022_ixi): about 70 seconds including the download, ~4.6 GB of
+     memory at the peak. Results for Germany: PBA 647 Mt, CBA 817 Mt CO2.
+     pymrio.download_exiobase3() did NOT work on that day: Zenodo answers its
+     page request with HTTP 403. Hence the direct download in step 1. -->
+
+This page shows how to compute **production-based (PBA)** and **consumption-based (CBA)**
+CO₂ emissions for your country from [EXIOBASE 3](https://doi.org/10.5281/zenodo.3583070)
+[@stadler2018]. Each step corresponds to a slide of
+[Session 6](s_06b_Accounting.qmd). If you have never used Python, this is still a good
+place to start: copy the code block by block into a Jupyter notebook and run it.
+
+**What you need:** Python 3.10 or newer, about 5 GB of free memory and 300 MB of disk space
+per year of data. Install the two packages once:
+
+```bash
+pip install pymrio pandas
+```
+
+## 1. Download one year
+
+EXIOBASE comes as one zip file per year. There are two versions of each year: `pxp`
+(product by product) and `ixi` (industry by industry). For country footprints, take `ixi`.
+
+```python
+from pathlib import Path
+from urllib.request import urlretrieve
+
+YEAR = 2022
+RECORD = "23039074"   # EXIOBASE 3.11.2 on Zenodo
+file = Path(f"IOT_{YEAR}_ixi.zip")
+if not file.exists():
+    urlretrieve(f"https://zenodo.org/records/{RECORD}/files/{file.name}?download=1", file)
+```
+
+Data are available for 1995–2024, but the **most recent years are nowcast**, i.e. estimated
+from trade and macroeconomic data rather than from full statistics. For the latest
+release, check the [Zenodo page](https://doi.org/10.5281/zenodo.3583070) and change
+`RECORD` accordingly.
+
+::: {.callout-note collapse="true"}
+## Why not `pymrio.download_exiobase3()`?
+pymrio has its own download function. At the time of writing it fails because Zenodo
+blocks the page request it relies on. If a later pymrio version fixes this, you can use it
+instead of the code above.
+:::
+
+## 2. Load the tables
+
+```python
+import numpy as np
+import pymrio
+
+exio = pymrio.parse_exiobase3(file)
+print(list(exio.get_extensions()))   # the environmental accounts
+print(exio.get_regions().tolist())   # the 49 regions
+```
+
+The regions are 44 countries, with their two-letter codes (`DE`, `CN`, `BR`, …), and five
+rest-of-the-world regions: `WA` (Asia and Pacific), `WL` (Latin America), `WE` (Europe),
+`WF` (Africa) and `WM` (Middle East). The **extensions** are the environmental accounts:
+`air_emissions`, `energy`, `material`, `water`, `land`, `employment` and a few more.
+
+## 3. Choose a stressor
+
+Each extension holds two tables: `F`, emissions by industry, and `F_Y`, emissions caused
+directly by final users (households heating their homes or driving their cars). Here we
+take all fossil CO₂ emissions:
+
+```python
+rows = exio.air_emissions.get_rows()
+co2 = [r for r in rows if r.startswith("CO2 -") and "biogenic" not in r]
+
+F  = exio.air_emissions.F.loc[co2].sum()     # by industry, in kg
+FY = exio.air_emissions.F_Y.loc[co2].sum()   # directly by final users, in kg
+```
+
+Print `rows` to see what else is there: methane, nitrous oxide, particulate matter and
+hundreds more. The units are in `exio.air_emissions.unit`.
+
+## 4. Compute the footprint: $s\,(I-A)^{-1} f$
+
+This is the equation from the lecture, one line per symbol:
+
+```python
+exio.calc_system()                    # computes A and the Leontief inverse L = (I - A)^-1
+x = exio.x["indout"]                  # gross output of every industry (million EUR)
+s = (F / x).replace([np.inf, -np.inf], 0).fillna(0)   # s: kg CO2 per million EUR of output
+
+country = "DE"
+f = exio.Y[country].sum(axis=1)       # f: the country's final demand, for products from everywhere
+supply_chain = exio.L.dot(f)          # (I - A)^-1 f: output needed everywhere to satisfy it
+
+pba = F[country].sum() + FY[country].sum()
+cba = (s * supply_chain).sum() + FY[country].sum()
+print(f"{country} {YEAR}: PBA {pba/1e9:.0f} Mt CO2, CBA {cba/1e9:.0f} Mt CO2")
+```
+
+For Germany in 2022 this gives a PBA of 647 Mt and a CBA of 817 Mt: German consumption
+causes about a quarter more emissions than German production.
+
+## 5. Where does the footprint come from?
+
+The same vector tells you **where** the emissions of your country's consumption occur:
+
+```python
+origin = (s * supply_chain).groupby(level="region").sum() / 1e9
+print(origin.sort_values(ascending=False).head(8).round(1))   # Mt CO2
+```
+
+For Germany: 250 Mt at home (plus the 174 Mt households emit directly), 92 Mt in China,
+47 Mt in the rest of Asia, followed by Poland, Russia and the Middle East. This is the
+externalisation from the lecture, country by country.
+
+## 6. All countries at once
+
+pymrio can do steps 4 and 5 for all regions in one go. Drop the extensions you do not
+need first, which saves memory:
+
+```python
+ae = exio.air_emissions
+for e in [e for e in exio.get_extensions() if e != "air_emissions"]:
+    exio.remove_extension(e)
+exio.calc_all()
+
+table = (ae.D_pba_reg.loc[co2].sum().to_frame("PBA")
+           .join(ae.D_cba_reg.loc[co2].sum().rename("CBA")) / 1e9)
+table["net imports"] = table["CBA"] - table["PBA"]
+print(table.round(0).sort_values("net imports"))
+```
+
+`D_pba_reg` and `D_cba_reg` already include the direct emissions of final users, so the
+numbers match those of step 4.
+
+## Before you put a number on your poster
+
+- **Say where it comes from:** EXIOBASE, the version (here 3.11.2), the year, the stressor,
+  and whether it is PBA or CBA.
+- **Check it against a second source.** Other databases give different footprints for the
+  same country, often by more than 10% [@moran2014]. For CO₂, Our World in Data shows
+  [production- and consumption-based emissions](https://ourworldindata.org/grapher/production-vs-consumption-co2-emissions)
+  from the Global Carbon Budget.
+- **Trust trends and orders of magnitude** more than a single exact number, especially
+  for nowcast years. To get a trend, run the code for several years.
+- **Licence:** EXIOBASE 3.9 and later is free for non-commercial academic use, which
+  covers your poster.
+
+## Going further
+
+- The figures of Session 6 are built in R, not Python. The code is in the
+  [`analysis/` folder of the course repository](https://github.com/graebnerc/EcolEcon26/tree/main/analysis).
+- The [pymrio documentation](https://pymrio.readthedocs.io/) has more examples:
+  aggregation, other stressors, and footprints by product.
+- The textbook on the methods behind this page is @miller2009.
+
+## References
+
+::: {#refs}
+:::

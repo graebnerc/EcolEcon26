@@ -17,11 +17,43 @@ region.
 
 ## 🖥️ Lecture Slides
 
-<!--slides:06b:EcolEcon26_L06b_Accounting.pdf-->
+<!--slides:06b:EcolEcon26_L06b_Accounting.html-->
 ::: {.slides-pending}
 📽️ Slides will be made available after the lecture.
 :::
 <!--/slides:06b-->
+
+<!--after:06b
+## 📊 Data sources for the figures
+
+Every data figure in the lecture is built from **openly available data**, so you can pull the
+same data for **your own country**.
+
+| Figure in the lecture | Where the data come from |
+|---|---|
+| Exports by African and European countries (treemaps) | [Atlas of Economic Complexity](https://atlas.hks.harvard.edu/) [@growthlabatlas], goods exports by 4-digit product (HS 1992), 2024 |
+| Physical trade balance by world region | [UN IRP Global Material Flows Database](https://www.materialflows.net/) ([background](https://www.resourcepanel.org/global-material-flows-database)), imports minus exports in tonnes |
+| The European carbon footprint | Taken from @wood2020, who use EXIOBASE 3 |
+
+::: {.callout-note}
+## Want to rebuild the figures yourself?
+
+The figures are drawn by the R script `accounting_02_figures.R` in the
+[`analysis/` folder of the course repository](https://github.com/graebnerc/EcolEcon26/tree/main/analysis).
+The [README](https://github.com/graebnerc/EcolEcon26/blob/main/analysis/README.md#session-6b-accounting-environmental-stressors)
+explains how to run it. You are welcome to change the regions, the year or the grouping, or
+to adapt the code for your own poster.
+:::
+
+## 🐍 Production- and consumption-based footprints for your country
+
+The [**one-page EXIOBASE tutorial**](exiobase_python.qmd) shows how to compute
+production-based and consumption-based CO₂ emissions for your country with Python,
+in about twenty lines of code. If you would rather not write code, Our World in Data
+shows [production- and consumption-based CO₂ emissions](https://ourworldindata.org/grapher/production-vs-consumption-co2-emissions)
+for almost every country. These numbers come from a different model (the Global Carbon Budget),
+which also makes them a good second source to check your EXIOBASE results against.
+after:06b-->
 
 ## 📚 Follow-up Reading
 

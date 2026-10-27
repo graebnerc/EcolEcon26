@@ -856,3 +856,149 @@ $draw-time: 0.6s;
   line-height: 1.05;
   margin-bottom: 0.15em;
 }
+
+// ============================================================================
+//  Additions for "Accounting environmental stressors" (L06b)
+// ============================================================================
+
+// ---- cells and boxes that light up on a click ------------------------------
+// A fragment that is never hidden: on its click it only takes a fill. Put
+// .mark plus one of the block colours on a <td>, a <rect> or a .cap, and give
+// all members of one block the same data-fragment-index.
+$io-z:  #D6E4EE;   // interindustry block
+$io-f:  #F6D5D0;   // final demand
+$io-v:  #FBEFC4;   // value added / payments sectors
+$io-x:  #CFE8E6;   // totals
+.reveal .slides section .fragment.mark { opacity: 1; visibility: inherit; }
+.reveal .fragment.mark { transition: background-color 0.35s ease, fill 0.35s ease; }
+.reveal .fragment.mark.visible.mz { background-color: $io-z; }
+.reveal .fragment.mark.visible.mf { background-color: $io-f; }
+.reveal .fragment.mark.visible.mv { background-color: $io-v; }
+.reveal .fragment.mark.visible.mx { background-color: $io-x; }
+.reveal .fragment.mark.visible.mr { background-color: $io-f; color: $euf-red; font-weight: 700; }
+
+// ---- the input-output tables ------------------------------------------------
+.reveal table.econ.io { font-size: 0.72em; }
+.reveal table.econ.io td, .reveal table.econ.io th { padding: 0.22em 0.5em; min-width: 2.2em; }
+.reveal table.econ.io td.rowlab, .reveal table.econ.io th.rowlab { text-align: left; font-weight: 700; }
+.reveal table.econ.io .blank { border: none !important; }
+.reveal table.econ.io .z  { background: $io-z; }
+
+// the three explanation boxes under the two-sector table, keyed by colour
+.reveal .grid3.io-notes { margin-top: 0.9em; font-size: 0.72em; }
+.reveal .grid3.io-notes .cap { border-width: 0 0 0 6px; padding: 0.55em 0.8em; }
+.reveal .grid3.io-notes .cap p, .reveal .grid3.io-notes .cap li { color: $euf-blue; }
+.reveal .grid3.io-notes .cap ul { margin: 0.2em 0 0 0.6em; }
+.reveal .grid3.io-notes .cap li { margin-bottom: 0.2em !important; font-size: 1em; }
+.reveal .grid3.io-notes .cap.nf { border-color: $euf-red;  background: rgba($io-f, 0.55); }
+.reveal .grid3.io-notes .cap.nv { border-color: #C98A00;   background: rgba($io-v, 0.55); }
+.reveal .grid3.io-notes .cap.nx { border-color: $euf-teal; background: rgba($io-x, 0.55); }
+
+// the schematic transactions table (Miller & Blair, fig. 1.1), inline SVG
+.reveal svg.iot .cell  { fill: #FFFFFF; stroke: #B9C3CB; stroke-width: 1; }
+.reveal svg.iot .cz    { fill: $io-f; }
+.reveal svg.iot .cf    { fill: #D5EBDD; }
+.reveal svg.iot .cv    { fill: #FFFFFF; }
+.reveal svg.iot .frame { fill: none; stroke: $euf-blue; stroke-width: 2.5; }
+.reveal svg.iot .hd    { fill: $euf-blue; font-size: 15px; font-weight: 700; }
+.reveal svg.iot .ch    { fill: $euf-navy; font-size: 14px; }
+.reveal svg.iot .rl    { fill: $euf-navy; font-size: 15px; }
+.reveal svg.iot .va    { fill: $euf-navy; font-size: 15px; }
+.reveal svg.iot .q     { fill: $euf-blue; font-size: 20px; font-weight: 700; }
+.reveal svg.iot .qs    { fill: $euf-gray; font-size: 16px; }
+.reveal svg.iot .hlr   { fill: none; stroke: $euf-red; stroke-width: 4; }
+
+// ---- the Leontief inverse, term by term -----------------------------------
+.reveal .series {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.35em;
+  margin: 0.2em 0 0 1.2em;
+}
+.reveal .series .term { text-align: center; min-width: 4.2em; }
+.reveal .series .term p { margin: 0; }
+.reveal .series .term .lab {
+  display: block;
+  color: $euf-gray;
+  font-size: 0.62em;
+  line-height: 1.25;
+  margin-top: 0.15em;
+}
+.reveal .series .op { padding-top: 0.15em; }
+
+// an equation with labels under its parts
+.reveal .eqlab { display: flex; justify-content: center; gap: 1.6em; align-items: flex-start; }
+.reveal .eqlab .term { text-align: center; }
+.reveal .eqlab .term p { margin: 0; }
+.reveal .eqlab .lab { display: block; color: $euf-gray; font-size: 0.6em; margin-top: 0.1em; }
+
+// ---- value chain of the car example ----------------------------------------
+.reveal .chain { display: flex; flex-direction: column; gap: 0.7em; }
+.reveal .chain .link { border: 2px solid; padding: 0.35em 0.8em; font-size: 0.8em; }
+.reveal .chain .link p { margin: 0; color: $euf-gray; }
+.reveal .chain .link .who { display: block; text-align: center; font-weight: 700; font-size: 1.1em; }
+.reveal .chain .chn { border-color: $euf-red; }  .reveal .chain .chn .who { color: $euf-red; }
+.reveal .chain .pol { border-color: #C98A00; }   .reveal .chain .pol .who { color: #C98A00; }
+.reveal .chain .ger { border-color: #69AACD; }   .reveal .chain .ger .who { color: #2A72B5; }
+
+.reveal table.econ.acct { font-size: 0.8em; }
+.reveal table.econ.acct td:first-child { text-align: left; font-weight: 700; max-width: 11em; }
+.reveal table.econ.acct td.CHN { background: #F3B2A6; }
+.reveal table.econ.acct td.POL { background: #F2D49A; }
+.reveal table.econ.acct td.GER { background: #BBD9EA; }
+.reveal table.econ.acct td.mix { background: linear-gradient(90deg, #F3B2A6 0 33%, #F2D49A 33% 66%, #BBD9EA 66% 100%); }
+.reveal table.econ.acct td.mix2 { background: linear-gradient(90deg, #F2D49A 0 50%, #BBD9EA 50% 100%); }
+
+// ---- MRIO block matrices ----------------------------------------------------
+.reveal .mrio { display: flex; align-items: center; justify-content: space-around; margin-top: 0.4em; }
+.reveal .mrio .blk { text-align: center; padding: 0.2em 0.6em; border: 2px solid transparent; }
+.reveal .mrio .blk p { margin: 0; }
+.reveal .mrio .blk .lab { display: block; font-size: 0.6em; font-weight: 700; margin-top: 0.2em; }
+.reveal .mrio .blk.dom { border-color: $euf-red; }  .reveal .mrio .blk.dom .lab { color: $euf-red; }
+.reveal .mrio .blk.trd { border-color: #2A72B5; }   .reveal .mrio .blk.trd .lab { color: #2A72B5; }
+
+// learning goals and outline on one slide
+.reveal .goals h3 { color: $euf-blue; font-size: 1.0em; margin: 0 0 0.4em 0; }
+.reveal .goals ol > li { margin-bottom: 0.45em !important; }
+
+// L06b, after the first overflow check: larger type in the IO figures
+.reveal svg.iot .hd { font-size: 18px; }
+.reveal svg.iot .ch { font-size: 16px; }
+.reveal svg.iot .rl, .reveal svg.iot .va { font-size: 18px; }
+.reveal svg.iot .q  { font-size: 25px; }
+.reveal svg.iot .qs { font-size: 19px; }
+.reveal table.econ.io2 { font-size: 0.82em; }
+.reveal .grid3.io-notes { font-size: 0.8em; }
+.reveal .series .term .lab, .reveal .eqlab .lab { font-size: 0.72em; }
+.reveal table.econ.acct { font-size: 1.0em; }
+.reveal .chain .link { font-size: 0.92em; }
+
+// L06b, review of 27.10.
+// IO schematic: the green and blue arrows frame their block; a worked example
+.reveal svg.iot .hlg   { fill: none; stroke: #5FB46E; stroke-width: 4; }
+.reveal svg.iot .hlb   { fill: none; stroke: $euf-blue; stroke-width: 4; }
+.reveal svg.iot .exc   { fill: #FBEFC4; stroke: #C98A00; stroke-width: 3; }
+.reveal svg.iot .exbox { fill: rgba(#FBEFC4, 0.6); stroke: #C98A00; stroke-width: 2; }
+.reveal svg.iot .exn   { fill: #8A5E00; font-size: 21px; font-weight: 700; }
+.reveal svg.iot .ext   { fill: $euf-navy; font-size: 19px; }
+// the neocolonial chain
+.reveal svg.neo .harm  { fill: rgba(#F6D5D0, 0.7); stroke: $euf-red; stroke-width: 2; }
+.reveal svg.neo .harmt { fill: $euf-red; font-weight: 700; font-size: 22px; }
+.reveal svg.neo .lbl   { font-size: 21px; }
+.reveal svg.neo .lbl-gray { fill: $euf-gray; font-size: 19px; font-style: italic; }
+.reveal svg.neo .money { fill: #1C7F7B; font-weight: 700; font-size: 21px; }
+// worked examples under a bullet (the Leontief inverse)
+.reveal .example { display: block; color: $euf-gray; font-size: 0.75em; margin: 0.15em 0 0.3em 0; }
+// a quote that has to be read from the back of the room
+.reveal .bigquote blockquote { font-size: 1.25em; }
+.reveal svg.neo .boxlabel { font-size: 25px; }
+.reveal svg.neo .lbl   { font-size: 23px; }
+.reveal svg.neo .lbl-gray { font-size: 21px; }
+.reveal svg.neo .money, .reveal svg.neo .harmt { font-size: 23px; }
+// the chain bullets are raw <ul> (explicit fragment indices): keep them tight
+.reveal .chain .link ul { margin: 0.15em 0 0.1em 1.1em; }
+.reveal .chain .link li { margin-bottom: 0.15em !important; color: $euf-gray; }
+// a second line in a .draw group that starts once the arrow has arrived
+// (the frames around final demand and value added on the IO schematic)
+.reveal svg .draw path.stroke.then { transition-delay: $draw-time; }
+.reveal svg .draw:not(.visible) path.stroke.then { transition-delay: 0s; }

@@ -4,11 +4,27 @@ subtitle: "A one-page tutorial for Session 6"
 date-modified: last-modified
 ---
 
-<!-- Tested on 27.10.2026 with Python 3.12, pymrio 0.7.0 and EXIOBASE 3.11.2
-     (IOT_2022_ixi): about 70 seconds including the download, ~4.6 GB of
-     memory at the peak. Results for Germany: PBA 647 Mt, CBA 817 Mt CO2.
+<!-- The Python cells are executed when the page is rendered, so the output
+     shown is real. Rendering needs the project's Python environment: a .venv
+     in the repo root with the packages in requirements.txt, which Quarto finds
+     through QUARTO_PYTHON in _environment.local (both untracked; see
+     requirements.txt for the two setup lines). The first render downloads
+     EXIOBASE (300 MB) into analysis/data-raw/exiobase/ (gitignored) and takes
+     a few minutes and ~5 GB of memory; after that the result is frozen in
+     _freeze/ and only re-run when this file changes.
+     Tested on 27.10.2026 with Python 3.12, pymrio 0.7.0 and EXIOBASE 3.11.2.
      pymrio.download_exiobase3() did NOT work on that day: Zenodo answers its
      page request with HTTP 403. Hence the direct download in step 1. -->
+
+```{python}
+#| include: false
+# Not shown on the page: keep the downloaded data out of the website folder.
+import os
+from pathlib import Path
+data_dir = Path("../../analysis/data-raw/exiobase")
+data_dir.mkdir(parents=True, exist_ok=True)
+os.chdir(data_dir)
+```
 
 This page shows how to compute **production-based (PBA)** and **consumption-based (CBA)**
 CO₂ emissions for your country from [EXIOBASE 3](https://doi.org/10.5281/zenodo.3583070)
@@ -28,7 +44,7 @@ pip install pymrio pandas
 EXIOBASE comes as one zip file per year. There are two versions of each year: `pxp`
 (product by product) and `ixi` (industry by industry). For country footprints, take `ixi`.
 
-```python
+```{python}
 from pathlib import Path
 from urllib.request import urlretrieve
 
@@ -53,7 +69,7 @@ instead of the code above.
 
 ## 2. Load the tables
 
-```python
+```{python}
 import numpy as np
 import pymrio
 
@@ -73,7 +89,7 @@ Each extension holds two tables: `F`, emissions by industry, and `F_Y`, emission
 directly by final users (households heating their homes or driving their cars). Here we
 take all fossil CO₂ emissions:
 
-```python
+```{python}
 rows = exio.air_emissions.get_rows()
 co2 = [r for r in rows if r.startswith("CO2 -") and "biogenic" not in r]
 
@@ -88,7 +104,7 @@ hundreds more. The units are in `exio.air_emissions.unit`.
 
 This is the equation from the lecture, one line per symbol:
 
-```python
+```{python}
 exio.calc_system()                    # computes A and the Leontief inverse L = (I - A)^-1
 x = exio.x["indout"]                  # gross output of every industry (million EUR)
 s = (F / x).replace([np.inf, -np.inf], 0).fillna(0)   # s: kg CO2 per million EUR of output
@@ -109,7 +125,7 @@ causes about a quarter more emissions than German production.
 
 The same vector tells you **where** the emissions of your country's consumption occur:
 
-```python
+```{python}
 origin = (s * supply_chain).groupby(level="region").sum() / 1e9
 print(origin.sort_values(ascending=False).head(8).round(1))   # Mt CO2
 ```
@@ -123,7 +139,7 @@ externalisation from the lecture, country by country.
 pymrio can do steps 4 and 5 for all regions in one go. Drop the extensions you do not
 need first, which saves memory:
 
-```python
+```{python}
 ae = exio.air_emissions
 for e in [e for e in exio.get_extensions() if e != "air_emissions"]:
     exio.remove_extension(e)
@@ -132,7 +148,7 @@ exio.calc_all()
 table = (ae.D_pba_reg.loc[co2].sum().to_frame("PBA")
            .join(ae.D_cba_reg.loc[co2].sum().rename("CBA")) / 1e9)
 table["net imports"] = table["CBA"] - table["PBA"]
-print(table.round(0).sort_values("net imports"))
+print(table.round().astype(int).sort_values("net imports"))
 ```
 
 `D_pba_reg` and `D_cba_reg` already include the direct emissions of final users, so the

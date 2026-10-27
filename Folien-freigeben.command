@@ -28,6 +28,18 @@
 #              render-Liste in _quarto.yml, sonst liegt das Deck nicht in
 #              _site und der iframe zeigt ins Leere.
 #
+#  NACHBEREITUNG (optional): Material, das ebenfalls erst nach dem Termin
+#  erscheinen soll (z. B. Hinweise auf Code und Daten), steht auf der Seite
+#  als auskommentierter Block
+#
+#      <!--after:06b
+#      ## Data and code
+#      …
+#      after:06b-->
+#
+#  Beim Freigeben wird daraus <!--after:06b--> … <!--/after:06b-->, der Inhalt
+#  also sichtbar. Der Block darf selbst kein "-->" enthalten.
+#
 #  Voraussetzung: die Datei liegt in content/material/slides/.
 #  Rückgängig machen: Folien-zuruecknehmen.command
 #
@@ -153,6 +165,10 @@ else:
     body = f"[📽️ Download the slides (PDF)](slides/{deck})\n"
 
 out = src[:m.start()] + m.group(1) + body + m.group(3) + src[m.end():]
+# Nachbereitung: den auskommentierten after-Block sichtbar machen.
+out = re.sub(r'<!--after:' + re.escape(sid) + r'\n(.*?)\nafter:' + re.escape(sid) + r'-->',
+             lambda a: '<!--after:' + sid + '-->\n' + a.group(1) + '\n<!--/after:' + sid + '-->',
+             out, flags=re.S)
 if out == src:
     print(f"  Sitzung {sid}: schon freigegeben.")
     raise SystemExit(2)

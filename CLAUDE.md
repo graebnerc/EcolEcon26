@@ -19,6 +19,8 @@ quarto render content/material/s_05_Trade.qmd    # Render a single page
 quarto publish netlify   # Publish to Netlify (target in _publish.yml)
 ```
 
+**Python** is needed for one page: `content/material/exiobase_python.qmd` has executable `{python}` cells (run through Jupyter, frozen in `_freeze/` like R output). Its environment is a `.venv` in the repo root built from `requirements.txt`, and Quarto finds it through `QUARTO_PYTHON` in `_environment.local`; both are untracked and machine-specific (setup lines at the top of `requirements.txt`). The first render downloads EXIOBASE (300 MB) into the gitignored `analysis/data-raw/exiobase/`.
+
 There is no test suite or linter — "building" means rendering with Quarto. Most renders are pure Markdown; R is needed for two things: any page with `{r}` chunks (at present only `content/material/template/session00.qmd`), and the figure pipeline in `analysis/`.
 
 **renv is activated.** `.Rprofile` sources `renv/activate.R`, so every R process started in this repo — including the one Quarto uses — resolves packages against the project library in `renv/library/`, not against the user library. After cloning, run `R -e 'renv::restore()'` once to install the pinned versions.

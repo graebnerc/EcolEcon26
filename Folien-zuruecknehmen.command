@@ -81,6 +81,10 @@ placeholder = (
     ":::\n"
 )
 out = src[:m.start()] + m.group(1) + placeholder + m.group(2) + src[m.end():]
+# Nachbereitung (siehe Folien-freigeben.command) wieder auskommentieren.
+out = re.sub(r'<!--after:' + re.escape(sid) + r'-->\n(.*?)\n<!--/after:' + re.escape(sid) + r'-->',
+             lambda a: '<!--after:' + sid + '\n' + a.group(1) + '\nafter:' + sid + '-->',
+             out, flags=re.S)
 if out == src:
     print(f"  Sitzung {sid}: war schon gesperrt.")
     raise SystemExit(2)

@@ -1,0 +1,11 @@
+# Python packages for the executable pages (at present only
+# content/material/exiobase_python.qmd). Setup, once, from the repo root:
+#   python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+#   echo "QUARTO_PYTHON=$PWD/.venv/bin/python" > _environment.local
+pymrio==0.7.0
+pandas==3.1.0
+numpy==2.5.4
+ipykernel
+nbclient
+nbformat
+pyyaml

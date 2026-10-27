@@ -87,3 +87,8 @@ content/material/slides/figures/
 # Keynote sources belong in content/material/slides/_keynote/, never in the repo root
 /*.key
 _SharedFolder-AK
+
+# Python: the venv and the machine-specific QUARTO_PYTHON (see requirements.txt)
+_environment.local
+
+/_*.local

@@ -234,7 +234,167 @@ III. Exercises and group work
 - Data source: statistical offices directly
 - Only very simple *economic* theory involved
 
-## An input-output table: the complete view
+## Building an IO table (1): flows between industries {auto-animate="true" data-auto-animate-id="io-num"}
+
+::: {.columns .iosteps style="gap: 2em; align-items: flex-start;"}
+::: {.column width="60%"}
+<table class="econ io num" data-id="io-num">
+<thead><tr><th class="corner">sells ↓ · buys →</th><th class="z">Agriculture</th><th class="z">Manufacturing</th></tr></thead>
+<tbody>
+<tr><th>Agriculture</th><td class="fragment mark mh z" data-fragment-index="4">150</td><td class="fragment mark mh z" data-fragment-index="3">500</td></tr>
+<tr><th>Manufacturing</th><td class="z">200</td><td class="z">100</td></tr>
+</tbody>
+</table>
+:::
+
+::: {.column width="40%"}
+<ul><li class="fragment" data-fragment-index="1">Two industries, values in € million</li><li class="fragment" data-fragment-index="2">Rows: who <strong>sells</strong> · columns: who <strong>buys</strong></li><li class="fragment" data-fragment-index="3">500: manufacturing buys agricultural products worth €500 m (e.g. grain for bread)</li><li class="fragment" data-fragment-index="4">150: agriculture buys its own products (seeds, feed)</li><li class="fragment" data-fragment-index="5">In general: <i>z</i><sub><i>ij</i></sub> = sales of industry <i>i</i> to industry <i>j</i></li></ul>
+:::
+:::
+
+::: {.source}
+Numbers after Miller & Blair [-@miller2009, ch. 2].
+:::
+
+## Building an IO table (2): final demand {auto-animate="true" data-auto-animate-id="io-num"}
+
+::: {.columns .iosteps style="gap: 2em; align-items: flex-start;"}
+::: {.column width="60%"}
+<table class="econ io num" data-id="io-num">
+<thead><tr><th class="corner">sells ↓ · buys →</th><th class="z">Agriculture</th><th class="z">Manufacturing</th><th class="fragment fd" data-fragment-index="1">Final demand <i>f</i></th><th class="fragment tot" data-fragment-index="2">Total output <i>x</i></th></tr></thead>
+<tbody>
+<tr><th>Agriculture</th><td class="fragment mark mh z" data-fragment-index="3">150</td><td class="fragment mark mh z" data-fragment-index="3">500</td><td class="fragment fd" data-fragment-index="1"><span class="fragment hlm mh cellmark" data-fragment-index="3">350</span></td><td class="fragment tot" data-fragment-index="2"><span class="fragment hlm mh cellmark" data-fragment-index="3">1000</span></td></tr>
+<tr><th>Manufacturing</th><td class="z">200</td><td class="z">100</td><td class="fragment fd" data-fragment-index="1">1700</td><td class="fragment tot" data-fragment-index="2">2000</td></tr>
+</tbody>
+</table>
+:::
+
+::: {.column width="40%"}
+<ul><li class="fragment" data-fragment-index="1">Other buyers: households, government, investors, the rest of the world → <strong>final demand</strong> <i>f</i></li><li class="fragment" data-fragment-index="2"><strong>Total output</strong> <i>x</i>: everything an industry sells</li><li class="fragment" data-fragment-index="3">Agriculture: 150 + 500 + 350 = 1000</li><li class="fragment" data-fragment-index="4">In general: <i>x</i><sub><i>i</i></sub> = Σ<sub><i>j</i></sub> <i>z</i><sub><i>ij</i></sub> + <i>f</i><sub><i>i</i></sub></li></ul>
+:::
+:::
+
+::: {.source}
+Numbers after Miller & Blair [-@miller2009, ch. 2].
+:::
+
+## Building an IO table (3): value added {auto-animate="true" data-auto-animate-id="io-num"}
+
+::: {.columns .iosteps style="gap: 2em; align-items: flex-start;"}
+::: {.column width="60%"}
+<table class="econ io num" data-id="io-num">
+<thead><tr><th class="corner">sells ↓ · buys →</th><th class="z">Agriculture</th><th class="z">Manufacturing</th><th class="fd">Final demand <i>f</i></th><th class="tot">Total output <i>x</i></th></tr></thead>
+<tbody>
+<tr><th>Agriculture</th><td class="fragment mark mh z" data-fragment-index="3">150</td><td class="z">500</td><td class="fragment mark mg fd" data-fragment-index="4">350</td><td class="tot">1000</td></tr>
+<tr><th>Manufacturing</th><td class="fragment mark mh z" data-fragment-index="3">200</td><td class="z">100</td><td class="fragment mark mg fd" data-fragment-index="4">1700</td><td class="tot">2000</td></tr>
+<tr><th class="fragment va" data-fragment-index="1">Value added <i>v</i></th><td class="fragment va" data-fragment-index="1"><span class="fragment hlm mh cellmark" data-fragment-index="3">650</span></td><td class="fragment va" data-fragment-index="1"><span class="fragment hlm mg cellmark" data-fragment-index="4">1400</span></td><td class="blank"></td><td class="blank"></td></tr>
+<tr><th class="fragment tot" data-fragment-index="2">Total input</th><td class="fragment tot" data-fragment-index="2">1000</td><td class="fragment tot" data-fragment-index="2">2000</td><td class="blank"></td><td class="blank"></td></tr>
+</tbody>
+</table>
+:::
+
+::: {.column width="40%"}
+<ul><li class="fragment" data-fragment-index="1">Industries also pay for non-industrial inputs: wages, profits, taxes → <strong>value added</strong> <i>v</i></li><li class="fragment" data-fragment-index="2"><strong>Total input</strong>: everything an industry spends</li><li class="fragment" data-fragment-index="3">Agriculture: 150 + 200 + 650 = 1000 = its total output</li><li class="fragment" data-fragment-index="4">Value added = final demand = <strong>GDP</strong>: 650 + 1400 = 2050 = 350 + 1700</li></ul>
+:::
+:::
+
+::: {.source}
+Numbers after Miller & Blair [-@miller2009, ch. 2].
+:::
+
+## In general: *n* industries
+
+::: {.columns style="gap: 1.6em;"}
+::: {.column width="44%"}
+[Interindustry flows of goods]{.muted}
+
+<table class="econ io" style="margin-top: 0.4em; font-size: 0.85em;">
+<thead>
+<tr><th class="blank"></th><th colspan="5">Buying sector</th></tr>
+<tr><th>Selling sector</th><th>1</th><th>⋯</th><th><i>j</i></th><th>⋯</th><th><i>n</i></th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td><i>z</i><sub>11</sub></td><td>⋯</td><td><i>z</i><sub>1<i>j</i></sub></td><td>⋯</td><td><i>z</i><sub>1<i>n</i></sub></td></tr>
+<tr><td>⋮</td><td>⋮</td><td></td><td>⋮</td><td></td><td>⋮</td></tr>
+<tr><td class="fragment mark mr" data-fragment-index="4"><i>i</i></td><td class="fragment mark mf" data-fragment-index="4"><i>z</i><sub><i>i</i>1</sub></td><td class="fragment mark mf" data-fragment-index="4">⋯</td><td class="fragment mark mr" data-fragment-index="1"><i>z</i><sub><i>ij</i></sub></td><td class="fragment mark mf" data-fragment-index="4">⋯</td><td class="fragment mark mf" data-fragment-index="4"><i>z</i><sub><i>in</i></sub></td></tr>
+<tr><td>⋮</td><td>⋮</td><td></td><td>⋮</td><td></td><td>⋮</td></tr>
+<tr><td><i>n</i></td><td><i>z</i><sub><i>n</i>1</sub></td><td>⋯</td><td><i>z</i><sub><i>nj</i></sub></td><td>⋯</td><td><i>z</i><sub><i>nn</i></sub></td></tr>
+</tbody>
+</table>
+
+::: {.fragment fragment-index=5 style="margin-top: 1.4em;"}
+- Next: embed this table in the full national accounts
+:::
+:::
+
+::: {.column width="56%"}
+::: {.nonincremental}
+::: {.fragment fragment-index=1}
+- $z_{ij}$: sales of sector $i$ to sector $j$ (interindustry sales)
+:::
+
+::: {.fragment fragment-index=2}
+- Total matrix for country $k$:
+  $$Z_{kk} = \begin{pmatrix} z_{11} & \cdots & z_{1n} \\ \vdots & & \vdots \\ z_{n1} & \cdots & z_{nn} \end{pmatrix}$$
+:::
+
+::: {.fragment fragment-index=3}
+- Missing: sales to non-industry actors, $f_i$
+:::
+
+::: {.fragment fragment-index=4}
+- Total sales of sector $i$, $x_i$:
+  $$x_i = z_{i1} + \dots + z_{ij} + \dots + z_{in} + f_i = \sum_{j=1}^n z_{ij} + f_i$$
+:::
+:::
+:::
+:::
+
+::: {.source}
+Miller & Blair [-@miller2009, ch. 2].
+:::
+
+## In detail: final demand and value added split up
+
+<table class="econ io io2">
+<thead><tr><th class="blank" colspan="2"></th><th colspan="2" class="z">Processing sectors</th><th colspan="4">Final demand</th><th>Total output (<i>x</i>)</th></tr><tr><th class="blank" colspan="2"></th><th class="z">1</th><th class="z">2</th><th>C</th><th>I</th><th>G</th><th>E</th><th></th></tr></thead><tbody>
+<tr><td class="rowlab" rowspan="2">Processing sectors</td><td>1</td><td class="z"><i>z</i><sub>11</sub></td><td class="z"><i>z</i><sub>12</sub></td><td class="fragment mark mf" data-fragment-index="1"><i>c</i><sub>1</sub></td><td class="fragment mark mf" data-fragment-index="1"><i>i</i><sub>1</sub></td><td class="fragment mark mf" data-fragment-index="1"><i>g</i><sub>1</sub></td><td class="fragment mark mf" data-fragment-index="1"><i>e</i><sub>1</sub></td><td class="fragment mark mx" data-fragment-index="3"><i>x</i><sub>1</sub></td></tr>
+<tr><td>2</td><td class="z"><i>z</i><sub>21</sub></td><td class="z"><i>z</i><sub>22</sub></td><td class="fragment mark mf" data-fragment-index="1"><i>c</i><sub>2</sub></td><td class="fragment mark mf" data-fragment-index="1"><i>i</i><sub>2</sub></td><td class="fragment mark mf" data-fragment-index="1"><i>g</i><sub>2</sub></td><td class="fragment mark mf" data-fragment-index="1"><i>e</i><sub>2</sub></td><td class="fragment mark mx" data-fragment-index="3"><i>x</i><sub>2</sub></td></tr>
+<tr><td class="rowlab" rowspan="3">Payments sectors</td><td class="rowlab">Value added (<i>v</i>′)</td><td class="fragment mark mv" data-fragment-index="2"><i>l</i><sub>1</sub></td><td class="fragment mark mv" data-fragment-index="2"><i>l</i><sub>2</sub></td><td><i>l</i><sub>C</sub></td><td><i>l</i><sub>I</sub></td><td><i>l</i><sub>G</sub></td><td><i>l</i><sub>E</sub></td><td class="fragment mark mx" data-fragment-index="3"><i>L</i></td></tr>
+<tr><td class="rowlab"></td><td class="fragment mark mv" data-fragment-index="2"><i>n</i><sub>1</sub></td><td class="fragment mark mv" data-fragment-index="2"><i>n</i><sub>2</sub></td><td><i>n</i><sub>C</sub></td><td><i>n</i><sub>I</sub></td><td><i>n</i><sub>G</sub></td><td><i>n</i><sub>E</sub></td><td class="fragment mark mx" data-fragment-index="3"><i>N</i></td></tr>
+<tr><td class="rowlab">Imports</td><td class="fragment mark mv" data-fragment-index="2"><i>m</i><sub>1</sub></td><td class="fragment mark mv" data-fragment-index="2"><i>m</i><sub>2</sub></td><td><i>m</i><sub>C</sub></td><td><i>m</i><sub>I</sub></td><td><i>m</i><sub>G</sub></td><td><i>m</i><sub>E</sub></td><td class="fragment mark mx" data-fragment-index="3"><i>M</i></td></tr>
+<tr><td class="rowlab" colspan="2">Total outlays (<i>x</i>′)</td><td class="fragment mark mx" data-fragment-index="3"><i>x</i><sub>1</sub></td><td class="fragment mark mx" data-fragment-index="3"><i>x</i><sub>2</sub></td><td class="fragment mark mx" data-fragment-index="3"><i>C</i></td><td class="fragment mark mx" data-fragment-index="3"><i>I</i></td><td class="fragment mark mx" data-fragment-index="3"><i>G</i></td><td class="fragment mark mx" data-fragment-index="3"><i>E</i></td><td class="fragment mark mx" data-fragment-index="3"><i>X</i></td></tr>
+</tbody></table>
+
+::: {.grid3 .io-notes .nonincremental}
+::: {.cap .nf .fragment fragment-index=1}
+**Composition of final demand**
+
+- consumption $C$, investment $I$, government spending $G$ and exports $E$
+- $f_i = c_i + i_i + g_i + e_i$
+:::
+
+::: {.cap .nv .fragment fragment-index=2}
+**The pendant on the input side: payments sectors / value added**
+
+- Employees' (non-industrial) labor: $l_i$
+- Other value added, e.g. government services, capital, land: $n_i$
+- Total value-added payments: $v_i = l_i + n_i$
+:::
+
+::: {.cap .nx .fragment fragment-index=3}
+**Totals**
+
+- Sum of columns or rows: total gross output $X$
+- Unlike net output (GDP): includes intermediate production
+:::
+:::
+
+::: {.source}
+Miller & Blair [-@miller2009, table 2.2].
+:::
+
+## A real input-output table: the complete view
 
 <svg class="diagram iot" viewBox="0 0 1440 600" width="1440" role="img" aria-label="Input-output transactions table: industries as producers and as consumers, final demand, and value added">
 <rect class="cell cz" x="410" y="180" width="66" height="27"/>
@@ -386,98 +546,6 @@ III. Exercises and group work
 After Miller & Blair [-@miller2009, fig. 1.1].
 :::
 
-## Input-output tables in more detail
-
-::: {.columns style="gap: 1.6em;"}
-::: {.column width="44%"}
-[Interindustry flows of goods]{.muted}
-
-<table class="econ io" style="margin-top: 0.4em; font-size: 0.85em;">
-<thead>
-<tr><th class="blank"></th><th colspan="5">Buying sector</th></tr>
-<tr><th>Selling sector</th><th>1</th><th>⋯</th><th><i>j</i></th><th>⋯</th><th><i>n</i></th></tr>
-</thead>
-<tbody>
-<tr><td>1</td><td><i>z</i><sub>11</sub></td><td>⋯</td><td><i>z</i><sub>1<i>j</i></sub></td><td>⋯</td><td><i>z</i><sub>1<i>n</i></sub></td></tr>
-<tr><td>⋮</td><td>⋮</td><td></td><td>⋮</td><td></td><td>⋮</td></tr>
-<tr><td class="fragment mark mr" data-fragment-index="4"><i>i</i></td><td class="fragment mark mf" data-fragment-index="4"><i>z</i><sub><i>i</i>1</sub></td><td class="fragment mark mf" data-fragment-index="4">⋯</td><td class="fragment mark mr" data-fragment-index="1"><i>z</i><sub><i>ij</i></sub></td><td class="fragment mark mf" data-fragment-index="4">⋯</td><td class="fragment mark mf" data-fragment-index="4"><i>z</i><sub><i>in</i></sub></td></tr>
-<tr><td>⋮</td><td>⋮</td><td></td><td>⋮</td><td></td><td>⋮</td></tr>
-<tr><td><i>n</i></td><td><i>z</i><sub><i>n</i>1</sub></td><td>⋯</td><td><i>z</i><sub><i>nj</i></sub></td><td>⋯</td><td><i>z</i><sub><i>nn</i></sub></td></tr>
-</tbody>
-</table>
-
-::: {.fragment fragment-index=5 style="margin-top: 1.4em;"}
-- Next: embed this table in the full national accounts
-:::
-:::
-
-::: {.column width="56%"}
-::: {.nonincremental}
-::: {.fragment fragment-index=1}
-- $z_{ij}$: sales of sector $i$ to sector $j$ (interindustry sales)
-:::
-
-::: {.fragment fragment-index=2}
-- Total matrix for country $k$:
-  $$Z_{kk} = \begin{pmatrix} z_{11} & \cdots & z_{1n} \\ \vdots & & \vdots \\ z_{n1} & \cdots & z_{nn} \end{pmatrix}$$
-:::
-
-::: {.fragment fragment-index=3}
-- Missing: sales to non-industry actors, $f_i$
-:::
-
-::: {.fragment fragment-index=4}
-- Total sales of sector $i$, $x_i$:
-  $$x_i = z_{i1} + \dots + z_{ij} + \dots + z_{in} + f_i = \sum_{j=1}^n z_{ij} + f_i$$
-:::
-:::
-:::
-:::
-
-::: {.source}
-Miller & Blair [-@miller2009, ch. 2].
-:::
-
-## Full accounts for a two-sector economy
-
-<table class="econ io io2">
-<thead><tr><th class="blank" colspan="2"></th><th colspan="2" class="z">Processing sectors</th><th colspan="4">Final demand</th><th>Total output (<i>x</i>)</th></tr><tr><th class="blank" colspan="2"></th><th class="z">1</th><th class="z">2</th><th>C</th><th>I</th><th>G</th><th>E</th><th></th></tr></thead><tbody>
-<tr><td class="rowlab" rowspan="2">Processing sectors</td><td>1</td><td class="z"><i>z</i><sub>11</sub></td><td class="z"><i>z</i><sub>12</sub></td><td class="fragment mark mf" data-fragment-index="1"><i>c</i><sub>1</sub></td><td class="fragment mark mf" data-fragment-index="1"><i>i</i><sub>1</sub></td><td class="fragment mark mf" data-fragment-index="1"><i>g</i><sub>1</sub></td><td class="fragment mark mf" data-fragment-index="1"><i>e</i><sub>1</sub></td><td class="fragment mark mx" data-fragment-index="3"><i>x</i><sub>1</sub></td></tr>
-<tr><td>2</td><td class="z"><i>z</i><sub>21</sub></td><td class="z"><i>z</i><sub>22</sub></td><td class="fragment mark mf" data-fragment-index="1"><i>c</i><sub>2</sub></td><td class="fragment mark mf" data-fragment-index="1"><i>i</i><sub>2</sub></td><td class="fragment mark mf" data-fragment-index="1"><i>g</i><sub>2</sub></td><td class="fragment mark mf" data-fragment-index="1"><i>e</i><sub>2</sub></td><td class="fragment mark mx" data-fragment-index="3"><i>x</i><sub>2</sub></td></tr>
-<tr><td class="rowlab" rowspan="3">Payments sectors</td><td class="rowlab">Value added (<i>v</i>′)</td><td class="fragment mark mv" data-fragment-index="2"><i>l</i><sub>1</sub></td><td class="fragment mark mv" data-fragment-index="2"><i>l</i><sub>2</sub></td><td><i>l</i><sub>C</sub></td><td><i>l</i><sub>I</sub></td><td><i>l</i><sub>G</sub></td><td><i>l</i><sub>E</sub></td><td class="fragment mark mx" data-fragment-index="3"><i>L</i></td></tr>
-<tr><td class="rowlab"></td><td class="fragment mark mv" data-fragment-index="2"><i>n</i><sub>1</sub></td><td class="fragment mark mv" data-fragment-index="2"><i>n</i><sub>2</sub></td><td><i>n</i><sub>C</sub></td><td><i>n</i><sub>I</sub></td><td><i>n</i><sub>G</sub></td><td><i>n</i><sub>E</sub></td><td class="fragment mark mx" data-fragment-index="3"><i>N</i></td></tr>
-<tr><td class="rowlab">Imports</td><td class="fragment mark mv" data-fragment-index="2"><i>m</i><sub>1</sub></td><td class="fragment mark mv" data-fragment-index="2"><i>m</i><sub>2</sub></td><td><i>m</i><sub>C</sub></td><td><i>m</i><sub>I</sub></td><td><i>m</i><sub>G</sub></td><td><i>m</i><sub>E</sub></td><td class="fragment mark mx" data-fragment-index="3"><i>M</i></td></tr>
-<tr><td class="rowlab" colspan="2">Total outlays (<i>x</i>′)</td><td class="fragment mark mx" data-fragment-index="3"><i>x</i><sub>1</sub></td><td class="fragment mark mx" data-fragment-index="3"><i>x</i><sub>2</sub></td><td class="fragment mark mx" data-fragment-index="3"><i>C</i></td><td class="fragment mark mx" data-fragment-index="3"><i>I</i></td><td class="fragment mark mx" data-fragment-index="3"><i>G</i></td><td class="fragment mark mx" data-fragment-index="3"><i>E</i></td><td class="fragment mark mx" data-fragment-index="3"><i>X</i></td></tr>
-</tbody></table>
-
-::: {.grid3 .io-notes .nonincremental}
-::: {.cap .nf .fragment fragment-index=1}
-**Composition of final demand**
-
-- consumption $C$, investment $I$, government spending $G$ and exports $E$
-- $f_i = c_i + i_i + g_i + e_i$
-:::
-
-::: {.cap .nv .fragment fragment-index=2}
-**The pendant on the input side: payments sectors / value added**
-
-- Employees' (non-industrial) labor: $l_i$
-- Other value added, e.g. government services, capital, land: $n_i$
-- Total value-added payments: $v_i = l_i + n_i$
-:::
-
-::: {.cap .nx .fragment fragment-index=3}
-**Totals**
-
-- Sum of columns or rows: total gross output $X$
-- Unlike net output (GDP): includes intermediate production
-:::
-:::
-
-::: {.source}
-Miller & Blair [-@miller2009, table 2.2].
-:::
-
 ## More than one country: MRIO tables
 
 - Global perspective: more than one country → system of IO tables
@@ -514,19 +582,37 @@ $$Z_{1k} = \begin{pmatrix} z_{11} & \cdots & z_{1n} \\ \vdots & & \vdots \\ z_{n
   - E.g., environmental factors as commodities of their own
 - Result: damages in country $i$ caused by consumption and production in country $j$
 
-## From flows to footprints: the Leontief inverse
+## From flows to footprints: the Leontief inverse {.leo}
 
 ::: {.nonincremental}
+::: {.columns style="gap: 1.5em; align-items: flex-start;"}
+::: {.column width="68%"}
 ::: {.fragment}
 - **Technical coefficients**: inputs from $i$ per unit of output of $j$: $\;a_{ij} = z_{ij} / x_j$, i.e. $\;A = Z\hat{x}^{-1}$
 
-  [Example: car industry, output €100 bn, buys steel for €20 bn → $a_{\text{steel,cars}} = 0.2$, i.e. 20 cents of steel per € of cars]{.example}
+  [Our table: manufacturing buys 500 from agriculture, output 2000 → $a_{12} = 500/2000 = 0.25$: 25 cents of agricultural inputs per € of manufactured goods]{.example}
 :::
 
 ::: {.fragment}
 - Output = what industries need + what final users buy: $\;x = Ax + f \;\Rightarrow\; x = (I - A)^{-1} f$
 
-  [Example, one sector with $a = 0.2$: final demand $f = 100$ → output $x = 100 / (1 - 0.2) = 125 = 100 + 20 + 4 + 0.8 + \dots$]{.example}
+  [Our table: $f = (350, 1700)$ gives back $x = (1000, 2000)$. And €100 more manufactured goods for final users → agriculture must produce €33 more: €25 directly, €8 for the inputs of the inputs^[$A = \begin{pmatrix}0.15 & 0.25\\ 0.20 & 0.05\end{pmatrix}$, $(I-A)^{-1} = \begin{pmatrix}1.254 & 0.330\\ 0.264 & 1.122\end{pmatrix}$: $(I-A)^{-1}(350, 1700)' = (1000, 2000)'$; $(I + A + A^2 + \dots)(0, 100)' = (0, 100)' + (25, 5)' + (8, 7)' = (33, 112)'$.]]{.example}
+:::
+:::
+
+::: {.column width="32%"}
+<table class="econ io num leo">
+<thead><tr><th class="corner"></th><th class="z">Agr.</th><th class="z">Manuf.</th><th class="fd"><i>f</i></th><th class="tot"><i>x</i></th></tr></thead>
+<tbody>
+<tr><th>Agriculture</th><td class="z">150</td><td class="z">500</td><td class="fd">350</td><td class="tot">1000</td></tr>
+<tr><th>Manufacturing</th><td class="z">200</td><td class="z">100</td><td class="fd">1700</td><td class="tot">2000</td></tr>
+</tbody>
+</table>
+
+::: {.source}
+Miller & Blair [-@miller2009, ch. 2 and 13]; Leontief [-@leontief1970].
+:::
+:::
 :::
 
 ::: {.fragment}
@@ -572,7 +658,7 @@ $A^3 + \dots$
 :::
 :::
 
-::: {.keybox .fragment style="margin-top: 1.0em;"}
+::: {.keybox .fragment style="margin-top: 0.4em;"}
 ::: {.eqlab}
 ::: {.term}
 footprint $=$
@@ -593,10 +679,6 @@ $f$
 [final demand]{.lab}
 :::
 :::
-:::
-
-::: {.source}
-Miller & Blair [-@miller2009, ch. 2 and 13]; Leontief [-@leontief1970].
 :::
 
 ## A real-world example: EXIOBASE3

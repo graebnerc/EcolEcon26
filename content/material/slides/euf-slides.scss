@@ -1002,3 +1002,29 @@ $io-x:  #CFE8E6;   // totals
 // (the frames around final demand and value added on the IO schematic)
 .reveal svg .draw path.stroke.then { transition-delay: $draw-time; }
 .reveal svg .draw:not(.visible) path.stroke.then { transition-delay: 0s; }
+
+// L06: the IO table built up with numbers
+.reveal table.econ.io.num { font-size: 0.82em; }
+.reveal table.econ.io.num th, .reveal table.econ.io.num td { padding: 0.35em 0.7em; text-align: center; }
+.reveal table.econ.io.num tbody th { text-align: left; font-weight: 700; }
+.reveal table.econ.io.num th.corner { font-weight: 400; font-size: 0.7em; color: $euf-gray; }
+.reveal table.econ.io .fd  { background: $io-f; }
+.reveal table.econ.io .va  { background: $io-v; }
+.reveal table.econ.io .tot { background: $io-x; }
+.reveal table.econ.io.num td.blank { background: none; }
+.reveal .fragment.mark.visible.mh { box-shadow: inset 0 0 0 3px $euf-red; color: $euf-red; font-weight: 700; }
+.reveal .fragment.mark.visible.mg { box-shadow: inset 0 0 0 3px #C98A00; color: #8A5E00; font-weight: 700; }
+.reveal .iosteps ul li { margin-bottom: 0.7em; }
+// a cell that appears on one click and is highlighted on a later one
+.reveal table.econ.io.num td:has(> .cellmark) { padding: 0; }
+.reveal .cellmark { display: block; padding: 0.35em 0.7em; }
+// nested in a cell that is itself a fragment: never hidden, framed when visible
+.reveal .slides section .fragment.hlm { opacity: 1; visibility: inherit; }
+.reveal .fragment.hlm.visible.mh { box-shadow: inset 0 0 0 3px $euf-red; color: $euf-red; font-weight: 700; }
+.reveal .fragment.hlm.visible.mg { box-shadow: inset 0 0 0 3px #C98A00; color: #8A5E00; font-weight: 700; }
+// the Leontief-inverse slide with the table beside it
+.reveal table.econ.io.num.leo { font-size: 0.62em; margin-top: 0.4em; }
+.reveal .leo .columns { font-size: 0.88em; }
+.reveal .leo .columns ul { margin-bottom: 0; }
+.reveal .leo .columns + div ul, .reveal .leo .nonincremental > .fragment ul { margin-top: 0.3em; margin-bottom: 0; }
+.reveal .leo .series { margin-top: 0; }

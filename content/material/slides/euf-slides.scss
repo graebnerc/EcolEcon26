@@ -1028,3 +1028,12 @@ $io-x:  #CFE8E6;   // totals
 .reveal .leo .columns ul { margin-bottom: 0; }
 .reveal .leo .columns + div ul, .reveal .leo .nonincremental > .fragment ul { margin-top: 0.3em; margin-bottom: 0; }
 .reveal .leo .series { margin-top: 0; }
+
+// L06: readings beside the physical trade balance, EU policy table
+.reveal .ptb-read { font-size: 0.72em; }
+.reveal .ptb-read ul ul { font-size: 1em; }
+.reveal .ptb-read li { margin-bottom: 0.25em !important; }
+.reveal table.econ.policy { font-size: 0.8em; width: 100%; margin-top: 0.6em; }
+.reveal table.econ.policy td, .reveal table.econ.policy th { text-align: left; padding: 0.45em 0.6em; vertical-align: top; }
+.reveal table.econ.policy td:first-child { font-weight: 700; white-space: nowrap; }
+.reveal table.econ.policy td:nth-child(2) { white-space: nowrap; }

@@ -91,7 +91,26 @@ instead of handicapping them."
 
 - Physical trade balance: imports **minus** exports, in tonnes
 
-![](figures/fig_L06b_09_physical_trade_balance.svg){.fragment height="600" fig-align="center" fig-alt="Physical trade balance by world region, 1970-2024: Asia and Europe are net importers of materials; West Asia, Eastern Europe and Central Asia, Latin America, North America and Africa are net exporters"}
+::: {.columns style="gap: 0.8em; align-items: center; margin-top: -0.4em;"}
+::: {.column width="63%"}
+![](figures/fig_L06b_09_physical_trade_balance.svg){.fragment height="560" fig-alt="Physical trade balance by world region, 1970-2024: Asia and Europe are net importers of materials; West Asia, Eastern Europe and Central Asia, Latin America, North America and Africa are net exporters"}
+:::
+
+::: {.column width="37%"}
+::: {.ptb-read}
+- **Asia & Pacific**: net importer since 1973
+  - 2.5 bn t (2024): fossil fuels, metal ores
+- **Europe**: net importer throughout
+  - ≈ 1 bn t · ≈ 30% of its material footprint extracted abroad
+- **North America**: net importer until 2012, net exporter since
+  - Exports: fossil fuels, biomass · footprint still > own extraction
+- **Latin America**: net exporter throughout
+  - ≈ 0.7 bn t: metal ores, biomass · ≈ 27% of its extraction consumed elsewhere
+- **West Asia**: net exporter throughout
+  - ≈ 1 bn t, almost only fossil fuels
+:::
+:::
+:::
 
 ## Neocolonial practices?
 
@@ -838,32 +857,34 @@ Steininger et al. [-@steininger2016]; Marques et al. [-@marques2012]. IBA cells:
 
 ## The European carbon footprint
 
-- Wood et al. [-@wood2020]: EU28 carbon footprint with EXIOBASE3
+- Wood et al. [-@wood2020]: greenhouse gases of the EU28, 1995–2015, with EXIOBASE3
 
 ::: {.columns style="gap: 1.6em;"}
-::: {.column width="60%"}
-![](img/L06b/wood2020-fig3.jpg){height="540" alt="GHG emissions embodied in EU trade: flows with other world regions in 2015, and total traded emissions 1995-2015"}
+::: {.column width="56%"}
+![](img/L06b/wood2020-fig3.jpg){height="520" alt="GHG emissions embodied in EU trade: flows with other world regions in 2015, and total traded emissions 1995-2015"}
 :::
 
-::: {.column width="40%"}
-- EU28 strongly integrated into world trade
-- EU28: net emission importer
-- Externalisation decreasing since 2008
-- Main reason: technological improvements in the EU and abroad
+::: {.column width="44%"}
+- **I**: emissions embodied in **imports**: emitted abroad for EU consumption
+- **E**: emissions embodied in **exports**: emitted in the EU for consumption abroad
+- **Net importer**: I > E, with every world region
+  - Largest gap: China, 783 vs. 295 Mt
+- → EU footprint (CBA) > EU emissions (PBA): 5.6 vs. 4.4 Gt
+- Since 2008: I falling, E slowly rising. Why?
 :::
 :::
 
 ::: {.source}
-Source: Wood et al. [-@wood2020], fig. 3.
+Wood et al. [-@wood2020], fig. 3; numbers for 2015, in CO₂ equivalents.
 :::
 
-## Emissions embodied in EU trade
+## How much of the EU footprint is traded?
 
-- **Emissions embodied in imports** (EEI): emitted outside the EU28 for final demand *within* the EU28 ('externalised')
-  - Non-CO₂ gases: net trade 40% of total footprint
-  - CO₂: EEI only 15% → trade in mining (CH₄), food and agriculture (CH₄, N₂O)
-- In all: 33% of the EU footprint due to EEI
-  - 17% of the EU's PBA emissions embodied in *exports*
+- **33%** of the EU footprint is emitted **abroad** (I)
+- **17%** of the emissions produced **in the EU** serve consumption abroad (E)
+- Net trade, I − E: **21%** of the EU footprint
+  - CO₂: 15% · other greenhouse gases: 40%
+  - Methane and nitrous oxide: imported agricultural products (CH₄, N₂O) and mining (CH₄)
 
 ::: {.arrowkey .fragment}
 ::: {.bigarrow style="color: #00395B;"}
@@ -871,58 +892,78 @@ Source: Wood et al. [-@wood2020], fig. 3.
 :::
 
 ::: {.keybox}
-Domestic policies miss 33% of emissions caused
+Policies for EU territory miss a third of the EU footprint
 :::
+:::
+
+::: {.source}
+Wood et al. [-@wood2020], numbers for 2015.
 :::
 
 ## What drives the EU footprint?
 
 ```{=html}
-<svg class="diagram" viewBox="0 0 960 350" width="1250" role="img" aria-label="Three drivers of the EU footprint: composition of trade, population growth and consumption per capita (no net effect); production technologies (negative); level of trade and total consumption (positive)">
+<svg class="diagram" viewBox="0 0 960 350" width="1250" role="img" aria-label="Drivers of the EU footprint 1995-2015: total consumption per capita (major increase), production technology in the EU and abroad (major decrease), offshoring, trade composition and population growth (minor increase)">
   <rect class="box" x="320" y="145" width="320" height="70" rx="10"/>
   <text class="boxlabel" x="480" y="188" text-anchor="middle">Overall footprint</text>
   <rect class="box" x="5" y="5" width="410" height="90" rx="10"/>
-  <text class="boxlabel" x="210" y="42" text-anchor="middle">Composition of trade, population</text>
-  <text class="boxlabel" x="210" y="74" text-anchor="middle">growth, consumption per capita</text>
-  <rect class="box" x="600" y="15" width="355" height="70" rx="10"/>
-  <text class="boxlabel" x="777" y="58" text-anchor="middle">Production technologies</text>
+  <text class="boxlabel" x="210" y="42" text-anchor="middle">Offshoring, trade composition,</text>
+  <text class="boxlabel" x="210" y="74" text-anchor="middle">population growth</text>
+  <rect class="box" x="590" y="5" width="365" height="90" rx="10"/>
+  <text class="boxlabel" x="772" y="42" text-anchor="middle">Production technology</text>
+  <text class="boxlabel" x="772" y="74" text-anchor="middle">(EU and abroad)</text>
   <rect class="box" x="300" y="265" width="360" height="82" rx="10"/>
-  <text class="boxlabel" x="480" y="298" text-anchor="middle">Level of trade &amp; total</text>
-  <text class="boxlabel" x="480" y="328" text-anchor="middle">consumption</text>
+  <text class="boxlabel" x="480" y="298" text-anchor="middle">Total consumption</text>
+  <text class="boxlabel" x="480" y="328" text-anchor="middle">(per capita)</text>
   <g class="fragment draw">
-    <path class="stroke" pathLength="1" d="M 290 97 L 336 136" fill="none" stroke="#00395B" stroke-width="5"/>
-    <polygon class="head" points="0,0 -18,-9 -18,9" fill="#00395B" transform="translate(342,141) rotate(41)"/>
-    <circle class="head" cx="272" cy="135" r="18" fill="#6F6F6F"/>
-    <text x="272" y="142" text-anchor="middle" style="fill:#fff; font-size:22px; font-weight:700;">0</text>
-  </g>
-  <g class="fragment draw">
-    <path class="stroke" pathLength="1" d="M 720 87 L 632 138" fill="none" stroke="#00395B" stroke-width="5"/>
-    <polygon class="head" points="0,0 -18,-9 -18,9" fill="#00395B" transform="translate(626,142) rotate(150)"/>
-    <circle class="head" cx="735" cy="128" r="18" fill="#1C7F7B"/>
-    <text x="735" y="136" text-anchor="middle" style="fill:#fff; font-size:26px; font-weight:700;">−</text>
-  </g>
-  <g class="fragment draw">
-    <path class="stroke" pathLength="1" d="M 480 263 L 480 224" fill="none" stroke="#00395B" stroke-width="5"/>
+    <path class="stroke" pathLength="1" d="M 480 263 L 480 230" fill="none" stroke="#00395B" stroke-width="5"/>
     <polygon class="head" points="0,0 -18,-9 -18,9" fill="#00395B" transform="translate(480,219) rotate(-90)"/>
-    <circle class="head" cx="515" cy="242" r="18" fill="#DF5541"/>
-    <text x="515" y="250" text-anchor="middle" style="fill:#fff; font-size:26px; font-weight:700;">+</text>
+    <circle class="head" cx="520" cy="242" r="22" fill="#DF5541"/>
+    <text x="520" y="251" text-anchor="middle" style="fill:#fff; font-size:28px; font-weight:700;">+</text>
+    <text class="lbl" x="552" y="249">major</text>
+  </g>
+  <g class="fragment draw">
+    <path class="stroke" pathLength="1" d="M 720 97 L 636 136" fill="none" stroke="#00395B" stroke-width="5"/>
+    <polygon class="head" points="0,0 -18,-9 -18,9" fill="#00395B" transform="translate(626,142) rotate(155)"/>
+    <circle class="head" cx="738" cy="132" r="22" fill="#1C7F7B"/>
+    <text x="738" y="141" text-anchor="middle" style="fill:#fff; font-size:28px; font-weight:700;">−</text>
+    <text class="lbl" x="770" y="140">major</text>
+  </g>
+  <g class="fragment draw">
+    <path class="stroke" pathLength="1" d="M 290 97 L 334 134" fill="none" stroke="#00395B" stroke-width="5"/>
+    <polygon class="head" points="0,0 -18,-9 -18,9" fill="#00395B" transform="translate(342,141) rotate(41)"/>
+    <circle class="head" cx="268" cy="135" r="14" fill="#E99A8D"/>
+    <text x="268" y="142" text-anchor="middle" style="fill:#fff; font-size:20px; font-weight:700;">+</text>
+    <text class="lbl" x="200" y="142" text-anchor="end">minor</text>
   </g>
 </svg>
 ```
 
-- Overall footprint slightly decreasing, 1995-2015
-  - Changes in consumption matter much more than outsourcing
+- Footprint 1995–2015: **−8%** (production-based: −13%)
+- Main reason for the decline: **cleaner production technology**, in the EU and abroad
+- Rising consumption matters much more than offshoring
+
+::: {.source}
+Wood et al. [-@wood2020], structural decomposition, fig. 4.
+:::
 
 ## Policy implications for the EU
 
-- **Main drivers** of traded emissions: three sectors
-  - **Agriculture & mining**: strong import, little substitution → only less consumption reduces emissions
-  - **Manufacturing**: more emissions imported *and* exported → specialisation, no significant externalisation
-- Here, EU policy must account for traded emissions
-- **Problem**: classical policies less effective when trade matters
-  - **Example**: carbon-tax exemptions to protect export competitiveness
-- One possible response: **border adjustment measures**
-  - Carbon prices included in the price of imports
+- Which sectors drive the **traded** emissions, and what follows?
+
+<table class="econ policy">
+<thead><tr><th>Sector</th><th>Emitted abroad¹</th><th>Why</th><th>Implication</th></tr></thead>
+<tbody>
+<tr class="fragment"><td>Mining</td><td>79%</td><td>Mines are largely outside the EU</td><td>Cannot move home → <strong>consumption-side</strong> policies</td></tr>
+<tr class="fragment"><td>Agriculture</td><td>37%</td><td>Some food cannot be grown in the EU</td><td>Same: <strong>consumption-side</strong> policies</td></tr>
+<tr class="fragment"><td>Manufacturing</td><td>45% (net: 25%)</td><td>Imports <em>and</em> exports: specialisation, not de-industrialisation</td><td>Carbon prices with exemptions to protect competitiveness → <strong>border adjustment</strong> (EU: CBAM since 2026 → Session 7)</td></tr>
+<tr class="fragment"><td>Households, services, transport</td><td>little</td><td>Hardly traded: PBA ≈ CBA</td><td><strong>Domestic</strong> policies reach them</td></tr>
+</tbody>
+</table>
+
+::: {.source}
+¹ Share of the emissions caused by EU consumption of the sector's products that occur outside the EU; net: after subtracting EU exports. Wood et al. [-@wood2020], fig. 6 and section 4.
+:::
 
 ## Why production-based accounting dominates
 

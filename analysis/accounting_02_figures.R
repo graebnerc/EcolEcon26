@@ -1,5 +1,5 @@
 # ============================================================================
-#  accounting_02_figures.R — rebuild the data figures for session 6b
+#  accounting_02_figures.R — rebuild the data figures for session 6
 #  ("Extractivism, externalization & the global accounting of ecological
 #  stressors")
 #
@@ -39,7 +39,7 @@ save_l06b <- function(plot, file, width = 9, height = 5.4) {
 if (!file.exists(IRP_FILE))
   stop("IRP export missing - see analysis/data-manual/README-mfa4_export.txt")
 
-message("Building session 6b figures ...")
+message("Building session 6 figures ...")
 
 # The unit column holds the single letter "t", which readr would guess as
 # logical TRUE - so the text columns are typed explicitly (as in 02_figures.R).

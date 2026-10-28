@@ -14,7 +14,7 @@ This session examines **trade**: the classical case for free trade, from Smith a
 and the challenges to it — unequal terms of trade, technological lock-in, and the
 **externalization** of ecological costs across countries. The **environmental conflicts**
 this produces on the ground were planned for the second half, but moved to the next
-session for lack of time (see [Environmental conflicts](s_06a_Conflicts.html), Session 6).
+session for lack of time (see [Environmental conflicts](s_08a_Conflicts.html), Session 8).
 
 ## 🖥️ Lecture Slides
 
@@ -220,7 +220,7 @@ A caveat to carry into the poster: economic complexity describes the **productiv
 structure** of an economy. It tells you nothing about whether that structure is ecologically
 sustainable or socially just. Look at what your country exports *and* at what this
 extraction or production costs on the ground, which is where
-[Session 6](s_06a_Conflicts.html) picks up.
+[Session 6](s_06_Accounting.html) picks up.
 
 ::: {.callout-note}
 ## Want to rebuild the figures yourself?

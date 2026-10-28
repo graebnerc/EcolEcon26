@@ -2,28 +2,27 @@
 title: "🗓️ Session 6: Accounting environmental stressors on the global level"
 date: "2026-10-28"
 date-modified: last-modified
-# The page used to be s_06_Accounting.html; keep old links working.
+# The page used to be s_06b_Accounting.html; keep old links working.
 aliases:
-  - s_06_Accounting.html
+  - s_06b_Accounting.html
 ---
 
 ## Abstract
 
-This second part of the session, following [Environmental conflicts](s_06a_Conflicts.html),
-introduces methods for **accounting environmental stressors on the global level**,
+This session introduces methods for **accounting environmental stressors on the global level**,
 including the distinction between production- and consumption-based statistics. In the
 accompanying group work, you continue analysing the challenges facing your selected country or
 region.
 
 ## 🖥️ Lecture Slides
 
-<!--slides:06b:EcolEcon26_L06b_Accounting.html-->
+<!--slides:06:EcolEcon26_L06_Accounting.html-->
 ::: {.slides-pending}
 📽️ Slides will be made available after the lecture.
 :::
-<!--/slides:06b-->
+<!--/slides:06-->
 
-<!--after:06b
+<!--after:06
 ## 📊 Data sources for the figures
 
 Every data figure in the lecture is built from **openly available data**, so you can pull the
@@ -40,7 +39,7 @@ same data for **your own country**.
 
 The figures are drawn by the R script `accounting_02_figures.R` in the
 [`analysis/` folder of the course repository](https://github.com/graebnerc/EcolEcon26/tree/main/analysis).
-The [README](https://github.com/graebnerc/EcolEcon26/blob/main/analysis/README.md#session-6b-accounting-environmental-stressors)
+The [README](https://github.com/graebnerc/EcolEcon26/blob/main/analysis/README.md#session-6-accounting-environmental-stressors)
 explains how to run it. You are welcome to change the regions, the year or the grouping, or
 to adapt the code for your own poster.
 :::
@@ -53,7 +52,7 @@ in about twenty lines of code. If you would rather not write code, Our World in 
 shows [production- and consumption-based CO₂ emissions](https://ourworldindata.org/grapher/production-vs-consumption-co2-emissions)
 for almost every country. These numbers come from a different model (the Global Carbon Budget),
 which also makes them a good second source to check your EXIOBASE results against.
-after:06b-->
+after:06-->
 
 ## 📚 Follow-up Reading
 

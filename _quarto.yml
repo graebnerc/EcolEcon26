@@ -55,20 +55,20 @@ website:
                 text: "Primer on poster design and presentation"
           - href: content/material/s_05_Trade.qmd
             text: "Session 5 (21.10.): Free trade: blessing or curse?"
-          - section: "Session 6 (28.10.): Environmental conflicts & accounting"
-            contents:
-              - href: content/material/s_06a_Conflicts.qmd
-                text: "Environmental conflicts"
-              - href: content/material/s_06b_Accounting.qmd
-                text: "Accounting environmental stressors"
+          - href: content/material/s_06_Accounting.qmd
+            text: "Session 6 (28.10.): Accounting environmental stressors"
           - section: "Session 7 (04.11.): Policy instruments & EU ETS"
             contents:
               - href: content/material/s_07a_PolicyInstruments.qmd
                 text: "Classical environmental policy instruments"
               - href: content/material/s_07b_ETS.qmd
                 text: "Application: the EU ETS"
-          - href: content/material/s_08_Degrowth.qmd
-            text: "Session 8 (11.11.): Growth vs. degrowth"
+          - section: "Session 8 (11.11.): Environmental conflicts & degrowth"
+            contents:
+              - href: content/material/s_08a_Conflicts.qmd
+                text: "Environmental conflicts"
+              - href: content/material/s_08b_Degrowth.qmd
+                text: "The growth vs. degrowth debate"
           - href: content/material/s_09_Justice.qmd
             text: "Session 9 (18.11.): Environmental & global justice"
           - href: content/material/s_10_HeatTransition.qmd

@@ -1,29 +1,31 @@
 ---
-title: "🗓️ Session 6: Environmental conflicts"
-date: "2026-10-28"
+title: "🗓️ Session 8: Environmental conflicts"
+date: "2026-11-11"
 date-modified: last-modified
-# Planned as the second part of session 5 (s_05b_Conflicts.html), moved here
-# for lack of time; keep old links working.
+# Planned for session 5 (s_05b_Conflicts.html), then session 6
+# (s_06a_Conflicts.html); keep old links working.
 aliases:
   - s_05b_Conflicts.html
+  - s_06a_Conflicts.html
 ---
 
 ## Abstract
 
 Where ecologically unequal exchange touches the ground, it is often contested. This first
-part of the session picks up where [Free trade — blessing or curse?](s_05_Trade.html) (Session 5)
-ended. It introduces **ecological distribution conflicts** and the **environmentalism of the
+part of the session links [Free trade — blessing or curse?](s_05_Trade.html) (Session 5) and
+[Accounting environmental stressors](s_06_Accounting.html) (Session 6) to the
+[growth vs. degrowth debate](s_08b_Degrowth.html) that follows. It introduces **ecological distribution conflicts** and the **environmentalism of the
 poor**, presents the **Environmental Justice Atlas (EJAtlas)**, and offers a structured way
 of analysing a single conflict — illustrated with lithium mining in the Salar de Atacama,
 Chile. In the group work, you apply it to a conflict in your country.
 
 ## 🖥️ Lecture Slides
 
-<!--slides:06a:EcolEcon26_L06a_Conflicts.html-->
+<!--slides:08a:EcolEcon26_L08a_Conflicts.html-->
 ::: {.slides-pending}
 📽️ Slides will be made available after the lecture.
 :::
-<!--/slides:06a-->
+<!--/slides:08a-->
 
 ## 🧭 Group work
 

@@ -29,7 +29,7 @@ os.chdir(data_dir)
 This page shows how to compute **production-based (PBA)** and **consumption-based (CBA)**
 CO₂ emissions for your country from [EXIOBASE 3](https://doi.org/10.5281/zenodo.3583070)
 [@stadler2018]. Each step corresponds to a slide of
-[Session 6](s_06b_Accounting.qmd). If you have never used Python, this is still a good
+[Session 6](s_06_Accounting.qmd). If you have never used Python, this is still a good
 place to start: copy the code block by block into a Jupyter notebook and run it.
 
 **What you need:** Python 3.10 or newer, about 5 GB of free memory and 300 MB of disk space

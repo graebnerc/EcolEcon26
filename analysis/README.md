@@ -15,7 +15,7 @@ shows the steps from the raw download to the finished figure.
 |---|---|---|---|
 | 3: Working with data | `01_download.R`, `02_figures.R` | GDP, poverty, material use, emissions, the doughnut | [session page](https://ecological-economics26.netlify.app/content/material/s_03b_WorkingWithData.html#data-sources-for-the-figures) |
 | 5: Free trade | `trade_01_download.R`, `trade_02_figures.R` | South Korea, solar PV, terms of trade, economic complexity, product space | [session page](https://ecological-economics26.netlify.app/content/material/s_05_Trade.html#data-sources-for-the-figures) |
-| 6b: Accounting | `accounting_02_figures.R` (no download script) | Export treemaps Africa vs. Europe, physical trade balance by region, material footprint by HDI group | UN IRP Global Material Flows Database; Our World in Data |
+| 6: Accounting | `accounting_02_figures.R` (no download script) | Export treemaps Africa vs. Europe, physical trade balance by region, material footprint by HDI group | UN IRP Global Material Flows Database; Our World in Data |
 
 For each session there are two scripts. The download script fetches the data
 and needs an internet connection. The figure script only reads the downloaded
@@ -57,7 +57,7 @@ Rscript analysis/02_figures.R           # figures go to analysis/figures/
 Rscript analysis/trade_01_download.R
 Rscript analysis/trade_02_figures.R
 
-# Session 6b (reads the IRP export and the OWID file of session 3)
+# Session 6 (reads the IRP export and the OWID file of session 3)
 Rscript analysis/accounting_02_figures.R
 ```
 
@@ -154,9 +154,9 @@ Slide titles refer to the
 | `fig_L05_21_rca_matrix` | Technologically unequal exchange | Countries × products with RCA ≥ 1 |
 | `fig_L05_24_product_space` | The product space | The product space |
 | `fig_L05_25_product_space_groups` | The product space | The product space for three groups of countries (`_blind`: the same without panel titles) |
-| `fig_L06a_lithium_trade` | Environmental conflicts (session 6) | Exporters of lithium carbonate, and the destinations of Chile's exports |
+| `fig_L06a_lithium_trade` | Environmental conflicts (session 8) | Exporters of lithium carbonate, and the destinations of Chile's exports |
 
-The lithium figure is used in session 6, but it is based on the same Atlas
+The lithium figure is used in session 8, but it is based on the same Atlas
 data and therefore built here.
 
 ### Data
@@ -277,7 +277,7 @@ colours are still fairly close, so every figure that uses them also has a
 legend and either direct labels or panel titles. If you change the colours,
 check them again, and the same applies to the colours on your poster.
 
-## Session 6b: accounting environmental stressors
+## Session 6: accounting environmental stressors
 
 | File | Slide | Content |
 |---|---|---|

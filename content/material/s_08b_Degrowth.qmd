@@ -2,20 +2,23 @@
 title: "🗓️ Session 8: The growth vs. degrowth debate"
 date: "2026-11-11"
 date-modified: last-modified
+# The page used to be s_08_Degrowth.html; keep old links working.
+aliases:
+  - s_08_Degrowth.html
 ---
 
 ## Abstract
 
-This session engages with the **growth vs. degrowth debate**. In the accompanying group work,
+Following [Environmental conflicts](s_08a_Conflicts.html), this second part of the session engages with the **growth vs. degrowth debate**. In the accompanying group work,
 you develop policy sets for your selected country or region.
 
 ## 🖥️ Lecture Slides
 
-<!--slides:08:EcolEcon26_L08_Degrowth.pdf-->
+<!--slides:08b:EcolEcon26_L08b_Degrowth.pdf-->
 ::: {.slides-pending}
 📽️ Slides will be made available after the lecture.
 :::
-<!--/slides:08-->
+<!--/slides:08b-->
 
 ## 📖 Up-front Reading
 

@@ -32,12 +32,12 @@
 #  erscheinen soll (z. B. Hinweise auf Code und Daten), steht auf der Seite
 #  als auskommentierter Block
 #
-#      <!--after:06b
+#      <!--after:06
 #      ## Data and code
 #      …
-#      after:06b-->
+#      after:06-->
 #
-#  Beim Freigeben wird daraus <!--after:06b--> … <!--/after:06b-->, der Inhalt
+#  Beim Freigeben wird daraus <!--after:06--> … <!--/after:06-->, der Inhalt
 #  also sichtbar. Der Block darf selbst kein "-->" enthalten.
 #
 #  Voraussetzung: die Datei liegt in content/material/slides/.

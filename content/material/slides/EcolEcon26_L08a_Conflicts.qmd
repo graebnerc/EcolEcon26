@@ -3,7 +3,7 @@ title: "Environmental conflicts"
 subtitle: "Where unequal exchange touches the ground — and how to analyse it"
 author: "Prof. Dr. Claudius Gräbner-Radkowitsch"
 institute: "Department of Pluralist Economics, Europa-Universität Flensburg · ICAE, JKU Linz"
-date: "2026-10-28"
+date: "2026-11-11"
 date-format: "D MMMM YYYY"
 bibliography: ../../../references/references.bib
 csl: ../../../references/jepp.csl
@@ -244,7 +244,7 @@ No case for your country? Take one linked to its main export commodity
 - The **EJAtlas**: a global, co-produced inventory — a starting point, to be read critically
 - **Seven questions** for a single conflict: what and where, why, through whom, impacts, how, when — and so what
 - The Atacama case: even **"green" technologies** have extraction frontiers and contested valuation languages
-- Next: **measuring** the embodied flows → after the break; **justice** → Session 9
+- Measuring the embodied flows → Session 6; next: **growth vs. degrowth**; **justice** → Session 9
 
 ## Suggestion for country analysis
 

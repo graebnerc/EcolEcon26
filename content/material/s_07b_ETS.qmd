@@ -27,6 +27,8 @@ An application of environmental policy instruments to the **European Emissions T
 :::
 <!--/slides:07b-->
 
+- The [worksheet](s_07b_ETS_Worksheet.pdf) for the group work
+
 ## 📚 Reading
 
 There is **no mandatory reading** for this session.

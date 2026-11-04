@@ -29,7 +29,7 @@
     ::: {.keybox} … :::           → bordered box, centred, for a takeaway
     ::: {.keybox .lg} / {.xl}     → the same box, enlarged for emphasis
     ::: {.taskbox} … :::          → large, low-sitting box for exercise slides
-    ::: {.arrow} … :::            → the fat-arrow conclusion line
+    ::: {.arrow} … :::            → the conclusion line with a drawn arrow
     ::: {#id .timer seconds="N"}  → countdown ring (needs the produnis/timer
                                     filter in the deck's YAML)
 
@@ -451,20 +451,33 @@ body:has(section.divider.present) .slide-logo { display: none !important; }
 .reveal .arrow {
   color: $euf-blue;
   font-weight: 700;
-  font-size: 1em;
+  font-size: 1.1em;
   margin-top: 1.2em;
 }
-.reveal .arrow p { margin: 0; }
+// The arrow is a vector drawing (colour: $euf-blue), so it does not depend on a
+// font. On a fragment it draws itself from left to right.
+.reveal .arrow p { margin: 0; position: relative; padding-left: 2.2em; }
 .reveal .arrow p::before {
-  content: "\27A1";
-  color: $euf-blue;
-  margin-right: 0.5em;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.12em;
+  width: 1.8em;
+  height: 1.05em;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 54 32'%3E%3Cpath d='M3 16H49M35 4L50 16L35 28' fill='none' stroke='%2300395B' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") left center / contain no-repeat;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
 }
+.reveal .arrow.fragment p::before {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.5s ease-out 0.1s;
+}
+.reveal .arrow.fragment.visible p::before { clip-path: inset(0); }
 
 // Size variants, matching .keybox and .grid2/.cap:
 //   ::: {.arrow .lg}  /  ::: {.arrow .xl}
 .reveal .arrow.lg {
-  font-size: 1.15em;
+  font-size: 1.2em;
   margin-top: 1.4em;
 }
 .reveal .arrow.xl {
@@ -1037,3 +1050,215 @@ $io-x:  #CFE8E6;   // totals
 .reveal table.econ.policy td, .reveal table.econ.policy th { text-align: left; padding: 0.45em 0.6em; vertical-align: top; }
 .reveal table.econ.policy td:first-child { font-weight: 700; white-space: nowrap; }
 .reveal table.econ.policy td:nth-child(2) { white-space: nowrap; }
+
+// L07a: the Kaya identity with labels under its terms
+.reveal .kaya { display: flex; justify-content: center; align-items: flex-start; gap: 0.35em; margin: 0.5em 0 0.7em 0; }
+.reveal .kaya .term { width: 6.4em; text-align: center; }
+.reveal .kaya .term > p:first-child { display: flex; align-items: center; justify-content: center; height: 3.3em; margin: 0; font-size: 1.25em; }
+.reveal .kaya .op { display: flex; align-items: center; height: 4.1em; font-size: 1em; }
+.reveal .kaya .op p { margin: 0; font-size: 1.25em; }
+.reveal .kaya .lab { display: block; margin-top: 0.5em; padding: 0.5em 0.3em; font-size: 0.85em; line-height: 1.25; }
+.reveal .kaya.compact { margin: 0 0 0.8em 0; }
+.reveal .kaya.compact .term { width: 5em; }
+.reveal .kaya.compact .term > p:first-child { height: 2.9em; font-size: 1.05em; }
+.reveal .kaya.compact .op { height: 3.05em; }
+.reveal .kaya.compact .op p { font-size: 1.05em; }
+.reveal .slides section .kaya-list.synced ol > li { margin-bottom: 1em; }
+
+// L07a: supply and demand diagrams
+.reveal svg.sd { margin: 0; }
+.reveal svg.sd .ax { fill: none; stroke: $euf-navy; stroke-width: 2.5; }
+.reveal svg.sd .cv { fill: none; stroke: $euf-blue; stroke-width: 3; }
+.reveal svg.sd .cv.smc { stroke: $euf-teal; }
+.reveal svg.sd .cv.t1 { stroke: #2A72B5; }
+.reveal svg.sd .dot { fill: none; stroke: $euf-navy; stroke-width: 3; stroke-dasharray: 1 8; stroke-linecap: round; }
+.reveal svg.sd .dot-t1 { fill: none; stroke: #2A72B5; stroke-width: 3; stroke-dasharray: 1 8; stroke-linecap: round; }
+.reveal svg.sd .pt { fill: #000000; }
+.reveal svg.sd .smcpt { fill: $euf-teal; }
+.reveal svg.sd .t1pt { fill: #2A72B5; }
+.reveal svg.sd .brace { fill: none; stroke: $euf-red; stroke-width: 2.5; }
+.reveal svg.sd .cs { fill: #F3B98A; fill-opacity: 0.8; }
+.reveal svg.sd .ps { fill: #FBE38B; fill-opacity: 0.8; }
+.reveal svg.sd text { font-size: 20px; }
+.reveal svg.sd .lg { fill: $euf-gray; }
+.reveal svg.sd .it { font-style: italic; }
+.reveal svg.sd .l-teal { fill: $euf-teal; font-weight: 600; }
+.reveal svg.sd .l-red { fill: $euf-red; font-weight: 600; }
+.reveal svg.sd .l-cs { fill: #B4530E; font-weight: 600; }
+.reveal svg.sd .l-ps { fill: #8A5E00; font-weight: 600; }
+.reveal svg.sd .val { fill: $euf-navy; font-style: italic; font-size: 21px; }
+.reveal svg.sd .sup { font-size: 15px; }
+.reveal svg.sd.mid { display: block; margin: 0 auto; }
+.reveal svg.sd .leader-blue { fill: none; stroke: #1F5A92; stroke-width: 1.5; }
+
+// L07a: the comparison of the four instruments, empty and filled in
+.reveal table.econ.instr { width: 100%; font-size: 0.85em; margin-top: 0.5em; table-layout: fixed; }
+.reveal table.econ.instr th, .reveal table.econ.instr td { text-align: center; vertical-align: middle; padding: 0.3em 0.5em; height: 2.3em; }
+.reveal table.econ.instr tbody th { text-align: left; }
+.reveal table.econ.instr.filled { margin-top: 0.2em; font-size: 0.92em; }
+.reveal .timer-xs .base-timer { width: 130px; height: 130px; margin: 0 auto; }
+
+// L07a: fragments that move instead of fade. .mv slides by --tx/--ty on its click
+// (nest two for two stops); .rise grows a bar out of its base; .hl frames a Kaya
+// term while it is the current step. Reveal's fade is switched off for all three.
+.reveal .slides section svg .fragment.mv,
+.reveal .slides section svg .fragment.rise,
+.reveal .slides section .fragment.hl { opacity: 1; visibility: inherit; }
+.reveal .slides section svg .fragment.mv { transition: transform 0.9s ease-in-out; }
+.reveal .slides section svg .fragment.mv.visible { transform: translate(var(--tx, 0px), var(--ty, 0px)); }
+.reveal .slides section svg .fragment.rise {
+  transform: scaleY(0);
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  transition: transform 0.6s ease-out;
+}
+.reveal .slides section svg .fragment.rise.down { transform-origin: 50% 0%; }
+.reveal .slides section svg .fragment.rise.visible { transform: scaleY(1); }
+.reveal .kaya .term.hl.current-fragment > p:first-child { box-shadow: inset 0 0 0 4px $euf-blue; }
+
+// L07a: further marks of the diagrams
+.reveal svg.sd .price { fill: none; stroke: #2A72B5; stroke-width: 3; }
+.reveal svg.sd .gap { fill: none; stroke: $euf-red; stroke-width: 5; }
+.reveal svg.sd .leader { fill: none; stroke: $euf-red; stroke-width: 1.5; }
+.reveal svg.sd .lost { fill: $euf-red; fill-opacity: 0.35; }
+.reveal svg.sd .rev { fill: #2A72B5; fill-opacity: 0.22; }
+.reveal svg.sd .mvpt { fill: #000000; }
+.reveal svg.sd .l-blue { fill: #1F5A92; font-weight: 600; }
+.reveal svg.sd .arrow-red { fill: none; stroke: $euf-red; stroke-width: 3; }
+.reveal svg.sd .fill-red { fill: $euf-red; }
+.reveal svg.sd .fill-teal { fill: $euf-teal; }
+.reveal svg.sd .money { fill: none; stroke: $euf-teal; stroke-width: 3; }
+.reveal svg.sd .firm { fill: $euf-blue; font-weight: 700; font-size: 22px; }
+.reveal svg.sd .abate { fill: #F3B98A; }
+.reveal svg.sd .allow { fill: $euf-blue; stroke: #FFFFFF; stroke-width: 2; }
+.reveal svg.sd .on-dark { fill: #FFFFFF; font-weight: 600; }
+.reveal svg.sd .on-light { fill: $euf-navy; font-weight: 600; }
+.reveal svg.sd .tax-line { fill: none; stroke: #2A72B5; stroke-width: 4; }
+.reveal svg.sd .old { fill: none; stroke: $euf-rule; stroke-width: 3; stroke-dasharray: 8 7; }
+.reveal svg.sd .ref { fill: none; stroke: $euf-gray; stroke-width: 1.5; stroke-dasharray: 6 6; }
+.reveal svg.sd .bar-g { fill: $euf-teal; }
+.reveal svg.sd .bar-r { fill: $euf-red; }
+.reveal svg.sd .bar-b { fill: $euf-blue; }
+.reveal svg.sd .bar-up { fill: $euf-red; }
+.reveal svg.sd .bar-down { fill: $euf-teal; }
+.reveal svg.sd .ghost { fill: none; stroke: $euf-blue; stroke-width: 2; stroke-dasharray: 7 6; }
+.reveal svg.sd .conn { fill: none; stroke: $euf-gray; stroke-width: 1.5; }
+.reveal svg.sd.wf { margin: 0 auto; }
+.reveal svg.sd .sm { font-size: 18px; }
+.reveal svg.sd .val.up { font-style: normal; font-weight: 600; }
+.reveal svg.sd.wf .val { font-style: normal; font-weight: 600; font-size: 20px; }
+.reveal svg.sd.reb .val { font-style: normal; font-weight: 600; font-size: 24px; }
+
+// L07a: causal chains of the rebound effects
+.reveal svg.sd.rbd { margin: 0 auto 0.4em auto; }
+.reveal svg.sd .node { fill: #FFFFFF; stroke: $euf-blue; stroke-width: 2; }
+.reveal svg.sd .node.start { fill: $euf-blue; }
+.reveal svg.sd .node.end { fill: #FBE3DF; stroke: $euf-red; }
+.reveal svg.sd .link { fill: none; stroke: $euf-blue; stroke-width: 3; }
+.reveal svg.sd .fill-blue { fill: $euf-blue; }
+
+// L08b: paper title pages, the five reasons for correlation, spurious charts
+.reveal .covers { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5em; }
+.reveal .covers.two { margin-bottom: 0.6em; }
+.reveal .covers p { margin: 0; }
+.reveal .covers img { width: 100%; margin: 0; }
+.reveal .why5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.6em; margin: 0.2em 0 0.6em 0; }
+.reveal .why5 .cap { padding: 0.6em 0.5em; text-align: center; }
+.reveal .why5 .cap p { color: $euf-navy; }
+.reveal .why5 .caphead { font-size: 0.85em; }
+.reveal .spurious { display: grid; grid-template-columns: 1fr 1fr 0.62fr; gap: 0.8em; align-items: center; margin-top: 0.3em; }
+.reveal .spurious p { margin: 0; }
+.reveal .spurious img { width: 100%; margin: 0; }
+.reveal img.mid { display: block; margin: 0.2em auto 0 auto; }
+.reveal .caplist ul { margin: 0 0 0 0.2em; }
+.reveal .slides section .caplist ul > li { font-size: 0.86em; margin: 0 0 0.35em 0; color: $euf-gray; }
+.reveal .ipat p { margin: 0 0 0.2em 0; font-size: 0.85em; color: $euf-gray; }
+
+// L08b: the tables of Warlenius (2023), rebuilt; .hi3/.hi4 shade the row of constant GDP
+.reveal table.econ.warl { width: 100%; font-size: 0.8em; margin-top: 0.3em; }
+.reveal table.econ.warl th, .reveal table.econ.warl td { padding: 0.28em 0.5em; text-align: right; }
+.reveal table.econ.warl.hi3 tbody tr:nth-child(3) td,
+.reveal table.econ.warl.hi4 tbody tr:nth-child(4) td { background: #D8E8F1; }
+.reveal table.econ.warl.t3 th:first-child, .reveal table.econ.warl.t3 td:first-child { text-align: left; }
+
+// L08b: GDP paths under different decoupling rates
+.reveal svg.sd .sc0, .reveal svg.sd .sc4, .reveal svg.sd .sc7, .reveal svg.sd .sc10, .reveal svg.sd .sc12 { fill: none; stroke-width: 3; }
+.reveal svg.sd .sc0 { stroke: $euf-gray; }
+.reveal svg.sd .sc4 { stroke: $euf-red; }
+.reveal svg.sd .sc7 { stroke: #2A72B5; }
+.reveal svg.sd .sc10 { stroke: $euf-blue; }
+.reveal svg.sd .sc12 { stroke: $euf-teal; }
+.reveal svg.sd .lbl { fill: $euf-navy; }
+
+// L07a: title page of a report beside the bullets
+.reveal img.cover { border: 1px solid $euf-rule; margin: 0; }
+
+// L07a: small tables and notes
+.reveal .arrow.tight { margin-top: 0.3em; }
+
+// L07a: bullets in step with a diagram. Each bullet is its own one-item list inside
+// a fragment div with an explicit index, so no list margins between them.
+.reveal .slides section .synced ul, .reveal .slides section .synced ol { display: block; margin-top: 0; margin-bottom: 0; }
+.reveal .slides section .synced ul > li, .reveal .slides section .synced ol > li { margin-top: 0; margin-bottom: 0.55em; }
+.reveal .synced p { margin: 0; }
+
+// An empty fragment that starts something in what follows it (.go-x.visible ~ …)
+.reveal .trigger { height: 0; margin: 0; }
+
+// L07a: the identity cancels down. \class{cs-x}{\cancel{…}} marks the terms. MathJax's
+// own strike is hidden: it measures the font before the slide is scaled, so its line
+// comes out too short. The diagonal here fits the box of the symbol at any scale and
+// is revealed from left to right by its trigger.
+.reveal .kaya .menclose[class*="cs-"] { position: relative; }
+.reveal .kaya .menclose[class*="cs-"] svg { display: none; }
+.reveal .kaya .menclose[class*="cs-"]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, transparent calc(50% - 1.5px), $euf-red calc(50% - 1.5px), $euf-red calc(50% + 1.5px), transparent calc(50% + 1.5px));
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 0.5s ease-out;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.reveal .go-p.visible ~ .kaya .menclose.cs-p::after,
+.reveal .go-g.visible ~ .kaya .menclose.cs-g::after,
+.reveal .go-e.visible ~ .kaya .menclose.cs-e::after { clip-path: inset(0); }
+.reveal .kaya .orig { transition: opacity 0.2s; }
+.reveal .go-fly.visible ~ .kaya .orig { opacity: 0; }
+html.print-pdf .reveal .go-fly.visible ~ .kaya .orig { opacity: 1; }
+.reveal .kaya-result { display: flex; align-items: center; justify-content: center; gap: 1.1em; margin-top: 0.5em; }
+.reveal .kaya-result > p { display: flex; align-items: center; gap: 0.35em; margin: 0; font-size: 1.25em; }
+.reveal .kaya-result .arrow { margin: 0; }
+.reveal .slides section .kaya-result .fly {
+  display: inline-block;
+  transform: translate(var(--fx), var(--fy));
+  transition: opacity 0.1s, transform 0.9s ease-in-out;
+}
+.reveal .slides section .kaya-result .fly.visible { transform: none; }
+
+// L07a: the four instruments take the colour of their group with its label
+.reveal .cap.nm, .reveal .cap.mb { transition: background-color 0.4s, border-color 0.4s, opacity 0.2s; }
+.reveal .cap.nm .caphead, .reveal .cap.nm p, .reveal .cap.mb .caphead, .reveal .cap.mb p { transition: color 0.4s; }
+.reveal .go-nm.visible ~ .grid2 .cap.nm { background: $euf-blue; border-color: $euf-blue; }
+.reveal .go-mb.visible ~ .grid2 .cap.mb { background: $euf-teal; border-color: $euf-teal; }
+.reveal .go-nm.visible ~ .grid2 .cap.nm .caphead, .reveal .go-nm.visible ~ .grid2 .cap.nm p,
+.reveal .go-mb.visible ~ .grid2 .cap.mb .caphead, .reveal .go-mb.visible ~ .grid2 .cap.mb p { color: #FFFFFF; }
+.reveal .instr-legend { margin-top: 1.1em; }
+.reveal .instr-legend p { display: flex; justify-content: center; gap: 2em; margin: 0; }
+.reveal .chip { padding: 0.25em 1em; color: #FFFFFF; font-weight: 700; }
+.reveal .chip.nm { background: $euf-blue; }
+.reveal .chip.mb { background: $euf-teal; }
+.reveal .wf-notes { margin-top: 0.1em; }
+.reveal .wf-notes li { margin-bottom: 0.25em !important; font-size: 0.92em; }
+.reveal .pq-notes { margin-top: 0.1em; }
+.reveal .pq-notes li { margin-bottom: 0.25em !important; font-size: 0.95em; }
+.reveal table.econ.popshare { width: 100%; font-size: 0.8em; margin: 0.3em 0 0.5em 0; }
+.reveal table.econ.popshare th, .reveal table.econ.popshare td { text-align: center; padding: 0.25em 0.5em; }
+.reveal table.econ.popshare td:first-child, .reveal table.econ.popshare th:first-child { text-align: left; font-weight: 700; }
+.reveal table.econ.trade-table { width: 100%; font-size: 0.85em; }
+.reveal table.econ.trade-table td, .reveal table.econ.trade-table th { text-align: center; padding: 0.3em 0.5em; }
+.reveal table.econ.trade-table td:first-child { text-align: left; }
+.reveal table.econ.travel { width: 100%; font-size: 0.82em; margin-bottom: 0.5em; }
+.reveal table.econ.travel td, .reveal table.econ.travel th { text-align: left; padding: 0.3em 0.6em; }
+.reveal table.econ.travel td:first-child { font-weight: 700; white-space: nowrap; }

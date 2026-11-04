@@ -16,6 +16,7 @@ shows the steps from the raw download to the finished figure.
 | 3: Working with data | `01_download.R`, `02_figures.R` | GDP, poverty, material use, emissions, the doughnut | [session page](https://ecological-economics26.netlify.app/content/material/s_03b_WorkingWithData.html#data-sources-for-the-figures) |
 | 5: Free trade | `trade_01_download.R`, `trade_02_figures.R` | South Korea, solar PV, terms of trade, economic complexity, product space | [session page](https://ecological-economics26.netlify.app/content/material/s_05_Trade.html#data-sources-for-the-figures) |
 | 6: Accounting | `accounting_02_figures.R` (no download script) | Export treemaps Africa vs. Europe, physical trade balance by region, material footprint by HDI group | UN IRP Global Material Flows Database; Our World in Data |
+| 7a: Policy instruments | `policy_01_download.R`, `policy_02_figures.R` | Kaya decomposition of CO₂ for any country (a table; the slide draws it as an animated SVG) | [Our World in Data, CO₂ dataset](https://github.com/owid/co2-data) |
 
 For each session there are two scripts. The download script fetches the data
 and needs an internet connection. The figure script only reads the downloaded
@@ -293,3 +294,26 @@ written by `trade_01_download.R`. The treemaps need the package `treemapify`.
 Countries are grouped by their most recent HDI and stay in that group for all
 years; the series starts in 1995 because the successor states of the USSR,
 Czechoslovakia and Yugoslavia enter the IRP data only in the early 1990s.
+
+## Session 7a: policy instruments
+
+`policy_01_download.R` fetches the CO₂ dataset of Our World in Data.
+`policy_02_figures.R` splits the change in a country's production-based (territorial) CO₂
+emissions between two years into the four Kaya factors (population, GDP per person, energy per
+GDP, CO₂ per energy), with the additive log-mean Divisia index (LMDI; [Ang, 2005](https://doi.org/10.1016/j.enpol.2003.10.010)).
+The four effects sum exactly to the total change. The script prints two tables: the first has
+the steps for each term (values, ratio, log ratio, effect), the second the summary. The
+[session page](https://ecological-economics26.netlify.app/content/material/s_07a_PolicyInstruments.html)
+goes through these steps for Germany.
+
+For your poster, put your country into `countries` and read the tables. Keep in mind that these
+are production-based emissions: production moved abroad looks like falling energy intensity (see
+Session 6). So the summary also prints consumption-based emissions and net CO₂ imports, as a
+check on how much of the change is trade. GDP in this dataset ends in 2022.
+
+The effects are accounting contributions, not causes. The identity is static and does not show
+how the terms affect each other, so "GDP per person added 517 Mt" does not tell you what would
+have happened with a different growth rate.
+
+The waterfall on the slide is an animated SVG drawn from these numbers. It lives in the deck,
+so if the numbers change, it has to be changed by hand.

@@ -11,11 +11,87 @@ effectiveness can be evaluated from an economic perspective.
 
 ## 🖥️ Lecture Slides
 
-<!--slides:07a:EcolEcon26_L07a_PolicyInstruments.pdf-->
-::: {.slides-pending}
-📽️ Slides will be made available after the lecture.
+<!--slides:07a:EcolEcon26_L07a_PolicyInstruments.html-->
+```{=html}
+<div class="container" style="position: relative;overflow: hidden;width: 100%;padding-top: 56.25%;">
+<iframe src="slides/EcolEcon26_L07a_PolicyInstruments.html" style="position: absolute;top: 0;left: 0;bottom: 0;right: 0;width: 100%;height: 100%;" allowfullscreen loading="lazy"></iframe>
+</div>
+```
+
+[📽️ Open the slides in a separate tab](slides/EcolEcon26_L07a_PolicyInstruments.html){.btn .btn-primary target="_blank"}
+
+::: {.callout-tip}
+## Would you rather have a PDF?
+Open the slides, click the ☰ button in the upper right corner, and choose
+**Tools → PDF Export Mode**. Then print the page (<kbd>Cmd</kbd>/<kbd>Ctrl</kbd> + <kbd>P</kbd>)
+and save it as a PDF.
 :::
 <!--/slides:07a-->
+
+<!--after:07a-->
+## 📊 Data for the Kaya decomposition
+
+The decomposition of Germany's and China's CO₂ emissions uses the openly available
+[CO₂ dataset of Our World in Data](https://github.com/owid/co2-data).
+
+::: {.callout-note collapse="true"}
+## The computations behind the decomposition (slide 7)
+
+**The setup.** The Kaya identity writes emissions as a product of four terms, and we want to
+know how much of the change between 1990 and 2022 goes to each term. Changing one term at a
+time does not work well here: if the other terms stay at their 1990 values, the pieces do not
+add up to the total change, and if we change them in sequence, the result depends on the
+order. The slide therefore uses the additive **log-mean Divisia index** (LMDI).
+
+For Germany, the numbers are as follows (GDP in international dollars, ratio = 2022/1990):
+
+| Term                        |      1990 |    2022 |     Ratio |  ln(ratio) | Effect (Mt) |
+|:----------------------------|----------:|--------:|----------:|-----------:|------------:|
+| Population (million)        |      79.7 |    84.1 |     1.055 |      0.053 |         +45 |
+| GDP per person              |    25,287 |  46,495 |     1.839 |      0.609 |        +517 |
+| Energy per GDP (kWh/dollar) |      2.08 |    0.87 |     0.420 |     −0.868 |        −737 |
+| CO₂ per energy (kg/kWh)     |     0.252 |   0.197 |     0.782 |     −0.246 |        −209 |
+| **CO₂ (Mt)**                | **1,055** | **671** | **0.637** | **−0.452** |    **−383** |
+
+**Step 1: logarithms.** The logarithm turns a product into a sum, so the log changes of the
+four terms add up exactly to the log change in emissions:
+$0.053 + 0.609 - 0.868 - 0.246 = -0.452$.
+
+**Step 2: back to Mt.** To turn log changes into Mt CO₂, we multiply them by the
+**logarithmic mean** of emissions in the two years:
+
+$$
+L = \frac{\mathcal{E}^{2022} - \mathcal{E}^{1990}}{\ln \mathcal{E}^{2022} - \ln \mathcal{E}^{1990}}
+= \frac{671.5 - 1{,}054.8}{\ln 671.5 - \ln 1{,}054.8} = 848.8
+$$
+
+By construction, $848.8 \cdot (-0.4516) = -383.3$ Mt, the total change.
+
+**Step 3: the effects.** Each term gets the same treatment. For GDP per person,
+$848.8 \cdot 0.609 = +517$ Mt. These are the bars on the slide. They sum to the total change
+without a residual; the $-384$ you get from the rounded values in the table is only a rounding
+difference.
+
+**What the effects do not tell you.** They are accounting contributions, not causes. The
+$-737$ Mt does not say what emissions would have been with a constant energy intensity, because
+the terms also affect each other (see the caution on slide 5). And since the formula uses
+logarithms, all values must be positive.
+
+The method is explained in @ang2005, a short practical guide. @ang2015 discusses which LMDI
+variant to use for which purpose.
+:::
+
+::: {.callout-note}
+## Decompose your own country
+
+The R script `policy_02_figures.R` in the
+[`analysis/` folder of the course repository](https://github.com/graebnerc/EcolEcon26/tree/main/analysis)
+prints this table. Put your country into `countries` and run it: which Kaya term is your
+country's story? The
+[README](https://github.com/graebnerc/EcolEcon26/blob/main/analysis/README.md#session-7a-policy-instruments)
+explains how.
+:::
+<!--/after:07a-->
 
 ## 📖 Up-front Reading
 

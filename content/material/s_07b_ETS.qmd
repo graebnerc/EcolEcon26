@@ -22,9 +22,7 @@ An application of environmental policy instruments to the **European Emissions T
 ## 🖥️ Lecture Slides
 
 <!--slides:07b:EcolEcon26_L07b_ETS.pdf-->
-::: {.slides-pending}
-📽️ Slides will be made available after the lecture.
-:::
+[📽️ Download the slides (PDF)](slides/EcolEcon26_L07b_ETS.pdf)
 <!--/slides:07b-->
 
 - The [worksheet](s_07b_ETS_Worksheet.pdf) for the group work

@@ -19,8 +19,12 @@ author:
 
 ## Abstract
 
-This session studies the **heat transition in Germany** as a case study. In the accompanying
-group work, you address the policy challenges facing your selected country or region.
+The guiding question of this session is: why is the (German) **heat transition** much more
+than a mere replacement of technologies or simple technological change? To illuminate this
+question, we introduce a **systems perspective** on technologies and technological change,
+which also takes into account actors, material artifacts, and rules and institutions. The
+approach is not specific to the German heat transition, and you can apply it to other cases
+as well.
 
 ## 🖥️ Lecture Slides
 
@@ -30,10 +34,20 @@ group work, you address the policy challenges facing your selected country or re
 :::
 <!--/slides:10-->
 
-## 📚 Follow-up Reading
+## 📖 Up-front Reading
 
-- [TODO: add follow-up readings for this session.]
+Please read **before** the session:
+
+- @braunger2023
+- @geels2004 — closed access, the PDF is available via
+  [Moodle](https://elearning.uni-flensburg.de/moodle/course/view.php?id=17919).
 
 ### 🏆 Further readings
 
-- [TODO: add further readings for this session.]
+- @brauers2021
+- @rosenow2025
+
+## References
+
+::: {#refs}
+:::

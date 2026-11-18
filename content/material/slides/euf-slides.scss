@@ -768,9 +768,9 @@ body:has(section.duel.present) .slide-logo { display: none !important; }
 .reveal .slides section ol > li { margin-bottom: 1.15em; padding-left: 0.3em; }
 
 // ---- a text grid in the boxed table style (L06a, seven questions) --------
-.reveal table.econ.grid7 { font-size: 0.8em; width: 100%; }
+.reveal table.econ.grid7 { font-size: 0.95em; width: 100%; }
 .reveal table.econ.grid7 td,
-.reveal table.econ.grid7 th { text-align: left; padding: 0.35em 0.6em; }
+.reveal table.econ.grid7 th { text-align: left; padding: 0.5em 0.7em; }
 .reveal table.econ.grid7 td:first-child { text-align: center; font-weight: 700; }
 .reveal table.econ.grid7 td:last-child { color: $euf-gray; }
 
@@ -1262,3 +1262,64 @@ html.print-pdf .reveal .go-fly.visible ~ .kaya .orig { opacity: 1; }
 .reveal table.econ.travel { width: 100%; font-size: 0.82em; margin-bottom: 0.5em; }
 .reveal table.econ.travel td, .reveal table.econ.travel th { text-align: left; padding: 0.3em 0.6em; }
 .reveal table.econ.travel td:first-child { font-weight: 700; white-space: nowrap; }
+
+// L08a: the three currents of environmentalism, fanning out from one heading.
+// Each column is a fragment that is never hidden: on its click the arrow is
+// drawn, then arrowhead and box fade in.
+.reveal .currents-head { text-align: center; margin: 0.9em 0 0.1em 0; }
+.reveal .grid3.currents { gap: 0 1.2em; }
+.reveal .slides section .fragment.fan { opacity: 1; visibility: inherit; }
+.reveal .fan svg { display: block; width: 100%; height: auto; overflow: visible; margin-bottom: 0.35em; }
+.reveal .fan path.stroke {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset $draw-time ease-in-out;
+}
+.reveal .fan.visible path.stroke { stroke-dashoffset: 0; }
+.reveal .fan .head,
+.reveal .fan .cap {
+  opacity: 0;
+  transition: opacity 0.3s ease ($draw-time - 0.1s);
+}
+.reveal .fan.visible .head,
+.reveal .fan.visible .cap { opacity: 1; }
+.reveal .fan:not(.visible) .head,
+.reveal .fan:not(.visible) .cap { transition-delay: 0s; }
+.reveal .fan .cap { text-align: center; }
+// the three boxes keep the same height, however long their text
+.reveal .fan { display: flex; flex-direction: column; }
+.reveal .fan .cap { flex: 1 0 auto; }
+
+// L08a: question numbers as badges, the same in the table of seven questions
+// and on the worked example, so the example reads as the table filled in.
+.reveal .qn {
+  display: inline-block;
+  min-width: 1.45em;
+  padding: 0.05em 0;
+  background: $euf-blue;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.85em;
+  line-height: 1.3;
+  text-align: center;
+  border-radius: 3px;
+}
+.reveal .qlist > ul { list-style: none; margin-left: 0; }
+.reveal .slides section .qlist > ul > li { position: relative; padding-left: 2.0em; margin-bottom: 0.9em; }
+.reveal .qlist > ul > li > .qn,
+.reveal .qlist > ul > li > p:first-child > .qn { position: absolute; left: 0; top: 0.12em; }
+.reveal .qlist ul ul { margin-left: 0.9em; }
+
+// the seven questions as a strip under the title of the worked example;
+// the questions the slide answers are filled in
+.reveal .qstrip { display: flex; gap: 0.35em; margin: -0.3em 0 1.0em 0; font-size: 0.6em; }
+.reveal .qstrip p { margin: 0; }
+.reveal .qstrip > span {
+  flex: 1 1 auto;
+  border: 1.5px solid $euf-rule;
+  color: $euf-gray;
+  padding: 0.25em 0.4em;
+  white-space: nowrap;
+}
+.reveal .qstrip > span.on { border-color: $euf-blue; background: $euf-blue; color: #FFFFFF; font-weight: 700; }
+.reveal .qstrip b { margin-right: 0.35em; }

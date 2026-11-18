@@ -7,10 +7,6 @@ date: "2026-11-11"
 date-format: "D MMMM YYYY"
 bibliography: ../../../references/references.bib
 csl: ../../../references/jepp.csl
-# cited only inside the raw-HTML table of "seven questions", which citeproc
-# cannot see
-nocite: |
-  @scheidel2018, @navas2018
 filters:
   - produnis/timer
 format:
@@ -36,25 +32,33 @@ format:
 ## From unequal exchange to conflicts on the ground
 
 - Resources flow **net from poorer to richer** countries
-- Per unit of resource exported, rich countries earn **far more**
-- The costs of extraction stay **where the extraction happens**
+- Rich countries earn **far more** per unit exported
+- Costs of extraction stay **where extraction happens**
 
 ::: {.grid2 .stats .fragment}
 ::: {.cap}
 [11×]{.statnum}
 
-value added per **tonne of raw material** embodied in exports — in **high-income** compared with **lowest-income** countries
+value added per **tonne of raw material** in exports — **high-** vs. **lowest-income** countries
 :::
 
 ::: {.cap}
 [28×]{.statnum}
 
-value added per **hour of labour** embodied in exports — in **high-income** compared with **lowest-income** countries
+value added per **hour of labour** in exports — **high-** vs. **lowest-income** countries
 :::
 :::
 
 ::: {.arrow .lg .fragment}
 Where those costs are contested: **ecological distribution conflicts**
+:::
+
+::: {.notes}
+**Recap of Session 6.** Dorninger et al. trace materials, energy, land and labour embodied in exports with an environmentally extended MRIO model, 1990–2015. High-income countries are net importers of all four.
+
+**The two numbers:** value added per tonne of raw material embodied in exports is 11 times higher in high-income than in the lowest-income countries; per hour of embodied labour it is 28 times higher. So poorer countries give up more resources and more work for each euro they earn.
+
+**Third bullet:** the money leaves with the commodity, the costs do not. Water, land, health effects stay at the extraction site. This is where the conflicts of today start.
 :::
 
 ::: {.source}
@@ -65,26 +69,71 @@ net flows of materials, energy, land and labour to high-income countries.
 
 ## The environmentalism of the poor
 
-::: {.columns .divided}
-::: {.column width="48%"}
 ::: {.colhead}
 Ecological distribution conflicts
 :::
 
-- A growing **social metabolism** needs ever more materials, energy and sinks
-- Conflicts over **who gets** the benefits and **who bears** the burdens
-- Fought out in different **valuation languages**: money, livelihood, territory, sacredness
-:::
+- Growing **social metabolism** → more materials, energy, sinks
+- Conflicts over **who gets** the benefits, **who bears** the burdens
+- Different **valuation languages**: money, livelihood, territory, sacredness
 
-::: {.column width="52%"}
-::: {.colhead}
+::: {.colhead .currents-head .fragment}
 Three currents of environmentalism
 :::
 
-- **Cult of wilderness**: protect pristine nature
-- **Gospel of eco-efficiency**: green growth, technology, markets
-- **Environmentalism of the poor**: livelihoods, territory and health of those living off the land
+::: {.grid3 .currents}
+::: {.fan .fragment}
+<svg viewBox="0 0 511 108" aria-hidden="true">
+  <path class="stroke" pathLength="1" d="M 740 4 L 271.2 100.8" fill="none" stroke="#00395B" stroke-width="5"/>
+  <polygon class="head" points="0,0 -20,-11 -20,11" fill="#00395B" transform="translate(255.5,104) rotate(168.34)"/>
+</svg>
+
+::: {.cap}
+[Cult of wilderness]{.caphead}
+
+Protect pristine nature
 :::
+:::
+
+::: {.fan .fragment}
+<svg viewBox="0 0 511 108" aria-hidden="true">
+  <path class="stroke" pathLength="1" d="M 255.5 4 L 255.5 88" fill="none" stroke="#00395B" stroke-width="5"/>
+  <polygon class="head" points="0,0 -20,-11 -20,11" fill="#00395B" transform="translate(255.5,104) rotate(90)"/>
+</svg>
+
+::: {.cap}
+[Gospel of eco-efficiency]{.caphead}
+
+Green growth, technology, markets
+:::
+:::
+
+::: {.fan .fragment}
+<svg viewBox="0 0 511 108" aria-hidden="true">
+  <path class="stroke" pathLength="1" d="M -229 4 L 239.8 100.8" fill="none" stroke="#00395B" stroke-width="5"/>
+  <polygon class="head" points="0,0 -20,-11 -20,11" fill="#00395B" transform="translate(255.5,104) rotate(11.66)"/>
+</svg>
+
+::: {.cap}
+[Environmentalism of the poor]{.caphead}
+
+Livelihoods, territory, health of those living off the land
+:::
+:::
+:::
+
+::: {.notes}
+**Social metabolism:** the flows of materials and energy through an economy, from extraction to waste. A growing metabolism needs new extraction sites and more sinks (atmosphere, rivers, dumps). Commodity frontiers move into new territories, and that is where conflicts arise.
+
+**Distribution:** the conflicts are about the distribution of environmental benefits and burdens, not about prices. Who gets the copper, the lithium, the cheap energy; who gets the polluted river.
+
+**Valuation languages:** the parties argue in different, often incommensurable terms. A company offers compensation in money; a community argues with livelihood, territory, sacredness, rights. Martínez-Alier's question: who has the power to impose a language of valuation?
+
+**The three currents** (Martínez-Alier 2002, ch. 1). They overlap and coexist, they are not stages.
+
+- *Cult of wilderness:* protect untouched nature, set aside parks and reserves. Roots in John Muir and the Sierra Club, today conservation biology, WWF. Not against growth as such. Has often removed local people from protected areas ("fortress conservation").
+- *Gospel of eco-efficiency:* use resources efficiently, sustainable development, ecological modernisation, eco-taxes and permit markets. Dominant in business and policy; the green growth of Session 8b.
+- *Environmentalism of the poor:* people defend the environment because they live from it — water, land, forests, fisheries. Not a luxury of the rich, as the environmental Kuznets curve would suggest. Classic cases: Chipko in India, Chico Mendes and the rubber tappers in Brazil, Ken Saro-Wiwa and the Ogoni in Nigeria.
 :::
 
 ::: {.source}
@@ -102,7 +151,7 @@ Anguelovski & Martínez-Alier [-@anguelovski2014]. Recall Text 3 of Session 2 [@
   - actors and mobilising groups
   - forms of mobilisation, intensity
   - impacts and outcome
-- For you: **a starting point** for your country
+- For you: **starting point** for your country
 :::
 
 ::: {.column .qrcol width="42%"}
@@ -110,6 +159,14 @@ Anguelovski & Martínez-Alier [-@anguelovski2014]. Recall Text 3 of Session 2 [@
 
 **[ejatlas.org](https://ejatlas.org)**
 :::
+:::
+
+::: {.notes}
+**Co-produced:** cases are written by researchers together with activist groups and checked by a moderator team. This is a strength (local knowledge) and a bias (see the slide on reading the atlas critically).
+
+**One template:** every case has the same fields, so cases can be compared and counted. This is what makes the global analyses on the next slide possible. Our seven questions use the same fields, so most answers are on the case page.
+
+**For you:** filter by country, then go to the sources listed on the case page.
 :::
 
 ::: {.source}
@@ -122,7 +179,7 @@ Temper, Del Bene & Martínez-Alier [-@temper2015].
 ::: {.cap .fragment}
 [Who mobilises]{.caphead}
 
-Mostly vulnerable groups, mostly non-violent protest — in countries of **all income levels**
+Mostly vulnerable groups, mostly non-violent — in countries of **all income levels**
 :::
 
 ::: {.cap .fragment}
@@ -134,12 +191,22 @@ Criminalisation **20%**, physical violence **18%**, assassinations **13%** of ca
 ::: {.cap .fragment}
 [With what effect]{.caphead}
 
-Projects stopped in **11%** of cases — up to **27%** with preventive mobilisation, diverse protest and litigation
+Projects stopped in **11%** of cases — up to **27%** if preventive, with protest *and* litigation
 :::
 :::
 
 ::: {.keybox .fragment}
 Indigenous Peoples: about **6%** of the world population — involved in at least **34%** of documented conflicts
+:::
+
+::: {.notes}
+**Who mobilises:** mostly marginalised groups — Indigenous Peoples, peasants, fisherfolk, poor urban neighbourhoods. Mostly non-violent forms: protest, petitions, litigation. Conflicts occur in high-income countries too; environmentalism of the poor is not only a Global South phenomenon.
+
+**At what risk:** shares of all 2,743 cases in Scheidel et al. (2020). Criminalisation means arrests and charges against defenders.
+
+**With what effect:** 11% of cases count as a success, i.e. the project was stopped. The share rises to 27% when mobilisation starts before the project (preventive) and combines different forms of protest with litigation.
+
+**Keybox:** Scheidel et al. (2023), 3,081 conflicts over development projects. 6% = share of Indigenous Peoples in the world population (6.2%).
 :::
 
 ::: {.source}
@@ -151,17 +218,33 @@ Percentages of all cases analysed: 2,743 EJAtlas conflicts in Scheidel et al. [-
 ## Analysing a conflict: seven questions
 
 <table class="econ grid7">
-<thead><tr><th></th><th>Question</th><th>Look for</th><th>Based on</th></tr></thead>
+<thead><tr><th></th><th>Topic</th><th>Guiding question</th></tr></thead>
 <tbody>
-<tr class="fragment"><td>1</td><td><strong>What and where?</strong></td><td>Project, commodity, location, timeline</td><td>Temper et al. (2015)</td></tr>
-<tr class="fragment"><td>2</td><td><strong>Why?</strong> The metabolic driver</td><td>Which flow of materials, energy, water or waste — and where does it go?</td><td>Scheidel et al. (2018); Dorninger et al. (2021)</td></tr>
-<tr class="fragment"><td>3</td><td><strong>Through whom?</strong> Actors</td><td>Companies, state, financiers, mobilising groups — who holds power?</td><td>Scheidel et al. (2018); Temper et al. (2015)</td></tr>
-<tr class="fragment"><td>4</td><td><strong>Impacts</strong></td><td>Environmental, health, socio-economic; visible or potential</td><td>Temper et al. (2015); Scheidel et al. (2023)</td></tr>
-<tr class="fragment"><td>5</td><td><strong>How?</strong> Valuation languages</td><td>Money and compensation — or livelihood, territory, sacredness?</td><td>Martínez-Alier (2002); Martínez-Alier et al. (2010)</td></tr>
-<tr class="fragment"><td>6</td><td><strong>When?</strong> Mobilisation and outcome</td><td>Preventive or reactive, forms of protest, repression, result</td><td>Scheidel et al. (2020); Navas et al. (2018)</td></tr>
-<tr class="fragment"><td>7</td><td><strong>So what?</strong> For your poster</td><td>What does the case say about your country's place in world trade?</td><td>Session 5; Dorninger et al. (2021)</td></tr>
+<tr class="fragment"><td><span class="qn">1</span></td><td><strong>Project and place</strong></td><td>Which project and commodity? Where, since when?</td></tr>
+<tr class="fragment"><td><span class="qn">2</span></td><td><strong>Metabolic driver</strong></td><td>Which flow of materials, energy, water or waste — and where does it go?</td></tr>
+<tr class="fragment"><td><span class="qn">3</span></td><td><strong>Actors</strong></td><td>Companies, state, financiers, mobilising groups — who has power?</td></tr>
+<tr class="fragment"><td><span class="qn">4</span></td><td><strong>Impacts</strong></td><td>Environmental, health, socio-economic — visible or potential?</td></tr>
+<tr class="fragment"><td><span class="qn">5</span></td><td><strong>Valuation languages</strong></td><td>In which terms do they argue: money — or livelihood, territory, sacredness?</td></tr>
+<tr class="fragment"><td><span class="qn">6</span></td><td><strong>Mobilisation and outcome</strong></td><td>Preventive or reactive? Forms of protest, repression, result?</td></tr>
+<tr class="fragment"><td><span class="qn">7</span></td><td><strong>So what?</strong></td><td>What does the case say about your country's place in world trade?</td></tr>
 </tbody>
 </table>
+
+::: {.notes}
+**Where the grid comes from.** Topics 2, 3, 5 and 6 are the four dimensions of the framework of Scheidel et al. [-@scheidel2018], who phrase them as question words: *why* (the metabolic driver), *through whom* (actors), *how* (valuation languages), *when* (stages of mobilisation). Here they are named by what to look for instead. The guiding questions follow the EJAtlas template [@temper2015], so most answers are on the case page.
+
+**Based on, question by question:**
+
+1. Project and place — @temper2015
+2. Metabolic driver — @scheidel2018; @martinezalier2010; "where does it go?" links back to @dorninger2021
+3. Actors — @scheidel2018; @temper2015
+4. Impacts — @temper2015; @scheidel2023
+5. Valuation languages — @martinezalier2002; @martinezalier2010
+6. Mobilisation and outcome — @scheidel2020; @navas2018 (violence is not only direct, but also slow or structural)
+7. So what? — Session 5; @dorninger2021
+
+**Question 7 is the link to the poster:** what does the case say about the country's position in world trade, and about the twin challenge of social provisioning and ecological sustainability? In the report, students start with question 7.
+:::
 
 ::: {.source}
 The full grid with sub-questions is on the handout.
@@ -169,49 +252,144 @@ The full grid with sub-questions is on the handout.
 
 ## Worked example: lithium in the Salar de Atacama, Chile
 
-::: {.columns style="gap: 1.6em;"}
-::: {.column width="44%"}
-- **What, where:** lithium from brine, pumped from beneath the salt flat; operations since 1984 and 1996
-- **Why:** brine pumped into evaporation ponds, plus freshwater — authorised quotas of about **2,000 l/s** of brine and **260 l/s** of freshwater
-- **Through whom:** SQM and Albemarle, under contracts with the state agency CORFO — on the territories of the **Atacameño/Lickanantay**
+```{=html}
+<div class="qstrip">
+<span class="on"><b>1</b>Project and place</span><span class="on"><b>2</b>Metabolic driver</span><span class="on"><b>3</b>Actors</span><span class="on"><b>4</b>Impacts</span><span><b>5</b>Valuation languages</span><span><b>6</b>Mobilisation</span><span><b>7</b>So what?</span>
+</div>
+```
+
+::: {.qlist}
+- [1]{.qn} **Project and place** Lithium brine beneath the salt flat; since **1984** and **1996**
+- [2]{.qn} **Metabolic driver** Lithium for batteries — brine and freshwater pumped out
+  - Quotas ≈ **2,000 l/s** brine, **260 l/s** freshwater
+- [3]{.qn} **Actors** SQM, Albemarle, state agency CORFO
+  - On the territories of the **Atacameño/Lickanantay**
+- [4]{.qn} **Impacts** Wetlands, vegetation, flamingos under pressure
+  - **High uncertainty** about the water balance — after 30 years of extraction
 :::
 
-::: {.column width="56%"}
-![](figures/fig_L06a_lithium_trade.svg){width="100%" fig-alt="Chile supplies 73% of world lithium carbonate exports; 72% of Chile's exports go to China, followed by South Korea and Japan"}
-:::
+::: {.notes}
+**The badges** are the numbers of the seven questions; the strip on top shows which ones this slide answers.
+
+**1, project and place.** Albemarle's operation goes back to 1984 (then Sociedad Chilena del Litio), SQM's to 1996.
+
+**The salt flat.** Chile's largest salt flat, about 3,000 km², at about 2,300 m in the Atacama Desert, one of the driest places on earth. A closed basin: water comes in from the Andes, as rivers and as groundwater, and leaves only by evaporation. Beneath the salt crust lies brine: groundwater saturated with salts, with some of the highest lithium concentrations in the world.
+
+**2, metabolic driver.** The brine is pumped into large ponds, where the sun evaporates the water over 9–14 months. The concentrate goes to plants near Antofagasta and is processed into lithium carbonate or hydroxide. Almost all the water in the brine evaporates and is lost to the basin. Freshwater is pumped in addition for processing. Quotas: SQM 1,600 l/s brine and 240 l/s freshwater, Albemarle 442 and 23.5 l/s; approved annual averages, not necessarily what is extracted. Where the lithium goes: question 7.
+
+**3, actors.**
+
+- *CORFO* (Corporación de Fomento de la Producción): the Chilean state's development agency, founded 1939. Since 1979 (Decree Law 2.886) lithium cannot be held under ordinary mining concessions, originally because of its nuclear uses; only the state can extract it, or let others do so by contract. CORFO has held the mining rights in the salar since the 1970s, leases them to the two companies and collects the lease payments. The nuclear energy commission CCHEN approves the sales quotas.
+- *SQM* (Sociedad Química y Minera de Chile): Chilean, from nitrates and fertilisers to lithium and potassium; the world's second-largest lithium producer. A former state company, privatised under the Pinochet dictatorship; its main shareholder is Julio Ponce Lerou, Pinochet's former son-in-law. China's Tianqi holds a large minority stake. Involved in the scandal over illegal political financing. Its CORFO contract runs to 2030; under a 2024 agreement, the state copper company Codelco takes the majority in a joint venture from 2031.
+- *Albemarle*: US chemical company (Charlotte, North Carolina), the world's largest lithium producer. Has run the old SCL operation since 2015; its contract runs to 2043.
+- *Atacameño/Lickanantay*: the Indigenous people of the basin, in communities such as Peine, Toconao and Socaire.
+
+**4, impacts: why pumping brine is a problem.** Brine and freshwater are not two separate stores. At the margins of the salar, fresh groundwater from the Andes meets the brine. This is where the lagoons, meadows and peatlands lie, with flamingos and other protected species, and where communities graze animals and farm. Pumping brine from the core lowers its level and draws freshwater towards it, so water tables at the margins can fall. Recharge in this climate is slow, so what is lost is not replaced on human time scales. Large copper mines pump groundwater in the same basin, which makes impacts hard to attribute.
+
+**Disputed science.** The companies' models treat brine and freshwater as separated by a low-permeability layer (SQM: a "salt cradle"; Albemarle: a "semi-impermeable saline interface"). The communities see one connected system. The SMA's case against SQM found brine extraction above the authorised quota (by 3.9%), harm to protected flora, and unauthorised changes to the monitoring and early-warning plans. The regulator also found a high degree of scientific uncertainty and no reliable water balance, despite 30 years of extraction.
 :::
 
 ::: {.source}
 Flores Fernández & Alba [-@floresfernandez2023], quotas: SQM 1,600 + 240 l/s, Albemarle 442 + 23.5 l/s
-(approved, not necessarily extracted). Trade: Atlas of Economic Complexity, 2024.
+(approved, not necessarily extracted).
 :::
 
 ## Worked example: lithium in the Salar de Atacama, Chile
 
-- **Impacts:** high-Andean wetlands, vegetation and flamingo populations under pressure
-  - **High scientific uncertainty** about the water balance — even after 30 years of extraction
-- **Valuation languages:** state and companies treat brine as a **mineral**; Lickanantay communities insist it is **water** — and water is sacred
-- **Mobilisation and outcome:** objections of Peine, Toconao, Socaire excluded on formal grounds (2006)
-  - Communities' council intervenes against SQM and the 2018 CORFO contract
+```{=html}
+<div class="qstrip">
+<span><b>1</b>Project and place</span><span><b>2</b>Metabolic driver</span><span><b>3</b>Actors</span><span><b>4</b>Impacts</span><span class="on"><b>5</b>Valuation languages</span><span class="on"><b>6</b>Mobilisation</span><span><b>7</b>So what?</span>
+</div>
+```
+
+::: {.qlist}
+- [5]{.qn} **Valuation languages** Brine as **mineral** or as **water**?
+  - State and companies: a mineral, under mining law
+  - Lickanantay: water — part of their territory, sacred
+- [6]{.qn} **Mobilisation and outcome**
+  - Objections excluded (2006); challenge to SQM's 2018 contract
   - Excess extraction found — **no sanction**, a compliance plan instead
-- **Not one voice:** resistance *and* negotiation
-  - Substantial direct and indirect economic benefits from the companies
-  - Some members work in the mines
-- **So what:** "green extractivism" — the **colonial shadow of green electromobility**
+  - **Not one voice:** resistance *and* negotiation
+:::
+
+::: {.notes}
+**5, valuation languages.** In Chilean law the brine is a mining resource: the Mining Code speaks of "occluded saline solutions", and the Water Code does not recognise brine as water. So pumping brine needs no water rights. The communities reject this split; in Peine's words, "there is no distinction between freshwater and brine". Water is part of their territory and sacred. Whichever language is accepted decides which impacts count at all.
+
+**6, mobilisation and outcome.**
+
+- 2006: in the environmental impact assessment of SQM's project, the communities of Peine, Toconao and Socaire contested the company's impact claims. Their comments were left out, officially on formal grounds.
+- The Council of Atacameño Peoples (Consejo de Pueblos Atacameños, 18 communities) intervened in the SMA's procedure against SQM and took legal action against the 2018 contract between CORFO and SQM. That contract followed a dispute over unpaid lease payments and extended SQM's rights.
+- Outcome of the SMA procedure: no sanction. SQM committed to a compliance plan with lower brine and water quotas and more studies; it also announced to cut extraction to half of the approved amount.
+
+**Not one voice.** Albemarle's agreements with Peine and the Council give the communities 3.5% of annual sales, almost US$40 million on 2022 sales. Some members work in the mines. Mobilisation here combines resistance with negotiation, which a simple "stopped / not stopped" outcome does not capture.
+:::
 
 ::: {.source}
 Flores Fernández & Alba [-@floresfernandez2023]; Jerez Henríquez, Garcés & Torres Salinas [-@jerez2021].
 :::
 
+## Worked example: lithium in the Salar de Atacama, Chile
+
+```{=html}
+<div class="qstrip">
+<span><b>1</b>Project and place</span><span><b>2</b>Metabolic driver</span><span><b>3</b>Actors</span><span><b>4</b>Impacts</span><span><b>5</b>Valuation languages</span><span><b>6</b>Mobilisation</span><span class="on"><b>7</b>So what?</span>
+</div>
+```
+
+<!-- The figure sits inside the first bullet, so it comes on the click after it;
+     it is lifted out of the flow to the right of the list. -->
+
+::: {.qlist style="width: 44%;"}
+- [7]{.qn} **So what?** Chile's place in world trade
+
+  ::: {.fragment .abs-left style="top: -0.2em; left: calc(100% + 1.6em); width: 120%;"}
+  ![](figures/fig_L06a_lithium_trade.svg){width="100%" fig-alt="Chile supplies 73% of world lithium carbonate exports; 72% of Chile's exports go to China, followed by South Korea and Japan"}
+  :::
+
+  - **73%** of world lithium carbonate exports, **72%** of them to China
+  - Raw material out, **batteries made elsewhere**
+  - **"Green extractivism"**: the colonial shadow of green electromobility
+:::
+
+::: {style="height: 3.2em;"}
+:::
+
+::: {.arrow .fragment}
+For your poster: the same step for your country's main export
+:::
+
+::: {.notes}
+**7, so what.** This is also the answer to "where does it go?" from question 2. Chile supplies 73% of world lithium carbonate exports; 72% of Chile's exports go to China, then South Korea and Japan, the battery producers.
+
+**Value added elsewhere.** Lithium brought the Chilean state about US$5 billion in 2022, about 1.6% of GDP. But Chile exports lithium carbonate; batteries and cars are made in China, South Korea, Japan, so most value added arises there (the 11× from the first slide).
+
+**Green extractivism** [@jerez2021]: decarbonisation in the North rests on new extraction frontiers in the South.
+
+**For the poster:** this is the question the groups answer first in their report.
+:::
+
+::: {.source}
+Trade: Atlas of Economic Complexity, 2024; Jerez Henríquez, Garcés & Torres Salinas [-@jerez2021];
+state revenue: Flores Fernández & Alba [-@floresfernandez2023].
+:::
+
 ## Read the atlas critically
 
-- It records conflicts that were **documented** — often by those mobilising
-- Coverage is **uneven** across countries — gaps e.g. in Central Asia, Russia, the Pacific
+- Records **documented** conflicts — often documented by those mobilising
+- **Uneven** coverage — gaps e.g. in Central Asia, Russia, the Pacific
 - **No entry is not no conflict**
-- So: triangulate with **peer-reviewed case studies** and local sources
+- Triangulate with **peer-reviewed case studies** and local sources
 
 ::: {.arrow .fragment}
 Same lesson as Session 3: the vantage point decides what is in the picture
+:::
+
+::: {.notes}
+**Documented:** a conflict enters the atlas only if someone writes it up, usually researchers together with those who mobilise. Conflicts without networks, without media attention, or where mobilising is too dangerous, are missing. Case pages are written from the perspective of the affected groups.
+
+**Coverage** follows the networks behind the atlas; gaps e.g. in Central Asia, Russia, the Pacific.
+
+**For the poster:** check the case page against at least one peer-reviewed case study or another independent source, and say where the information comes from.
 :::
 
 ::: {.source}
@@ -223,7 +401,7 @@ Temper, Del Bene & Martínez-Alier [-@temper2015]; on data gaps, Scheidel et al.
 ::: {.taskbox style="margin-top: 1.0em;"}
 **Country groups** · **20 minutes**
 
-Find the conflicts the EJAtlas lists for **your country** — pick **one**, ideally linked to a major export
+EJAtlas: conflicts in **your country** — pick **one**, ideally linked to a major export
 
 Work through the **seven questions** on the handout
 
@@ -239,20 +417,32 @@ No case for your country? Take one linked to its main export commodity
 
 ## Summary
 
-- Ecologically unequal exchange becomes visible as **ecological distribution conflicts** where resources are extracted
-- **Environmentalism of the poor**: defending livelihoods, territory and health — not a luxury
-- The **EJAtlas**: a global, co-produced inventory — a starting point, to be read critically
-- **Seven questions** for a single conflict: what and where, why, through whom, impacts, how, when — and so what
-- The Atacama case: even **"green" technologies** have extraction frontiers and contested valuation languages
-- Measuring the embodied flows → Session 6; next: **growth vs. degrowth**; **justice** → Session 9
+- Unequal exchange → **ecological distribution conflicts** where resources are extracted
+- **Environmentalism of the poor**: livelihoods, territory, health — not a luxury
+- **EJAtlas**: co-produced inventory — starting point, read critically
+- **Seven questions**: from project and place to *so what?*
+- Atacama: **"green" technologies** have extraction frontiers too
+- Next: **growth vs. degrowth**; **justice** → Session 9
+
+::: {.notes}
+**First bullet:** the flows measured in Session 6 become visible as conflicts at the extraction sites.
+
+**Atacama:** even the technologies of the energy transition have extraction frontiers, and contested valuation languages: brine as mineral or as water.
+:::
 
 ## Suggestion for country analysis
 
-- Look at data on trade, and trade openness
-- Complement this with data on export composition, complexity, and the product space
-- What is your country specialized in?
-- What are the outlooks for the future?
-- Which **environmental conflicts** does the EJAtlas list for your country? Analyse one with the **seven questions**
+- **Trade** and **trade openness**
+- Export **composition**, **complexity**, **product space**
+- **Specialisation** and **outlook**
+- **Environmental conflicts** in the EJAtlas → one case, **seven questions**
+
+::: {.notes}
+- Look at data on trade and trade openness (Session 5).
+- Complement this with export composition, complexity and the product space.
+- What is the country specialised in? What are the outlooks for the future?
+- Which environmental conflicts does the EJAtlas list for the country? Analyse one with the seven questions; question 7 links it to the trade analysis.
+:::
 
 ## References {.smaller .scrollable}
 

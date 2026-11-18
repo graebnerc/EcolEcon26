@@ -1,0 +1,79 @@
+---
+title: "Analysing an environmental conflict"
+subtitle: "Seven questions for the group work in Session 8 — and for your poster"
+date: "2026-10-28"
+date-modified: last-modified
+# Formerly ConflictAnalysis.qmd; keep the old link working.
+aliases:
+  - ConflictAnalysis.html
+nocite: |
+  @dorninger2021, @navas2018
+format:
+  html:
+    toc: false
+  pdf:
+    papersize: a4
+    geometry: "top=2.4cm, bottom=2.2cm, left=1.8cm, right=1.8cm, headheight=1.4cm"
+    fontsize: 10pt
+    number-sections: false
+    toc: false
+    include-in-header: ../../assets/euf-pdf.tex
+---
+
+::: {.content-visible when-format="html"}
+::: {.callout-note appearance="simple" icon=false}
+📄 **For the group work:** [download this grid as a PDF](s_08a_ConflictAnalysis.pdf). The
+lecture slides explain where each question comes from, with lithium mining in the Salar de Atacama, Chile, as a worked example.
+:::
+:::
+
+**Task (20 min, country groups).** Open the [Environmental Justice Atlas](https://ejatlas.org)
+and filter by your country. Pick **one** conflict — ideally one linked to a major export of
+your country. If there is no case for your country, take one linked to its main export commodity
+(Atlas of Economic Complexity). Work through the seven questions. Report in **2 minutes, starting with question 7**.
+
+**Why these questions.** The grid draws on two works. Its structure follows the conceptual
+framework of @scheidel2018: conflicts over the environment arise from a growing social
+metabolism (the *metabolic driver*), are carried by particular *actors*, are fought in
+different *valuation languages*, and unfold in stages of *mobilisation* (questions 2, 3, 5
+and 6). The guiding questions follow the template on which every EJAtlas case is coded
+[@temper2015], so most answers can be found on the case page.
+
+**The column "Based on"** names, for each question, the work its concepts come from. That is
+where to read further, and what to cite on your poster. Besides the two works above, these
+are Martínez-Alier's work on valuation languages [@martinezalier2002; @martinezalier2010],
+the global analyses of EJAtlas cases on impacts [@scheidel2023] and on mobilisation, outcomes
+and violence [@scheidel2020; @navas2018], and, for question 7, your trade analysis from
+Session 5 and the net resource flows measured by @dorninger2021 (Session 6).
+
+| | Topic | Guiding questions | Based on |
+|:-:|:-----------------|:---------------------------------------------|:---------------|
+| **1** | **Project and place** | Which project, which commodity, which type of conflict? Where exactly, since when? | @temper2015 |
+| **2** | **Metabolic driver** | Which flow of materials, energy, water or waste is at stake? Where does the commodity go — who consumes it? Who receives the benefits, who bears the costs? | @scheidel2018; @martinezalier2010 |
+| **3** | **Actors** | Companies (and their home countries), state agencies, financiers; affected and mobilising groups, NGOs. Who has power, money, legal standing? | @scheidel2018; @temper2015 |
+| **4** | **Impacts** | Environmental, health and socio-economic impacts. Visible already, or potential? Which groups are hit hardest? | @temper2015; @scheidel2023 |
+| **5** | **Valuation languages** | In which terms do the parties argue — money, jobs, compensation, or livelihood, territory, sacredness, rights? Are some languages excluded from the decision? | @martinezalier2002; @martinezalier2010 |
+| **6** | **Mobilisation and outcome** | Preventive, reacting to the project, or demanding reparation? Forms of protest, litigation, intensity. Repression or violence — direct, but also slow or structural? Outcome? | @scheidel2020; @navas2018 |
+| **7** | **So what?** For your poster | What does the case tell you about your country's position in world trade — and about the twin challenge of social provisioning and ecological sustainability? | Session 5; @dorninger2021 |
+
+**Read the atlas critically.** The EJAtlas lists conflicts that were *documented*, often
+together with those mobilising [@temper2015]. Coverage differs strongly between countries
+[@scheidel2023], and a missing entry does not mean there is no conflict. Treat a case page
+as a starting point: check it against at least one peer-reviewed case study or another
+independent source, and note on your poster where your information comes from.
+
+**Background.** Why the poor often defend the environment — because they live from it — is
+the subject of the *environmentalism of the poor* [@martinezalier2002;
+@anguelovski2014]. A global overview of what mobilisations achieve and at what risk is
+@scheidel2020. The worked example in the lecture draws on @floresfernandez2023 and @jerez2021.
+
+## References {.unnumbered}
+
+::: {.content-visible when-format="pdf"}
+```{=latex}
+\footnotesize
+```
+:::
+
+::: {#refs}
+:::

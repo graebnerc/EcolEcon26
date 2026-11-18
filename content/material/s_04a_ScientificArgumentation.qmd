@@ -3,11 +3,6 @@ title: "🗓️ Session 4: Primer on scientific argumentation"
 date: "2026-10-07"
 date-modified: last-modified
 author:
-  - name: Claudius Gräbner-Radkowitsch
-    url: https://claudius-graebner.com/
-    orcid: 0000-0003-4065-4722
-    affiliation: EUF and JKU
-    affiliation-url: https://www.uni-flensburg.de/en/pluralist-economics
   - name: Anna-Katharina Kothe
     orcid: 0009-0001-6178-4174
     affiliation: EUF

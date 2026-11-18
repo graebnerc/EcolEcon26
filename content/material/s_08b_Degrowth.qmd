@@ -14,7 +14,7 @@ you develop policy sets for your selected country or region.
 
 ## 🖥️ Lecture Slides
 
-<!--slides:08b:EcolEcon26_L08b_Degrowth.pdf-->
+<!--slides:08b:EcolEcon26_L08b_Degrowth.html-->
 ::: {.slides-pending}
 📽️ Slides will be made available after the lecture.
 :::
@@ -33,6 +33,7 @@ Please read **before** the session:
 - @jackson2024
 - @schmelzer2023
 - @warlenius2025
+- @zellziegler2021 — on the role of sufficiency in European energy and climate plans.
 
 ## References
 

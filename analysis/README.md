@@ -17,6 +17,7 @@ shows the steps from the raw download to the finished figure.
 | 5: Free trade | `trade_01_download.R`, `trade_02_figures.R` | South Korea, solar PV, terms of trade, economic complexity, product space | [session page](https://ecological-economics26.netlify.app/content/material/s_05_Trade.html#data-sources-for-the-figures) |
 | 6: Accounting | `accounting_02_figures.R` (no download script) | Export treemaps Africa vs. Europe, physical trade balance by region, material footprint by HDI group | UN IRP Global Material Flows Database; Our World in Data |
 | 7a: Policy instruments | `policy_01_download.R`, `policy_02_figures.R` | Kaya decomposition of CO₂ for any country (a table; the slide draws it as an animated SVG) | [Our World in Data, CO₂ dataset](https://github.com/owid/co2-data) |
+| 8b: Growth vs. degrowth | `degrowth_01_download.R`, `degrowth_02_figures.R` | World GDP, material footprint and GHG; coupling and decoupling in three countries; the trick with two y-axes; rebound in German housing; adoption of new goods | [World Bank WDI](https://data.worldbank.org/indicator/NY.GDP.MKTP.KD); UN IRP Global Material Flows Database; [Our World in Data, CO₂ dataset](https://github.com/owid/co2-data); [OWID technology adoption](https://ourworldindata.org/grapher/technology-adoption-by-households-in-the-united-states) |
 
 For each session there are two scripts. The download script fetches the data
 and needs an internet connection. The figure script only reads the downloaded
@@ -60,6 +61,14 @@ Rscript analysis/trade_02_figures.R
 
 # Session 6 (reads the IRP export and the OWID file of session 3)
 Rscript analysis/accounting_02_figures.R
+
+# Session 7a
+Rscript analysis/policy_01_download.R
+Rscript analysis/policy_02_figures.R
+
+# Session 8b (also reads the IRP export and the OWID file of session 7a)
+Rscript analysis/degrowth_01_download.R
+Rscript analysis/degrowth_02_figures.R
 ```
 
 In RStudio, open the project file, open a script and click *Source*. Opening
@@ -317,3 +326,56 @@ have happened with a different growth rate.
 
 The waterfall on the slide is an animated SVG drawn from these numbers. It lives in the deck,
 so if the numbers change, it has to be changed by hand.
+
+## Session 8b: the growth vs. degrowth debate
+
+`degrowth_01_download.R` fetches three things. First, GDP in constant 2015 US$ from the World
+Bank for the world, China, Germany and Türkiye. I use the World Bank here and not the Maddison GDP of the OWID
+file, because Maddison has only benchmark years for the world total before 2008, so a world
+series from it is a straight line between those years. `degrowth_02_figures.R` combines this
+with greenhouse gas emissions without land use (Jones et al., from the OWID file of session 7a)
+and the material flows of the IRP export. Each figure stops at the last year for which all of
+its series exist.
+
+Second, the data on heating in German housing that Jonas Lage, Frauke Wiese and I used in a
+blog post in 2024 (Destatis and AGEB, 1990–2020). They are in a
+[GitHub gist](https://gist.github.com/graebnerc/346608931c440c1a27cd431476b43779); the script
+downloads one fixed revision of it. Heat demand per person is heat demand per m² times living
+space per person, and the script checks that the three columns fit together. Third, the
+technology adoption data of Our World in Data (Comin and Hobijn 2004, and others), for the
+adoption curves of new goods in US households.
+
+| File | Slide | Content |
+|---|---|---|
+| `fig_L08b_05_gdp_material` | 5 | World GDP and material footprint since 1990, index 1990 = 1 |
+| `fig_L08b_07_axes_1` to `_3` | 7 | Germany: the same GDP and GHG data with three different right-hand axes |
+| `fig_L08b_10_decoupling_types` | 10 | Türkiye (material use), China and Germany (GHG) against GDP since 2000 |
+| `fig_L08b_11_rebound` | 11 | Heating in German housing, 1990–2020, index 1990 = 100 |
+| `fig_L08b_14_world` | 14 | World GDP, material footprint and GHG since 1970, index 1990 = 1 |
+| `fig_L08b_27_adoption_goods` | 27 | Adoption of new goods in US households since 1860 |
+
+For the world, the material footprint is the same as domestic extraction: what one country
+imports, another has extracted. That is why the world series is extraction, which the IRP gives
+from 1970, while the footprint of single countries starts later. The script also prints the
+correlation between the levels of world GDP and the material footprint (0.99 for 1990–2024),
+the number on slide 5.
+
+The figure on slide 5 follows Hickel and Kallis (2020); theirs stopped in 2013, this one goes
+to 2024. On slide 7, the three panels show identical data. Only the mapping of the emissions onto
+the right-hand axis changes: normal, reversed, and stretched from 0 to 6,000 Mt. The function
+`two_axes()` shows how little it takes.
+
+The country panels on slide 14 (right) are `fig_14_decoupling` of session 3 and come from
+`02_figures.R`.
+
+On slide 10, the three panels show no decoupling, relative and absolute decoupling. Türkiye is
+the example for the first because its material use grew faster than its GDP since 2000 (+281%
+against +218%). The 2025 version of the slide used Indonesia, but with current data
+Indonesia's material use grows more slowly than its GDP.
+
+The adoption curves on slide 27 rebuild Figure 2 of Systemiq (2023) as far as the data allow:
+Systemiq took cars, steamships and steel from a different source, so the figure uses the OWID
+series for cars and leaves the other two out. The figure next to it, on infrastructures and
+energy systems, is still the one from the Systemiq report, because its main source (Sovacool
+2016) publishes no data.
+

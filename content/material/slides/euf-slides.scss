@@ -1166,13 +1166,36 @@ $io-x:  #CFE8E6;   // totals
 .reveal .why5 .cap { padding: 0.6em 0.5em; text-align: center; }
 .reveal .why5 .cap p { color: $euf-navy; }
 .reveal .why5 .caphead { font-size: 0.85em; }
-.reveal .spurious { display: grid; grid-template-columns: 1fr 1fr 0.62fr; gap: 0.8em; align-items: center; margin-top: 0.3em; }
+.reveal .spurious { display: grid; grid-template-columns: 1fr 1.62fr; gap: 0.8em; align-items: center; margin-top: 0.3em; }
+.reveal .spurious .pair { display: grid; grid-template-columns: 1fr 0.62fr; gap: 0.8em; align-items: center; }
 .reveal .spurious p { margin: 0; }
 .reveal .spurious img { width: 100%; margin: 0; }
 .reveal img.mid { display: block; margin: 0.2em auto 0 auto; }
 .reveal .caplist ul { margin: 0 0 0 0.2em; }
 .reveal .slides section .caplist ul > li { font-size: 0.86em; margin: 0 0 0.35em 0; color: $euf-gray; }
 .reveal .ipat p { margin: 0 0 0.2em 0; font-size: 0.85em; color: $euf-gray; }
+
+// L08b: the five reasons for correlation as small causal graphs
+.reveal svg.sd.why { margin: -0.4em auto -0.3em auto; }
+.reveal svg.sd .var-node { fill: #FFFFFF; stroke: $euf-blue; stroke-width: 2.5; }
+.reveal svg.sd .var-node.z { stroke: $euf-teal; }
+.reveal svg.sd .var { fill: $euf-navy; font-style: italic; font-family: Georgia, "Times New Roman", serif; font-size: 28px; }
+.reveal svg.sd .var.q { fill: $euf-gray; font-style: normal; }
+.reveal svg.sd .case { fill: $euf-blue; font-weight: 700; font-size: 21px; }
+.reveal svg.sd .sep { fill: none; stroke: $euf-rule; stroke-width: 1.5; }
+.reveal svg.sd .nolink { fill: none; stroke: $euf-gray; stroke-width: 2.5; stroke-dasharray: 4 8; }
+
+// L08b: same data, three stories
+.reveal .axes3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1em; margin-top: 0.4em; }
+.reveal .axes3 p { margin: 0; }
+.reveal .axes3 img { width: 100%; margin: 0; }
+
+// L08b: worked calculation under a diagram or above a table
+.reveal .calc { text-align: center; margin: 0.4em 0 0.5em 0; color: $euf-navy; }
+.reveal .calc p { margin: 0 0 0.25em 0; }
+.reveal .cap.suff { border-width: 3px; }
+.reveal .given { font-size: 0.78em; color: $euf-navy; margin: 0.1em 0 0.3em 0; }
+.reveal .given p { margin: 0 0 0.15em 0; }
 
 // L08b: the tables of Warlenius (2023), rebuilt; .hi3/.hi4 shade the row of constant GDP
 .reveal table.econ.warl { width: 100%; font-size: 0.8em; margin-top: 0.3em; }
